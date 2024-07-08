@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "01_introduction.html",
+    "href": "01_introduction.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "01_introduction.html#introduction-to-r",
+    "href": "01_introduction.html#introduction-to-r",
+    "title": "",
+    "section": "Introduction to R",
+    "text": "Introduction to R"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to R for BigCare 2024",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
