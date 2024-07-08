@@ -1,0 +1,39 @@
+project:
+  type: website
+
+website:
+  title: "Intro to R for BigCare 2024"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+    right:
+      - text: chapters
+        menu:
+          - text: 1. Introduction
+            href: 01_introduction.qmd
+
+format:
+  html:
+    code-tools:
+      source: repo
+    fig-cap-location: margin
+    tbl-cap-location: margin
+    code-copy: true
+    theme:
+      light: [cosmo]
+    #fontsize: "15px"
+    linestretch: 1.8
+    #mainfont: "Roboto"
+    #monofont: "Fira Mono"
+    smooth-scroll: true
+    toc-depth: 3
+    code-link: true
+    highlight-style: printing
+    code-block-bg: true
+    code-overflow: wrap
+    reference-location: margin
+    mermaid:
+      theme: neutral
+    css: styles.css
