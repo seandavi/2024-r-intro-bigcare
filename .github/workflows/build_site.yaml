@@ -9,7 +9,7 @@ name: build_site
 permissions: read-all
 jobs:
     build_site:
-      runs-on: macos-latest
+      runs-on: windows-latest
       permissions:
         contents: write
       env:
