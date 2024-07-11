@@ -455,17 +455,18 @@ length</code></pre>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># and use our logical vector to create a vector of myvec values that are &gt;0.25</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9927046 2.6965794 1.0271138</code></pre>
+<pre><code>[1] 0.8127615 1.7082809 0.5328539</code></pre>
 </div>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># or &lt;=0.25 using the logical "not" operator, "!"</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="op">!</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.9381846 -2.2263262 -0.2430687 -0.2758258  0.2207109 -1.1993946  0.1047671</code></pre>
+<pre><code>[1] -0.40282316 -1.08071883 -0.74651999 -0.09782679 -0.29455745 -0.42532073
+[7] -1.20873177</code></pre>
 </div>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># shorter, one line approach</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">myvec</span> <span class="op">&gt;</span> <span class="fl">0.25</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9927046 2.6965794 1.0271138</code></pre>
+<pre><code>[1] 0.8127615 1.7082809 0.5328539</code></pre>
 </div>
 </div>
 </section><section id="character-vectors-a.k.a.-strings" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="character-vectors-a.k.a.-strings">
