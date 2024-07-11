@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/index.html</loc>
+    <lastmod>2024-07-09T11:45:21.969Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/intro.html</loc>
+    <lastmod>2024-07-09T11:56:32.647Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/chatbots.html</loc>
+    <lastmod>2024-07-09T00:34:21.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/data_structures_intro.html</loc>
+    <lastmod>2024-07-09T13:45:33.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/dataframes_intro.html</loc>
+    <lastmod>2024-07-11T20:03:56.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/ggplot.html</loc>
+    <lastmod>2024-07-10T21:30:29.821Z</lastmod>
+  </url>
+</urlset>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to R for BigCare 2024</title>
+<title>Introduction to R for BigCare 2024 – 2&nbsp; Chatbots as Learning Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./data_structures_intro.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatbots.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -163,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
+  <a href="./chatbots.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
@@ -195,16 +196,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#features-of-chatbots" id="toc-features-of-chatbots" class="nav-link active" data-scroll-target="#features-of-chatbots">Features of Chatbots</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/chatbots.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Introduction to R for BigCare 2024</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -221,14 +222,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level1 unnumbered">
-<h1 class="unnumbered">Overview</h1>
-<p>This is the overview.</p>
+<p><a href="https://chatgpt.com/">ChatGPT</a>, developed by OpenAI, and <a href="https://claude.ai">Claude</a>, developed by Anthropic, are advanced language models that leverage deep learning techniques to understand and generate human-like text. At their core, these chatbots operate using a variant of the <a href="https://www.datacamp.com/tutorial/how-transformers-work">Transformer architecture</a>, which enable them to process and generate text based on the patterns and structures they learn from vast amounts of training data. These models<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> excels in natural language understanding and generation tasks, making them incredibly versatile tools for a wide range of applications beyond simple chat interactions.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Foundation models are a recent development in AI. These models are developed from algorithms designed to optimize for generality and versatility of output. They are based on large-scale neural networks that are often trained on a broad range of data sources and large amounts of data to accomplish a wide range of downstream tasks, including some for which they were not specifically developed and trained.</p></div></div><p>In the context of programming and coding, these chatbots serve as valuable assistants by providing explanations, examples, and guidance related to programming languages like R. Users can interact with a chatbot by posing questions or requesting code snippets, which they generate based on their understanding of the input and their extensive training data. For instance, users can inquire about specific syntax rules, algorithm implementations, or even debugging tips, and chatbots can respond with clear explanations and relevant examples. This capability makes them particularly useful for learners and developers seeking quick insights or clarification on complex programming concepts.</p>
+<p>Moreover, chatbots can facilitate learning and problem-solving by offering personalized responses tailored to the user’s queries. Their ability to generate coherent and contextually relevant text allows them to simulate a dialogue where they guides users through coding challenges or help them understand intricate programming concepts more intuitively. This makes chatbots not only a powerful tool for acquiring programming knowledge but also a supportive companion in the journey of mastering programming languages like R.</p>
+<p>In this tutorial, we will explore how chatbots like ChatGPT and Claude can be leveraged as learning tools for programming in R. We will discuss their features, capabilities, and potential applications in the context of programming education. By the end of this tutorial, you will have a better understanding of how chatbots can enhance the learning experience and support your programming endeavors.</p>
+<section id="features-of-chatbots" class="level1 unnumbered">
+<h1 class="unnumbered">Features of Chatbots</h1>
+<p>Chatbots like ChatGPT and Claude offer a range of features that make them valuable learning tools for programming in R. Some of the key features include:</p>
+<ol type="1">
+<li><strong>Natural Language Understanding</strong>: Chatbots can interpret and respond to user queries in natural language, making interactions more intuitive and user-friendly.</li>
+<li><strong>Code Generation</strong>: Chatbots can generate code snippets, examples, and explanations based on the user’s input, helping users understand and implement programming concepts.</li>
+<li><strong>Personalized Responses</strong>: Chatbots can provide personalized responses tailored to the user’s queries, enhancing the learning experience and engagement.</li>
+<li><strong>Interactive Learning</strong>: Chatbots can engage users in interactive learning experiences, guiding them through coding challenges and providing real-time feedback.</li>
+<li><strong>24/7 Availability</strong>: Chatbots are available round the clock, allowing users to seek assistance and guidance at any time, making them convenient learning companions.</li>
+<li><strong>Extensive Knowledge Base</strong>: Chatbots have access to vast amounts of training data and information, enabling them to provide accurate and up-to-date responses to user queries.</li>
+<li><strong>Scalability</strong>: Chatbots can scale to accommodate a large number of users simultaneously, making them suitable for both individual learners and educational institutions.</li>
+<li><strong>Feedback and Evaluation</strong>: Chatbots can provide feedback and evaluation on user-generated code, helping users identify and correct errors in their programming assignments.</li>
+<li><strong>Multimodal Capabilities</strong>: Chatbots can support multimodal interactions, such as text, voice, and visual inputs, enhancing the user experience and accessibility.</li>
+<li><strong>Continuous Learning</strong>: Chatbots can continuously learn and improve their responses based on user interactions and feedback, ensuring that they stay relevant and up-to-date.</li>
+</ol>
 
 
 <!-- -->
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -704,21 +722,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction to R and RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction to R and RStudio">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_structures_intro.html" class="pagination-link" aria-label="Vectors">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Overview {.unnumbered}</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chatbots as Learning Tools</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>This is the overview. </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">ChatGPT</span><span class="co">](https://chatgpt.com/)</span>, developed by OpenAI, and  <span class="co">[</span><span class="ot">Claude</span><span class="co">](https://claude.ai)</span>, developed by Anthropic, are advanced language models that leverage deep learning techniques to understand and generate human-like text. At their core, these chatbots operate using a variant of the <span class="co">[</span><span class="ot">Transformer architecture</span><span class="co">](https://www.datacamp.com/tutorial/how-transformers-work)</span>, which enable them to process and generate text based on the patterns and structures they learn from vast amounts of training data. These models<span class="ot">[^foundation_models]</span> excels in natural language understanding and generation tasks, making them incredibly versatile tools for a wide range of applications beyond simple chat interactions.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">[^foundation_models]: </span>Foundation models are a recent development in AI. These models are developed from algorithms designed to optimize for generality and versatility of output. They are based on large-scale neural networks that are often trained on a broad range of data sources and large amounts of data to accomplish a wide range of downstream tasks, including some for which they were not specifically developed and trained.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>In the context of programming and coding, these chatbots serve as valuable assistants by providing explanations, examples, and guidance related to programming languages like R. Users can interact with a chatbot by posing questions or requesting code snippets, which they generate based on their understanding of the input and their extensive training data. For instance, users can inquire about specific syntax rules, algorithm implementations, or even debugging tips, and chatbots can respond with clear explanations and relevant examples. This capability makes them particularly useful for learners and developers seeking quick insights or clarification on complex programming concepts.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Moreover, chatbots can facilitate learning and problem-solving by offering personalized responses tailored to the user's queries. Their ability to generate coherent and contextually relevant text allows them to simulate a dialogue where they guides users through coding challenges or help them understand intricate programming concepts more intuitively. This makes chatbots not only a powerful tool for acquiring programming knowledge but also a supportive companion in the journey of mastering programming languages like R.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>In this tutorial, we will explore how chatbots like ChatGPT and Claude can be leveraged as learning tools for programming in R. We will discuss their features, capabilities, and potential applications in the context of programming education. By the end of this tutorial, you will have a better understanding of how chatbots can enhance the learning experience and support your programming endeavors.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu"># Features of Chatbots {.unnumbered}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Chatbots like ChatGPT and Claude offer a range of features that make them valuable learning tools for programming in R. Some of the key features include:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Natural Language Understanding**: Chatbots can interpret and respond to user queries in natural language, making interactions more intuitive and user-friendly.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Code Generation**: Chatbots can generate code snippets, examples, and explanations based on the user's input, helping users understand and implement programming concepts.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Personalized Responses**: Chatbots can provide personalized responses tailored to the user's queries, enhancing the learning experience and engagement.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Interactive Learning**: Chatbots can engage users in interactive learning experiences, guiding them through coding challenges and providing real-time feedback.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**24/7 Availability**: Chatbots are available round the clock, allowing users to seek assistance and guidance at any time, making them convenient learning companions.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Extensive Knowledge Base**: Chatbots have access to vast amounts of training data and information, enabling them to provide accurate and up-to-date responses to user queries.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Scalability**: Chatbots can scale to accommodate a large number of users simultaneously, making them suitable for both individual learners and educational institutions.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Feedback and Evaluation**: Chatbots can provide feedback and evaluation on user-generated code, helping users identify and correct errors in their programming assignments.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>**Multimodal Capabilities**: Chatbots can support multimodal interactions, such as text, voice, and visual inputs, enhancing the user experience and accessibility.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>**Continuous Learning**: Chatbots can continuously learn and improve their responses based on user interactions and feedback, ensuring that they stay relevant and up-to-date.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/chatbots.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
