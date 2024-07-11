@@ -30,7 +30,7 @@ jobs:
             extra-packages: any::rcmdcheck
             needs: check
   
-        - name: Install R package dependencies
+        - name: Install R packagedependencies
           run: Rscript -e "install.packages('devtools', repos='http://cran.us.r-project.org'); devtools::install(dependencies=TRUE)"
   
         - name: setup-quarto
@@ -39,7 +39,6 @@ jobs:
             tinytex: true
 #        - name: install quarto titlepages
 #          run: quarto install extension --no-prompt nmfs-opensci/quarto_titlepages
-        - uses: quarto-dev/quarto-actions/render@v2
         - uses: quarto-dev/quarto-actions/publish@v2
           with: 
             target: gh-pages
