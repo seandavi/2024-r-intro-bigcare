@@ -1,30 +1,37 @@
 project:
-  type: website
+  type: book
 
-website:
-  title: "Intro to R for BigCare 2024"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-    right:
-      - text: chapters
-        menu:
-          - text: 1. Introduction
-            href: 01_introduction.qmd
+execute:
+  freeze: auto
+
+bibliography: [bibliography.bib]
+book:
+  title: "Introduction to R for BigCare 2024"
+  reader-mode: true
+
+  site-url: https://seandavi.github.io/2024-r-intro-bigcare/
+  repo-url: https://github.com/seandavi/2024-r-intro-bigcare
+  repo-branch: main
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - chatbots.qmd
+    - data_structures_intro.qmd
+    - dataframes_intro.qmd
+    - ggplot.qmd
 
 format:
   html:
-    code-tools:
-      source: repo
+    code-tools: true
     fig-cap-location: margin
     tbl-cap-location: margin
     code-copy: true
     theme:
-      light: [cosmo]
+      - flatly
+      - style.scss
     #fontsize: "15px"
-    linestretch: 1.8
+    #linestretch: 1.8
     #mainfont: "Roboto"
     #monofont: "Fira Mono"
     smooth-scroll: true

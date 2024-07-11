@@ -1,0 +1,311 @@
+# Plotting with ggplot2
+
+The `ggplot2` package is a popular data visualization package in R. 
+It is based on the Grammar of Graphics, a general scheme for data visualization that breaks up graphs into semantic components such as scales and layers. 
+The Grammar of Graphics was developed by Leland Wilkinson in 1999 and is implemented in the `ggplot2` package by Hadley Wickham.
+
+The Grammar of Graphics is a powerful framework for creating complex visualizations by combining simple components. 
+@fig-grammar-of-graphics illustrates the layered components of a data visualization, each contributing to the final plot. 
+Each layer builds upon the previous one, though not all layers are required for every plot.  
+The `ggplot2` package provides a flexible and intuitive interface for creating a wide range of visualizations, from simple scatter plots to complex multi-layered plots. 
+
+::: {#fig-grammar-of-graphics}
+
+![](https://www.dotlayer.org/en/grammar-of-graphics/2018-09-01-grammar-of-graphics_files/figure-html/image_gg.png)
+
+Components of a Data Visualization Layer Structure. 
+This diagram from @Caron2018-hu illustrates the layered components of a data visualization, each contributing to the final plot. Each layer builds upon the previous one, culminating in a comprehensive and interpretable visualization. 
+Layers from bottom (foundation) to top (icing on the cake) are:
+1) Data: The actual variables to be plotted.
+2) Aesthetics: Scales onto which data is mapped.
+3) Geometries: Shapes used to represent the data.
+4) Facets: Rows and columns of sub-plots.
+5) Statistics: Statistical models and summaries.
+6) Coordinates: Plotting space for the data.
+7) Theme: Describes all the non-data ink.
+
+:::
+ 
+This chapter provides an overview of the `ggplot2` package and its implementation of the Grammar of Graphics. 
+We will cover the basic components of a `ggplot2` plot, including data, aesthetics, geometries, and themes.
+
+## Data
+
+The first step in creating a `ggplot2` plot is to specify the data to be visualized.
+The data should be in a tidy format (@Wickham2014-ye), with each row representing an observation and each column representing a variable. 
+The insurance dataset is described in the book Machine Learning with R by Brett Lantz. 
+The dataset describes medical information and costs billed by health insurance companies for 1338 individuals in 2013, as compiled by the United States Census Bureau. 
+
+Variables include: 
+
+* age
+    : age of primary beneficiary
+* sex
+    : insurance contractor gender, female, male
+* bmi
+    : Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9
+* children
+    : Number of children covered by health insurance / Number of dependents
+* smoker
+    : Smoking status
+
+* region
+    : the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
+
+* charges
+    : Individual medical costs billed by health insurance
+
+We will load the data directly from the web, but you can also download the data from the link at github[^insurance-data].
+
+[^insurance-data]: Insurance data csv file, <https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv>
+
+
+```{r}
+insurance_url <- "https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv"
+insurance <- read.csv(insurance_url)
+```
+
+Explore the dataset a bit to understand its structure and contents. For example, you can use the `head()` function to view the first few rows of the dataset.
+
+
+```{r}
+head(insurance)
+```
+
+And you can examine the dimensions of the dataset using the `dim()`, which returns the number of rows and columns in the dataset, the `ncol()` function, which returns the number of columns, and the `nrow()` function, which returns the number of rows.
+
+```{r}
+dim(insurance)
+ncol(insurance)
+nrow(insurance)
+```
+
+Note that with the `dim()` function, the number of rows is given first, followed by the number of columns.
+
+Notice that, while the BMI variable represents a measure of a person's weight relative to their height, there is no discrete variable for whether a person is obese or not. The World Health Organization (WHO) defines obesity as a BMI greater than or equal to 30. We can create a new variable, `obese`, that indicates whether a person is obese based on their BMI.
+
+```{r}
+insurance$obese <- ifelse(insurance$bmi >= 30, "obese", "not obese")
+```
+
+If we examine the dataset again, we can see that the new variable `obese` has been added to the dataset.
+
+```{r}
+head(insurance)
+```
+
+## Aesthetics
+
+The next step in creating a `ggplot2` plot is to specify the aesthetics of the plot. Aesthetics are visual properties of the plot that _map data to visual elements_.
+
+```{r}
+#| fig-cap: A plot with age on the x-axis and charges on the y-axis.
+#| label: fig-ggplot2-aesthetics
+# specify dataset and mapping
+library(ggplot2)
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges)
+)
+```
+
+In the code above, the `data` are the data to be visualized, and the `mapping` specifies how the data should be mapped to the plot. 
+In this case, the `x` aesthetic is mapped to the `age` variable, and the `y` aesthetic is mapped to the `charges` variable. 
+Note that there are no data displayed in @fig-ggplot2-aesthetics yet; we have only specified the data and aesthetics. 
+However, you can see the structure of the plot in the output, which shows the data and aesthetics that have been specified with `age` on the x-axis and `charges` on the y-axis.
+
+## Geometries
+
+The next step is to add a geometry to the plot. 
+Geometries are the visual representations of the data, such as points, lines, or bars.
+Since this is a scatter plot, we will use the `geom_point()` function to add points to the plot. 
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis results from adding geom_point() to the plot.
+#| label: fig-ggplot2-geometries-points
+# add points to the plot
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges)
+) +
+    geom_point()
+```
+
+::: {.callout-note}
+When using `ggplot2`, the `+` operator is used to add layers to the plot. 
+The `ggplot()` function specifies the data and aesthetics, and the `geom_point()` function adds points to the plot. 
+Using the `+` operator is a common practice in `ggplot2` to add layers to a plot, but the `+` operator does not work for other types of plots in R.
+:::
+
+Using other geometries, you can create different types of plots. For example, you can use `geom_line()` to create a line plot, `geom_bar()` to create a bar plot, or `geom_boxplot()` to create a box plot. Before doing so here, ask yourself if those geometries would be appropriate for the data you are working with.
+
+A number of parameters (options) can be specified in a geom_ function. Options for the `geom_point()` function include color, size, and alpha. These control the point color, size, and transparency, respectively. Transparency ranges from 0 (completely transparent) to 1 (completely opaque). Adding a degree of transparency can help visualize overlapping points such as in @fig-ggplot2-geometries-points-options.
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis with colored points, larger size, and transparency.
+#| label: fig-ggplot2-geometries-points-options
+# add points to the plot
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges)
+) +
+    geom_point(
+        color = "blue",
+        size = 3,
+        alpha = 0.3
+    )
+```
+
+We can add a best fit line to the scatter plot using the `geom_smooth()` function. The `method` parameter specifies the method used to fit the line. In this case, we will use the default method, which is linear regression, specified by `method = "lm"`. The `lm` method fits a _linear model_ to the data, which in this case is simple linear regression [^reg_formula] of the _dependent_ variable `charges` as a function of the _independent_ variable `age`. The result is shown in @fig-ggplot2-geometries-points-smooth.
+
+[^reg_formula]: The linear regression model is of the form $charges = \alpha +  \beta * age + \epsilon$ where $\alpha$ is the intercept, $\beta$ is the slope, and $\epsilon$ is the "error".
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis with a best fit line.
+#| label: fig-ggplot2-geometries-points-smooth
+# add points and a best fit line to the plot
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges)
+) +
+    geom_point(
+        color = "blue",
+        alpha = 0.3
+    ) +
+    geom_smooth(method = "lm")
+```
+
+What do you observe in @fig-ggplot2-geometries-points-smooth with the best fit line? How well does the line fit the data? Do you think a linear model is appropriate for this data? 
+
+## Grouping
+
+In addition to mapping variables to the x and y axes [i.e., `aes(x = ..., y=...)`], variables can be mapped to the color, shape, size, transparency, and other visual characteristics of geometric objects. This allows groups of observations to be superimposed in a single graph.
+
+For example, we can map the `smoker` variable to the color of the points in the scatter plot. The result is shown in @fig-ggplot2-geometries-points-grouped.
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis with points colored by the smoker variable.
+#| label: fig-ggplot2-geometries-points-grouped
+# add points to the plot, colored by the smoker variable
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges, color = smoker)
+) +
+    geom_point()
+```
+
+In @fig-ggplot2-geometries-points-grouped, the points are colored based on the `smoker` variable, with smokers in orange and non-smokers in blue. This allows us to visually compare the charges of smokers and non-smokers as a function of age. 
+
+If we add back in the best fit line, we can see how the relationship between age and charges differs between smokers and non-smokers. The result is shown in @fig-ggplot2-geometries-points-grouped-smooth.
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis with points colored by the smoker variable and a best fit line.
+#| label: fig-ggplot2-geometries-points-grouped-smooth
+# add points to the plot, colored by the smoker variable, and a best fit line
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges, color = smoker)
+) +
+    geom_point() +
+    geom_smooth(method = "lm")
+```
+
+How well does the best fit line fit the data for smokers and non-smokers? Do you see any differences in the relationship between age and charges for smokers and non-smokers?
+
+## Facets
+
+Facets are a way to create multiple plots based on the levels of a categorical variable. In other words, facets allow you to create a grid of plots, with each plot showing a different subset of the data based on the levels of a categorical variable.
+
+In @fig-ggplot2-geometries-points-grouped-smooth, we noticed that there are still two groups of points, even when looking at just smokers. We can further separate the data by the `obese` variable, creating a grid of plots with one plot for each combination of smoker and obese status.
+
+```{r}
+#| fig-cap: A grid of scatter plots with age on the x-axis and charges on the y-axis, colored by the smoker variable, and faceted by the obese variable.
+#| label: fig-ggplot2-geometries-points-grouped-smooth-faceted
+# add points to the plot, colored by the smoker variable, and faceted by the obese variable
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges, color = smoker)
+) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~obese)
+```
+
+The way that we interpret the `facet_wrap(~ obese)` command is that we want to create a grid of plots, with each plot showing a different subset of the data based on the levels of the `obese` variable. In this case, we have two levels of the `obese` variable: `obese` and `not obese`, so we get two plots in the grid.
+
+## Labels
+
+Labels are an important part of any plot. They help the viewer understand what the plot is showing and what the axes represent. 
+While our plot already has labels for the x and y axes, we can add a title to the plot and change the labels for the x and y axes to make them more descriptive.
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis, colored by the smoker variable, and faceted by the obese variable, with labels.
+#| label: fig-ggplot2-geometries-points-grouped-smooth-faceted-labeled
+# add points to the plot, colored by the smoker variable, faceted by the obese variable, and add labels
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges, color = smoker)
+) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~obese) +
+    labs(
+        title = "Medical Charges as a function of patient characteristics",
+        subtitle = "US Census Bureau 2013 data",
+        caption = "Source: https://github.com/stedy/Machine-Learning-with-R-datasets",
+        x = "Age",
+        y = "Annual Medical Charges",
+        color = "Smoker?"
+    )
+```
+
+## Themes
+
+Themes are a way to control the non-data ink in a plot, such as the background color, grid lines, and text size. Rather than specifying each element individually, you can use a pre-defined theme to quickly style your plot. For a nice overview of themes in `ggplot2`, see the the [ggplot2 themes gallery](https://r-charts.com/ggplot2/themes/).
+
+To create a more visually appealing plot, we can apply the `theme_minimal()` theme to our plot. This theme removes the background grid lines and adds a light gray background to the plot.
+
+```{r}
+#| fig-cap: A scatter plot with age on the x-axis and charges on the y-axis, colored by the smoker variable, faceted by the obese variable, with labels and a minimal theme.
+#| label: fig-ggplot2-geometries-points-grouped-smooth-faceted-labeled-themed
+# add points to the plot, colored by the smoker variable, faceted by the obese variable, add labels, and apply a minimal theme
+ggplot(
+    data = insurance,
+    mapping = aes(x = age, y = charges, color = smoker)
+) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~obese) +
+    labs(
+        title = "Medical Charges as a function of patient characteristics",
+        subtitle = "US Census Bureau 2013 data",
+        caption = "Source: https://github.com/stedy/Machine-Learning-with-R-datasets",
+        x = "Age",
+        y = "Annual Medical Charges",
+        color = "Smoker?"
+    ) +
+    theme_minimal()
+```
+
+## Saving a Plot
+
+Once you have created a plot that you are happy with, you may want to save it to a file for use in a report or presentation. 
+The `ggsave()` function in `ggplot2` allows you to save a plot to a file in a variety of formats, including PNG, PDF, and SVG.
+Take a look at the help for `ggsave()` to see the available options. 
+In particular, you can specify the file name, width, height, and resolution of the saved plot.
+
+```{r}
+# save the plot to a file
+ggsave("insurance_plot.png")
+```
+
+::: {.callout-note}
+The `ggsave()` function saves the last plot that you created with `ggplot2`. 
+`ggsave()` will save the plot to the working directory by default, but you can specify a different directory by providing the full path to the file name. 
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+ 

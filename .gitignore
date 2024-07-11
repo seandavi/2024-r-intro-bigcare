@@ -1,2 +1,9 @@
 _site
 .quarto
+
+.quarto/
+*_cache/
+*_files/
+_site/
+_freeze/
+_book/

@@ -1,0 +1,22 @@
+# Datasets
+
+## Insurance dataset
+
+The insurance dataset is described in the book Machine Learning with R by Brett Lantz. 
+The dataset describes medical information and costs billed by health insurance companies in 2013, as compiled by the United States Census Bureau. 
+Variables include 
+
+* age
+* sex
+* body mass index
+* number of children covered by health insurance
+* smoker status
+* US region
+* individual medical costs billed by health insurance for 1338 individuals.
+
+- [insurance.csv](https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv)
+
+```{r}
+# Load the insurance dataset
+insurance <- read.csv("https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv")
+```
