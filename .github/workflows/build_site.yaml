@@ -5,6 +5,8 @@ on:
       branches: [main]
     pull_request:
       branches: [main]
+    workflow_dispatch:
+    
 name: build_site
 permissions: read-all
 jobs:
@@ -14,6 +16,7 @@ jobs:
         contents: write
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         R_KEEP_PKG_SOURCE: yes
       steps:
         - uses: actions/checkout@v4
@@ -28,13 +31,15 @@ jobs:
             needs: check
   
         - name: Install R package dependencies
-          run: Rscript -e "install.packages('devtools', repos='http://cran.us.r-project.org'); devtools::install_deps(dependencies=TRUE)"
+          run: Rscript -e "install.packages('devtools', repos='http://cran.us.r-project.org'); devtools::install(dependencies=TRUE)"
   
         - name: setup-quarto
           uses: quarto-dev/quarto-actions/setup@v2
           with:
             tinytex: true
-        - name: install quarto titlepages
-          run: quarto install extension --no-prompt nmfs-opensci/quarto_titlepages
+#        - name: install quarto titlepages
+#          run: quarto install extension --no-prompt nmfs-opensci/quarto_titlepages
         - uses: quarto-dev/quarto-actions/render@v2
         - uses: quarto-dev/quarto-actions/publish@v2
+          with: 
+            target: gh-pages
