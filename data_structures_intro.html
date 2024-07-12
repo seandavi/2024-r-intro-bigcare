@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.54">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>3&nbsp; Vectors – Introduction to R for BigCare 2024</title>
+<title>5&nbsp; Vectors – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_structures_intro.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_structures_intro.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,32 +143,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  <a href="./010_rstudio_and_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./020_r_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030_r_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_structures_intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
     </ul>
@@ -179,24 +191,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#creating-vectors" id="toc-creating-vectors" class="nav-link active" data-scroll-target="#creating-vectors"><span class="header-section-number">3.1</span> Creating vectors</a></li>
-  <li><a href="#vector-operations" id="toc-vector-operations" class="nav-link" data-scroll-target="#vector-operations"><span class="header-section-number">3.2</span> Vector Operations</a></li>
+<li><a href="#creating-vectors" id="toc-creating-vectors" class="nav-link active" data-scroll-target="#creating-vectors"><span class="header-section-number">5.1</span> Creating vectors</a></li>
+  <li><a href="#vector-operations" id="toc-vector-operations" class="nav-link" data-scroll-target="#vector-operations"><span class="header-section-number">5.2</span> Vector Operations</a></li>
   <li>
-<a href="#logical-vectors" id="toc-logical-vectors" class="nav-link" data-scroll-target="#logical-vectors"><span class="header-section-number">3.3</span> Logical Vectors</a>
+<a href="#logical-vectors" id="toc-logical-vectors" class="nav-link" data-scroll-target="#logical-vectors"><span class="header-section-number">5.3</span> Logical Vectors</a>
   <ul class="collapse">
-<li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators"><span class="header-section-number">3.3.1</span> Logical Operators</a></li>
+<li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators"><span class="header-section-number">5.3.1</span> Logical Operators</a></li>
   </ul>
 </li>
-  <li><a href="#indexing-vectors" id="toc-indexing-vectors" class="nav-link" data-scroll-target="#indexing-vectors"><span class="header-section-number">3.4</span> Indexing Vectors</a></li>
-  <li><a href="#character-vectors-a.k.a.-strings" id="toc-character-vectors-a.k.a.-strings" class="nav-link" data-scroll-target="#character-vectors-a.k.a.-strings"><span class="header-section-number">3.5</span> Character Vectors, A.K.A. Strings</a></li>
-  <li><a href="#missing-values-aka-na" id="toc-missing-values-aka-na" class="nav-link" data-scroll-target="#missing-values-aka-na"><span class="header-section-number">3.6</span> Missing Values, AKA “NA”</a></li>
-  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">3.7</span> Factors</a></li>
+  <li><a href="#indexing-vectors" id="toc-indexing-vectors" class="nav-link" data-scroll-target="#indexing-vectors"><span class="header-section-number">5.4</span> Indexing Vectors</a></li>
+  <li><a href="#character-vectors-a.k.a.-strings" id="toc-character-vectors-a.k.a.-strings" class="nav-link" data-scroll-target="#character-vectors-a.k.a.-strings"><span class="header-section-number">5.5</span> Character Vectors, A.K.A. Strings</a></li>
+  <li><a href="#missing-values-aka-na" id="toc-missing-values-aka-na" class="nav-link" data-scroll-target="#missing-values-aka-na"><span class="header-section-number">5.6</span> Missing Values, AKA “NA”</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">5.7</span> Factors</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/data_structures_intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span>
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -271,8 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<section id="creating-vectors" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="creating-vectors">
-<span class="header-section-number">3.1</span> Creating vectors</h2>
+<section id="creating-vectors" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="creating-vectors">
+<span class="header-section-number">5.1</span> Creating vectors</h2>
 <p>Character vectors (also sometimes called “string” vectors) are entered with each value surrounded by single or double quotes; either is acceptable, but they must match. They are always displayed by R with double quotes. Here are some examples of creating vectors:</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># examples of vectors</span></span>
@@ -321,8 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [16]  6.0  5.0  4.0  3.0  2.0  1.0</code></pre>
 </div>
 </div>
-</section><section id="vector-operations" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="vector-operations">
-<span class="header-section-number">3.2</span> Vector Operations</h2>
+</section><section id="vector-operations" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="vector-operations">
+<span class="header-section-number">5.2</span> Vector Operations</h2>
 <p>Operations on a single vector are typically done element-by-element. For example, we can add <code>2</code> to a vector, <code>2</code> is added to each element of the vector and a new vector of the same length is returned.</p>
 <div class="cell">
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
@@ -361,8 +373,8 @@ length</code></pre>
 </div>
 </div>
 <p>Typical operations include multiplication (“*”), addition, subtraction, division, exponentiation (“^”), but many operations in R operate on vectors and are then called “vectorized”.</p>
-</section><section id="logical-vectors" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="logical-vectors">
-<span class="header-section-number">3.3</span> Logical Vectors</h2>
+</section><section id="logical-vectors" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="logical-vectors">
+<span class="header-section-number">5.3</span> Logical Vectors</h2>
 <p>Logical vectors are vectors composed on only the values <code>TRUE</code> and <code>FALSE</code>. Note the all-upper-case and no quotation marks.</p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span><span class="op">)</span></span>
@@ -386,8 +398,8 @@ length</code></pre>
 <pre><code>[1] 1 0 1</code></pre>
 </div>
 </div>
-<section id="logical-operators" class="level3" data-number="3.3.1"><h3 data-number="3.3.1" class="anchored" data-anchor-id="logical-operators">
-<span class="header-section-number">3.3.1</span> Logical Operators</h3>
+<section id="logical-operators" class="level3" data-number="5.3.1"><h3 data-number="5.3.1" class="anchored" data-anchor-id="logical-operators">
+<span class="header-section-number">5.3.1</span> Logical Operators</h3>
 <p>Some operators like <code>&lt;, &gt;, ==, &gt;=, &lt;=, !=</code> can be used to create logical vectors.</p>
 <div class="cell">
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># create a numeric vector</span></span>
@@ -418,8 +430,8 @@ length</code></pre>
 <pre><code> [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
-</section></section><section id="indexing-vectors" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="indexing-vectors">
-<span class="header-section-number">3.4</span> Indexing Vectors</h2>
+</section></section><section id="indexing-vectors" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="indexing-vectors">
+<span class="header-section-number">5.4</span> Indexing Vectors</h2>
 <p>In R, an index is used to refer to a specific element or set of elements in an vector (or other data structure). [R uses <code>[</code> and <code>]</code> to perform indexing, although other approaches to getting subsets of larger data structures are common in R.</p>
 <div class="cell">
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">0.1</span><span class="op">)</span></span>
@@ -450,27 +462,26 @@ length</code></pre>
 <span><span class="va">gt1</span> <span class="op">=</span> <span class="op">(</span><span class="va">myvec</span> <span class="op">&gt;</span> <span class="fl">0.25</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">gt1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<pre><code>[1] 7</code></pre>
 </div>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># and use our logical vector to create a vector of myvec values that are &gt;0.25</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8127615 1.7082809 0.5328539</code></pre>
+<pre><code>[1] 1.0411951 1.0654844 0.6883711 0.5107692 0.4048351 1.9308242 1.6917576</code></pre>
 </div>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># or &lt;=0.25 using the logical "not" operator, "!"</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="op">!</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.40282316 -1.08071883 -0.74651999 -0.09782679 -0.29455745 -0.42532073
-[7] -1.20873177</code></pre>
+<pre><code>[1] -0.28781439 -0.05171691 -1.61276154</code></pre>
 </div>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># shorter, one line approach</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">myvec</span> <span class="op">&gt;</span> <span class="fl">0.25</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8127615 1.7082809 0.5328539</code></pre>
+<pre><code>[1] 1.0411951 1.0654844 0.6883711 0.5107692 0.4048351 1.9308242 1.6917576</code></pre>
 </div>
 </div>
-</section><section id="character-vectors-a.k.a.-strings" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="character-vectors-a.k.a.-strings">
-<span class="header-section-number">3.5</span> Character Vectors, A.K.A. Strings</h2>
+</section><section id="character-vectors-a.k.a.-strings" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="character-vectors-a.k.a.-strings">
+<span class="header-section-number">5.5</span> Character Vectors, A.K.A. Strings</h2>
 <p>R uses the <code>paste</code> function to concatenate strings.</p>
 <div class="cell">
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"abc"</span>,<span class="st">"def"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -531,8 +542,8 @@ length</code></pre>
 <pre><code>[1] "abcdef" "abcd"   "bcde"  </code></pre>
 </div>
 </div>
-</section><section id="missing-values-aka-na" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="missing-values-aka-na">
-<span class="header-section-number">3.6</span> Missing Values, AKA “NA”</h2>
+</section><section id="missing-values-aka-na" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="missing-values-aka-na">
+<span class="header-section-number">5.6</span> Missing Values, AKA “NA”</h2>
 <p>R has a special value, “NA”, that represents a “missing” value, or <em>Not Available</em>, in a vector or other data structure. Here, we just create a vector to experiment.</p>
 <div class="cell">
 <div class="sourceCode" id="cb80"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
@@ -574,8 +585,8 @@ length</code></pre>
 <pre><code>[1] 1 3 4 5</code></pre>
 </div>
 </div>
-</section><section id="factors" class="level2" data-number="3.7"><h2 data-number="3.7" class="anchored" data-anchor-id="factors">
-<span class="header-section-number">3.7</span> Factors</h2>
+</section><section id="factors" class="level2" data-number="5.7"><h2 data-number="5.7" class="anchored" data-anchor-id="factors">
+<span class="header-section-number">5.7</span> Factors</h2>
 <p>A factor is a special type of vector, normally used to hold a categorical variable–such as smoker/nonsmoker, state of residency, zipcode–in many statistical functions. Such vectors have class “factor”. Factors are primarily used in Analysis of Variance (ANOVA) or other situations when “categories” are needed. When a factor is used as a predictor variable, the corresponding indicator variables are created (more later).</p>
 <p>Note of caution that factors in R often <em>appear</em> to be character vectors when printed, but you will notice that they do not have double quotes around them. They are stored in R as numbers with a key name, so sometimes you will note that the factor <em>behaves</em> like a numeric vector.</p>
 <div class="cell">
@@ -1112,12 +1123,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./chatbots.html" class="pagination-link" aria-label="Chatbots as Learning Tools">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./dataframes_intro.html" class="pagination-link" aria-label="Data Frames">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">

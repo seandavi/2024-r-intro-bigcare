@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.54">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>4&nbsp; Data Frames – Introduction to R for BigCare 2024</title>
+<title>6&nbsp; Data Frames – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataframes_intro.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataframes_intro.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,32 +143,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and RStudio</span></span></a>
+  <a href="./010_rstudio_and_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./020_r_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030_r_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_structures_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
     </ul>
@@ -179,14 +191,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">4.1</span> Learning goals</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">4.2</span> Learning objectives</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">4.3</span> Dataset</a></li>
-  <li><a href="#inspecting-data.frames" id="toc-inspecting-data.frames" class="nav-link" data-scroll-target="#inspecting-data.frames"><span class="header-section-number">4.4</span> Inspecting data.frames</a></li>
+<li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset"><span class="header-section-number">6.1</span> Dataset</a></li>
+  <li><a href="#inspecting-data.frames" id="toc-inspecting-data.frames" class="nav-link" data-scroll-target="#inspecting-data.frames"><span class="header-section-number">6.2</span> Inspecting data.frames</a></li>
   <li>
-<a href="#accessing-variables-columns-and-subsetting" id="toc-accessing-variables-columns-and-subsetting" class="nav-link" data-scroll-target="#accessing-variables-columns-and-subsetting"><span class="header-section-number">4.5</span> Accessing variables (columns) and subsetting</a>
+<a href="#accessing-variables-columns-and-subsetting" id="toc-accessing-variables-columns-and-subsetting" class="nav-link" data-scroll-target="#accessing-variables-columns-and-subsetting"><span class="header-section-number">6.3</span> Accessing variables (columns) and subsetting</a>
   <ul class="collapse">
-<li><a href="#some-data-exploration" id="toc-some-data-exploration" class="nav-link" data-scroll-target="#some-data-exploration"><span class="header-section-number">4.5.1</span> Some data exploration</a></li>
+<li><a href="#some-data-exploration" id="toc-some-data-exploration" class="nav-link" data-scroll-target="#some-data-exploration"><span class="header-section-number">6.3.1</span> Some data exploration</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/dataframes_intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -194,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span>
+<span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -210,23 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><p>While R has many different data types, the one that is central to much of the power and popularity of R is the <code>data.frame</code>. A data.frame looks a bit like an R matrix in that it has two dimensions, rows and columns. However, data.frames are usually viewed as a set of columns representing variables and the rows representing the values of those variables. Importantly, a data.frame may contain <em>different</em> data types in each of its columns; matrices <strong>must</strong> contain only one data type. This distinction is important to remember, as there are <em>specific</em> approaches to working with R data.frames that may be different than those for working with matrices.</p>
-<section id="learning-goals" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="learning-goals">
-<span class="header-section-number">4.1</span> Learning goals</h2>
-<ul>
-<li>Understand how data.frames are different from matrices.</li>
-<li>Know a few functions for examing the contents of a data.frame.</li>
-<li>List approaches for subsetting data.frames.</li>
-<li>Be able to load and save tabular data from and to disk.</li>
-<li>Show how to create a data.frames from scratch.</li>
-</ul></section><section id="learning-objectives" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="learning-objectives">
-<span class="header-section-number">4.2</span> Learning objectives</h2>
-<ul>
-<li>Load the yeast growth dataset into R using <code>read.csv</code>.</li>
-<li>Examine the contents of the dataset.</li>
-<li>Use subsetting to find genes that may be involved with nutrient metabolism and transport.</li>
-<li>Summarize data measurements by categories.</li>
-</ul></section><section id="dataset" class="level2 page-columns page-full" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="dataset">
-<span class="header-section-number">4.3</span> Dataset</h2>
+<section id="dataset" class="level2 page-columns page-full" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="dataset">
+<span class="header-section-number">6.1</span> Dataset</h2>
 <p>The insurance dataset is described in the book Machine Learning with R by Brett Lantz. The dataset describes medical information and costs billed by health insurance companies for 1338 individuals in 2013, as compiled by the United States Census Bureau.</p>
 <p>Variables include:</p>
 <ul>
@@ -324,8 +319,8 @@ Individual medical costs billed by health insurance
 6  31 female 25.740        0     no southeast  3756.622 not obese</code></pre>
 </div>
 </div>
-</section><section id="inspecting-data.frames" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="inspecting-data.frames">
-<span class="header-section-number">4.4</span> Inspecting data.frames</h2>
+</section><section id="inspecting-data.frames" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="inspecting-data.frames">
+<span class="header-section-number">6.2</span> Inspecting data.frames</h2>
 <p>There are a few functions that are useful for inspecting the contents of a data.frame:</p>
 <ul>
 <li>Overviews of content
@@ -423,8 +418,8 @@ Individual medical costs billed by health insurance
 <div class="cell">
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">insurance</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="accessing-variables-columns-and-subsetting" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="accessing-variables-columns-and-subsetting">
-<span class="header-section-number">4.5</span> Accessing variables (columns) and subsetting</h2>
+</section><section id="accessing-variables-columns-and-subsetting" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="accessing-variables-columns-and-subsetting">
+<span class="header-section-number">6.3</span> Accessing variables (columns) and subsetting</h2>
 <p>In R, data.frames can be subset similarly to other two-dimensional data structures. The <code>[</code> in R is used to denote subsetting of any kind. When working with two-dimensional data, we need two values inside the <code>[ ]</code> to specify the details. The specification is <code>[rows, columns]</code>. For example, to get the first three rows of <code>insurance</code>, use:</p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">insurance</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -478,8 +473,8 @@ Individual medical costs billed by health insurance
 <pre><code>[1] 19 18 28 33 32 31</code></pre>
 </div>
 </div>
-<section id="some-data-exploration" class="level3" data-number="4.5.1"><h3 data-number="4.5.1" class="anchored" data-anchor-id="some-data-exploration">
-<span class="header-section-number">4.5.1</span> Some data exploration</h3>
+<section id="some-data-exploration" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="some-data-exploration">
+<span class="header-section-number">6.3.1</span> Some data exploration</h3>
 <p>There are a couple of columns that include numeric values. Which columns are numeric?</p>
 <div class="cell">
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">insurance</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1052,12 +1047,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./data_structures_intro.html" class="pagination-link" aria-label="Vectors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vectors</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ggplot.html" class="pagination-link" aria-label="Plotting with ggplot2">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1072,243 +1067,227 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>important to remember, as there are *specific* approaches to working with R data.frames</span>
 <span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>that may be different than those for working with matrices.</span>
 <span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning goals</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Understand how data.frames are different from matrices.</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Know a few functions for examing the contents of a data.frame.</span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>List approaches for subsetting data.frames.</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Be able to load and save tabular data from and to disk.</span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Show how to create a data.frames from scratch.</span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Load the yeast growth dataset into R using <span class="in">`read.csv`</span>.</span>
-<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Examine the contents of the dataset.</span>
-<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use subsetting to find genes that may be involved with nutrient metabolism and transport.</span>
-<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Summarize data measurements by categories.</span>
-<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>The insurance dataset is described in the book Machine Learning with R by Brett Lantz. </span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>The dataset describes medical information and costs billed by health insurance companies for 1338 individuals in 2013, as compiled by the United States Census Bureau. </span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>Variables include: </span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>age</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>    : age of primary beneficiary</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>sex</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    : insurance contractor gender, female, male</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>bmi</span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    : Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9</span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>children</span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a>    : Number of children covered by health insurance / Number of dependents</span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>smoker</span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>    : Smoking status</span>
 <span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>The insurance dataset is described in the book Machine Learning with R by Brett Lantz. </span>
-<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>The dataset describes medical information and costs billed by health insurance companies for 1338 individuals in 2013, as compiled by the United States Census Bureau. </span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>region</span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>    : the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</span>
 <span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a>Variables include: </span>
-<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>age</span>
-<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a>    : age of primary beneficiary</span>
-<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>sex</span>
-<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a>    : insurance contractor gender, female, male</span>
-<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>bmi</span>
-<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>    : Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9</span>
-<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>children</span>
-<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a>    : Number of children covered by health insurance / Number of dependents</span>
-<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>smoker</span>
-<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a>    : Smoking status</span>
-<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>region</span>
-<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a>    : the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</span>
-<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>charges</span>
-<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a>    : Individual medical costs billed by health insurance</span>
-<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a>We will load the data directly from the web, but you can also download the data from the link at github<span class="ot">[^insurance-data]</span>.</span>
-<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a><span class="ot">[^insurance-data]: </span>Insurance data csv file, <span class="ot">&lt;https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv&gt;</span></span>
-<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>charges</span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a>    : Individual medical costs billed by health insurance</span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a>We will load the data directly from the web, but you can also download the data from the link at github<span class="ot">[^insurance-data]</span>.</span>
+<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a><span class="ot">[^insurance-data]: </span>Insurance data csv file, <span class="ot">&lt;https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv&gt;</span></span>
+<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a>insurance_url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv"</span></span>
+<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a>insurance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(insurance_url)</span>
+<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a>Explore the dataset a bit to understand its structure and contents. For example, you can use the <span class="in">`head()`</span> function to view the first few rows of the dataset.</span>
+<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance)</span>
+<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-59"><a href="#cb54-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-60"><a href="#cb54-60" aria-hidden="true" tabindex="-1"></a>insurance_url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv"</span></span>
-<span id="cb54-61"><a href="#cb54-61" aria-hidden="true" tabindex="-1"></a>insurance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(insurance_url)</span>
-<span id="cb54-62"><a href="#cb54-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-63"><a href="#cb54-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-64"><a href="#cb54-64" aria-hidden="true" tabindex="-1"></a>Explore the dataset a bit to understand its structure and contents. For example, you can use the <span class="in">`head()`</span> function to view the first few rows of the dataset.</span>
-<span id="cb54-65"><a href="#cb54-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-57"><a href="#cb54-57" aria-hidden="true" tabindex="-1"></a>And you can examine the dimensions of the dataset using the <span class="in">`dim()`</span>, which returns the number of rows and columns in the dataset, the <span class="in">`ncol()`</span> function, which returns the number of columns, and the <span class="in">`nrow()`</span> function, which returns the number of rows.</span>
+<span id="cb54-58"><a href="#cb54-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-61"><a href="#cb54-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-62"><a href="#cb54-62" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(insurance)</span>
+<span id="cb54-63"><a href="#cb54-63" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(insurance)</span>
+<span id="cb54-64"><a href="#cb54-64" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(insurance)</span>
+<span id="cb54-65"><a href="#cb54-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb54-66"><a href="#cb54-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-69"><a href="#cb54-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-70"><a href="#cb54-70" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance)</span>
-<span id="cb54-71"><a href="#cb54-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-72"><a href="#cb54-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-73"><a href="#cb54-73" aria-hidden="true" tabindex="-1"></a>And you can examine the dimensions of the dataset using the <span class="in">`dim()`</span>, which returns the number of rows and columns in the dataset, the <span class="in">`ncol()`</span> function, which returns the number of columns, and the <span class="in">`nrow()`</span> function, which returns the number of rows.</span>
-<span id="cb54-74"><a href="#cb54-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-77"><a href="#cb54-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-78"><a href="#cb54-78" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(insurance)</span>
-<span id="cb54-79"><a href="#cb54-79" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(insurance)</span>
-<span id="cb54-80"><a href="#cb54-80" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(insurance)</span>
-<span id="cb54-81"><a href="#cb54-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-82"><a href="#cb54-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-83"><a href="#cb54-83" aria-hidden="true" tabindex="-1"></a>Note that with the <span class="in">`dim()`</span> function, the number of rows is given first, followed by the number of columns.</span>
+<span id="cb54-67"><a href="#cb54-67" aria-hidden="true" tabindex="-1"></a>Note that with the <span class="in">`dim()`</span> function, the number of rows is given first, followed by the number of columns.</span>
+<span id="cb54-68"><a href="#cb54-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-69"><a href="#cb54-69" aria-hidden="true" tabindex="-1"></a>Notice that, while the BMI variable represents a measure of a person's weight relative to their height, there is no discrete variable for whether a person is obese or not. The World Health Organization (WHO) defines obesity as a BMI greater than or equal to 30. We can create a new variable, <span class="in">`obese`</span>, that indicates whether a person is obese based on their BMI.</span>
+<span id="cb54-70"><a href="#cb54-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-73"><a href="#cb54-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-74"><a href="#cb54-74" aria-hidden="true" tabindex="-1"></a>insurance<span class="sc">$</span>obese <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(insurance<span class="sc">$</span>bmi <span class="sc">&gt;=</span> <span class="dv">30</span>, <span class="st">"obese"</span>, <span class="st">"not obese"</span>)</span>
+<span id="cb54-75"><a href="#cb54-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-76"><a href="#cb54-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-77"><a href="#cb54-77" aria-hidden="true" tabindex="-1"></a>If we examine the dataset again, we can see that the new variable <span class="in">`obese`</span> has been added to the dataset.</span>
+<span id="cb54-78"><a href="#cb54-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-81"><a href="#cb54-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-82"><a href="#cb54-82" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance)</span>
+<span id="cb54-83"><a href="#cb54-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb54-84"><a href="#cb54-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-85"><a href="#cb54-85" aria-hidden="true" tabindex="-1"></a>Notice that, while the BMI variable represents a measure of a person's weight relative to their height, there is no discrete variable for whether a person is obese or not. The World Health Organization (WHO) defines obesity as a BMI greater than or equal to 30. We can create a new variable, <span class="in">`obese`</span>, that indicates whether a person is obese based on their BMI.</span>
+<span id="cb54-85"><a href="#cb54-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inspecting data.frames</span></span>
 <span id="cb54-86"><a href="#cb54-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-89"><a href="#cb54-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-90"><a href="#cb54-90" aria-hidden="true" tabindex="-1"></a>insurance<span class="sc">$</span>obese <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(insurance<span class="sc">$</span>bmi <span class="sc">&gt;=</span> <span class="dv">30</span>, <span class="st">"obese"</span>, <span class="st">"not obese"</span>)</span>
-<span id="cb54-91"><a href="#cb54-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-92"><a href="#cb54-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-93"><a href="#cb54-93" aria-hidden="true" tabindex="-1"></a>If we examine the dataset again, we can see that the new variable <span class="in">`obese`</span> has been added to the dataset.</span>
-<span id="cb54-94"><a href="#cb54-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-97"><a href="#cb54-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-98"><a href="#cb54-98" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance)</span>
-<span id="cb54-99"><a href="#cb54-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-100"><a href="#cb54-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-101"><a href="#cb54-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inspecting data.frames</span></span>
-<span id="cb54-102"><a href="#cb54-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-103"><a href="#cb54-103" aria-hidden="true" tabindex="-1"></a>There are a few functions that are useful for inspecting the contents of a data.frame:</span>
-<span id="cb54-104"><a href="#cb54-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-105"><a href="#cb54-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Overviews of content</span>
-<span id="cb54-106"><a href="#cb54-106" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`head()`</span> to show first few rows</span>
-<span id="cb54-107"><a href="#cb54-107" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`tail()`</span> to show last few rows</span>
-<span id="cb54-108"><a href="#cb54-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Size</span>
-<span id="cb54-109"><a href="#cb54-109" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`dim()`</span> for dimensions (rows, columns)</span>
-<span id="cb54-110"><a href="#cb54-110" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`nrow()`</span></span>
-<span id="cb54-111"><a href="#cb54-111" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`ncol()`</span></span>
-<span id="cb54-112"><a href="#cb54-112" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`object.size()`</span> for power users interested in the memory used to store an object</span>
-<span id="cb54-113"><a href="#cb54-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data and attribute summaries</span>
-<span id="cb54-114"><a href="#cb54-114" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`colnames()`</span> to get the names of the columns</span>
-<span id="cb54-115"><a href="#cb54-115" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`rownames()`</span> to get the "names" of the rows--may not be present</span>
-<span id="cb54-116"><a href="#cb54-116" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`summary()`</span> to get per-column summaries of the data in the data.frame.</span>
-<span id="cb54-117"><a href="#cb54-117" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb54-118"><a href="#cb54-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r dataframeinspection}</span></span>
-<span id="cb54-119"><a href="#cb54-119" aria-hidden="true" tabindex="-1"></a><span class="in"># Show the first few rows</span></span>
-<span id="cb54-120"><a href="#cb54-120" aria-hidden="true" tabindex="-1"></a><span class="in">head(insurance)</span></span>
-<span id="cb54-121"><a href="#cb54-121" aria-hidden="true" tabindex="-1"></a><span class="in"># Show the last few rows</span></span>
-<span id="cb54-122"><a href="#cb54-122" aria-hidden="true" tabindex="-1"></a><span class="in">tail(insurance)</span></span>
-<span id="cb54-123"><a href="#cb54-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-124"><a href="#cb54-124" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the dimensions of the data.frame</span></span>
-<span id="cb54-125"><a href="#cb54-125" aria-hidden="true" tabindex="-1"></a><span class="in">dim(insurance)</span></span>
-<span id="cb54-126"><a href="#cb54-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-127"><a href="#cb54-127" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the number of rows and columns</span></span>
-<span id="cb54-128"><a href="#cb54-128" aria-hidden="true" tabindex="-1"></a><span class="in">nrow(insurance)</span></span>
-<span id="cb54-129"><a href="#cb54-129" aria-hidden="true" tabindex="-1"></a><span class="in">ncol(insurance)</span></span>
+<span id="cb54-87"><a href="#cb54-87" aria-hidden="true" tabindex="-1"></a>There are a few functions that are useful for inspecting the contents of a data.frame:</span>
+<span id="cb54-88"><a href="#cb54-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-89"><a href="#cb54-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Overviews of content</span>
+<span id="cb54-90"><a href="#cb54-90" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`head()`</span> to show first few rows</span>
+<span id="cb54-91"><a href="#cb54-91" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`tail()`</span> to show last few rows</span>
+<span id="cb54-92"><a href="#cb54-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Size</span>
+<span id="cb54-93"><a href="#cb54-93" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`dim()`</span> for dimensions (rows, columns)</span>
+<span id="cb54-94"><a href="#cb54-94" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`nrow()`</span></span>
+<span id="cb54-95"><a href="#cb54-95" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`ncol()`</span></span>
+<span id="cb54-96"><a href="#cb54-96" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`object.size()`</span> for power users interested in the memory used to store an object</span>
+<span id="cb54-97"><a href="#cb54-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data and attribute summaries</span>
+<span id="cb54-98"><a href="#cb54-98" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`colnames()`</span> to get the names of the columns</span>
+<span id="cb54-99"><a href="#cb54-99" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`rownames()`</span> to get the "names" of the rows--may not be present</span>
+<span id="cb54-100"><a href="#cb54-100" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span><span class="in">`summary()`</span> to get per-column summaries of the data in the data.frame.</span>
+<span id="cb54-101"><a href="#cb54-101" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb54-102"><a href="#cb54-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r dataframeinspection}</span></span>
+<span id="cb54-103"><a href="#cb54-103" aria-hidden="true" tabindex="-1"></a><span class="in"># Show the first few rows</span></span>
+<span id="cb54-104"><a href="#cb54-104" aria-hidden="true" tabindex="-1"></a><span class="in">head(insurance)</span></span>
+<span id="cb54-105"><a href="#cb54-105" aria-hidden="true" tabindex="-1"></a><span class="in"># Show the last few rows</span></span>
+<span id="cb54-106"><a href="#cb54-106" aria-hidden="true" tabindex="-1"></a><span class="in">tail(insurance)</span></span>
+<span id="cb54-107"><a href="#cb54-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-108"><a href="#cb54-108" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the dimensions of the data.frame</span></span>
+<span id="cb54-109"><a href="#cb54-109" aria-hidden="true" tabindex="-1"></a><span class="in">dim(insurance)</span></span>
+<span id="cb54-110"><a href="#cb54-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-111"><a href="#cb54-111" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the number of rows and columns</span></span>
+<span id="cb54-112"><a href="#cb54-112" aria-hidden="true" tabindex="-1"></a><span class="in">nrow(insurance)</span></span>
+<span id="cb54-113"><a href="#cb54-113" aria-hidden="true" tabindex="-1"></a><span class="in">ncol(insurance)</span></span>
+<span id="cb54-114"><a href="#cb54-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-115"><a href="#cb54-115" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the names of the columns</span></span>
+<span id="cb54-116"><a href="#cb54-116" aria-hidden="true" tabindex="-1"></a><span class="in">colnames(insurance)</span></span>
+<span id="cb54-117"><a href="#cb54-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-118"><a href="#cb54-118" aria-hidden="true" tabindex="-1"></a><span class="in"># Basic summary of the data</span></span>
+<span id="cb54-119"><a href="#cb54-119" aria-hidden="true" tabindex="-1"></a><span class="in">summary(insurance)</span></span>
+<span id="cb54-120"><a href="#cb54-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-121"><a href="#cb54-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-122"><a href="#cb54-122" aria-hidden="true" tabindex="-1"></a>In RStudio, there is an additional function, <span class="in">`View()`</span> (note the capital "V") that opens the first</span>
+<span id="cb54-123"><a href="#cb54-123" aria-hidden="true" tabindex="-1"></a>1000 rows (default) in the RStudio window, akin to a spreadsheet view. </span>
+<span id="cb54-124"><a href="#cb54-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-125"><a href="#cb54-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb54-126"><a href="#cb54-126" aria-hidden="true" tabindex="-1"></a><span class="in">View(insurance)</span></span>
+<span id="cb54-127"><a href="#cb54-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-128"><a href="#cb54-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-129"><a href="#cb54-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Accessing variables (columns) and subsetting</span></span>
 <span id="cb54-130"><a href="#cb54-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-131"><a href="#cb54-131" aria-hidden="true" tabindex="-1"></a><span class="in"># Get the names of the columns</span></span>
-<span id="cb54-132"><a href="#cb54-132" aria-hidden="true" tabindex="-1"></a><span class="in">colnames(insurance)</span></span>
-<span id="cb54-133"><a href="#cb54-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-134"><a href="#cb54-134" aria-hidden="true" tabindex="-1"></a><span class="in"># Basic summary of the data</span></span>
-<span id="cb54-135"><a href="#cb54-135" aria-hidden="true" tabindex="-1"></a><span class="in">summary(insurance)</span></span>
-<span id="cb54-136"><a href="#cb54-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-137"><a href="#cb54-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-138"><a href="#cb54-138" aria-hidden="true" tabindex="-1"></a>In RStudio, there is an additional function, <span class="in">`View()`</span> (note the capital "V") that opens the first</span>
-<span id="cb54-139"><a href="#cb54-139" aria-hidden="true" tabindex="-1"></a>1000 rows (default) in the RStudio window, akin to a spreadsheet view. </span>
-<span id="cb54-140"><a href="#cb54-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-141"><a href="#cb54-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb54-142"><a href="#cb54-142" aria-hidden="true" tabindex="-1"></a><span class="in">View(insurance)</span></span>
-<span id="cb54-143"><a href="#cb54-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-131"><a href="#cb54-131" aria-hidden="true" tabindex="-1"></a>In R, data.frames can be subset similarly to other two-dimensional data structures. The <span class="in">`[`</span> in R is used </span>
+<span id="cb54-132"><a href="#cb54-132" aria-hidden="true" tabindex="-1"></a>to denote subsetting of any kind. When working with two-dimensional data, we need two values inside the <span class="in">`[ ]`</span></span>
+<span id="cb54-133"><a href="#cb54-133" aria-hidden="true" tabindex="-1"></a>to specify the details. The specification is <span class="in">`[rows, columns]`</span>. For example, to get the first three rows of <span class="in">`insurance`</span>,</span>
+<span id="cb54-134"><a href="#cb54-134" aria-hidden="true" tabindex="-1"></a>use:</span>
+<span id="cb54-135"><a href="#cb54-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-138"><a href="#cb54-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-139"><a href="#cb54-139" aria-hidden="true" tabindex="-1"></a>insurance[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, ]</span>
+<span id="cb54-140"><a href="#cb54-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-141"><a href="#cb54-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-142"><a href="#cb54-142" aria-hidden="true" tabindex="-1"></a>Note how the second number, the columns, is blank. R takes that to mean "all the columns". Similarly, we can</span>
+<span id="cb54-143"><a href="#cb54-143" aria-hidden="true" tabindex="-1"></a>combine rows and columns specification arbitrarily.</span>
 <span id="cb54-144"><a href="#cb54-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-145"><a href="#cb54-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Accessing variables (columns) and subsetting</span></span>
-<span id="cb54-146"><a href="#cb54-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-147"><a href="#cb54-147" aria-hidden="true" tabindex="-1"></a>In R, data.frames can be subset similarly to other two-dimensional data structures. The <span class="in">`[`</span> in R is used </span>
-<span id="cb54-148"><a href="#cb54-148" aria-hidden="true" tabindex="-1"></a>to denote subsetting of any kind. When working with two-dimensional data, we need two values inside the <span class="in">`[ ]`</span></span>
-<span id="cb54-149"><a href="#cb54-149" aria-hidden="true" tabindex="-1"></a>to specify the details. The specification is <span class="in">`[rows, columns]`</span>. For example, to get the first three rows of <span class="in">`insurance`</span>,</span>
-<span id="cb54-150"><a href="#cb54-150" aria-hidden="true" tabindex="-1"></a>use:</span>
-<span id="cb54-151"><a href="#cb54-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-154"><a href="#cb54-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-155"><a href="#cb54-155" aria-hidden="true" tabindex="-1"></a>insurance[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, ]</span>
-<span id="cb54-156"><a href="#cb54-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-157"><a href="#cb54-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-158"><a href="#cb54-158" aria-hidden="true" tabindex="-1"></a>Note how the second number, the columns, is blank. R takes that to mean "all the columns". Similarly, we can</span>
-<span id="cb54-159"><a href="#cb54-159" aria-hidden="true" tabindex="-1"></a>combine rows and columns specification arbitrarily.</span>
-<span id="cb54-160"><a href="#cb54-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-163"><a href="#cb54-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-164"><a href="#cb54-164" aria-hidden="true" tabindex="-1"></a>insurance[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb54-165"><a href="#cb54-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-166"><a href="#cb54-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-167"><a href="#cb54-167" aria-hidden="true" tabindex="-1"></a>Because selecting a single variable, or column, is such a common operation, there are two shortcuts for</span>
-<span id="cb54-168"><a href="#cb54-168" aria-hidden="true" tabindex="-1"></a>doing so *with data.frames*. The first, the <span class="in">`$`</span> operator works like so:</span>
-<span id="cb54-169"><a href="#cb54-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-172"><a href="#cb54-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-173"><a href="#cb54-173" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the column names, just to refresh memory</span></span>
-<span id="cb54-174"><a href="#cb54-174" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(insurance)</span>
-<span id="cb54-175"><a href="#cb54-175" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that I am using "head" here to limit the output</span></span>
-<span id="cb54-176"><a href="#cb54-176" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance<span class="sc">$</span>age)</span>
-<span id="cb54-177"><a href="#cb54-177" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the actual length of "symbol"?</span></span>
-<span id="cb54-178"><a href="#cb54-178" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(insurance<span class="sc">$</span>age)</span>
-<span id="cb54-179"><a href="#cb54-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-180"><a href="#cb54-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-181"><a href="#cb54-181" aria-hidden="true" tabindex="-1"></a>The second is related to the fact that, in R, data.frames are also lists. We subset a list by using <span class="in">`[[]]`</span> notation.</span>
-<span id="cb54-182"><a href="#cb54-182" aria-hidden="true" tabindex="-1"></a>To get the second column of <span class="in">`insurance`</span>, we can use:</span>
+<span id="cb54-147"><a href="#cb54-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-148"><a href="#cb54-148" aria-hidden="true" tabindex="-1"></a>insurance[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb54-149"><a href="#cb54-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-150"><a href="#cb54-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-151"><a href="#cb54-151" aria-hidden="true" tabindex="-1"></a>Because selecting a single variable, or column, is such a common operation, there are two shortcuts for</span>
+<span id="cb54-152"><a href="#cb54-152" aria-hidden="true" tabindex="-1"></a>doing so *with data.frames*. The first, the <span class="in">`$`</span> operator works like so:</span>
+<span id="cb54-153"><a href="#cb54-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-156"><a href="#cb54-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-157"><a href="#cb54-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the column names, just to refresh memory</span></span>
+<span id="cb54-158"><a href="#cb54-158" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(insurance)</span>
+<span id="cb54-159"><a href="#cb54-159" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that I am using "head" here to limit the output</span></span>
+<span id="cb54-160"><a href="#cb54-160" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance<span class="sc">$</span>age)</span>
+<span id="cb54-161"><a href="#cb54-161" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the actual length of "symbol"?</span></span>
+<span id="cb54-162"><a href="#cb54-162" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(insurance<span class="sc">$</span>age)</span>
+<span id="cb54-163"><a href="#cb54-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-164"><a href="#cb54-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-165"><a href="#cb54-165" aria-hidden="true" tabindex="-1"></a>The second is related to the fact that, in R, data.frames are also lists. We subset a list by using <span class="in">`[[]]`</span> notation.</span>
+<span id="cb54-166"><a href="#cb54-166" aria-hidden="true" tabindex="-1"></a>To get the second column of <span class="in">`insurance`</span>, we can use:</span>
+<span id="cb54-167"><a href="#cb54-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-170"><a href="#cb54-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-171"><a href="#cb54-171" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance[[<span class="dv">2</span>]])</span>
+<span id="cb54-172"><a href="#cb54-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-173"><a href="#cb54-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-174"><a href="#cb54-174" aria-hidden="true" tabindex="-1"></a>Alternatively, we can use the column name:</span>
+<span id="cb54-175"><a href="#cb54-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-178"><a href="#cb54-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-179"><a href="#cb54-179" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance[[<span class="st">"age"</span>]])</span>
+<span id="cb54-180"><a href="#cb54-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-181"><a href="#cb54-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-182"><a href="#cb54-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### Some data exploration</span></span>
 <span id="cb54-183"><a href="#cb54-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-186"><a href="#cb54-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-187"><a href="#cb54-187" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance[[<span class="dv">2</span>]])</span>
-<span id="cb54-188"><a href="#cb54-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-189"><a href="#cb54-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-190"><a href="#cb54-190" aria-hidden="true" tabindex="-1"></a>Alternatively, we can use the column name:</span>
-<span id="cb54-191"><a href="#cb54-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-194"><a href="#cb54-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-195"><a href="#cb54-195" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insurance[[<span class="st">"age"</span>]])</span>
-<span id="cb54-196"><a href="#cb54-196" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-197"><a href="#cb54-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-198"><a href="#cb54-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### Some data exploration</span></span>
-<span id="cb54-199"><a href="#cb54-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-200"><a href="#cb54-200" aria-hidden="true" tabindex="-1"></a>There are a couple of columns that include numeric values. Which columns are numeric?</span>
-<span id="cb54-201"><a href="#cb54-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-204"><a href="#cb54-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-205"><a href="#cb54-205" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>age)</span>
-<span id="cb54-206"><a href="#cb54-206" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>obese)</span>
-<span id="cb54-207"><a href="#cb54-207" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>children)</span>
-<span id="cb54-208"><a href="#cb54-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb54-209"><a href="#cb54-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-210"><a href="#cb54-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-211"><a href="#cb54-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-212"><a href="#cb54-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-215"><a href="#cb54-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb54-216"><a href="#cb54-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| height=8</span></span>
-<span id="cb54-217"><a href="#cb54-217" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb54-218"><a href="#cb54-218" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
-<span id="cb54-219"><a href="#cb54-219" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb54-220"><a href="#cb54-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-221"><a href="#cb54-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Original DataFrame</span></span>
-<span id="cb54-222"><a href="#cb54-222" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb54-223"><a href="#cb54-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
-<span id="cb54-224"><a href="#cb54-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>, <span class="st">"David"</span>, <span class="st">"Eve"</span>),</span>
-<span id="cb54-225"><a href="#cb54-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">23</span>),</span>
-<span id="cb54-226"><a href="#cb54-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">88</span>, <span class="dv">95</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">85</span>),</span>
-<span id="cb54-227"><a href="#cb54-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"New York"</span>, <span class="st">"Chicago"</span>, <span class="st">"Boston"</span>, <span class="st">"Seattle"</span>, <span class="st">"Austin"</span>)</span>
-<span id="cb54-228"><a href="#cb54-228" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb54-229"><a href="#cb54-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-230"><a href="#cb54-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter</span></span>
-<span id="cb54-231"><a href="#cb54-231" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">23</span>)</span>
-<span id="cb54-232"><a href="#cb54-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-233"><a href="#cb54-233" aria-hidden="true" tabindex="-1"></a><span class="co"># Select</span></span>
-<span id="cb54-234"><a href="#cb54-234" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> df_filtered <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, score)</span>
-<span id="cb54-235"><a href="#cb54-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-236"><a href="#cb54-236" aria-hidden="true" tabindex="-1"></a><span class="co"># Mutate</span></span>
-<span id="cb54-237"><a href="#cb54-237" aria-hidden="true" tabindex="-1"></a>df_mutated <span class="ot">&lt;-</span> df_selected <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">score_scaled =</span> score <span class="sc">/</span> <span class="dv">100</span>)</span>
-<span id="cb54-238"><a href="#cb54-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-239"><a href="#cb54-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange</span></span>
-<span id="cb54-240"><a href="#cb54-240" aria-hidden="true" tabindex="-1"></a>df_arranged <span class="ot">&lt;-</span> df_mutated <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(score))</span>
-<span id="cb54-241"><a href="#cb54-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-242"><a href="#cb54-242" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize</span></span>
-<span id="cb54-243"><a href="#cb54-243" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb54-244"><a href="#cb54-244" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(city) <span class="sc">%&gt;%</span></span>
-<span id="cb54-245"><a href="#cb54-245" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">avg_score =</span> <span class="fu">mean</span>(score))</span>
-<span id="cb54-246"><a href="#cb54-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-247"><a href="#cb54-247" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create table grobs</span></span>
-<span id="cb54-248"><a href="#cb54-248" aria-hidden="true" tabindex="-1"></a>create_table_grob <span class="ot">&lt;-</span> <span class="cf">function</span>(df, title) {</span>
-<span id="cb54-249"><a href="#cb54-249" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> <span class="fu">tableGrob</span>(df)</span>
-<span id="cb54-250"><a href="#cb54-250" aria-hidden="true" tabindex="-1"></a>    title_grob <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(title, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">16</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>))</span>
-<span id="cb54-251"><a href="#cb54-251" aria-hidden="true" tabindex="-1"></a>    padding <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"line"</span>)</span>
-<span id="cb54-252"><a href="#cb54-252" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> gtable<span class="sc">::</span><span class="fu">gtable_add_rows</span>(table_grob, <span class="at">heights =</span> <span class="fu">grobHeight</span>(title_grob) <span class="sc">+</span> padding, <span class="at">pos =</span> <span class="dv">0</span>)</span>
-<span id="cb54-253"><a href="#cb54-253" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> gtable<span class="sc">::</span><span class="fu">gtable_add_grob</span>(table_grob, <span class="fu">list</span>(title_grob), <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fu">ncol</span>(table_grob))</span>
-<span id="cb54-254"><a href="#cb54-254" aria-hidden="true" tabindex="-1"></a>    table_grob</span>
-<span id="cb54-255"><a href="#cb54-255" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb54-256"><a href="#cb54-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-257"><a href="#cb54-257" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating table grobs</span></span>
-<span id="cb54-258"><a href="#cb54-258" aria-hidden="true" tabindex="-1"></a>original_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df, <span class="st">"Original DataFrame"</span>)</span>
-<span id="cb54-259"><a href="#cb54-259" aria-hidden="true" tabindex="-1"></a>filtered_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_filtered, <span class="st">"Filtered (age &gt; 23)"</span>)</span>
-<span id="cb54-260"><a href="#cb54-260" aria-hidden="true" tabindex="-1"></a>selected_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_selected, <span class="st">"Selected (name, score)"</span>)</span>
-<span id="cb54-261"><a href="#cb54-261" aria-hidden="true" tabindex="-1"></a>mutated_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_mutated, <span class="st">"Mutated (score_scaled)"</span>)</span>
-<span id="cb54-262"><a href="#cb54-262" aria-hidden="true" tabindex="-1"></a>arranged_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_arranged, <span class="st">"Arranged (by score)"</span>)</span>
-<span id="cb54-263"><a href="#cb54-263" aria-hidden="true" tabindex="-1"></a>summarized_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_grouped, <span class="st">"Summarized (avg score by city)"</span>)</span>
-<span id="cb54-264"><a href="#cb54-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-265"><a href="#cb54-265" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange tables in a grid</span></span>
-<span id="cb54-266"><a href="#cb54-266" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(</span>
-<span id="cb54-267"><a href="#cb54-267" aria-hidden="true" tabindex="-1"></a>    original_grob, filtered_grob,</span>
-<span id="cb54-268"><a href="#cb54-268" aria-hidden="true" tabindex="-1"></a>    selected_grob, mutated_grob,</span>
-<span id="cb54-269"><a href="#cb54-269" aria-hidden="true" tabindex="-1"></a>    arranged_grob, summarized_grob,</span>
-<span id="cb54-270"><a href="#cb54-270" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">6</span></span>
-<span id="cb54-271"><a href="#cb54-271" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb54-272"><a href="#cb54-272" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-184"><a href="#cb54-184" aria-hidden="true" tabindex="-1"></a>There are a couple of columns that include numeric values. Which columns are numeric?</span>
+<span id="cb54-185"><a href="#cb54-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-188"><a href="#cb54-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-189"><a href="#cb54-189" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>age)</span>
+<span id="cb54-190"><a href="#cb54-190" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>obese)</span>
+<span id="cb54-191"><a href="#cb54-191" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(insurance<span class="sc">$</span>children)</span>
+<span id="cb54-192"><a href="#cb54-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb54-193"><a href="#cb54-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-194"><a href="#cb54-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-195"><a href="#cb54-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-196"><a href="#cb54-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-199"><a href="#cb54-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-200"><a href="#cb54-200" aria-hidden="true" tabindex="-1"></a><span class="co">#| height=8</span></span>
+<span id="cb54-201"><a href="#cb54-201" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb54-202"><a href="#cb54-202" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb54-203"><a href="#cb54-203" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb54-204"><a href="#cb54-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-205"><a href="#cb54-205" aria-hidden="true" tabindex="-1"></a><span class="co"># Original DataFrame</span></span>
+<span id="cb54-206"><a href="#cb54-206" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb54-207"><a href="#cb54-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb54-208"><a href="#cb54-208" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>, <span class="st">"David"</span>, <span class="st">"Eve"</span>),</span>
+<span id="cb54-209"><a href="#cb54-209" aria-hidden="true" tabindex="-1"></a>    <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">23</span>),</span>
+<span id="cb54-210"><a href="#cb54-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">88</span>, <span class="dv">95</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">85</span>),</span>
+<span id="cb54-211"><a href="#cb54-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"New York"</span>, <span class="st">"Chicago"</span>, <span class="st">"Boston"</span>, <span class="st">"Seattle"</span>, <span class="st">"Austin"</span>)</span>
+<span id="cb54-212"><a href="#cb54-212" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb54-213"><a href="#cb54-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-214"><a href="#cb54-214" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter</span></span>
+<span id="cb54-215"><a href="#cb54-215" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">23</span>)</span>
+<span id="cb54-216"><a href="#cb54-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-217"><a href="#cb54-217" aria-hidden="true" tabindex="-1"></a><span class="co"># Select</span></span>
+<span id="cb54-218"><a href="#cb54-218" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> df_filtered <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, score)</span>
+<span id="cb54-219"><a href="#cb54-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-220"><a href="#cb54-220" aria-hidden="true" tabindex="-1"></a><span class="co"># Mutate</span></span>
+<span id="cb54-221"><a href="#cb54-221" aria-hidden="true" tabindex="-1"></a>df_mutated <span class="ot">&lt;-</span> df_selected <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">score_scaled =</span> score <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb54-222"><a href="#cb54-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-223"><a href="#cb54-223" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange</span></span>
+<span id="cb54-224"><a href="#cb54-224" aria-hidden="true" tabindex="-1"></a>df_arranged <span class="ot">&lt;-</span> df_mutated <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(score))</span>
+<span id="cb54-225"><a href="#cb54-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-226"><a href="#cb54-226" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize</span></span>
+<span id="cb54-227"><a href="#cb54-227" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb54-228"><a href="#cb54-228" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(city) <span class="sc">%&gt;%</span></span>
+<span id="cb54-229"><a href="#cb54-229" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">avg_score =</span> <span class="fu">mean</span>(score))</span>
+<span id="cb54-230"><a href="#cb54-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-231"><a href="#cb54-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create table grobs</span></span>
+<span id="cb54-232"><a href="#cb54-232" aria-hidden="true" tabindex="-1"></a>create_table_grob <span class="ot">&lt;-</span> <span class="cf">function</span>(df, title) {</span>
+<span id="cb54-233"><a href="#cb54-233" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> <span class="fu">tableGrob</span>(df)</span>
+<span id="cb54-234"><a href="#cb54-234" aria-hidden="true" tabindex="-1"></a>    title_grob <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(title, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">16</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>))</span>
+<span id="cb54-235"><a href="#cb54-235" aria-hidden="true" tabindex="-1"></a>    padding <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"line"</span>)</span>
+<span id="cb54-236"><a href="#cb54-236" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> gtable<span class="sc">::</span><span class="fu">gtable_add_rows</span>(table_grob, <span class="at">heights =</span> <span class="fu">grobHeight</span>(title_grob) <span class="sc">+</span> padding, <span class="at">pos =</span> <span class="dv">0</span>)</span>
+<span id="cb54-237"><a href="#cb54-237" aria-hidden="true" tabindex="-1"></a>    table_grob <span class="ot">&lt;-</span> gtable<span class="sc">::</span><span class="fu">gtable_add_grob</span>(table_grob, <span class="fu">list</span>(title_grob), <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fu">ncol</span>(table_grob))</span>
+<span id="cb54-238"><a href="#cb54-238" aria-hidden="true" tabindex="-1"></a>    table_grob</span>
+<span id="cb54-239"><a href="#cb54-239" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb54-240"><a href="#cb54-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-241"><a href="#cb54-241" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating table grobs</span></span>
+<span id="cb54-242"><a href="#cb54-242" aria-hidden="true" tabindex="-1"></a>original_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df, <span class="st">"Original DataFrame"</span>)</span>
+<span id="cb54-243"><a href="#cb54-243" aria-hidden="true" tabindex="-1"></a>filtered_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_filtered, <span class="st">"Filtered (age &gt; 23)"</span>)</span>
+<span id="cb54-244"><a href="#cb54-244" aria-hidden="true" tabindex="-1"></a>selected_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_selected, <span class="st">"Selected (name, score)"</span>)</span>
+<span id="cb54-245"><a href="#cb54-245" aria-hidden="true" tabindex="-1"></a>mutated_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_mutated, <span class="st">"Mutated (score_scaled)"</span>)</span>
+<span id="cb54-246"><a href="#cb54-246" aria-hidden="true" tabindex="-1"></a>arranged_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_arranged, <span class="st">"Arranged (by score)"</span>)</span>
+<span id="cb54-247"><a href="#cb54-247" aria-hidden="true" tabindex="-1"></a>summarized_grob <span class="ot">&lt;-</span> <span class="fu">create_table_grob</span>(df_grouped, <span class="st">"Summarized (avg score by city)"</span>)</span>
+<span id="cb54-248"><a href="#cb54-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-249"><a href="#cb54-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange tables in a grid</span></span>
+<span id="cb54-250"><a href="#cb54-250" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(</span>
+<span id="cb54-251"><a href="#cb54-251" aria-hidden="true" tabindex="-1"></a>    original_grob, filtered_grob,</span>
+<span id="cb54-252"><a href="#cb54-252" aria-hidden="true" tabindex="-1"></a>    selected_grob, mutated_grob,</span>
+<span id="cb54-253"><a href="#cb54-253" aria-hidden="true" tabindex="-1"></a>    arranged_grob, summarized_grob,</span>
+<span id="cb54-254"><a href="#cb54-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">6</span></span>
+<span id="cb54-255"><a href="#cb54-255" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb54-256"><a href="#cb54-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

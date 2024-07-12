@@ -2,26 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/index.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <lastmod>2024-07-12T01:26:26.735Z</lastmod>
   </url>
   <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/intro.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/010_rstudio_and_r.html</loc>
+    <lastmod>2024-07-12T01:26:26.721Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/020_r_basics.html</loc>
+    <lastmod>2024-07-12T01:26:26.721Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/030_r_functions.html</loc>
+    <lastmod>2024-07-12T01:26:26.721Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/chatbots.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <lastmod>2024-07-12T01:26:26.722Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/data_structures_intro.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <lastmod>2024-07-12T01:26:26.722Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/dataframes_intro.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <lastmod>2024-07-12T01:26:26.722Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/ggplot.html</loc>
-    <lastmod>2024-07-11T21:11:24.263Z</lastmod>
+    <lastmod>2024-07-12T01:26:26.722Z</lastmod>
   </url>
 </urlset>
