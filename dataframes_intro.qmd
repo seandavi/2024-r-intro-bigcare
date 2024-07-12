@@ -9,22 +9,6 @@ of its columns; matrices **must** contain only one data type. This distinction i
 important to remember, as there are *specific* approaches to working with R data.frames
 that may be different than those for working with matrices.
 
-
-## Learning goals
-
-* Understand how data.frames are different from matrices.
-* Know a few functions for examing the contents of a data.frame.
-* List approaches for subsetting data.frames.
-* Be able to load and save tabular data from and to disk.
-* Show how to create a data.frames from scratch.
-
-## Learning objectives
-
-* Load the yeast growth dataset into R using `read.csv`.
-* Examine the contents of the dataset.
-* Use subsetting to find genes that may be involved with nutrient metabolism and transport.
-* Summarize data measurements by categories.
-
 ## Dataset
 
 The insurance dataset is described in the book Machine Learning with R by Brett Lantz. 

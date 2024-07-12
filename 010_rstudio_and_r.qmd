@@ -1,32 +1,4 @@
-# Introduction to R and RStudio
-
-::: {.grid}
-
-::: {.g-col-4}
-## Questions {.unnumbered}
-
-* What is R?
-* Why use R?
-* Why not use R?
-* Why use RStudio and how does it differ from R?
-
-:::
-
-::: {.g-col-8}
-
-## Learning Objectives {.unnumbered}
-
--   Know advantages of analyzing data in R
--   Know advantages of using RStudio
--   Be able to start RStudio on your computer
--   Identify the panels of the RStudio interface
--   Be able to customize the RStudio layout
-
-:::
-
-:::
-
-## Introduction
+# Introduction
 
 In this chapter, we will discuss the basics of R and RStudio\index{RStudio}, two essential
 tools in genomics data analysis. We will cover the advantages of using R and
@@ -102,15 +74,28 @@ For more details, see [what is "open-source"?](https://opensource.com/resources/
 
 ## Why not use R?
 
-- R cannot do everything.
-- R is not always the “best” tool for the job.
-- R will *not* hold your hand. Often, it will *slap* your hand instead.
-- The documentation can be opaque (but there is documentation).
-- R can drive you crazy (on a good day) or age you prematurely (on a
-    bad one).
-- Finding the right package to do the job you want to do can be
-    challenging; worse, some contributed packages are unreliable.]{}
-- R does not have a meaningfully useful graphical user interface (GUI).
+1. R cannot do everything. There are some tasks that are better suited to other
+   languages or tools. However, R can often be used to interface with these
+   other tools.
+1. R is not always the "best" tool for the job. (However, it is often a "good"
+   tool for the job.)
+1. R will *not* hold your hand. Often, it will *slap* your hand instead. 
+   In other words, R is not always user-friendly and can be difficult to learn.
+   (We'll try to make it easier for you in this book and by providing you with
+   a good foundation for learning R and getting help when you need it.)
+2. The documentation can be opaque (but there is documentation). 
+3. R can drive you crazy (on a good day) or age you prematurely (on a
+   bad one). 
+4. Finding the right package to do the job you want to do can be
+   challenging; worse, some contributed packages are unreliable or poorly
+   documented. 
+5. R does not have a meaningfully useful graphical user interface (GUI). If you
+   are used to working with a GUI, you may find R difficult to use at first.
+
+Additional reasons to consider other tools include access to expertise and 
+support from colleagues and coworkers. If you are working in a group that uses
+python, for example, you may want to use python for your analysis to take
+advantage of the expertise of your colleagues.
 
 ## R License and the Open Source Ideal
 
@@ -120,7 +105,7 @@ R is free (yes, totally free!) and distributed under GNU license. In particular,
 - Modify the source code to your heart’s content
 - Distribute the modified source code and even charge
     money for it, but you must distribute the modified source code
-    under the original GNU license]{}
+    under the original GNU license. 
 
 This license means that R will always be
 available, will always be open source, and can grow organically without
@@ -128,13 +113,13 @@ constraint.
 
 ## RStudio
 
-RStudio is an integrated development environment (IDE) for R. It provides a
-graphical user interface (GUI) for R, making it easier to write and execute R
-code. RStudio also provides several other useful features, including a
+RStudio is an integrated development environment (IDE) for R. 
+RStudio also provides several other useful features, including a
 built-in console, syntax-highlighting editor, and tools for plotting, history,
 debugging, workspace management, and workspace viewing. RStudio is available in
 both free and commercial editions; the commercial edition provides some additional
-features, including support for multiple sessions and enhanced debugging
+features, including support for multiple sessions and enhanced debugging. 
+For the vast majority of users, the free version is more than sufficient. 
 
 ### Getting started with RStudio
  
@@ -143,11 +128,12 @@ your computer. Follow these steps:
 
 1. Download and install R from the [official R website](https://cran.r-project.org/).
 2. Download and install RStudio from the [official RStudio website](https://posit.co/downloads/).
-3. Launch RStudio. You should see the RStudio interface with four panels.
+3. Launch RStudio. You should see the RStudio interface with four panels as shown in @fig-rstudio-interface.
 
 ### The RStudio Interface
  
-RStudio's interface consists of four panels (see @fig-rstudio-interface):
+RStudio's interface consists of four panels (see @fig-rstudio-interface) that
+provide different functionalities:
 
 * Console
   : This panel displays the R console, where you can enter and execute R
@@ -168,7 +154,8 @@ RStudio's interface consists of four panels (see @fig-rstudio-interface):
 ::: {.callout-note}
 ## Do I need to use RStudio?
 
-No. You can use R without RStudio. However, RStudio makes it easier to write
+No. You can use R without RStudio. Other interfaces, such as jupyter notebooks or VScode
+are great alternatives. However, RStudio makes it easy to write
 and execute R code, and it provides several useful features that are not
 available in the basic R console. Note that the only part of RStudio that is
 actually interacting with R directly is the console. The other panels are
@@ -186,9 +173,8 @@ size, and panel layout. You can also resize the panels as needed to gain screen 
 
 ![Dealing with limited screen real estate can be a challenge, particularly when you want to open another window to, for example, view a web page. You can resize the panes by sliding the center divider (red arrows) or by clicking on the minimize/maximize buttons (see blue arrow).](images/rstudio_resize.png){#fig-rstudio-resize}
 
-In summary, R and RStudio are powerful tools for genomics data analysis. By
-understanding the advantages of using R and RStudio and familiarizing yourself
-with the RStudio interface, you can efficiently analyze and visualize your
-data. In the following chapters, we will delve deeper into the functionality of
-R, Bioconductor, and various statistical methods to help you gain a
-comprehensive understanding of genomics data analysis.
+## Summary
+
+At this point, you should have a working Rstudio installation on your computer. 
+In the next chapter, we will discuss the basics of R programming, including how to
+perform simple calculations, create variables, and use functions.
