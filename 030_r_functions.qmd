@@ -100,7 +100,7 @@ As you provide more arguments, it becomes more likely that your order and R's or
 sample(size = 1, x = die)
 ```
 
-### Sample with Replacement
+## Function example: sample with replacement
 
 If you set `size = 2`, you can _almost_ simulate a pair of dice. Before we run that code, think for a minute why that might be the case. `sample` will return two numbers, one for each die:
 
