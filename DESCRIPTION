@@ -1,7 +1,7 @@
 Package: BigCare2024
 Title: Basic intro to R and Bioc stuff
-Version: 0.99.0
-Date: 2024-07-11
+Version: 0.99.1
+Date: 2024-07-13
 Authors@R: 
     person("Sean", "Davis", , "seandavi@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-8991-6458"))
@@ -12,7 +12,8 @@ Depends: knitr, rmarkdown, pdftools, ggfortify, ggplot2,
     SummarizedExperiment, GenomicFeatures, AnnotationDbi, dplyr, 
     ggthemes, gridExtra, tidyr, readr, palmerpenguins, tidyverse, swirl,
     readxl, writexl, mlr3verse, mlr3learners, ranger, kknn, ComplexHeatmap,
-    glmnet, heatmaps, ggparty, mlr3viz
+    glmnet, heatmaps, ggparty, mlr3vizi, microbiome/mia, vegan, 
+    TreeSummarizedExperiment
 License: Artistic-2.0
 URL: https://github.com/seandavi/2024-r-intro-bigcare
 biocViews: Software
