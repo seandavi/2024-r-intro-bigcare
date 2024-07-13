@@ -2,7 +2,11 @@
 
 The human microbiome is a complex ecosystem of bacteria, viruses, fungi, and other microorganisms that live in and on the human body. These microorganisms play a crucial role in human health and disease, influencing everything from digestion and metabolism to immune function and mental health.
 
-In this chapter, we will assume that the data has already been processed and cleaned, and we will focus on analyzing the microbiome data using R. We will explore common microbiome analysis techniques, including alpha and beta diversity analysis, and visualizing microbiome data.
+In this chapter, we will assume that the data has already been processed and cleaned, and we will focus on analyzing the microbiome data using R. At a high level, we will
+
+1. Load the microbiome data into R
+2. Calculate and visualize alpha diversity indices
+3. Calculate and visualize beta diversity indices
 
 ## Loading the data
 
@@ -27,24 +31,18 @@ Once the `mia` package is installed, you can load it into your R session using t
 library(mia)
 ```
 
-Now that the `mia` package is loaded, we can load the microbiome dataset that we will be working with. In this case, we will use the `Tito2024QMP` dataset, which contains microbial abundance data for a set of colorectal cancer samples, colon adenoma samples, and health controls. You can look at the details of the dataset using `help('Tito2024QMP')`. 
+Now that the `mia` package is loaded, we can load the microbiome dataset that we will be working with. 
 
-To load the dataset into your R session, you can use the following command:
+We will be using the `curatedMetagenomicData` package to load the `FengQ_2015` dataset. This dataset contains microbiome data from a study by [Feng et al. (2015)](https://pubmed.ncbi.nlm.nih.gov/25758642/). The curatedMetagenomicData package provides a convenient interface for accessing microbiome datasets that have been pre-processed and curated for analysis.
 
-```{r}
-# Load the Tito2024QMP dataset
-data("Tito2024QMP")
-```
-
-The `Tito2024QMP` dataset is now loaded into your R session and is ready for analysis. We can double-check that the dataset has been loaded correctly by examining its structure and contents.
+Ignore the details of the code for now, but suffice it to say that what the code will do for us is to load a dataset for downstream analysis.
 
 ```{r}
-# Bioconductor datasets are typically stored as SummarizedExperiment objects
-# typing the object name will show some basic information about the dataset
-Tito2024QMP
+# Load the FengQ_2015 dataset
+library(curatedMetagenomicData)
+tse <- curatedMetagenomicData("FengQ_2015.relative_abundance", dryrun = FALSE, rownames = "short")[[1]]
 ```
 
-When looking at the output of the `Tito2024QMP` object, you will see information about the number of samples, the number of features (microbes), and additional information about what is stored with the dataset. 
 
 ::: {.callout-tip}
 If you are working with your own microbiome data, you will often need to  load it into R using functions like `read.csv()` or `read.table()` to read tabular data files. Make sure your data is properly formatted and cleaned before loading it into R for analysis. 
@@ -52,18 +50,16 @@ If you are working with your own microbiome data, you will often need to  load i
 
 ## Exploring the data
 
+Once the data is loaded into R, we can start exploring the data to understand its structure and contents. The `tse` object is a `TreeSummarizedExperiment` object, which is a specialized data structure for storing microbiome data in R. We can use various functions to explore the data stored in the `tse` object. 
 
-
-Once the data is loaded, we can start exploring the microbiome dataset. The `Tito2024QMP` dataset is a `TreeSummarizedExperiment` object, a common data structure used in Bioconductor for storing high-throughput biological data. It contains information about the microbial abundances in different samples, as well as metadata associated with the samples.
-
-To reduce the number of keys that we need to type and to make the code more readable, we can assign the `Tito2024QMP` object to a shorter variable name, such as `tse`:
+To get an overview of the data, we can simply type the name of the object in the R console:
 
 ```{r}
-# Assign the Tito2024QMP dataset to a shorter variable name
-tse <- Tito2024QMP
+# Print the object
+tse
 ```
 
-This effectively made a copy of the `Tito2024QMP` object and stored it in the `tse` variable. We can now use the `tse` variable to refer to the dataset throughout the rest of the analysis.
+Note that the output of the `tse` object will show you the dimensions of the data, the metadata associated with the samples and features, etc. However, the data themselves are not printed to the console due to the large size of the dataset. The `TreeSummarizedExperiment` object is a complex data structure that contains multiple components, including the abundance data, sample information, feature information, and other metadata.
 
 The sample information is stored in the `colData` slot of the `Tito2024QMP` object. You can access the sample information using the `colData()` function:
 
@@ -71,6 +67,8 @@ The sample information is stored in the `colData` slot of the `Tito2024QMP` obje
 # Access the sample information
 colData(tse)
 ```
+
+As you can see, there is a lot of information stored in the `colData` slot, including sample IDs, study conditions, and other metadata associated with the samples. This information is essential for understanding the context of the microbiome data and for performing downstream analyses. 
 
 ## Community indices
 
