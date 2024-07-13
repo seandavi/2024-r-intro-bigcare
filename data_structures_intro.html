@@ -462,22 +462,22 @@ length</code></pre>
 <span><span class="va">gt1</span> <span class="op">=</span> <span class="op">(</span><span class="va">myvec</span> <span class="op">&gt;</span> <span class="fl">0.25</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">gt1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># and use our logical vector to create a vector of myvec values that are &gt;0.25</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.0411951 1.0654844 0.6883711 0.5107692 0.4048351 1.9308242 1.6917576</code></pre>
+<pre><code>[1] 0.7831174 0.5358207 0.8832050 0.4218819 0.9551676</code></pre>
 </div>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># or &lt;=0.25 using the logical "not" operator, "!"</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="op">!</span><span class="va">gt1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.28781439 -0.05171691 -1.61276154</code></pre>
+<pre><code>[1] -0.2431059  0.1258777 -0.1795923 -1.6136884 -1.3488314</code></pre>
 </div>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># shorter, one line approach</span></span>
 <span><span class="va">myvec</span><span class="op">[</span><span class="va">myvec</span> <span class="op">&gt;</span> <span class="fl">0.25</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.0411951 1.0654844 0.6883711 0.5107692 0.4048351 1.9308242 1.6917576</code></pre>
+<pre><code>[1] 0.7831174 0.5358207 0.8832050 0.4218819 0.9551676</code></pre>
 </div>
 </div>
 </section><section id="character-vectors-a.k.a.-strings" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="character-vectors-a.k.a.-strings">
