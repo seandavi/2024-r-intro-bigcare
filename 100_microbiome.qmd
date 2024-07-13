@@ -141,7 +141,7 @@ altExp(tse, "Genus") <- runMDS(tse,
     method = "bray",
     name = "BrayCurtis",
     ncomponents = 5,
-    assay.type = "counts",
+    assay.type = "relative_abundance",
     keep_dist = TRUE
 )
 ```
