@@ -183,6 +183,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./100_microbiome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
+  </div>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -191,14 +197,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#sample-with-replacement" id="toc-sample-with-replacement" class="nav-link active" data-scroll-target="#sample-with-replacement"><span class="header-section-number">3.0.1</span> Sample with Replacement</a></li>
+<li><a href="#function-example-sample-with-replacement" id="toc-function-example-sample-with-replacement" class="nav-link active" data-scroll-target="#function-example-sample-with-replacement"><span class="header-section-number">3.1</span> Function example: sample with replacement</a></li>
   <li>
-<a href="#write-functions" id="toc-write-functions" class="nav-link" data-scroll-target="#write-functions"><span class="header-section-number">3.1</span> Writing Your Own Functions</a>
+<a href="#write-functions" id="toc-write-functions" class="nav-link" data-scroll-target="#write-functions"><span class="header-section-number">3.2</span> Writing Your Own Functions</a>
   <ul class="collapse">
-<li><a href="#the-function-constructor" id="toc-the-function-constructor" class="nav-link" data-scroll-target="#the-function-constructor"><span class="header-section-number">3.1.1</span> The Function Constructor</a></li>
+<li><a href="#the-function-constructor" id="toc-the-function-constructor" class="nav-link" data-scroll-target="#the-function-constructor"><span class="header-section-number">3.2.1</span> The Function Constructor</a></li>
   </ul>
 </li>
-  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments"><span class="header-section-number">3.2</span> Arguments</a></li>
+  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments"><span class="header-section-number">3.3</span> Arguments</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/030_r_functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -264,18 +270,18 @@ Figure&nbsp;3.1: “When you link functions together, R will resolve them from t
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 3</code></pre>
+<pre><code>[1] 4 3</code></pre>
 </div>
 </div>
 <p>To roll your die and get a number back, set <code>x</code> to <code>die</code> and sample one element from it. You’ll get a new (maybe different) number each time you roll it:</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -287,7 +293,7 @@ Figure&nbsp;3.1: “When you link functions together, R will resolve them from t
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>Often, the name of the first argument is not very descriptive, and it is usually obvious what the first piece of data refers to anyways.</p>
@@ -347,16 +353,16 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span>, x <span class="op">=</span> <span class="va">die</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
 </div>
-<section id="sample-with-replacement" class="level3" data-number="3.0.1"><h3 data-number="3.0.1" class="anchored" data-anchor-id="sample-with-replacement">
-<span class="header-section-number">3.0.1</span> Sample with Replacement</h3>
+<section id="function-example-sample-with-replacement" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="function-example-sample-with-replacement">
+<span class="header-section-number">3.1</span> Function example: sample with replacement</h2>
 <p>If you set <code>size = 2</code>, you can <em>almost</em> simulate a pair of dice. Before we run that code, think for a minute why that might be the case. <code>sample</code> will return two numbers, one for each die:</p>
 <div class="cell">
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 4</code></pre>
+<pre><code>[1] 6 1</code></pre>
 </div>
 </div>
 <p>I said this “almost” works because this method does something funny. If you use it many times, you’ll notice that the second die never has the same value as the first die, which means you’ll never roll something like a pair of threes or snake eyes. What is going on?</p>
@@ -365,7 +371,7 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5 5</code></pre>
+<pre><code>[1] 3 2</code></pre>
 </div>
 </div>
 <p>The argument <code>replace = TRUE</code> causes <code>sample</code> to sample <em>with replacement</em>. Our jar example provides a good way to understand the difference between sampling with replacement and without. When <code>sample</code> uses replacement, it draws a value from the jar and records the value. Then it puts the value back into the jar. In other words, <code>sample</code> <em>replaces</em> each value after each draw. As a result, <code>sample</code> may select the same value on the second draw. Each value has a chance of being selected each time. It is as if every draw were the first draw.</p>
@@ -373,7 +379,7 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6 5</code></pre>
+<pre><code>[1] 2 2</code></pre>
 </div>
 </div>
 <p>Congratulate yourself; you’ve just run your first simulation in R! You now have a method for simulating the result of rolling a pair of dice. If you want to add up the dice, you can feed your result straight into the <code>sum</code> function:</p>
@@ -381,39 +387,39 @@ When faced with a new function, consult <code>help</code>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2</code></pre>
+<pre><code>[1] 4 1</code></pre>
 </div>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">dice</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 </div>
 <p>What would happen if you call <code>dice</code> multiple times? Would R generate a new pair of dice values each time? Let’s give it a try:</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2</code></pre>
+<pre><code>[1] 4 1</code></pre>
 </div>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2</code></pre>
+<pre><code>[1] 4 1</code></pre>
 </div>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2</code></pre>
+<pre><code>[1] 4 1</code></pre>
 </div>
 </div>
 <p>The name <code>dice</code> refers to a <em>vector</em> of two numbers. Calling more than once does not change the favlue. Each time you call <code>dice</code>, R will show you the result of that one time you called <code>sample</code> and saved the output to <code>dice</code>. R won’t rerun <code>sample(die, 2, replace = TRUE)</code> to create a new roll of the dice. Once you save a set of results to an R object, those results do not change.</p>
 <p>However, it <em>would</em> be convenient to have an object that can re-roll the dice whenever you call it. You can make such an object by writing your own R function.</p>
-</section><section id="write-functions" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="write-functions">
-<span class="header-section-number">3.1</span> Writing Your Own Functions</h2>
+</section><section id="write-functions" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="write-functions">
+<span class="header-section-number">3.2</span> Writing Your Own Functions</h2>
 <p>To recap, you already have working R code that simulates rolling a pair of dice:</p>
 <div class="cell">
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span></span>
 <span><span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">dice</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
+<pre><code>[1] 9</code></pre>
 </div>
 </div>
 <p>You can retype this code into the console anytime you want to re-roll your dice. However, this is an awkward way to work with the code. It would be easier to use your code if you wrapped it into its own function, which is exactly what we’ll do now. We’re going to write a function named <code>roll</code> that you can use to roll your virtual dice. When you’re finished, the function will work like this: each time you call <code>roll()</code>, R will return the sum of rolling two dice:</p>
@@ -426,8 +432,8 @@ When faced with a new function, consult <code>help</code>
 <span><span class="fu">roll</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">## 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Functions may seem mysterious or fancy, but they are <em>just another type of R object</em>. Instead of containing data, they contain code. This code is stored in a special format that makes it easy to reuse the code in new situations. You can write your own functions by recreating this format.</p>
-<section id="the-function-constructor" class="level3" data-number="3.1.1"><h3 data-number="3.1.1" class="anchored" data-anchor-id="the-function-constructor">
-<span class="header-section-number">3.1.1</span> The Function Constructor</h3>
+<section id="the-function-constructor" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="the-function-constructor">
+<span class="header-section-number">3.2.1</span> The Function Constructor</h3>
 <p>Every function in R has three basic parts: a name, a body of code, and a set of arguments. To make your own function, you need to replicate these parts and store them in an R object, which you can do with the <code>function</code> function. To do this, call <code>function()</code> and follow it with a pair of braces, <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code>:</p>
 <div class="cell">
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_function</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -465,7 +471,7 @@ Indentation and readability
 <div class="cell">
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
+<pre><code>[1] 9</code></pre>
 </div>
 </div>
 <p>You can think of the parentheses as the “trigger” that causes R to run the function. If you type in a function’s name <em>without</em> the parentheses, R will show you the code that is stored inside the function. If you type in the name <em>with</em> the parentheses, R will run that code:</p>
@@ -480,7 +486,7 @@ Indentation and readability
 </div>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
 <p>The code that you place inside your function is known as the <em>body</em> of the function. When you run a function in R, R will execute all of the code in the body and then return the result of the last line of code. If the last line of code doesn’t return a value, neither will your function, so you want to ensure that your final line of code returns a value. One way to check this is to think about what would happen if you ran the body of code line by line in the command line. Would R display a result after the last line, or would it not?</p>
@@ -493,8 +499,8 @@ Indentation and readability
 <span><span class="va">two</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Again, this is just showing the distinction between expressions and assignments.</p>
-</section></section><section id="arguments" class="level2 page-columns page-full" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="arguments">
-<span class="header-section-number">3.2</span> Arguments</h2>
+</section></section><section id="arguments" class="level2 page-columns page-full" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="arguments">
+<span class="header-section-number">3.3</span> Arguments</h2>
 <p>What if we removed one line of code from our function and changed the name <code>die</code> to <code>bones</code> (just a name–don’t think of it as important), like this?</p>
 <div class="cell">
 <div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">roll2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
@@ -518,15 +524,15 @@ Indentation and readability
 <div class="cell">
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span>bones <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span>bones <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
+<pre><code>[1] 9</code></pre>
 </div>
 <div class="sourceCode" id="cb75"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 33</code></pre>
+<pre><code>[1] 22</code></pre>
 </div>
 </div>
 <p>Notice that <code>roll2</code> will still give an error if you do not supply a value for the <code>bones</code> argument when you call <code>roll2</code>:</p>
@@ -544,7 +550,7 @@ Indentation and readability
 <div class="cell">
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11</code></pre>
+<pre><code>[1] 8</code></pre>
 </div>
 </div>
 <p>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <code>function</code>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument’s default value (if you defined one).</p>
@@ -1145,7 +1151,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb81-120"><a href="#cb81-120" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">x =</span> die)</span>
 <span id="cb81-121"><a href="#cb81-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-122"><a href="#cb81-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-123"><a href="#cb81-123" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample with Replacement</span></span>
+<span id="cb81-123"><a href="#cb81-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Function example: sample with replacement</span></span>
 <span id="cb81-124"><a href="#cb81-124" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-125"><a href="#cb81-125" aria-hidden="true" tabindex="-1"></a>If you set <span class="in">`size = 2`</span>, you can _almost_ simulate a pair of dice. Before we run that code, think for a minute why that might be the case. <span class="in">`sample`</span> will return two numbers, one for each die:</span>
 <span id="cb81-126"><a href="#cb81-126" aria-hidden="true" tabindex="-1"></a></span>
