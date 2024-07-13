@@ -18,6 +18,7 @@ book:
     - 010_rstudio_and_r.qmd
     - 020_r_basics.qmd
     - 030_r_functions.qmd
+    - 050_r_scripts.qmd
     - chatbots.qmd
     - data_structures_intro.qmd
     - dataframes_intro.qmd

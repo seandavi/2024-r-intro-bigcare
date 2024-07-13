@@ -1,0 +1,87 @@
+# R Scripts
+
+## What are R Scripts?
+
+R scripts are text files containing a series of R commands and code that can be executed sequentially. They serve as a way to store, organize, and run R code in a reproducible manner. R scripts typically have a `.R` file extension and can be created and edited using any text editor or integrated development environment (IDE) like RStudio.
+
+## Why are R Scripts Useful?
+
+R scripts offer several advantages for data analysis and programming:
+
+1. **Reproducibility**: Scripts allow you to save and rerun your analysis, ensuring consistent results.
+2. **Organization**: They help structure your work logically, making it easier to understand and maintain.
+3. **Efficiency**: You can execute multiple commands at once, saving time on repetitive tasks.
+4. **Collaboration**: Scripts can be easily shared with colleagues, promoting teamwork and knowledge transfer.
+5. **Version Control**: They integrate well with version control systems like Git, allowing you to track changes over time.
+6. **Documentation**: You can include comments in your scripts, explaining your thought process and methodology.
+
+## Creating an R Script Using RStudio
+
+To create an R script in RStudio, follow these steps:
+
+1. Open RStudio.
+2. Click on File > New File > R Script (or use the keyboard shortcut Ctrl+Shift+N on Windows/Linux, Cmd+Shift+N on Mac).
+3. A new untitled script will open in the editor pane.
+4. Start writing your R code in the script.
+5. To save the script, click on File > Save (or use Ctrl+S / Cmd+S) and choose a name and location for your file.
+
+Here's a simple example of what your R script might look like:
+
+```r
+# This is a comment in R
+# Let's create a script that rolls a die.
+die_roll <- sample(1:6, 1, replace = TRUE)
+print(paste("You rolled a", die_roll))
+
+# Let's add our roll2() function to our script
+roll2 <- function(bones = 1:6) {
+    dice <- sample(bones, size = 2, replace = TRUE)
+    sum(dice)
+}
+```
+
+Paste this code into your R script and save it with a meaningful name, such as `roll_die.R`.
+This script defines a die-rolling function `roll2()` and prints the result of a single die roll.
+
+::: {.callout-info}
+**Tip:** Use comments (lines starting with `#`) to explain your code and provide context for others (and your future self).
+:::
+
+## Interacting with 
+
+## Loading an R Script After Saving
+
+Once you've saved an R script, you can load and run it in several ways:
+
+1. **Using the source() function**:
+   This is the most common method to load and execute an R script.
+
+   ```r
+   source("path/to/your/script.R")
+   ```
+
+   Replace "path/to/your/script.R" with the actual path to your saved script.
+
+2. **In RStudio**:
+   - Open the script file in RStudio.
+   - Click the "Source" button in the editor pane, or use the keyboard shortcut Ctrl+Shift+S (Windows/Linux) or Cmd+Shift+S (Mac).
+
+3. **From the R console**:
+   You can also load a script directly from the R console:
+
+   ```r
+   file.edit("path/to/your/script.R")
+   ```
+
+   This will open the script in the editor, allowing you to review and modify it before running.
+
+Remember, when you load a script using `source()`, all the code in the script will be executed. If you only want to load the functions or objects defined in the script without running all the code, you can use the `source()` function with the `local = TRUE` argument:
+
+```r
+env <- new.env()
+source("path/to/your/script.R", local = env)
+```
+
+This loads the script's contents into a new environment, allowing you to access its functions and objects without executing the entire script.
+
+By mastering R scripts, you'll be able to create more organized, reproducible, and efficient data analysis workflows in R.
