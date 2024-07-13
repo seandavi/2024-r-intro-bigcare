@@ -22,6 +22,7 @@ book:
     - data_structures_intro.qmd
     - dataframes_intro.qmd
     - ggplot.qmd
+    - 100_microbiome.qmd
 
 format:
   html:

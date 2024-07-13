@@ -1,0 +1,166 @@
+# Microbiome analysis
+
+The human microbiome is a complex ecosystem of bacteria, viruses, fungi, and other microorganisms that live in and on the human body. These microorganisms play a crucial role in human health and disease, influencing everything from digestion and metabolism to immune function and mental health.
+
+In this chapter, we will assume that the data has already been processed and cleaned, and we will focus on analyzing the microbiome data using R. We will explore common microbiome analysis techniques, including alpha and beta diversity analysis, and visualizing microbiome data.
+
+## Loading the data
+
+Before we can start analyzing the microbiome data, we need to load the data into R. The data is typically stored in a tabular format after quantification of microbial abundances in different samples. In this case, we will use a dataset built into the `mia` package. The `mia` package provides a collection of microbiome datasets for educational purposes and includes functions for processing and analyzing microbiome data.
+
+To load the data, we first need to install and load the `mia` package. If you haven't installed the `mia` package yet, you can do so using the following command:
+
+```{r eval=FALSE}
+# Install the mia package
+BiocManager::install("microbiome/mia")
+```
+
+::: {.callout-note}
+**Note:** The `mia` package is part of the Bioconductor project, but in this case, we are installing it directly from GitHub using the `microbiome/mia` repository. This is a common practice when working with development versions of packages or with packages that are not yet available on Bioconductor. 
+
+:::
+
+Once the `mia` package is installed, you can load it into your R session using the following command:
+
+```{r message=FALSE, warning=FALSE}
+# Load the mia package
+library(mia)
+```
+
+Now that the `mia` package is loaded, we can load the microbiome dataset that we will be working with. In this case, we will use the `Tito2024QMP` dataset, which contains microbial abundance data for a set of colorectal cancer samples, colon adenoma samples, and health controls. You can look at the details of the dataset using `help('Tito2024QMP')`. 
+
+To load the dataset into your R session, you can use the following command:
+
+```{r}
+# Load the Tito2024QMP dataset
+data("Tito2024QMP")
+```
+
+The `Tito2024QMP` dataset is now loaded into your R session and is ready for analysis. We can double-check that the dataset has been loaded correctly by examining its structure and contents.
+
+```{r}
+# Bioconductor datasets are typically stored as SummarizedExperiment objects
+# typing the object name will show some basic information about the dataset
+Tito2024QMP
+```
+
+When looking at the output of the `Tito2024QMP` object, you will see information about the number of samples, the number of features (microbes), and additional information about what is stored with the dataset. 
+
+::: {.callout-tip}
+If you are working with your own microbiome data, you will often need to  load it into R using functions like `read.csv()` or `read.table()` to read tabular data files. Make sure your data is properly formatted and cleaned before loading it into R for analysis. 
+:::
+
+## Exploring the data
+
+
+
+Once the data is loaded, we can start exploring the microbiome dataset. The `Tito2024QMP` dataset is a `TreeSummarizedExperiment` object, a common data structure used in Bioconductor for storing high-throughput biological data. It contains information about the microbial abundances in different samples, as well as metadata associated with the samples.
+
+To reduce the number of keys that we need to type and to make the code more readable, we can assign the `Tito2024QMP` object to a shorter variable name, such as `tse`:
+
+```{r}
+# Assign the Tito2024QMP dataset to a shorter variable name
+tse <- Tito2024QMP
+```
+
+This effectively made a copy of the `Tito2024QMP` object and stored it in the `tse` variable. We can now use the `tse` variable to refer to the dataset throughout the rest of the analysis.
+
+The sample information is stored in the `colData` slot of the `Tito2024QMP` object. You can access the sample information using the `colData()` function:
+
+```{r}
+# Access the sample information
+colData(tse)
+```
+
+## Community indices
+
+In the field of microbiome ecology several indices to describe samples and
+community of samples are available. In this vignette we just want to give a
+very brief introduction.
+
+Functions for calculating alpha and beta diversity indices are available.
+Using `addAlpha` multiple diversity indices are calculated by default
+and results are stored automatically in `colData`. Selected indices can be 
+calculated individually by setting `index = "shannon"` for example. 
+
+```{r}
+tse <- addAlpha(tse, index = "shannon", assay.type = "relative_abundance")
+colnames(colData(tse))
+```
+
+And we can look at the resulting colData() which now contains the calculated alpha diversity indices.
+
+```{r}
+colData(tse)
+```
+
+`colData(tse)` is a `DataFrame` object, which is a _subclass_ of `data.frame`.
+
+::: {.callout-note}
+## Classes and subclasses in R
+
+When we say that an object in R (or other languages) is a _subclass_ of another object, we mean that it inherits properties and methods from the parent object. In this case, a `DataFrame` object inherits properties and methods from the `data.frame` object, but it may have additional features specific to the `DataFrame` class.
+
+In practice, this means that you can use `DataFrame` objects in the same way you would use `data.frame` objects, but you may also have access to additional functionality specific to the `DataFrame` class. 
+:::
+
+Remember that the alpha diversity indices are calculated for each sample. We can visualize the distribution of the Shannon index across different sample groups using a histogram or a density plot as shown in @fig-alpha-diversity
+
+```{r}
+#| label: fig-alpha-diversity
+#| fig-cap: Alpha diversity (Shannon index) distribution across all samples
+# Load the ggplot2 package for visualization
+library(ggplot2)
+ggplot(colData(tse), aes(x = shannon)) +
+    geom_density()
+```
+
+We can also compare the alpha diversity indices between different sample groups. For example, we can compare the Shannon index between samples from different diagnosis groups (e.g., colorectal cancer, colon adenoma, and healthy controls) as shown in @fig-alpha-diversity-by-diagnosis.
+
+```{r}
+#| label: fig-alpha-diversity-by-diagnosis
+#| fig-cap: Alpha diversity (Shannon index) by study condition
+ggplot(colData(tse), aes(x = shannon, color = study_condition)) +
+    geom_density()
+```
+
+**Exercise:** Visualize the alpha diversity index for another sample group such as `age_category` or `gender`. As a hint, what would you change in the `aes()` function to plot the data by a different variable? 
+
+**Exercise:** Examine the relationship between `age` and alpha diversity. You can use a scatter plot to visualize the relationship between age and the Shannon index. What will you need to change in the `aes()` function to plot this relationship? And what `geom_` function would you use to create the scatter plot? 
+
+
+Beta diversity indices are used to describe inter-sample connections. 
+Technically they are calculated as `dist` object and reduced dimensions can
+be extracted using `cmdscale`. This is wrapped up in the `runMDS` function
+of the `scater` package, but can be easily used to calculated beta diversity
+indices using the established functions from the `vegan` package or any other 
+package using comparable inputs.
+
+```{r}
+library(scater)
+altExp(tse, "Genus") <- runMDS(tse,
+    FUN = vegan::vegdist,
+    method = "bray",
+    name = "BrayCurtis",
+    ncomponents = 5,
+    assay.type = "counts",
+    keep_dist = TRUE
+)
+```
+
+JSD and UniFrac are implemented in `mia` as well. `calculateJSD` can be used
+as a drop-in replacement in the example above (omit the `method` argument as 
+well) to calculate the JSD. For calculating the UniFrac distance via
+`calculateUniFrac` either a `TreeSummarizedExperiment` must be used or a tree
+supplied via the `tree` argument. For more details see `?calculateJSD`,
+`?calculateUnifrac` or `?getDPCoA`.
+
+`runMDS` performs the decomposition. Alternatively `addNMDS` can also be used.
+
+## Other indices
+
+`estimateDominance` and `estimateEvenness` implement other sample-wise indices.
+The function behave equivalently to `estimateDiversity`. For more information
+see the corresponding man pages.
+
+
