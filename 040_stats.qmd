@@ -1,0 +1,65 @@
+# Statistics
+
+In this chapter, we will cover the basics of statistics, including descriptive statistics, hypothesis testing, and correlation analysis. We will also discuss how to perform these analyses using R.
+What is a statistic?
+A statistic is a numerical value that summarizes a dataset. Statistics can be used to describe the characteristics of a dataset, test hypotheses, and make predictions. There are two main types of statistics: descriptive statistics and inferential statistics.
+
+
+## Statistics on a single variable
+
+When we talk about a "variable" in R or other analyses, we may be talking about the thing we are measuring OR the measurements themselves.  
+For example, when we talk about the "age" variable, we may be talking about "age" as a general measurable thing OR about the measurements of "age" on subjects.
+The same holds true when working with data and statistics. 
+In the context of this chapter, when we are talking about "statistics on a single variable," we are referring to summarizing the measurements of that variable. 
+
+Let's make this concrete by simulating 50 adult patient ages. 
+
+```{r}
+# set the random number generator seed to make results reproducible
+set.seed(123)
+
+# simulate some adult ages
+age <- sample(18:99, size = 50, replace = TRUE)
+```
+
+Take a moment to examine that data. Consider using a histogram (`hist()`), printing the variable, or using `summary()`.
+
+### Measures of central tendency
+
+Now that we have our simple `age` variable, calculate the mean and the median.
+
+```{r}
+mean(age)
+median(age)
+```
+
+These measures are called measures of central tendency and give us a sense of the "center" of the distribution. 
+Note that the mean and median do not give the same result. 
+Why is that?
+
+As an exercise, try using the `quantile()` function to find the median rather than the `median()` function.
+
+### Measures of dispersion or spread
+
+In addition to measuring the "middle" of a variable, we often also desire a statistic to represent the "spread" of a variable.
+Measures such as the standard deviation and interquartile range (IQR) help us with that. 
+
+```{r}
+sd(age)
+IQR(age)
+```
+
+## Statistics on two variables
+
+To work on this section, let's load up our insurance data.
+
+```{r eval=FALSE}
+insurance_url <-
+    insurance <- readr::read_csv(insurance_url)
+```
+
+
+### Correlation
+
+### Hypothesis testing
+
