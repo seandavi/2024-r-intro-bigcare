@@ -1,4 +1,4 @@
-# Up and Running with R
+# The R language
 
 In this chapter, we're going to get an introduction to the R language, so we can dive right into programming. We're going to create a pair of virtual dice that can generate random numbers. No need to worry if you're new to programming. We'll return to many of the concepts here in more detail later.  
 
@@ -69,6 +69,18 @@ Once you get the hang of the command line, you can easily do anything in R that 
 # this obeys order-of-operations
 6 / (4 - 1)   
 ```
+
+Most of the arithmetic operators in R are the same as those on a calculator, but R uses different symbols for some of them:
+
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Exponentiation: `^`
+- Modulo: `%%`
+
+The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is `9`.
+The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
 
 ::: {.callout-tip}
 R treats the hashtag character, `#`, in a special way; R will not run anything that follows a hashtag on a line. This makes hashtags very useful for adding comments and annotations to your code. Humans will be able to read the comments, but your computer will pass over them. The hashtag is known as the _commenting symbol_ in R.
@@ -222,6 +234,14 @@ Your environment will contain different names than mine, because you have probab
 
 You can also see which names you have used by examining RStudio's environment pane.
 
+We can remove an object from the environment using the `rm` function. For example, to create and then remove an object named `to_disappear`, you could run the following code:
+
+```r
+to_disappear <- 1
+rm(to_disappear)
+to_disappear # this will return an error
+```
+
 We now have a virtual die that is stored in the computer's memory and which has a name that we can use to refer to it. You can access it whenever you like by typing the word *`die`*. 
 
 So what can you do with this die? Quite a lot. R will replace an object with its contents whenever the object's name appears in a command. So, for example, you can do all sorts of math with the die. Math isn't so helpful for rolling dice, but manipulating sets of numbers will be your stock and trade as a data scientist. So let's take a look at how to do that:
@@ -260,12 +280,15 @@ It is important to know that operations with vectors are not the same that you m
 ```r
 # Inner product (1*1 + 2*2 + 3*3 + 4*4 + 5*5 + 6*6)
 die %*% die
-# Outer product
+# Outer product (will be a 6 x 6 matrix with 
+#  all possible products of the two vectors)
 die %o% die
 ```
 :::
 
 Now that you can do math with your `die` object, let's look at how you could "roll" it. Rolling your die will require something more sophisticated than basic arithmetic; you'll need to randomly select one of the die's values. And for that, you will need a _function_.
+
+While we've seen functions already, the next section will discuss R functions more formally. 
 
 
 
@@ -298,111 +321,5 @@ The standard R prompt is a ">" sign. When present, R is waiting for the next exp
 sin(3.7)
 ```
 
-R can be used as a glorified calculator by using R expressions. Mathematical operations include:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
 
-The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is `9`.
-The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
-
-## Expressions
-
-```{r calculator10, eval=FALSE}
-5 + 2
-28 %% 3
-3^2
-5 + 4 * 4 + 4 ^ 4 / 10
-```
-
-Note that R follows order-of-operations and groupings based on parentheses.
-
-```{r calculator20, eval=FALSE}
-5 + 4 / 9
-(5 + 4) / 9
-```
-
-## Assignment
-
-While using R as a calculator is interesting, to do useful and interesting things, we need to assign _values_ to _objects_. To create objects, we need to give it a name followed by the assignment operator `<-` (or, entirely equivalently, `=`) and the value we want to give it:
-
-```{r assignment}
-weight_kg <- 55 
-```
-
-`<-` is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Using an `=` is equivalent (in nearly all cases). Learn to use `<-` as it is good programming practice. 
-
-Objects can be given any name such as `x`, `current_temperature`, or `subject_id` (see below). You want your object names to be explicit and not too long. They cannot start with a number (`2x` is not valid but `x2` is). R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`). There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., `if`, `else`, `for`, see [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html) for a complete list). In general, even if it's allowed, it's best to not use other function names, which we'll get into shortly (e.g., `c`, `T`, `mean`, `data`, `df`, `weights`). When in doubt, check the help to see if the name is already in use. It's also best to avoid dots (`.`) within a variable name as in `my.dataset`. It is also recommended to use nouns for variable names, and verbs for function names.
-
-When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:
-
-```{r printAssignment}
-weight_kg
-```
-
-Now that R has `weight_kg` in memory, which R refers to as the "global environment", we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).
-
-```{r modAssignment}
-2.2 * weight_kg
-```
-
-We can also change a variable's value by assigning it a new one:
-
-```{r newAssignment}
-weight_kg <- 57.5
-2.2 * weight_kg
-```
-
-This means that assigning a value to one variable does not change the values of other variables. For example, let's store the animal's weight in pounds in a variable.
-
-```{r calculationWithVar}
-weight_lb <- 2.2 * weight_kg
-```
-
-and then change `weight_kg` to 100.
-
-```{r modAssignment2}
-weight_kg <- 100
-```
-
-What do you think is the current content of the object `weight_lb`, 126.5 or 220?
-
-You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the `ls()` function. You can remove objects (variables) with the `rm()` function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.
-
-```{r rm, eval=FALSE}
-ls()
-rm(weight_lb, weight_kg)
-ls()
-```
-
-What happens when you type the following, now?
-
-```{r errorAfterrm, eval=FALSE}
-weight_lb # oops! you should get an error because weight_lb no longer exists!
-```
-
-## Rules for Names in R
-
-R allows users to assign names to objects such as variables, functions, and even dimensions of data. However, these names must follow a few rules.
-
-- Names may contain any combination of letters, numbers, underscore, and "."
-- Names may not start with numbers, underscore.
-- R names are case-sensitive.
-
-Examples of valid R names include:
-
-```
-pi
-x
-camelCaps
-my_stuff
-MY_Stuff
-this.is.the.name.of.the.man
-ABC123
-abc1234asdf
-.hi
-```
