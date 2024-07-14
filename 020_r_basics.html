@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.54">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>2&nbsp; Up and Running with R – Introduction to R for BigCare 2024</title>
+<title>2&nbsp; The R language – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./020_r_basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./020_r_basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -138,56 +138,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010_rstudio_and_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020_r_basics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030_r_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050_r_scripts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R data structures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_structures_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+  <a href="./vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exploring data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040_stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100_microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
+  <a href="./310_microbiome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
   </div>
+</li>
+      </ul>
 </li>
     </ul>
 </div>
@@ -204,20 +266,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects"><span class="header-section-number">2.2</span> Objects</a></li>
-  <li>
-<a href="#up-and-running-with-r" id="toc-up-and-running-with-r" class="nav-link" data-scroll-target="#up-and-running-with-r"><span class="header-section-number">3</span> Up and Running with R</a>
-  <ul class="collapse">
-<li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions"><span class="header-section-number">3.1</span> Expressions</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment"><span class="header-section-number">3.2</span> Assignment</a></li>
-  <li><a href="#rules-for-names-in-r" id="toc-rules-for-names-in-r" class="nav-link" data-scroll-target="#rules-for-names-in-r"><span class="header-section-number">3.3</span> Rules for Names in R</a></li>
-  </ul>
-</li>
+  <li><a href="#up-and-running-with-r" id="toc-up-and-running-with-r" class="nav-link" data-scroll-target="#up-and-running-with-r"><span class="header-section-number">3</span> Up and Running with R</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/020_r_basics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./020_r_basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span>
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -318,6 +373,22 @@ Tip
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
+<p>Most of the arithmetic operators in R are the same as those on a calculator, but R uses different symbols for some of them:</p>
+<ul>
+<li>Addition: <code>+</code>
+</li>
+<li>Subtraction: <code>-</code>
+</li>
+<li>Multiplication: <code>*</code>
+</li>
+<li>Division: <code>/</code>
+</li>
+<li>Exponentiation: <code>^</code>
+</li>
+<li>Modulo: <code>%%</code>
+</li>
+</ul>
+<p>The <code>^</code> operator raises the number to its left to the power of the number to its right: for example <code>3^2</code> is <code>9</code>. The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or <code>5 %% 3</code> is 2.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -532,18 +603,22 @@ Capitalization matters
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your environment will contain different names than mine, because you have probably created different objects.</p>
 <p>You can also see which names you have used by examining RStudio’s environment pane.</p>
+<p>We can remove an object from the environment using the <code>rm</code> function. For example, to create and then remove an object named <code>to_disappear</code>, you could run the following code:</p>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">to_disappear</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">to_disappear</span><span class="op">)</span></span>
+<span><span class="va">to_disappear</span> <span class="co"># this will return an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We now have a virtual die that is stored in the computer’s memory and which has a name that we can use to refer to it. You can access it whenever you like by typing the word <em><code>die</code></em>.</p>
 <p>So what can you do with this die? Quite a lot. R will replace an object with its contents whenever the object’s name appears in a command. So, for example, you can do all sorts of math with the die. Math isn’t so helpful for rolling dice, but manipulating sets of numbers will be your stock and trade as a data scientist. So let’s take a look at how to do that:</p>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">-</span> <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">-</span> <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0 1 2 3 4 5</code></pre>
 </div>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">/</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">/</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5 1.0 1.5 2.0 2.5 3.0</code></pre>
 </div>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">*</span> <span class="va">die</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">*</span> <span class="va">die</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1  4  9 16 25 36</code></pre>
 </div>
@@ -560,23 +635,23 @@ Figure&nbsp;2.3: “When R performs element-wise execution, it matches up vector
 </div>
 <p>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in <a href="#fig-recycle" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>. This isn’t a permanent change–the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as <em>vector recycling</em>, and it helps R do element-wise operations:</p>
 <div class="cell">
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2</code></pre>
 </div>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4</code></pre>
 </div>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4 5 6</code></pre>
 </div>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">+</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">+</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 4 4 6 6 8</code></pre>
 </div>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">+</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">die</span> <span class="op">+</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in die + 1:4: longer object length is not a multiple of shorter object
 length</code></pre>
@@ -605,13 +680,15 @@ Element-wise operations are not matrix operations
 </div>
 <div class="callout-body-container callout-body">
 <p>It is important to know that operations with vectors are not the same that you might expect if you are expecting R to perform “matrix” operations. R can do inner multiplication with the <code>%*%</code> operator and outer multiplication with the <code>%o%</code> operator:</p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Inner product (1*1 + 2*2 + 3*3 + 4*4 + 5*5 + 6*6)</span></span>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Inner product (1*1 + 2*2 + 3*3 + 4*4 + 5*5 + 6*6)</span></span>
 <span><span class="va">die</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="va">die</span></span>
-<span><span class="co"># Outer product</span></span>
+<span><span class="co"># Outer product (will be a 6 x 6 matrix with </span></span>
+<span><span class="co">#  all possible products of the two vectors)</span></span>
 <span><span class="va">die</span> <span class="op"><a href="https://rdrr.io/r/base/outer.html">%o%</a></span> <span class="va">die</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Now that you can do math with your <code>die</code> object, let’s look at how you could “roll” it. Rolling your die will require something more sophisticated than basic arithmetic; you’ll need to randomly select one of the die’s values. And for that, you will need a <em>function</em>.</p>
+<p>While we’ve seen functions already, the next section will discuss R functions more formally.</p>
 </section><section id="up-and-running-with-r" class="level1" data-number="3"><h1 data-number="3">
 <span class="header-section-number">3</span> Up and Running with R</h1>
 <p>The only meaningful way of interacting with R is by typing into the R console. At the most basic level, anything that we type at the command line will fall into one of two categories:</p>
@@ -619,14 +696,14 @@ Element-wise operations are not matrix operations
 <li>
 <p>Assignments</p>
 <div class="cell">
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fl">1</span></span>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fl">1</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </li>
 <li>
 <p>Expressions</p>
 <div class="cell">
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="va">pi</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html">sin</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="va">pi</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html">sin</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.225071</code></pre>
 </div>
@@ -636,113 +713,17 @@ Element-wise operations are not matrix operations
 <p>The assignment type is obvious because either the The <code>&lt;-</code> or <code>=</code> are used. Note that when we type expressions, R will return a result. In this case, the result of R evaluating <code>1 + pi + sin(42)</code> is 3.2250711.</p>
 <p>The standard R prompt is a “&gt;” sign. When present, R is waiting for the next expression or assignment. If a line is not a complete R command, R will continue the next line with a “+”. For example, typing the fillowing with a “Return” after the second “+” will result in R giving back a “+” on the next line, a prompt to keep typing.</p>
 <div class="cell">
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="va">pi</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="va">pi</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Trig.html">sin</a></span><span class="op">(</span><span class="fl">3.7</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.611757</code></pre>
 </div>
 </div>
-<p>R can be used as a glorified calculator by using R expressions. Mathematical operations include:</p>
-<ul>
-<li>Addition: <code>+</code>
-</li>
-<li>Subtraction: <code>-</code>
-</li>
-<li>Multiplication: <code>*</code>
-</li>
-<li>Division: <code>/</code>
-</li>
-<li>Exponentiation: <code>^</code>
-</li>
-<li>Modulo: <code>%%</code>
-</li>
-</ul>
-<p>The <code>^</code> operator raises the number to its left to the power of the number to its right: for example <code>3^2</code> is <code>9</code>. The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or <code>5 %% 3</code> is 2.</p>
-<section id="expressions" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="expressions">
-<span class="header-section-number">3.1</span> Expressions</h2>
-<div class="cell">
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">5</span> <span class="op">+</span> <span class="fl">2</span></span>
-<span><span class="fl">28</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">3</span></span>
-<span><span class="fl">3</span><span class="op">^</span><span class="fl">2</span></span>
-<span><span class="fl">5</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="fl">4</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">^</span> <span class="fl">4</span> <span class="op">/</span> <span class="fl">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that R follows order-of-operations and groupings based on parentheses.</p>
-<div class="cell">
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">5</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">/</span> <span class="fl">9</span></span>
-<span><span class="op">(</span><span class="fl">5</span> <span class="op">+</span> <span class="fl">4</span><span class="op">)</span> <span class="op">/</span> <span class="fl">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="assignment" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="assignment">
-<span class="header-section-number">3.2</span> Assignment</h2>
-<p>While using R as a calculator is interesting, to do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create objects, we need to give it a name followed by the assignment operator <code>&lt;-</code> (or, entirely equivalently, <code>=</code>) and the value we want to give it:</p>
-<div class="cell">
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>&lt;-</code> is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Using an <code>=</code> is equivalent (in nearly all cases). Learn to use <code>&lt;-</code> as it is good programming practice.</p>
-<p>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code> (see below). You want your object names to be explicit and not too long. They cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>). There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., <code>if</code>, <code>else</code>, <code>for</code>, see <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html">here</a> for a complete list). In general, even if it’s allowed, it’s best to not use other function names, which we’ll get into shortly (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>, <code>df</code>, <code>weights</code>). When in doubt, check the help to see if the name is already in use. It’s also best to avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. It is also recommended to use nouns for variable names, and verbs for function names.</p>
-<p>When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:</p>
-<div class="cell">
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_kg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 55</code></pre>
-</div>
-</div>
-<p>Now that R has <code>weight_kg</code> in memory, which R refers to as the “global environment”, we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).</p>
-<div class="cell">
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 121</code></pre>
-</div>
-</div>
-<p>We can also change a variable’s value by assigning it a new one:</p>
-<div class="cell">
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">57.5</span></span>
-<span><span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 126.5</code></pre>
-</div>
-</div>
-<p>This means that assigning a value to one variable does not change the values of other variables. For example, let’s store the animal’s weight in pounds in a variable.</p>
-<div class="cell">
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_lb</span> <span class="op">&lt;-</span> <span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>and then change <code>weight_kg</code> to 100.</p>
-<div class="cell">
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>What do you think is the current content of the object <code>weight_lb</code>, 126.5 or 220?</p>
-<p>You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> function. You can remove objects (variables) with the <code><a href="https://rdrr.io/r/base/rm.html">rm()</a></code> function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.</p>
-<div class="cell">
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">weight_lb</span>, <span class="va">weight_kg</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>What happens when you type the following, now?</p>
-<div class="cell">
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weight_lb</span> <span class="co"># oops! you should get an error because weight_lb no longer exists!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="rules-for-names-in-r" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="rules-for-names-in-r">
-<span class="header-section-number">3.3</span> Rules for Names in R</h2>
-<p>R allows users to assign names to objects such as variables, functions, and even dimensions of data. However, these names must follow a few rules.</p>
-<ul>
-<li>Names may contain any combination of letters, numbers, underscore, and “.”</li>
-<li>Names may not start with numbers, underscore.</li>
-<li>R names are case-sensitive.</li>
-</ul>
-<p>Examples of valid R names include:</p>
-<pre><code>pi
-x
-camelCaps
-my_stuff
-MY_Stuff
-this.is.the.name.of.the.man
-ABC123
-abc1234asdf
-.hi</code></pre>
 
 
 <!-- -->
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1218,419 +1199,335 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./030_r_functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./030_r_functions.html" class="pagination-link" aria-label="Using functions in R">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb78" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Up and Running with R</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>In this chapter, we're going to get an introduction to the R language, so we can dive right into programming. We're going to create a pair of virtual dice that can generate random numbers. No need to worry if you're new to programming. We'll return to many of the concepts here in more detail later.  </span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>To simulate a pair of dice, we need to break down each die into its essential features. A die can only show one of six numbers: 1, 2, 3, 4, 5, and 6. We can capture the die's essential characteristics by saving these numbers as a group of values in the computer. Let's save these numbers first and then figure out a way to "roll" our virtual die.</span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## The R User Interface</span></span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>The RStudio interface is simple. You type R code into the bottom line of the RStudio console pane and then click Enter to run it. The code you type is called a _command_, because it will command your computer to do something for you. The line you type it into is called the _command line_.</span>
-<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a><span class="al">![Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don't forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with **File &gt; Tools &gt; Global Options** in the menu bar.](images/rstudio_image.png)</span>{#fig-rstudio-start}</span>
-<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>When you type a command at the prompt and hit Enter, your computer executes the command and shows you the results. Then RStudio displays a fresh prompt for your next command. For example, if you type <span class="in">`1 + 1`</span> and hit Enter, RStudio will display:</span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; 1 + 1</span></span>
-<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a><span class="in">[1] 2</span></span>
-<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a><span class="in">&gt;</span></span>
-<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>You'll notice that a <span class="in">`[1]`</span> appears next to your result. R is just letting you know that this line begins with the first value in your result. Some commands return more than one value, and their results may fill up multiple lines. For example, the command <span class="in">`100:130`</span> returns 31 values; it creates a sequence of integers from 100 to 130. Notice that new bracketed numbers appear at the start of the second and third lines of output. These numbers just mean that the second line begins with the 14th value in the result, and the third line begins with the 25th value. You can mostly ignore the numbers that appear in brackets:</span>
-<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; 100:130</span></span>
-<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a><span class="in"> [1] 100 101 102 103 104 105 106 107 108 109 110 111 112</span></span>
-<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a><span class="in">[14] 113 114 115 116 117 118 119 120 121 122 123 124 125</span></span>
-<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a><span class="in">[25] 126 127 128 129 130</span></span>
-<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>The colon operator (<span class="in">`:`</span>) returns every integer between two integers. It is an easy way to create a sequence of numbers.</span>
-<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb78-35"><a href="#cb78-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## When do we compile?</span></span>
-<span id="cb78-36"><a href="#cb78-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-37"><a href="#cb78-37" aria-hidden="true" tabindex="-1"></a>In some languages, like C, Java, and FORTRAN, you have to compile your human-readable code into machine-readable code (often 1s and 0s) before you can run it. If you've programmed in such a language before, you may wonder whether you have to compile your R code before you can use it. The answer is no. R is a dynamic programming language, which means R automatically interprets your code as you run it. </span>
-<span id="cb78-38"><a href="#cb78-38" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-39"><a href="#cb78-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-40"><a href="#cb78-40" aria-hidden="true" tabindex="-1"></a>If you type an incomplete command and press Enter, R will display a <span class="in">`+`</span> prompt, which means R is waiting for you to type the rest of your command. Either finish the command or hit Escape to start over:</span>
-<span id="cb78-41"><a href="#cb78-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-42"><a href="#cb78-42" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-43"><a href="#cb78-43" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">-</span></span>
-<span id="cb78-44"><a href="#cb78-44" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span></span>
-<span id="cb78-45"><a href="#cb78-45" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb78-46"><a href="#cb78-46" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
-<span id="cb78-47"><a href="#cb78-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-48"><a href="#cb78-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-49"><a href="#cb78-49" aria-hidden="true" tabindex="-1"></a>If you type a command that R doesn't recognize, R will return an error message. If you ever see an error message, don't panic. R is just telling you that your computer couldn't understand or do what you asked it to do. You can then try a different command at the next prompt:</span>
-<span id="cb78-50"><a href="#cb78-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-51"><a href="#cb78-51" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-52"><a href="#cb78-52" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">3</span> % <span class="dv">5</span></span>
-<span id="cb78-53"><a href="#cb78-53" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> unexpected input <span class="cf">in</span> <span class="st">"3 % 5"</span></span>
-<span id="cb78-54"><a href="#cb78-54" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span></span>
-<span id="cb78-55"><a href="#cb78-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-56"><a href="#cb78-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-57"><a href="#cb78-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb78-58"><a href="#cb78-58" aria-hidden="true" tabindex="-1"></a>Whenever you get an error message in R, consider googling the error message. You'll often find that someone else has had the same problem and has posted a solution online. Simply cutting-and-pasting the error message into a search engine will often work</span>
-<span id="cb78-59"><a href="#cb78-59" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-60"><a href="#cb78-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-61"><a href="#cb78-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-62"><a href="#cb78-62" aria-hidden="true" tabindex="-1"></a>Once you get the hang of the command line, you can easily do anything in R that you would do with a calculator. For example, you could do some basic arithmetic:</span>
-<span id="cb78-63"><a href="#cb78-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-66"><a href="#cb78-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-67"><a href="#cb78-67" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span>   </span>
-<span id="cb78-68"><a href="#cb78-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-69"><a href="#cb78-69" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>   </span>
-<span id="cb78-70"><a href="#cb78-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-71"><a href="#cb78-71" aria-hidden="true" tabindex="-1"></a><span class="co"># this obeys order-of-operations</span></span>
-<span id="cb78-72"><a href="#cb78-72" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>)   </span>
-<span id="cb78-73"><a href="#cb78-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-74"><a href="#cb78-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-75"><a href="#cb78-75" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb78-76"><a href="#cb78-76" aria-hidden="true" tabindex="-1"></a>R treats the hashtag character, <span class="in">`#`</span>, in a special way; R will not run anything that follows a hashtag on a line. This makes hashtags very useful for adding comments and annotations to your code. Humans will be able to read the comments, but your computer will pass over them. The hashtag is known as the _commenting symbol_ in R.</span>
-<span id="cb78-77"><a href="#cb78-77" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-78"><a href="#cb78-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-79"><a href="#cb78-79" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb78-80"><a href="#cb78-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cancelling commands</span></span>
-<span id="cb78-81"><a href="#cb78-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-82"><a href="#cb78-82" aria-hidden="true" tabindex="-1"></a>Some R commands may take a long time to run. You can cancel a command once it has begun by pressing ctrl + c or by clicking the "stop sign" if it is available in Rstudio. Note that it may also take R a long time to cancel the command. </span>
-<span id="cb78-83"><a href="#cb78-83" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-84"><a href="#cb78-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-85"><a href="#cb78-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-86"><a href="#cb78-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### An exercise</span></span>
-<span id="cb78-87"><a href="#cb78-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-88"><a href="#cb78-88" aria-hidden="true" tabindex="-1"></a>That's the basic interface for executing R code in RStudio. Think you have it? If so, try doing these simple tasks. If you execute everything correctly, you should end up with the same number that you started with: </span>
-<span id="cb78-89"><a href="#cb78-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-90"><a href="#cb78-90" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Choose any number and add 2 to it.</span>
-<span id="cb78-91"><a href="#cb78-91" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Multiply the result by 3.</span>
-<span id="cb78-92"><a href="#cb78-92" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Subtract 6 from the answer.</span>
-<span id="cb78-93"><a href="#cb78-93" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Divide what you get by 3.</span>
-<span id="cb78-94"><a href="#cb78-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-95"><a href="#cb78-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-98"><a href="#cb78-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-99"><a href="#cb78-99" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb78-100"><a href="#cb78-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-101"><a href="#cb78-101" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">*</span> <span class="dv">3</span></span>
-<span id="cb78-102"><a href="#cb78-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-103"><a href="#cb78-103" aria-hidden="true" tabindex="-1"></a><span class="dv">36</span> <span class="sc">-</span> <span class="dv">6</span></span>
-<span id="cb78-104"><a href="#cb78-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-105"><a href="#cb78-105" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">/</span> <span class="dv">3</span></span>
-<span id="cb78-106"><a href="#cb78-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-107"><a href="#cb78-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-108"><a href="#cb78-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objects</span></span>
-<span id="cb78-109"><a href="#cb78-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-110"><a href="#cb78-110" aria-hidden="true" tabindex="-1"></a>Now that you know how to use R, let's use it to make a virtual die. The <span class="in">`:`</span> operator from a couple of pages ago gives you a nice way to create a group of numbers from one to six. The <span class="in">`:`</span> operator returns its results as a __vector__ (we are going to work with vectors in more detail), a one-dimensional set of numbers:</span>
-<span id="cb78-111"><a href="#cb78-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-112"><a href="#cb78-112" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-113"><a href="#cb78-113" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb78-114"><a href="#cb78-114" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span>
-<span id="cb78-115"><a href="#cb78-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-116"><a href="#cb78-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-117"><a href="#cb78-117" aria-hidden="true" tabindex="-1"></a>That's all there is to how a virtual die looks! But you are not done yet. Running <span class="in">`1:6`</span> generated a vector of numbers for you to see, but it didn't save that vector anywhere for later use. If we want to use those numbers again, we'll have to ask your computer to save them somewhere. You can do that by creating an R _object_.</span>
-<span id="cb78-118"><a href="#cb78-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-119"><a href="#cb78-119" aria-hidden="true" tabindex="-1"></a>R lets you save data by storing it inside an R object. What is an object? Just a name that you can use to call up stored data. For example, you can save data into an object like _`a`_ or _`b`_. Wherever R encounters the object, it will replace it with the data saved inside, like so:</span>
-<span id="cb78-120"><a href="#cb78-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-123"><a href="#cb78-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-124"><a href="#cb78-124" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-125"><a href="#cb78-125" aria-hidden="true" tabindex="-1"></a>a</span>
-<span id="cb78-126"><a href="#cb78-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-127"><a href="#cb78-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-130"><a href="#cb78-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-131"><a href="#cb78-131" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb78-132"><a href="#cb78-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-133"><a href="#cb78-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-134"><a href="#cb78-134" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb78-135"><a href="#cb78-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## What just happened?</span></span>
-<span id="cb78-136"><a href="#cb78-136" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-137"><a href="#cb78-137" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>To create an R object, choose a name and then use the less-than symbol, <span class="in">`&lt;`</span>, followed by a minus sign, <span class="in">`-`</span>, to save data into it. This combination looks like an arrow, <span class="in">`&lt;-`</span>. R will make an object, give it your name, and store in it whatever follows the arrow. So <span class="in">`a &lt;- 1`</span> stores <span class="in">`1`</span> in an object named <span class="in">`a`</span>.</span>
-<span id="cb78-138"><a href="#cb78-138" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>When you ask R what's in <span class="in">`a`</span>, R tells you on the next line.</span>
-<span id="cb78-139"><a href="#cb78-139" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>You can use your object in new R commands, too. Since <span class="in">`a`</span> previously stored the value of <span class="in">`1`</span>, you're now adding <span class="in">`1`</span> to <span class="in">`2`</span>.</span>
-<span id="cb78-140"><a href="#cb78-140" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-141"><a href="#cb78-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-142"><a href="#cb78-142" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb78-143"><a href="#cb78-143" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment vs expressions</span></span>
-<span id="cb78-144"><a href="#cb78-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-145"><a href="#cb78-145" aria-hidden="true" tabindex="-1"></a>Everything that you type into the R console can be assigned to one of two categories:</span>
-<span id="cb78-146"><a href="#cb78-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-147"><a href="#cb78-147" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assignments</span>
-<span id="cb78-148"><a href="#cb78-148" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Expressions</span>
-<span id="cb78-149"><a href="#cb78-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-150"><a href="#cb78-150" aria-hidden="true" tabindex="-1"></a>An expression is a command that tells R to do something. For example, <span class="in">`1 + 2`</span> is an expression that tells R to add <span class="in">`1`</span> and <span class="in">`2`</span>. When you type an expression into the R console, R will evaluate the expression and return the result. For example, if you type <span class="in">`1 + 2`</span> into the R console, R will return <span class="in">`3`</span>. Expressions can have "side effects" but they don't explicitly result</span>
-<span id="cb78-151"><a href="#cb78-151" aria-hidden="true" tabindex="-1"></a>in anything being added to R memory.</span>
-<span id="cb78-152"><a href="#cb78-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-155"><a href="#cb78-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-156"><a href="#cb78-156" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb78-157"><a href="#cb78-157" aria-hidden="true" tabindex="-1"></a><span class="dv">28</span> <span class="sc">%%</span> <span class="dv">3</span></span>
-<span id="cb78-158"><a href="#cb78-158" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb78-159"><a href="#cb78-159" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">^</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">10</span></span>
-<span id="cb78-160"><a href="#cb78-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-161"><a href="#cb78-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-162"><a href="#cb78-162" aria-hidden="true" tabindex="-1"></a>While using R as a calculator is interesting, to do useful and interesting things, we need to assign values to objects. To create objects, we need to give it a name followed by the assignment operator <span class="in">`&lt;-`</span> (or, entirely equivalently, <span class="in">`=`</span>) and the value we want to give it:</span>
-<span id="cb78-163"><a href="#cb78-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-166"><a href="#cb78-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-167"><a href="#cb78-167" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb78-168"><a href="#cb78-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-169"><a href="#cb78-169" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-170"><a href="#cb78-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-171"><a href="#cb78-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-172"><a href="#cb78-172" aria-hidden="true" tabindex="-1"></a>So, for another example, the following code would create an object named <span class="in">`die`</span> that contains the numbers one through six. To see what is stored in an object, just type the object's name by itself:</span>
-<span id="cb78-173"><a href="#cb78-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-176"><a href="#cb78-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-177"><a href="#cb78-177" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb78-178"><a href="#cb78-178" aria-hidden="true" tabindex="-1"></a>die</span>
-<span id="cb78-179"><a href="#cb78-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-180"><a href="#cb78-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-181"><a href="#cb78-181" aria-hidden="true" tabindex="-1"></a>When you create an object, the object will appear in the environment pane of RStudio, as shown in @fig-add-to-environment. This pane will show you all of the objects you've created since opening RStudio.</span>
-<span id="cb78-182"><a href="#cb78-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-183"><a href="#cb78-183" aria-hidden="true" tabindex="-1"></a><span class="al">![Assignment creates an object in the environment pane.](images/rstudio_add_to_environment.png)</span>{#fig-add-to-environment}</span>
-<span id="cb78-184"><a href="#cb78-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-185"><a href="#cb78-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-186"><a href="#cb78-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, environment, echo = FALSE, fig.cap = "The RStudio environment pane keeps track of the R objects you create."}</span></span>
-<span id="cb78-187"><a href="#cb78-187" aria-hidden="true" tabindex="-1"></a><span class="in">#knitr::include_graphics("images/hopr_0102.png")</span></span>
-<span id="cb78-188"><a href="#cb78-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-189"><a href="#cb78-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-190"><a href="#cb78-190" aria-hidden="true" tabindex="-1"></a>You can name an object in R almost anything you want, but there are a few rules. First, a name cannot start with a number. Second, a name cannot use some special symbols, like <span class="in">`^`</span>, <span class="in">`!`</span>, <span class="in">`$`</span>, <span class="in">`@`</span>, <span class="in">`+`</span>, <span class="in">`-`</span>, <span class="in">`/`</span>, or <span class="in">`*`</span>:</span>
-<span id="cb78-191"><a href="#cb78-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-192"><a href="#cb78-192" aria-hidden="true" tabindex="-1"></a>|Good names|Names that cause errors</span>
-<span id="cb78-193"><a href="#cb78-193" aria-hidden="true" tabindex="-1"></a>|----------|----------</span>
-<span id="cb78-194"><a href="#cb78-194" aria-hidden="true" tabindex="-1"></a>|a         | 1trial</span>
-<span id="cb78-195"><a href="#cb78-195" aria-hidden="true" tabindex="-1"></a>|b         | $</span>
-<span id="cb78-196"><a href="#cb78-196" aria-hidden="true" tabindex="-1"></a>|FOO       | ^mean</span>
-<span id="cb78-197"><a href="#cb78-197" aria-hidden="true" tabindex="-1"></a>|my_var    | 2nd</span>
-<span id="cb78-198"><a href="#cb78-198" aria-hidden="true" tabindex="-1"></a>|.day      | !bad</span>
-<span id="cb78-199"><a href="#cb78-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-200"><a href="#cb78-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-201"><a href="#cb78-201" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb78-202"><a href="#cb78-202" aria-hidden="true" tabindex="-1"></a><span class="fu">## Capitalization matters</span></span>
-<span id="cb78-203"><a href="#cb78-203" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-204"><a href="#cb78-204" aria-hidden="true" tabindex="-1"></a>R is case-sensitive, so <span class="in">`name`</span> and <span class="in">`Name`</span> will refer to different objects:</span>
-<span id="cb78-205"><a href="#cb78-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-206"><a href="#cb78-206" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-207"><a href="#cb78-207" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Name <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb78-208"><a href="#cb78-208" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Name <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb78-209"><a href="#cb78-209" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
-<span id="cb78-210"><a href="#cb78-210" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> name <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb78-211"><a href="#cb78-211" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> object <span class="st">'name'</span> not found</span>
-<span id="cb78-212"><a href="#cb78-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-213"><a href="#cb78-213" aria-hidden="true" tabindex="-1"></a>The error above is a common one!</span>
-<span id="cb78-214"><a href="#cb78-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-215"><a href="#cb78-215" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-216"><a href="#cb78-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-217"><a href="#cb78-217" aria-hidden="true" tabindex="-1"></a>Finally, R will overwrite any previous information stored in an object without asking you for permission. So, it is a good idea to _not_ use names that are already taken:</span>
-<span id="cb78-218"><a href="#cb78-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-221"><a href="#cb78-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-222"><a href="#cb78-222" aria-hidden="true" tabindex="-1"></a>my_number <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-223"><a href="#cb78-223" aria-hidden="true" tabindex="-1"></a>my_number </span>
-<span id="cb78-224"><a href="#cb78-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-225"><a href="#cb78-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-228"><a href="#cb78-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-229"><a href="#cb78-229" aria-hidden="true" tabindex="-1"></a>my_number <span class="ot">&lt;-</span> <span class="dv">999</span></span>
-<span id="cb78-230"><a href="#cb78-230" aria-hidden="true" tabindex="-1"></a>my_number</span>
-<span id="cb78-231"><a href="#cb78-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-232"><a href="#cb78-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-233"><a href="#cb78-233" aria-hidden="true" tabindex="-1"></a>You can see which object names you have already used with the function <span class="in">`ls`</span>:</span>
-<span id="cb78-234"><a href="#cb78-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-235"><a href="#cb78-235" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-236"><a href="#cb78-236" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span>
-<span id="cb78-237"><a href="#cb78-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-238"><a href="#cb78-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-239"><a href="#cb78-239" aria-hidden="true" tabindex="-1"></a>Your environment will contain different names than mine, because you have probably created different objects.</span>
-<span id="cb78-240"><a href="#cb78-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-241"><a href="#cb78-241" aria-hidden="true" tabindex="-1"></a>You can also see which names you have used by examining RStudio's environment pane.</span>
-<span id="cb78-242"><a href="#cb78-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-243"><a href="#cb78-243" aria-hidden="true" tabindex="-1"></a>We now have a virtual die that is stored in the computer's memory and which has a name that we can use to refer to it. You can access it whenever you like by typing the word *`die`*. </span>
-<span id="cb78-244"><a href="#cb78-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-245"><a href="#cb78-245" aria-hidden="true" tabindex="-1"></a>So what can you do with this die? Quite a lot. R will replace an object with its contents whenever the object's name appears in a command. So, for example, you can do all sorts of math with the die. Math isn't so helpful for rolling dice, but manipulating sets of numbers will be your stock and trade as a data scientist. So let's take a look at how to do that:</span>
-<span id="cb78-246"><a href="#cb78-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-249"><a href="#cb78-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-250"><a href="#cb78-250" aria-hidden="true" tabindex="-1"></a>die <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb78-251"><a href="#cb78-251" aria-hidden="true" tabindex="-1"></a>die <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb78-252"><a href="#cb78-252" aria-hidden="true" tabindex="-1"></a>die <span class="sc">*</span> die</span>
-<span id="cb78-253"><a href="#cb78-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-254"><a href="#cb78-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-255"><a href="#cb78-255" aria-hidden="true" tabindex="-1"></a>R uses _element-wise execution_ when working with a _vector_ like <span class="in">`die`</span>. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run *`die - 1`*, R subtracts one from each element of <span class="in">`die`</span>. </span>
-<span id="cb78-256"><a href="#cb78-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-257"><a href="#cb78-257" aria-hidden="true" tabindex="-1"></a>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run *`die * die`*, R lines up the two <span class="in">`die`</span> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two {@fig-elementwise}.</span>
-<span id="cb78-258"><a href="#cb78-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-259"><a href="#cb78-259" aria-hidden="true" tabindex="-1"></a><span class="al">!["When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently."](images/hopr_0103.png)</span>{#fig-elementwise}</span>
-<span id="cb78-260"><a href="#cb78-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-261"><a href="#cb78-261" aria-hidden="true" tabindex="-1"></a>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in @fig-recycle. This isn't a permanent change--the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as _vector recycling_, and it helps R do element-wise operations:</span>
-<span id="cb78-262"><a href="#cb78-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-265"><a href="#cb78-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb78-266"><a href="#cb78-266" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
-<span id="cb78-267"><a href="#cb78-267" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb78-268"><a href="#cb78-268" aria-hidden="true" tabindex="-1"></a>die</span>
-<span id="cb78-269"><a href="#cb78-269" aria-hidden="true" tabindex="-1"></a>die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
-<span id="cb78-270"><a href="#cb78-270" aria-hidden="true" tabindex="-1"></a>die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb78-271"><a href="#cb78-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-272"><a href="#cb78-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-273"><a href="#cb78-273" aria-hidden="true" tabindex="-1"></a><span class="al">!["R will repeat a short vector to do element-wise operations with two vectors of uneven lengths."](images/hopr_0104.png)</span>{#fig-recycle}</span>
-<span id="cb78-274"><a href="#cb78-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-275"><a href="#cb78-275" aria-hidden="true" tabindex="-1"></a>Element-wise operations are a very useful feature in R because they manipulate groups of values in an orderly way. When you start working with data sets, element-wise operations will ensure that values from one observation or case are only paired with values from the same observation or case. Element-wise operations also make it easier to write your own programs and functions in R. </span>
-<span id="cb78-276"><a href="#cb78-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-277"><a href="#cb78-277" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb78-278"><a href="#cb78-278" aria-hidden="true" tabindex="-1"></a><span class="fu">## Element-wise operations are not matrix operations</span></span>
-<span id="cb78-279"><a href="#cb78-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-280"><a href="#cb78-280" aria-hidden="true" tabindex="-1"></a>It is important to know that operations with vectors are not the same that you might expect if you are expecting R to perform "matrix" operations. R can do inner multiplication with the <span class="in">`%*%`</span> operator and outer multiplication with the <span class="in">`%o%`</span> operator:</span>
-<span id="cb78-281"><a href="#cb78-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-282"><a href="#cb78-282" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb78-283"><a href="#cb78-283" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner product (1*1 + 2*2 + 3*3 + 4*4 + 5*5 + 6*6)</span></span>
-<span id="cb78-284"><a href="#cb78-284" aria-hidden="true" tabindex="-1"></a>die <span class="sc">%*%</span> die</span>
-<span id="cb78-285"><a href="#cb78-285" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer product</span></span>
-<span id="cb78-286"><a href="#cb78-286" aria-hidden="true" tabindex="-1"></a>die <span class="sc">%o%</span> die</span>
-<span id="cb78-287"><a href="#cb78-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-288"><a href="#cb78-288" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb78-289"><a href="#cb78-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-290"><a href="#cb78-290" aria-hidden="true" tabindex="-1"></a>Now that you can do math with your <span class="in">`die`</span> object, let's look at how you could "roll" it. Rolling your die will require something more sophisticated than basic arithmetic; you'll need to randomly select one of the die's values. And for that, you will need a _function_.</span>
-<span id="cb78-291"><a href="#cb78-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-292"><a href="#cb78-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-293"><a href="#cb78-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-294"><a href="#cb78-294" aria-hidden="true" tabindex="-1"></a><span class="fu"># Up and Running with R</span></span>
-<span id="cb78-295"><a href="#cb78-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-296"><a href="#cb78-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-297"><a href="#cb78-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-298"><a href="#cb78-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-299"><a href="#cb78-299" aria-hidden="true" tabindex="-1"></a>The only meaningful way of interacting with R is by typing into the R console. At the most basic level, anything that we type at the command line will fall into one of two categories:</span>
-<span id="cb78-300"><a href="#cb78-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-301"><a href="#cb78-301" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Assignments</span>
-<span id="cb78-302"><a href="#cb78-302" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-303"><a href="#cb78-303" aria-hidden="true" tabindex="-1"></a>    <span class="in">```{r}</span></span>
-<span id="cb78-304"><a href="#cb78-304" aria-hidden="true" tabindex="-1"></a><span class="in">    x = 1</span></span>
-<span id="cb78-305"><a href="#cb78-305" aria-hidden="true" tabindex="-1"></a><span class="in">    y &lt;- 2</span></span>
-<span id="cb78-306"><a href="#cb78-306" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
-<span id="cb78-307"><a href="#cb78-307" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-308"><a href="#cb78-308" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Expressions</span>
-<span id="cb78-309"><a href="#cb78-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-310"><a href="#cb78-310" aria-hidden="true" tabindex="-1"></a>    <span class="in">```{r}</span></span>
-<span id="cb78-311"><a href="#cb78-311" aria-hidden="true" tabindex="-1"></a><span class="in">    1 + pi + sin(42)</span></span>
-<span id="cb78-312"><a href="#cb78-312" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
-<span id="cb78-313"><a href="#cb78-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-314"><a href="#cb78-314" aria-hidden="true" tabindex="-1"></a>The assignment type is obvious because either the The <span class="in">`&lt;-`</span> or <span class="in">`=`</span> are used. Note that when we type expressions, R will return a result.  In this case, the result of R evaluating <span class="in">`1 + pi + sin(42)`</span> is <span class="in">`r 1 + pi + sin(42)`</span>.</span>
-<span id="cb78-315"><a href="#cb78-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-316"><a href="#cb78-316" aria-hidden="true" tabindex="-1"></a>The standard R prompt is a "&gt;" sign. When present, R is waiting for the next expression or assignment.  If a line is not a complete R command, R will continue the next line with a "+". For example, typing the fillowing with a "Return" after the second "+" will result in R giving back a "+" on the next line, a prompt to keep typing.</span>
-<span id="cb78-317"><a href="#cb78-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-318"><a href="#cb78-318" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tidy=FALSE}</span></span>
-<span id="cb78-319"><a href="#cb78-319" aria-hidden="true" tabindex="-1"></a><span class="in">1 + pi +</span></span>
-<span id="cb78-320"><a href="#cb78-320" aria-hidden="true" tabindex="-1"></a><span class="in">sin(3.7)</span></span>
-<span id="cb78-321"><a href="#cb78-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-322"><a href="#cb78-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-323"><a href="#cb78-323" aria-hidden="true" tabindex="-1"></a>R can be used as a glorified calculator by using R expressions. Mathematical operations include:</span>
-<span id="cb78-324"><a href="#cb78-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-325"><a href="#cb78-325" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Addition: <span class="in">`+`</span></span>
-<span id="cb78-326"><a href="#cb78-326" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subtraction: <span class="in">`-`</span></span>
-<span id="cb78-327"><a href="#cb78-327" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiplication: <span class="in">`*`</span></span>
-<span id="cb78-328"><a href="#cb78-328" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Division: <span class="in">`/`</span></span>
-<span id="cb78-329"><a href="#cb78-329" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exponentiation: <span class="in">`^`</span></span>
-<span id="cb78-330"><a href="#cb78-330" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Modulo: <span class="in">`%%`</span></span>
-<span id="cb78-331"><a href="#cb78-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-332"><a href="#cb78-332" aria-hidden="true" tabindex="-1"></a>The <span class="in">`^`</span> operator raises the number to its left to the power of the number to its right: for example <span class="in">`3^2`</span> is <span class="in">`9`</span>.</span>
-<span id="cb78-333"><a href="#cb78-333" aria-hidden="true" tabindex="-1"></a>The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or <span class="in">`5 %% 3`</span> is 2.</span>
-<span id="cb78-334"><a href="#cb78-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-335"><a href="#cb78-335" aria-hidden="true" tabindex="-1"></a><span class="fu">## Expressions</span></span>
-<span id="cb78-336"><a href="#cb78-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-337"><a href="#cb78-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r calculator10, eval=FALSE}</span></span>
-<span id="cb78-338"><a href="#cb78-338" aria-hidden="true" tabindex="-1"></a><span class="in">5 + 2</span></span>
-<span id="cb78-339"><a href="#cb78-339" aria-hidden="true" tabindex="-1"></a><span class="in">28 %% 3</span></span>
-<span id="cb78-340"><a href="#cb78-340" aria-hidden="true" tabindex="-1"></a><span class="in">3^2</span></span>
-<span id="cb78-341"><a href="#cb78-341" aria-hidden="true" tabindex="-1"></a><span class="in">5 + 4 * 4 + 4 ^ 4 / 10</span></span>
-<span id="cb78-342"><a href="#cb78-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-343"><a href="#cb78-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-344"><a href="#cb78-344" aria-hidden="true" tabindex="-1"></a>Note that R follows order-of-operations and groupings based on parentheses.</span>
-<span id="cb78-345"><a href="#cb78-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-346"><a href="#cb78-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r calculator20, eval=FALSE}</span></span>
-<span id="cb78-347"><a href="#cb78-347" aria-hidden="true" tabindex="-1"></a><span class="in">5 + 4 / 9</span></span>
-<span id="cb78-348"><a href="#cb78-348" aria-hidden="true" tabindex="-1"></a><span class="in">(5 + 4) / 9</span></span>
-<span id="cb78-349"><a href="#cb78-349" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-350"><a href="#cb78-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-351"><a href="#cb78-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment</span></span>
-<span id="cb78-352"><a href="#cb78-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-353"><a href="#cb78-353" aria-hidden="true" tabindex="-1"></a>While using R as a calculator is interesting, to do useful and interesting things, we need to assign _values_ to _objects_. To create objects, we need to give it a name followed by the assignment operator <span class="in">`&lt;-`</span> (or, entirely equivalently, <span class="in">`=`</span>) and the value we want to give it:</span>
-<span id="cb78-354"><a href="#cb78-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-355"><a href="#cb78-355" aria-hidden="true" tabindex="-1"></a><span class="in">```{r assignment}</span></span>
-<span id="cb78-356"><a href="#cb78-356" aria-hidden="true" tabindex="-1"></a><span class="in">weight_kg &lt;- 55 </span></span>
-<span id="cb78-357"><a href="#cb78-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-358"><a href="#cb78-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-359"><a href="#cb78-359" aria-hidden="true" tabindex="-1"></a><span class="in">`&lt;-`</span> is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Using an <span class="in">`=`</span> is equivalent (in nearly all cases). Learn to use <span class="in">`&lt;-`</span> as it is good programming practice. </span>
-<span id="cb78-360"><a href="#cb78-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-361"><a href="#cb78-361" aria-hidden="true" tabindex="-1"></a>Objects can be given any name such as <span class="in">`x`</span>, <span class="in">`current_temperature`</span>, or <span class="in">`subject_id`</span> (see below). You want your object names to be explicit and not too long. They cannot start with a number (<span class="in">`2x`</span> is not valid but <span class="in">`x2`</span> is). R is case sensitive (e.g., <span class="in">`weight_kg`</span> is different from <span class="in">`Weight_kg`</span>). There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., <span class="in">`if`</span>, <span class="in">`else`</span>, <span class="in">`for`</span>, see <span class="co">[</span><span class="ot">here</span><span class="co">](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)</span> for a complete list). In general, even if it's allowed, it's best to not use other function names, which we'll get into shortly (e.g., <span class="in">`c`</span>, <span class="in">`T`</span>, <span class="in">`mean`</span>, <span class="in">`data`</span>, <span class="in">`df`</span>, <span class="in">`weights`</span>). When in doubt, check the help to see if the name is already in use. It's also best to avoid dots (<span class="in">`.`</span>) within a variable name as in <span class="in">`my.dataset`</span>. It is also recommended to use nouns for variable names, and verbs for function names.</span>
-<span id="cb78-362"><a href="#cb78-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-363"><a href="#cb78-363" aria-hidden="true" tabindex="-1"></a>When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:</span>
-<span id="cb78-364"><a href="#cb78-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-365"><a href="#cb78-365" aria-hidden="true" tabindex="-1"></a><span class="in">```{r printAssignment}</span></span>
-<span id="cb78-366"><a href="#cb78-366" aria-hidden="true" tabindex="-1"></a><span class="in">weight_kg</span></span>
-<span id="cb78-367"><a href="#cb78-367" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-368"><a href="#cb78-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-369"><a href="#cb78-369" aria-hidden="true" tabindex="-1"></a>Now that R has <span class="in">`weight_kg`</span> in memory, which R refers to as the "global environment", we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).</span>
-<span id="cb78-370"><a href="#cb78-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-371"><a href="#cb78-371" aria-hidden="true" tabindex="-1"></a><span class="in">```{r modAssignment}</span></span>
-<span id="cb78-372"><a href="#cb78-372" aria-hidden="true" tabindex="-1"></a><span class="in">2.2 * weight_kg</span></span>
-<span id="cb78-373"><a href="#cb78-373" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-374"><a href="#cb78-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-375"><a href="#cb78-375" aria-hidden="true" tabindex="-1"></a>We can also change a variable's value by assigning it a new one:</span>
-<span id="cb78-376"><a href="#cb78-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-377"><a href="#cb78-377" aria-hidden="true" tabindex="-1"></a><span class="in">```{r newAssignment}</span></span>
-<span id="cb78-378"><a href="#cb78-378" aria-hidden="true" tabindex="-1"></a><span class="in">weight_kg &lt;- 57.5</span></span>
-<span id="cb78-379"><a href="#cb78-379" aria-hidden="true" tabindex="-1"></a><span class="in">2.2 * weight_kg</span></span>
-<span id="cb78-380"><a href="#cb78-380" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-381"><a href="#cb78-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-382"><a href="#cb78-382" aria-hidden="true" tabindex="-1"></a>This means that assigning a value to one variable does not change the values of other variables. For example, let's store the animal's weight in pounds in a variable.</span>
-<span id="cb78-383"><a href="#cb78-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-384"><a href="#cb78-384" aria-hidden="true" tabindex="-1"></a><span class="in">```{r calculationWithVar}</span></span>
-<span id="cb78-385"><a href="#cb78-385" aria-hidden="true" tabindex="-1"></a><span class="in">weight_lb &lt;- 2.2 * weight_kg</span></span>
-<span id="cb78-386"><a href="#cb78-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-387"><a href="#cb78-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-388"><a href="#cb78-388" aria-hidden="true" tabindex="-1"></a>and then change <span class="in">`weight_kg`</span> to 100.</span>
-<span id="cb78-389"><a href="#cb78-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-390"><a href="#cb78-390" aria-hidden="true" tabindex="-1"></a><span class="in">```{r modAssignment2}</span></span>
-<span id="cb78-391"><a href="#cb78-391" aria-hidden="true" tabindex="-1"></a><span class="in">weight_kg &lt;- 100</span></span>
-<span id="cb78-392"><a href="#cb78-392" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-393"><a href="#cb78-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-394"><a href="#cb78-394" aria-hidden="true" tabindex="-1"></a>What do you think is the current content of the object <span class="in">`weight_lb`</span>, 126.5 or 220?</span>
-<span id="cb78-395"><a href="#cb78-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-396"><a href="#cb78-396" aria-hidden="true" tabindex="-1"></a>You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the <span class="in">`ls()`</span> function. You can remove objects (variables) with the <span class="in">`rm()`</span> function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.</span>
-<span id="cb78-397"><a href="#cb78-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-398"><a href="#cb78-398" aria-hidden="true" tabindex="-1"></a><span class="in">```{r rm, eval=FALSE}</span></span>
-<span id="cb78-399"><a href="#cb78-399" aria-hidden="true" tabindex="-1"></a><span class="in">ls()</span></span>
-<span id="cb78-400"><a href="#cb78-400" aria-hidden="true" tabindex="-1"></a><span class="in">rm(weight_lb, weight_kg)</span></span>
-<span id="cb78-401"><a href="#cb78-401" aria-hidden="true" tabindex="-1"></a><span class="in">ls()</span></span>
-<span id="cb78-402"><a href="#cb78-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-403"><a href="#cb78-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-404"><a href="#cb78-404" aria-hidden="true" tabindex="-1"></a>What happens when you type the following, now?</span>
-<span id="cb78-405"><a href="#cb78-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-406"><a href="#cb78-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r errorAfterrm, eval=FALSE}</span></span>
-<span id="cb78-407"><a href="#cb78-407" aria-hidden="true" tabindex="-1"></a><span class="in">weight_lb # oops! you should get an error because weight_lb no longer exists!</span></span>
-<span id="cb78-408"><a href="#cb78-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-409"><a href="#cb78-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-410"><a href="#cb78-410" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rules for Names in R</span></span>
-<span id="cb78-411"><a href="#cb78-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-412"><a href="#cb78-412" aria-hidden="true" tabindex="-1"></a>R allows users to assign names to objects such as variables, functions, and even dimensions of data. However, these names must follow a few rules.</span>
-<span id="cb78-413"><a href="#cb78-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-414"><a href="#cb78-414" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Names may contain any combination of letters, numbers, underscore, and "."</span>
-<span id="cb78-415"><a href="#cb78-415" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Names may not start with numbers, underscore.</span>
-<span id="cb78-416"><a href="#cb78-416" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>R names are case-sensitive.</span>
-<span id="cb78-417"><a href="#cb78-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-418"><a href="#cb78-418" aria-hidden="true" tabindex="-1"></a>Examples of valid R names include:</span>
-<span id="cb78-419"><a href="#cb78-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-420"><a href="#cb78-420" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb78-421"><a href="#cb78-421" aria-hidden="true" tabindex="-1"></a><span class="in">pi</span></span>
-<span id="cb78-422"><a href="#cb78-422" aria-hidden="true" tabindex="-1"></a><span class="in">x</span></span>
-<span id="cb78-423"><a href="#cb78-423" aria-hidden="true" tabindex="-1"></a><span class="in">camelCaps</span></span>
-<span id="cb78-424"><a href="#cb78-424" aria-hidden="true" tabindex="-1"></a><span class="in">my_stuff</span></span>
-<span id="cb78-425"><a href="#cb78-425" aria-hidden="true" tabindex="-1"></a><span class="in">MY_Stuff</span></span>
-<span id="cb78-426"><a href="#cb78-426" aria-hidden="true" tabindex="-1"></a><span class="in">this.is.the.name.of.the.man</span></span>
-<span id="cb78-427"><a href="#cb78-427" aria-hidden="true" tabindex="-1"></a><span class="in">ABC123</span></span>
-<span id="cb78-428"><a href="#cb78-428" aria-hidden="true" tabindex="-1"></a><span class="in">abc1234asdf</span></span>
-<span id="cb78-429"><a href="#cb78-429" aria-hidden="true" tabindex="-1"></a><span class="in">.hi</span></span>
-<span id="cb78-430"><a href="#cb78-430" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb65" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># The R language</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>In this chapter, we're going to get an introduction to the R language, so we can dive right into programming. We're going to create a pair of virtual dice that can generate random numbers. No need to worry if you're new to programming. We'll return to many of the concepts here in more detail later.  </span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>To simulate a pair of dice, we need to break down each die into its essential features. A die can only show one of six numbers: 1, 2, 3, 4, 5, and 6. We can capture the die's essential characteristics by saving these numbers as a group of values in the computer. Let's save these numbers first and then figure out a way to "roll" our virtual die.</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## The R User Interface</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>The RStudio interface is simple. You type R code into the bottom line of the RStudio console pane and then click Enter to run it. The code you type is called a _command_, because it will command your computer to do something for you. The line you type it into is called the _command line_.</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="al">![Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don't forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with **File &gt; Tools &gt; Global Options** in the menu bar.](images/rstudio_image.png)</span>{#fig-rstudio-start}</span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>When you type a command at the prompt and hit Enter, your computer executes the command and shows you the results. Then RStudio displays a fresh prompt for your next command. For example, if you type <span class="in">`1 + 1`</span> and hit Enter, RStudio will display:</span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; 1 + 1</span></span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="in">[1] 2</span></span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="in">&gt;</span></span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a>You'll notice that a <span class="in">`[1]`</span> appears next to your result. R is just letting you know that this line begins with the first value in your result. Some commands return more than one value, and their results may fill up multiple lines. For example, the command <span class="in">`100:130`</span> returns 31 values; it creates a sequence of integers from 100 to 130. Notice that new bracketed numbers appear at the start of the second and third lines of output. These numbers just mean that the second line begins with the 14th value in the result, and the third line begins with the 25th value. You can mostly ignore the numbers that appear in brackets:</span>
+<span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; 100:130</span></span>
+<span id="cb65-25"><a href="#cb65-25" aria-hidden="true" tabindex="-1"></a><span class="in"> [1] 100 101 102 103 104 105 106 107 108 109 110 111 112</span></span>
+<span id="cb65-26"><a href="#cb65-26" aria-hidden="true" tabindex="-1"></a><span class="in">[14] 113 114 115 116 117 118 119 120 121 122 123 124 125</span></span>
+<span id="cb65-27"><a href="#cb65-27" aria-hidden="true" tabindex="-1"></a><span class="in">[25] 126 127 128 129 130</span></span>
+<span id="cb65-28"><a href="#cb65-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-29"><a href="#cb65-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-30"><a href="#cb65-30" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb65-31"><a href="#cb65-31" aria-hidden="true" tabindex="-1"></a>The colon operator (<span class="in">`:`</span>) returns every integer between two integers. It is an easy way to create a sequence of numbers.</span>
+<span id="cb65-32"><a href="#cb65-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-33"><a href="#cb65-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-34"><a href="#cb65-34" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb65-35"><a href="#cb65-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## When do we compile?</span></span>
+<span id="cb65-36"><a href="#cb65-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-37"><a href="#cb65-37" aria-hidden="true" tabindex="-1"></a>In some languages, like C, Java, and FORTRAN, you have to compile your human-readable code into machine-readable code (often 1s and 0s) before you can run it. If you've programmed in such a language before, you may wonder whether you have to compile your R code before you can use it. The answer is no. R is a dynamic programming language, which means R automatically interprets your code as you run it. </span>
+<span id="cb65-38"><a href="#cb65-38" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-39"><a href="#cb65-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-40"><a href="#cb65-40" aria-hidden="true" tabindex="-1"></a>If you type an incomplete command and press Enter, R will display a <span class="in">`+`</span> prompt, which means R is waiting for you to type the rest of your command. Either finish the command or hit Escape to start over:</span>
+<span id="cb65-41"><a href="#cb65-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-42"><a href="#cb65-42" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-43"><a href="#cb65-43" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">-</span></span>
+<span id="cb65-44"><a href="#cb65-44" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span></span>
+<span id="cb65-45"><a href="#cb65-45" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb65-46"><a href="#cb65-46" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
+<span id="cb65-47"><a href="#cb65-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-48"><a href="#cb65-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-49"><a href="#cb65-49" aria-hidden="true" tabindex="-1"></a>If you type a command that R doesn't recognize, R will return an error message. If you ever see an error message, don't panic. R is just telling you that your computer couldn't understand or do what you asked it to do. You can then try a different command at the next prompt:</span>
+<span id="cb65-50"><a href="#cb65-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-51"><a href="#cb65-51" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-52"><a href="#cb65-52" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">3</span> % <span class="dv">5</span></span>
+<span id="cb65-53"><a href="#cb65-53" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> unexpected input <span class="cf">in</span> <span class="st">"3 % 5"</span></span>
+<span id="cb65-54"><a href="#cb65-54" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span></span>
+<span id="cb65-55"><a href="#cb65-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-56"><a href="#cb65-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-57"><a href="#cb65-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb65-58"><a href="#cb65-58" aria-hidden="true" tabindex="-1"></a>Whenever you get an error message in R, consider googling the error message. You'll often find that someone else has had the same problem and has posted a solution online. Simply cutting-and-pasting the error message into a search engine will often work</span>
+<span id="cb65-59"><a href="#cb65-59" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-60"><a href="#cb65-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-61"><a href="#cb65-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-62"><a href="#cb65-62" aria-hidden="true" tabindex="-1"></a>Once you get the hang of the command line, you can easily do anything in R that you would do with a calculator. For example, you could do some basic arithmetic:</span>
+<span id="cb65-63"><a href="#cb65-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-66"><a href="#cb65-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-67"><a href="#cb65-67" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span>   </span>
+<span id="cb65-68"><a href="#cb65-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-69"><a href="#cb65-69" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>   </span>
+<span id="cb65-70"><a href="#cb65-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-71"><a href="#cb65-71" aria-hidden="true" tabindex="-1"></a><span class="co"># this obeys order-of-operations</span></span>
+<span id="cb65-72"><a href="#cb65-72" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>)   </span>
+<span id="cb65-73"><a href="#cb65-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-74"><a href="#cb65-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-75"><a href="#cb65-75" aria-hidden="true" tabindex="-1"></a>Most of the arithmetic operators in R are the same as those on a calculator, but R uses different symbols for some of them:</span>
+<span id="cb65-76"><a href="#cb65-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-77"><a href="#cb65-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Addition: <span class="in">`+`</span></span>
+<span id="cb65-78"><a href="#cb65-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subtraction: <span class="in">`-`</span></span>
+<span id="cb65-79"><a href="#cb65-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiplication: <span class="in">`*`</span></span>
+<span id="cb65-80"><a href="#cb65-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Division: <span class="in">`/`</span></span>
+<span id="cb65-81"><a href="#cb65-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exponentiation: <span class="in">`^`</span></span>
+<span id="cb65-82"><a href="#cb65-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Modulo: <span class="in">`%%`</span></span>
+<span id="cb65-83"><a href="#cb65-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-84"><a href="#cb65-84" aria-hidden="true" tabindex="-1"></a>The <span class="in">`^`</span> operator raises the number to its left to the power of the number to its right: for example <span class="in">`3^2`</span> is <span class="in">`9`</span>.</span>
+<span id="cb65-85"><a href="#cb65-85" aria-hidden="true" tabindex="-1"></a>The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or <span class="in">`5 %% 3`</span> is 2.</span>
+<span id="cb65-86"><a href="#cb65-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-87"><a href="#cb65-87" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb65-88"><a href="#cb65-88" aria-hidden="true" tabindex="-1"></a>R treats the hashtag character, <span class="in">`#`</span>, in a special way; R will not run anything that follows a hashtag on a line. This makes hashtags very useful for adding comments and annotations to your code. Humans will be able to read the comments, but your computer will pass over them. The hashtag is known as the _commenting symbol_ in R.</span>
+<span id="cb65-89"><a href="#cb65-89" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-90"><a href="#cb65-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-91"><a href="#cb65-91" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb65-92"><a href="#cb65-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cancelling commands</span></span>
+<span id="cb65-93"><a href="#cb65-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-94"><a href="#cb65-94" aria-hidden="true" tabindex="-1"></a>Some R commands may take a long time to run. You can cancel a command once it has begun by pressing ctrl + c or by clicking the "stop sign" if it is available in Rstudio. Note that it may also take R a long time to cancel the command. </span>
+<span id="cb65-95"><a href="#cb65-95" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-96"><a href="#cb65-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-97"><a href="#cb65-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-98"><a href="#cb65-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### An exercise</span></span>
+<span id="cb65-99"><a href="#cb65-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-100"><a href="#cb65-100" aria-hidden="true" tabindex="-1"></a>That's the basic interface for executing R code in RStudio. Think you have it? If so, try doing these simple tasks. If you execute everything correctly, you should end up with the same number that you started with: </span>
+<span id="cb65-101"><a href="#cb65-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-102"><a href="#cb65-102" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Choose any number and add 2 to it.</span>
+<span id="cb65-103"><a href="#cb65-103" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Multiply the result by 3.</span>
+<span id="cb65-104"><a href="#cb65-104" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Subtract 6 from the answer.</span>
+<span id="cb65-105"><a href="#cb65-105" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Divide what you get by 3.</span>
+<span id="cb65-106"><a href="#cb65-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-107"><a href="#cb65-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-110"><a href="#cb65-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-111"><a href="#cb65-111" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb65-112"><a href="#cb65-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-113"><a href="#cb65-113" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb65-114"><a href="#cb65-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-115"><a href="#cb65-115" aria-hidden="true" tabindex="-1"></a><span class="dv">36</span> <span class="sc">-</span> <span class="dv">6</span></span>
+<span id="cb65-116"><a href="#cb65-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-117"><a href="#cb65-117" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb65-118"><a href="#cb65-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-119"><a href="#cb65-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-120"><a href="#cb65-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objects</span></span>
+<span id="cb65-121"><a href="#cb65-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-122"><a href="#cb65-122" aria-hidden="true" tabindex="-1"></a>Now that you know how to use R, let's use it to make a virtual die. The <span class="in">`:`</span> operator from a couple of pages ago gives you a nice way to create a group of numbers from one to six. The <span class="in">`:`</span> operator returns its results as a __vector__ (we are going to work with vectors in more detail), a one-dimensional set of numbers:</span>
+<span id="cb65-123"><a href="#cb65-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-124"><a href="#cb65-124" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-125"><a href="#cb65-125" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb65-126"><a href="#cb65-126" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span>
+<span id="cb65-127"><a href="#cb65-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-128"><a href="#cb65-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-129"><a href="#cb65-129" aria-hidden="true" tabindex="-1"></a>That's all there is to how a virtual die looks! But you are not done yet. Running <span class="in">`1:6`</span> generated a vector of numbers for you to see, but it didn't save that vector anywhere for later use. If we want to use those numbers again, we'll have to ask your computer to save them somewhere. You can do that by creating an R _object_.</span>
+<span id="cb65-130"><a href="#cb65-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-131"><a href="#cb65-131" aria-hidden="true" tabindex="-1"></a>R lets you save data by storing it inside an R object. What is an object? Just a name that you can use to call up stored data. For example, you can save data into an object like _`a`_ or _`b`_. Wherever R encounters the object, it will replace it with the data saved inside, like so:</span>
+<span id="cb65-132"><a href="#cb65-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-135"><a href="#cb65-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-136"><a href="#cb65-136" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb65-137"><a href="#cb65-137" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb65-138"><a href="#cb65-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-139"><a href="#cb65-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-142"><a href="#cb65-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-143"><a href="#cb65-143" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb65-144"><a href="#cb65-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-145"><a href="#cb65-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-146"><a href="#cb65-146" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb65-147"><a href="#cb65-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## What just happened?</span></span>
+<span id="cb65-148"><a href="#cb65-148" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb65-149"><a href="#cb65-149" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>To create an R object, choose a name and then use the less-than symbol, <span class="in">`&lt;`</span>, followed by a minus sign, <span class="in">`-`</span>, to save data into it. This combination looks like an arrow, <span class="in">`&lt;-`</span>. R will make an object, give it your name, and store in it whatever follows the arrow. So <span class="in">`a &lt;- 1`</span> stores <span class="in">`1`</span> in an object named <span class="in">`a`</span>.</span>
+<span id="cb65-150"><a href="#cb65-150" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>When you ask R what's in <span class="in">`a`</span>, R tells you on the next line.</span>
+<span id="cb65-151"><a href="#cb65-151" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>You can use your object in new R commands, too. Since <span class="in">`a`</span> previously stored the value of <span class="in">`1`</span>, you're now adding <span class="in">`1`</span> to <span class="in">`2`</span>.</span>
+<span id="cb65-152"><a href="#cb65-152" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-153"><a href="#cb65-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-154"><a href="#cb65-154" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb65-155"><a href="#cb65-155" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment vs expressions</span></span>
+<span id="cb65-156"><a href="#cb65-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-157"><a href="#cb65-157" aria-hidden="true" tabindex="-1"></a>Everything that you type into the R console can be assigned to one of two categories:</span>
+<span id="cb65-158"><a href="#cb65-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-159"><a href="#cb65-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assignments</span>
+<span id="cb65-160"><a href="#cb65-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Expressions</span>
+<span id="cb65-161"><a href="#cb65-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-162"><a href="#cb65-162" aria-hidden="true" tabindex="-1"></a>An expression is a command that tells R to do something. For example, <span class="in">`1 + 2`</span> is an expression that tells R to add <span class="in">`1`</span> and <span class="in">`2`</span>. When you type an expression into the R console, R will evaluate the expression and return the result. For example, if you type <span class="in">`1 + 2`</span> into the R console, R will return <span class="in">`3`</span>. Expressions can have "side effects" but they don't explicitly result</span>
+<span id="cb65-163"><a href="#cb65-163" aria-hidden="true" tabindex="-1"></a>in anything being added to R memory.</span>
+<span id="cb65-164"><a href="#cb65-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-167"><a href="#cb65-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-168"><a href="#cb65-168" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb65-169"><a href="#cb65-169" aria-hidden="true" tabindex="-1"></a><span class="dv">28</span> <span class="sc">%%</span> <span class="dv">3</span></span>
+<span id="cb65-170"><a href="#cb65-170" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb65-171"><a href="#cb65-171" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">^</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb65-172"><a href="#cb65-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-173"><a href="#cb65-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-174"><a href="#cb65-174" aria-hidden="true" tabindex="-1"></a>While using R as a calculator is interesting, to do useful and interesting things, we need to assign values to objects. To create objects, we need to give it a name followed by the assignment operator <span class="in">`&lt;-`</span> (or, entirely equivalently, <span class="in">`=`</span>) and the value we want to give it:</span>
+<span id="cb65-175"><a href="#cb65-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-178"><a href="#cb65-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-179"><a href="#cb65-179" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb65-180"><a href="#cb65-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-181"><a href="#cb65-181" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-182"><a href="#cb65-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-183"><a href="#cb65-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-184"><a href="#cb65-184" aria-hidden="true" tabindex="-1"></a>So, for another example, the following code would create an object named <span class="in">`die`</span> that contains the numbers one through six. To see what is stored in an object, just type the object's name by itself:</span>
+<span id="cb65-185"><a href="#cb65-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-188"><a href="#cb65-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-189"><a href="#cb65-189" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb65-190"><a href="#cb65-190" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb65-191"><a href="#cb65-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-192"><a href="#cb65-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-193"><a href="#cb65-193" aria-hidden="true" tabindex="-1"></a>When you create an object, the object will appear in the environment pane of RStudio, as shown in @fig-add-to-environment. This pane will show you all of the objects you've created since opening RStudio.</span>
+<span id="cb65-194"><a href="#cb65-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-195"><a href="#cb65-195" aria-hidden="true" tabindex="-1"></a><span class="al">![Assignment creates an object in the environment pane.](images/rstudio_add_to_environment.png)</span>{#fig-add-to-environment}</span>
+<span id="cb65-196"><a href="#cb65-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-197"><a href="#cb65-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-198"><a href="#cb65-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, environment, echo = FALSE, fig.cap = "The RStudio environment pane keeps track of the R objects you create."}</span></span>
+<span id="cb65-199"><a href="#cb65-199" aria-hidden="true" tabindex="-1"></a><span class="in">#knitr::include_graphics("images/hopr_0102.png")</span></span>
+<span id="cb65-200"><a href="#cb65-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-201"><a href="#cb65-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-202"><a href="#cb65-202" aria-hidden="true" tabindex="-1"></a>You can name an object in R almost anything you want, but there are a few rules. First, a name cannot start with a number. Second, a name cannot use some special symbols, like <span class="in">`^`</span>, <span class="in">`!`</span>, <span class="in">`$`</span>, <span class="in">`@`</span>, <span class="in">`+`</span>, <span class="in">`-`</span>, <span class="in">`/`</span>, or <span class="in">`*`</span>:</span>
+<span id="cb65-203"><a href="#cb65-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-204"><a href="#cb65-204" aria-hidden="true" tabindex="-1"></a>|Good names|Names that cause errors</span>
+<span id="cb65-205"><a href="#cb65-205" aria-hidden="true" tabindex="-1"></a>|----------|----------</span>
+<span id="cb65-206"><a href="#cb65-206" aria-hidden="true" tabindex="-1"></a>|a         | 1trial</span>
+<span id="cb65-207"><a href="#cb65-207" aria-hidden="true" tabindex="-1"></a>|b         | $</span>
+<span id="cb65-208"><a href="#cb65-208" aria-hidden="true" tabindex="-1"></a>|FOO       | ^mean</span>
+<span id="cb65-209"><a href="#cb65-209" aria-hidden="true" tabindex="-1"></a>|my_var    | 2nd</span>
+<span id="cb65-210"><a href="#cb65-210" aria-hidden="true" tabindex="-1"></a>|.day      | !bad</span>
+<span id="cb65-211"><a href="#cb65-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-212"><a href="#cb65-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-213"><a href="#cb65-213" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb65-214"><a href="#cb65-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Capitalization matters</span></span>
+<span id="cb65-215"><a href="#cb65-215" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb65-216"><a href="#cb65-216" aria-hidden="true" tabindex="-1"></a>R is case-sensitive, so <span class="in">`name`</span> and <span class="in">`Name`</span> will refer to different objects:</span>
+<span id="cb65-217"><a href="#cb65-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-218"><a href="#cb65-218" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-219"><a href="#cb65-219" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Name <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb65-220"><a href="#cb65-220" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Name <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb65-221"><a href="#cb65-221" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb65-222"><a href="#cb65-222" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> name <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb65-223"><a href="#cb65-223" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> object <span class="st">'name'</span> not found</span>
+<span id="cb65-224"><a href="#cb65-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-225"><a href="#cb65-225" aria-hidden="true" tabindex="-1"></a>The error above is a common one!</span>
+<span id="cb65-226"><a href="#cb65-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-227"><a href="#cb65-227" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-228"><a href="#cb65-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-229"><a href="#cb65-229" aria-hidden="true" tabindex="-1"></a>Finally, R will overwrite any previous information stored in an object without asking you for permission. So, it is a good idea to _not_ use names that are already taken:</span>
+<span id="cb65-230"><a href="#cb65-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-233"><a href="#cb65-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-234"><a href="#cb65-234" aria-hidden="true" tabindex="-1"></a>my_number <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb65-235"><a href="#cb65-235" aria-hidden="true" tabindex="-1"></a>my_number </span>
+<span id="cb65-236"><a href="#cb65-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-237"><a href="#cb65-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-240"><a href="#cb65-240" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-241"><a href="#cb65-241" aria-hidden="true" tabindex="-1"></a>my_number <span class="ot">&lt;-</span> <span class="dv">999</span></span>
+<span id="cb65-242"><a href="#cb65-242" aria-hidden="true" tabindex="-1"></a>my_number</span>
+<span id="cb65-243"><a href="#cb65-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-244"><a href="#cb65-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-245"><a href="#cb65-245" aria-hidden="true" tabindex="-1"></a>You can see which object names you have already used with the function <span class="in">`ls`</span>:</span>
+<span id="cb65-246"><a href="#cb65-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-247"><a href="#cb65-247" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-248"><a href="#cb65-248" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span>
+<span id="cb65-249"><a href="#cb65-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-250"><a href="#cb65-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-251"><a href="#cb65-251" aria-hidden="true" tabindex="-1"></a>Your environment will contain different names than mine, because you have probably created different objects.</span>
+<span id="cb65-252"><a href="#cb65-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-253"><a href="#cb65-253" aria-hidden="true" tabindex="-1"></a>You can also see which names you have used by examining RStudio's environment pane.</span>
+<span id="cb65-254"><a href="#cb65-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-255"><a href="#cb65-255" aria-hidden="true" tabindex="-1"></a>We can remove an object from the environment using the <span class="in">`rm`</span> function. For example, to create and then remove an object named <span class="in">`to_disappear`</span>, you could run the following code:</span>
+<span id="cb65-256"><a href="#cb65-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-257"><a href="#cb65-257" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-258"><a href="#cb65-258" aria-hidden="true" tabindex="-1"></a>to_disappear <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb65-259"><a href="#cb65-259" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(to_disappear)</span>
+<span id="cb65-260"><a href="#cb65-260" aria-hidden="true" tabindex="-1"></a>to_disappear <span class="co"># this will return an error</span></span>
+<span id="cb65-261"><a href="#cb65-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-262"><a href="#cb65-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-263"><a href="#cb65-263" aria-hidden="true" tabindex="-1"></a>We now have a virtual die that is stored in the computer's memory and which has a name that we can use to refer to it. You can access it whenever you like by typing the word *`die`*. </span>
+<span id="cb65-264"><a href="#cb65-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-265"><a href="#cb65-265" aria-hidden="true" tabindex="-1"></a>So what can you do with this die? Quite a lot. R will replace an object with its contents whenever the object's name appears in a command. So, for example, you can do all sorts of math with the die. Math isn't so helpful for rolling dice, but manipulating sets of numbers will be your stock and trade as a data scientist. So let's take a look at how to do that:</span>
+<span id="cb65-266"><a href="#cb65-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-269"><a href="#cb65-269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-270"><a href="#cb65-270" aria-hidden="true" tabindex="-1"></a>die <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb65-271"><a href="#cb65-271" aria-hidden="true" tabindex="-1"></a>die <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb65-272"><a href="#cb65-272" aria-hidden="true" tabindex="-1"></a>die <span class="sc">*</span> die</span>
+<span id="cb65-273"><a href="#cb65-273" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-274"><a href="#cb65-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-275"><a href="#cb65-275" aria-hidden="true" tabindex="-1"></a>R uses _element-wise execution_ when working with a _vector_ like <span class="in">`die`</span>. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run *`die - 1`*, R subtracts one from each element of <span class="in">`die`</span>. </span>
+<span id="cb65-276"><a href="#cb65-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-277"><a href="#cb65-277" aria-hidden="true" tabindex="-1"></a>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run *`die * die`*, R lines up the two <span class="in">`die`</span> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two {@fig-elementwise}.</span>
+<span id="cb65-278"><a href="#cb65-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-279"><a href="#cb65-279" aria-hidden="true" tabindex="-1"></a><span class="al">!["When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently."](images/hopr_0103.png)</span>{#fig-elementwise}</span>
+<span id="cb65-280"><a href="#cb65-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-281"><a href="#cb65-281" aria-hidden="true" tabindex="-1"></a>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in @fig-recycle. This isn't a permanent change--the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as _vector recycling_, and it helps R do element-wise operations:</span>
+<span id="cb65-282"><a href="#cb65-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-285"><a href="#cb65-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-286"><a href="#cb65-286" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
+<span id="cb65-287"><a href="#cb65-287" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb65-288"><a href="#cb65-288" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb65-289"><a href="#cb65-289" aria-hidden="true" tabindex="-1"></a>die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
+<span id="cb65-290"><a href="#cb65-290" aria-hidden="true" tabindex="-1"></a>die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb65-291"><a href="#cb65-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-292"><a href="#cb65-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-293"><a href="#cb65-293" aria-hidden="true" tabindex="-1"></a><span class="al">!["R will repeat a short vector to do element-wise operations with two vectors of uneven lengths."](images/hopr_0104.png)</span>{#fig-recycle}</span>
+<span id="cb65-294"><a href="#cb65-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-295"><a href="#cb65-295" aria-hidden="true" tabindex="-1"></a>Element-wise operations are a very useful feature in R because they manipulate groups of values in an orderly way. When you start working with data sets, element-wise operations will ensure that values from one observation or case are only paired with values from the same observation or case. Element-wise operations also make it easier to write your own programs and functions in R. </span>
+<span id="cb65-296"><a href="#cb65-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-297"><a href="#cb65-297" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb65-298"><a href="#cb65-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## Element-wise operations are not matrix operations</span></span>
+<span id="cb65-299"><a href="#cb65-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-300"><a href="#cb65-300" aria-hidden="true" tabindex="-1"></a>It is important to know that operations with vectors are not the same that you might expect if you are expecting R to perform "matrix" operations. R can do inner multiplication with the <span class="in">`%*%`</span> operator and outer multiplication with the <span class="in">`%o%`</span> operator:</span>
+<span id="cb65-301"><a href="#cb65-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-302"><a href="#cb65-302" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb65-303"><a href="#cb65-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner product (1*1 + 2*2 + 3*3 + 4*4 + 5*5 + 6*6)</span></span>
+<span id="cb65-304"><a href="#cb65-304" aria-hidden="true" tabindex="-1"></a>die <span class="sc">%*%</span> die</span>
+<span id="cb65-305"><a href="#cb65-305" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer product (will be a 6 x 6 matrix with </span></span>
+<span id="cb65-306"><a href="#cb65-306" aria-hidden="true" tabindex="-1"></a><span class="co">#  all possible products of the two vectors)</span></span>
+<span id="cb65-307"><a href="#cb65-307" aria-hidden="true" tabindex="-1"></a>die <span class="sc">%o%</span> die</span>
+<span id="cb65-308"><a href="#cb65-308" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-309"><a href="#cb65-309" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-310"><a href="#cb65-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-311"><a href="#cb65-311" aria-hidden="true" tabindex="-1"></a>Now that you can do math with your <span class="in">`die`</span> object, let's look at how you could "roll" it. Rolling your die will require something more sophisticated than basic arithmetic; you'll need to randomly select one of the die's values. And for that, you will need a _function_.</span>
+<span id="cb65-312"><a href="#cb65-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-313"><a href="#cb65-313" aria-hidden="true" tabindex="-1"></a>While we've seen functions already, the next section will discuss R functions more formally. </span>
+<span id="cb65-314"><a href="#cb65-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-315"><a href="#cb65-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-316"><a href="#cb65-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-317"><a href="#cb65-317" aria-hidden="true" tabindex="-1"></a><span class="fu"># Up and Running with R</span></span>
+<span id="cb65-318"><a href="#cb65-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-319"><a href="#cb65-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-320"><a href="#cb65-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-321"><a href="#cb65-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-322"><a href="#cb65-322" aria-hidden="true" tabindex="-1"></a>The only meaningful way of interacting with R is by typing into the R console. At the most basic level, anything that we type at the command line will fall into one of two categories:</span>
+<span id="cb65-323"><a href="#cb65-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-324"><a href="#cb65-324" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Assignments</span>
+<span id="cb65-325"><a href="#cb65-325" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb65-326"><a href="#cb65-326" aria-hidden="true" tabindex="-1"></a>    <span class="in">```{r}</span></span>
+<span id="cb65-327"><a href="#cb65-327" aria-hidden="true" tabindex="-1"></a><span class="in">    x = 1</span></span>
+<span id="cb65-328"><a href="#cb65-328" aria-hidden="true" tabindex="-1"></a><span class="in">    y &lt;- 2</span></span>
+<span id="cb65-329"><a href="#cb65-329" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
+<span id="cb65-330"><a href="#cb65-330" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb65-331"><a href="#cb65-331" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Expressions</span>
+<span id="cb65-332"><a href="#cb65-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-333"><a href="#cb65-333" aria-hidden="true" tabindex="-1"></a>    <span class="in">```{r}</span></span>
+<span id="cb65-334"><a href="#cb65-334" aria-hidden="true" tabindex="-1"></a><span class="in">    1 + pi + sin(42)</span></span>
+<span id="cb65-335"><a href="#cb65-335" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
+<span id="cb65-336"><a href="#cb65-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-337"><a href="#cb65-337" aria-hidden="true" tabindex="-1"></a>The assignment type is obvious because either the The <span class="in">`&lt;-`</span> or <span class="in">`=`</span> are used. Note that when we type expressions, R will return a result.  In this case, the result of R evaluating <span class="in">`1 + pi + sin(42)`</span> is <span class="in">`r 1 + pi + sin(42)`</span>.</span>
+<span id="cb65-338"><a href="#cb65-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-339"><a href="#cb65-339" aria-hidden="true" tabindex="-1"></a>The standard R prompt is a "&gt;" sign. When present, R is waiting for the next expression or assignment.  If a line is not a complete R command, R will continue the next line with a "+". For example, typing the fillowing with a "Return" after the second "+" will result in R giving back a "+" on the next line, a prompt to keep typing.</span>
+<span id="cb65-340"><a href="#cb65-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-341"><a href="#cb65-341" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tidy=FALSE}</span></span>
+<span id="cb65-342"><a href="#cb65-342" aria-hidden="true" tabindex="-1"></a><span class="in">1 + pi +</span></span>
+<span id="cb65-343"><a href="#cb65-343" aria-hidden="true" tabindex="-1"></a><span class="in">sin(3.7)</span></span>
+<span id="cb65-344"><a href="#cb65-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-345"><a href="#cb65-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-346"><a href="#cb65-346" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

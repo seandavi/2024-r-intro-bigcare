@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.54">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>3&nbsp; Functions – Introduction to R for BigCare 2024</title>
+<title>3&nbsp; Using functions in R – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chatbots.html" rel="next">
+<link href="./050_r_scripts.html" rel="next">
 <link href="./020_r_basics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030_r_functions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./030_r_functions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -138,56 +138,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010_rstudio_and_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020_r_basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030_r_functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050_r_scripts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R data structures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_structures_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+  <a href="./vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exploring data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040_stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100_microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
+  <a href="./310_microbiome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
   </div>
+</li>
+      </ul>
 </li>
     </ul>
 </div>
@@ -208,9 +270,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/030_r_functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./030_r_functions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span>
+<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -225,8 +287,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>In the last chapter, you learned how to use R objects to store data. In this chapter, you’ll learn how to use R functions are used to share and store code. Functions are a powerful tool in R. They allow you to write code once and use it many times. You can even share your functions with others. In this chapter, you’ll learn how to use functions to simulate rolling a pair of dice.</p>
-<p>R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the <code>round</code> function, or calculate its factorial with the <code>factorial</code> function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses:</p>
+</header><p>In the previous chapter, you learned about storing data in R objects. Now, we’ll explore R functions. Functions let you save and reuse code. They’re very useful because you can write code once and use it repeatedly. You can also share your functions with others. This chapter will show you how to create functions to simulate rolling two dice.</p>
+<p>You can recognize that you are using a function in R when you see a name followed by parentheses. For example, <code>mean(1:6)</code> is a function call. The name of the function is <code>mean</code>, and the data that the function is operating on is <code>1:6</code>. Functions are a fundamental part of R. They are used to perform simple and complex tasks.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where do functions come from?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The functions that we use in R come from a variety of sources. Some functions are built into R, and others are part of packages that you can install. You can also write your own functions. A major strength of R is that it is open-source, which means that anyone can write and share functions. This has led to a large and diverse collection of functions that you can use in your work.</p>
+</div>
+</div>
+<p>R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the <code>round</code> function, or calculate its factorial with the <code>factorial</code> function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3.1415</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -270,22 +346,22 @@ Figure&nbsp;3.1: “When you link functions together, R will resolve them from t
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 3</code></pre>
+<pre><code>[1] 2 4</code></pre>
 </div>
 </div>
 <p>To roll your die and get a number back, set <code>x</code> to <code>die</code> and sample one element from it. You’ll get a new (maybe different) number each time you roll it:</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>Many R functions take multiple arguments that help them do their job. You can give a function as many arguments as you like as long as you separate each argument with a comma.</p>
@@ -293,7 +369,7 @@ Figure&nbsp;3.1: “When you link functions together, R will resolve them from t
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 </div>
 <p>Often, the name of the first argument is not very descriptive, and it is usually obvious what the first piece of data refers to anyways.</p>
@@ -346,7 +422,7 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
 </div>
 <p>As you provide more arguments, it becomes more likely that your order and R’s order may not align. As a result, values may get passed to the wrong argument. Argument names prevent this. R will always match a value to its argument name, no matter where it appears in the order of arguments:</p>
@@ -371,7 +447,7 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3 2</code></pre>
+<pre><code>[1] 2 5</code></pre>
 </div>
 </div>
 <p>The argument <code>replace = TRUE</code> causes <code>sample</code> to sample <em>with replacement</em>. Our jar example provides a good way to understand the difference between sampling with replacement and without. When <code>sample</code> uses replacement, it draws a value from the jar and records the value. Then it puts the value back into the jar. In other words, <code>sample</code> <em>replaces</em> each value after each draw. As a result, <code>sample</code> may select the same value on the second draw. Each value has a chance of being selected each time. It is as if every draw were the first draw.</p>
@@ -379,7 +455,7 @@ When faced with a new function, consult <code>help</code>
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2</code></pre>
+<pre><code>[1] 2 5</code></pre>
 </div>
 </div>
 <p>Congratulate yourself; you’ve just run your first simulation in R! You now have a method for simulating the result of rolling a pair of dice. If you want to add up the dice, you can feed your result straight into the <code>sum</code> function:</p>
@@ -387,26 +463,26 @@ When faced with a new function, consult <code>help</code>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 1</code></pre>
+<pre><code>[1] 3 1</code></pre>
 </div>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">dice</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
 <p>What would happen if you call <code>dice</code> multiple times? Would R generate a new pair of dice values each time? Let’s give it a try:</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 1</code></pre>
+<pre><code>[1] 3 1</code></pre>
 </div>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 1</code></pre>
+<pre><code>[1] 3 1</code></pre>
 </div>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 1</code></pre>
+<pre><code>[1] 3 1</code></pre>
 </div>
 </div>
 <p>The name <code>dice</code> refers to a <em>vector</em> of two numbers. Calling more than once does not change the favlue. Each time you call <code>dice</code>, R will show you the result of that one time you called <code>sample</code> and saved the output to <code>dice</code>. R won’t rerun <code>sample(die, 2, replace = TRUE)</code> to create a new roll of the dice. Once you save a set of results to an R object, those results do not change.</p>
@@ -419,7 +495,7 @@ When faced with a new function, consult <code>help</code>
 <span><span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">dice</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 </div>
 <p>You can retype this code into the console anytime you want to re-roll your dice. However, this is an awkward way to work with the code. It would be easier to use your code if you wrapped it into its own function, which is exactly what we’ll do now. We’re going to write a function named <code>roll</code> that you can use to roll your virtual dice. When you’re finished, the function will work like this: each time you call <code>roll()</code>, R will return the sum of rolling two dice:</p>
@@ -486,7 +562,7 @@ Indentation and readability
 </div>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 7</code></pre>
 </div>
 </div>
 <p>The code that you place inside your function is known as the <em>body</em> of the function. When you run a function in R, R will execute all of the code in the body and then return the result of the last line of code. If the last line of code doesn’t return a value, neither will your function, so you want to ensure that your final line of code returns a value. One way to check this is to think about what would happen if you ran the body of code line by line in the command line. Would R display a result after the last line, or would it not?</p>
@@ -524,15 +600,15 @@ Indentation and readability
 <div class="cell">
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span>bones <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span>bones <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 <div class="sourceCode" id="cb75"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 22</code></pre>
+<pre><code>[1] 11</code></pre>
 </div>
 </div>
 <p>Notice that <code>roll2</code> will still give an error if you do not supply a value for the <code>bones</code> argument when you call <code>roll2</code>:</p>
@@ -550,7 +626,7 @@ Indentation and readability
 <div class="cell">
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roll2</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <code>function</code>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument’s default value (if you defined one).</p>
@@ -1039,323 +1115,331 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./020_r_basics.html" class="pagination-link" aria-label="Up and Running with R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span>
+      <a href="./020_r_basics.html" class="pagination-link" aria-label="The R language">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chatbots.html" class="pagination-link" aria-label="Chatbots as Learning Tools">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./050_r_scripts.html" class="pagination-link" aria-label="R Scripts">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb81" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Functions</span></span>
+<div class="sourceCode" id="cb81" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Using functions in R</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>In the last chapter, you learned how to use R objects to store data. In this chapter, you'll learn how to use R functions are used to share and store code. Functions are a powerful tool in R. They allow you to write code once and use it many times. You can even share your functions with others. In this chapter, you'll learn how to use functions to simulate rolling a pair of dice.</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the <span class="in">`round`</span> function, or calculate its factorial with the <span class="in">`factorial`</span> function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses: </span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>)</span>
-<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>)</span>
-<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>The data that you pass into the function is called the function's _argument_. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost @fig-pemdas.</span>
-<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>Recall that we had a die object that we used to simulate rolling a die:</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>In the previous chapter, you learned about storing data in R objects. Now, we'll explore R functions. Functions let you save and reuse code. They're very useful because you can write code once and use it repeatedly. You can also share your functions with others. This chapter will show you how to create functions to simulate rolling two dice.</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>You can recognize that you are using a function in R when you see a name followed by parentheses. For example, <span class="in">`mean(1:6)`</span> is a function call. The name of the function is <span class="in">`mean`</span>, and the data that the function is operating on is <span class="in">`1:6`</span>. Functions are a fundamental part of R. They are used to perform simple and complex tasks. </span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where do functions come from?</span></span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>The functions that we use in R come from a variety of sources. Some functions are built into R, and others are part of packages that you can install. You can also write your own functions. A major strength of R is that it is open-source, which means that anyone can write and share functions. This has led to a large and diverse collection of functions that you can use in your work.</span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the <span class="in">`round`</span> function, or calculate its factorial with the <span class="in">`factorial`</span> function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses. </span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-20"><a href="#cb81-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb81-22"><a href="#cb81-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-23"><a href="#cb81-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-24"><a href="#cb81-24" aria-hidden="true" tabindex="-1"></a>We can use that object as input to functions, just like we can use raw data. For example, we can calculate the mean of the die:</span>
-<span id="cb81-25"><a href="#cb81-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-28"><a href="#cb81-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-29"><a href="#cb81-29" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb81-30"><a href="#cb81-30" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(die)</span>
-<span id="cb81-31"><a href="#cb81-31" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(die))</span>
-<span id="cb81-32"><a href="#cb81-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-33"><a href="#cb81-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-34"><a href="#cb81-34" aria-hidden="true" tabindex="-1"></a><span class="al">!["When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean."](images/hopr_0105.png)</span>{#fig-pemdas}</span>
-<span id="cb81-35"><a href="#cb81-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-36"><a href="#cb81-36" aria-hidden="true" tabindex="-1"></a>Returning to our die, we can use the <span class="in">`sample`</span> function to randomly select one of the die's values; in other words, the <span class="in">`sample`</span> function can simulate rolling the <span class="in">`die`</span>.</span>
-<span id="cb81-37"><a href="#cb81-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-38"><a href="#cb81-38" aria-hidden="true" tabindex="-1"></a>The <span class="in">`sample`</span> function takes _two_ arguments: a vector named <span class="in">`x`</span> and a number named <span class="in">`size`</span>. <span class="in">`sample`</span> will return <span class="in">`size`</span> elements from the vector:</span>
-<span id="cb81-39"><a href="#cb81-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-42"><a href="#cb81-42" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-43"><a href="#cb81-43" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> <span class="dv">2</span>)</span>
-<span id="cb81-44"><a href="#cb81-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-45"><a href="#cb81-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-46"><a href="#cb81-46" aria-hidden="true" tabindex="-1"></a>To roll your die and get a number back, set <span class="in">`x`</span> to <span class="in">`die`</span> and sample one element from it. You'll get a new (maybe different) number each time you roll it:</span>
-<span id="cb81-47"><a href="#cb81-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-50"><a href="#cb81-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-51"><a href="#cb81-51" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb81-52"><a href="#cb81-52" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb81-53"><a href="#cb81-53" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb81-54"><a href="#cb81-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-55"><a href="#cb81-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-56"><a href="#cb81-56" aria-hidden="true" tabindex="-1"></a>Many R functions take multiple arguments that help them do their job. You can give a function as many arguments as you like as long as you separate each argument with a comma. </span>
-<span id="cb81-57"><a href="#cb81-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-58"><a href="#cb81-58" aria-hidden="true" tabindex="-1"></a>You may have noticed that I set <span class="in">`die`</span> and <span class="in">`1`</span> equal to the names of the arguments in <span class="in">`sample`</span>, <span class="in">`x`</span> and <span class="in">`size`</span>. Every argument in every R function has a name. You can specify which data should be assigned to which argument by setting a name equal to data, as in the preceding code. This becomes important as you begin to pass multiple arguments to the same function; names help you avoid passing the wrong data to the wrong argument. However, using names is optional. You will notice that R users do not often use the name of the first argument in a function. So you might see the previous code written as:</span>
-<span id="cb81-59"><a href="#cb81-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-62"><a href="#cb81-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-63"><a href="#cb81-63" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb81-64"><a href="#cb81-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-65"><a href="#cb81-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-66"><a href="#cb81-66" aria-hidden="true" tabindex="-1"></a>Often, the name of the first argument is not very descriptive, and it is usually obvious what the first piece of data refers to anyways.</span>
-<span id="cb81-67"><a href="#cb81-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-68"><a href="#cb81-68" aria-hidden="true" tabindex="-1"></a>But how do you know which argument names to use? If you try to use a name that a function does not expect, you will likely get an error:</span>
-<span id="cb81-69"><a href="#cb81-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-70"><a href="#cb81-70" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-71"><a href="#cb81-71" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>, <span class="at">corners =</span> <span class="dv">2</span>)</span>
-<span id="cb81-72"><a href="#cb81-72" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in round(3.1415, corners = 2) : unused argument(s) (corners = 2)</span></span>
-<span id="cb81-73"><a href="#cb81-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-74"><a href="#cb81-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-75"><a href="#cb81-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>)</span>
+<span id="cb81-22"><a href="#cb81-22" aria-hidden="true" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>)</span>
+<span id="cb81-23"><a href="#cb81-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-24"><a href="#cb81-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-25"><a href="#cb81-25" aria-hidden="true" tabindex="-1"></a>The data that you pass into the function is called the function's _argument_. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost @fig-pemdas.</span>
+<span id="cb81-26"><a href="#cb81-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-27"><a href="#cb81-27" aria-hidden="true" tabindex="-1"></a>Recall that we had a die object that we used to simulate rolling a die:</span>
+<span id="cb81-28"><a href="#cb81-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-31"><a href="#cb81-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-32"><a href="#cb81-32" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb81-33"><a href="#cb81-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-34"><a href="#cb81-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-35"><a href="#cb81-35" aria-hidden="true" tabindex="-1"></a>We can use that object as input to functions, just like we can use raw data. For example, we can calculate the mean of the die:</span>
+<span id="cb81-36"><a href="#cb81-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-39"><a href="#cb81-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-40"><a href="#cb81-40" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb81-41"><a href="#cb81-41" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(die)</span>
+<span id="cb81-42"><a href="#cb81-42" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(die))</span>
+<span id="cb81-43"><a href="#cb81-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-44"><a href="#cb81-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-45"><a href="#cb81-45" aria-hidden="true" tabindex="-1"></a><span class="al">!["When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean."](images/hopr_0105.png)</span>{#fig-pemdas}</span>
+<span id="cb81-46"><a href="#cb81-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-47"><a href="#cb81-47" aria-hidden="true" tabindex="-1"></a>Returning to our die, we can use the <span class="in">`sample`</span> function to randomly select one of the die's values; in other words, the <span class="in">`sample`</span> function can simulate rolling the <span class="in">`die`</span>.</span>
+<span id="cb81-48"><a href="#cb81-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-49"><a href="#cb81-49" aria-hidden="true" tabindex="-1"></a>The <span class="in">`sample`</span> function takes _two_ arguments: a vector named <span class="in">`x`</span> and a number named <span class="in">`size`</span>. <span class="in">`sample`</span> will return <span class="in">`size`</span> elements from the vector:</span>
+<span id="cb81-50"><a href="#cb81-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-53"><a href="#cb81-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-54"><a href="#cb81-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> <span class="dv">2</span>)</span>
+<span id="cb81-55"><a href="#cb81-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-56"><a href="#cb81-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-57"><a href="#cb81-57" aria-hidden="true" tabindex="-1"></a>To roll your die and get a number back, set <span class="in">`x`</span> to <span class="in">`die`</span> and sample one element from it. You'll get a new (maybe different) number each time you roll it:</span>
+<span id="cb81-58"><a href="#cb81-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-61"><a href="#cb81-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-62"><a href="#cb81-62" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb81-63"><a href="#cb81-63" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb81-64"><a href="#cb81-64" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> die, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb81-65"><a href="#cb81-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-66"><a href="#cb81-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-67"><a href="#cb81-67" aria-hidden="true" tabindex="-1"></a>Many R functions take multiple arguments that help them do their job. You can give a function as many arguments as you like as long as you separate each argument with a comma. </span>
+<span id="cb81-68"><a href="#cb81-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-69"><a href="#cb81-69" aria-hidden="true" tabindex="-1"></a>You may have noticed that I set <span class="in">`die`</span> and <span class="in">`1`</span> equal to the names of the arguments in <span class="in">`sample`</span>, <span class="in">`x`</span> and <span class="in">`size`</span>. Every argument in every R function has a name. You can specify which data should be assigned to which argument by setting a name equal to data, as in the preceding code. This becomes important as you begin to pass multiple arguments to the same function; names help you avoid passing the wrong data to the wrong argument. However, using names is optional. You will notice that R users do not often use the name of the first argument in a function. So you might see the previous code written as:</span>
+<span id="cb81-70"><a href="#cb81-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-73"><a href="#cb81-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-74"><a href="#cb81-74" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb81-75"><a href="#cb81-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-76"><a href="#cb81-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-77"><a href="#cb81-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-78"><a href="#cb81-78" aria-hidden="true" tabindex="-1"></a>If you're not sure which names to use with a function, you can look up the function's arguments with <span class="in">`args`</span>. To do this, place the name of the function in the parentheses behind <span class="in">`args`</span>. For example, you can see that the <span class="in">`round`</span> function takes two arguments, one named <span class="in">`x`</span> and one named <span class="in">`digits`</span>:</span>
-<span id="cb81-79"><a href="#cb81-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-82"><a href="#cb81-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-83"><a href="#cb81-83" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(round)</span>
+<span id="cb81-77"><a href="#cb81-77" aria-hidden="true" tabindex="-1"></a>Often, the name of the first argument is not very descriptive, and it is usually obvious what the first piece of data refers to anyways.</span>
+<span id="cb81-78"><a href="#cb81-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-79"><a href="#cb81-79" aria-hidden="true" tabindex="-1"></a>But how do you know which argument names to use? If you try to use a name that a function does not expect, you will likely get an error:</span>
+<span id="cb81-80"><a href="#cb81-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-81"><a href="#cb81-81" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb81-82"><a href="#cb81-82" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>, <span class="at">corners =</span> <span class="dv">2</span>)</span>
+<span id="cb81-83"><a href="#cb81-83" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in round(3.1415, corners = 2) : unused argument(s) (corners = 2)</span></span>
 <span id="cb81-84"><a href="#cb81-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-85"><a href="#cb81-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-86"><a href="#cb81-86" aria-hidden="true" tabindex="-1"></a>Did you notice that <span class="in">`args`</span> shows that the <span class="in">`digits`</span> argument of <span class="in">`round`</span> is already set to 0? Frequently, an R function will take optional arguments like <span class="in">`digits`</span>. These arguments are considered optional because they come with a default value. You can pass a new value to an optional argument if you want, and R will use the default value if you do not. For example, <span class="in">`round`</span> will round your number to 0 digits past the decimal point by default. To override the default, supply your own value for <span class="in">`digits`</span>:</span>
+<span id="cb81-86"><a href="#cb81-86" aria-hidden="true" tabindex="-1"></a>If you're not sure which names to use with a function, you can look up the function's arguments with <span class="in">`args`</span>. To do this, place the name of the function in the parentheses behind <span class="in">`args`</span>. For example, you can see that the <span class="in">`round`</span> function takes two arguments, one named <span class="in">`x`</span> and one named <span class="in">`digits`</span>:</span>
 <span id="cb81-87"><a href="#cb81-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-90"><a href="#cb81-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-91"><a href="#cb81-91" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>)</span>
-<span id="cb81-92"><a href="#cb81-92" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb81-93"><a href="#cb81-93" aria-hidden="true" tabindex="-1"></a><span class="co"># pi happens to be a built-in value in R</span></span>
-<span id="cb81-94"><a href="#cb81-94" aria-hidden="true" tabindex="-1"></a>pi</span>
-<span id="cb81-95"><a href="#cb81-95" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi)</span>
-<span id="cb81-96"><a href="#cb81-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-97"><a href="#cb81-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-98"><a href="#cb81-98" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb81-99"><a href="#cb81-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## When faced with a new function, consult `help`</span></span>
-<span id="cb81-100"><a href="#cb81-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-101"><a href="#cb81-101" aria-hidden="true" tabindex="-1"></a>When you are using a function that is new to you, consider looking up the <span class="in">`help()`</span> for that function. You can do this by typing <span class="in">`?`</span> followed by the function's name. For example, to look up the <span class="in">`sample`</span> function, type <span class="in">`?sample`</span>. This will open a help page that describes the function and its arguments. You can also look up the help page for a function by typing <span class="in">`help(sample)`</span>. The help page will show you the names of the function's arguments and their default values, as well as examples of how to use the function.</span>
-<span id="cb81-102"><a href="#cb81-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-103"><a href="#cb81-103" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb81-104"><a href="#cb81-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-105"><a href="#cb81-105" aria-hidden="true" tabindex="-1"></a>You should write out the names of each argument after the first one or two when you call a function with multiple arguments. Why? First, this will help you and others understand your code. It is usually obvious which argument your first input refers to (and sometimes the second input as well). However, you'd need a large memory to remember the third and fourth arguments of every R function. Second, and more importantly, writing out argument names prevents errors.</span>
-<span id="cb81-106"><a href="#cb81-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-107"><a href="#cb81-107" aria-hidden="true" tabindex="-1"></a>If you do not write out the names of your arguments, R will match your values to the arguments in your function by order. For example, in the following code, the first value, <span class="in">`die`</span>, will be matched to the first argument of <span class="in">`sample`</span>, which is named <span class="in">`x`</span>. The next value, <span class="in">`1`</span>, will be matched to the next argument, <span class="in">`size`</span>:</span>
+<span id="cb81-91"><a href="#cb81-91" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(round)</span>
+<span id="cb81-92"><a href="#cb81-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-93"><a href="#cb81-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-94"><a href="#cb81-94" aria-hidden="true" tabindex="-1"></a>Did you notice that <span class="in">`args`</span> shows that the <span class="in">`digits`</span> argument of <span class="in">`round`</span> is already set to 0? Frequently, an R function will take optional arguments like <span class="in">`digits`</span>. These arguments are considered optional because they come with a default value. You can pass a new value to an optional argument if you want, and R will use the default value if you do not. For example, <span class="in">`round`</span> will round your number to 0 digits past the decimal point by default. To override the default, supply your own value for <span class="in">`digits`</span>:</span>
+<span id="cb81-95"><a href="#cb81-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-98"><a href="#cb81-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-99"><a href="#cb81-99" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>)</span>
+<span id="cb81-100"><a href="#cb81-100" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.1415</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb81-101"><a href="#cb81-101" aria-hidden="true" tabindex="-1"></a><span class="co"># pi happens to be a built-in value in R</span></span>
+<span id="cb81-102"><a href="#cb81-102" aria-hidden="true" tabindex="-1"></a>pi</span>
+<span id="cb81-103"><a href="#cb81-103" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi)</span>
+<span id="cb81-104"><a href="#cb81-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-105"><a href="#cb81-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-106"><a href="#cb81-106" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb81-107"><a href="#cb81-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## When faced with a new function, consult `help`</span></span>
 <span id="cb81-108"><a href="#cb81-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-111"><a href="#cb81-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-112"><a href="#cb81-112" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="dv">1</span>)</span>
-<span id="cb81-113"><a href="#cb81-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-109"><a href="#cb81-109" aria-hidden="true" tabindex="-1"></a>When you are using a function that is new to you, consider looking up the <span class="in">`help()`</span> for that function. You can do this by typing <span class="in">`?`</span> followed by the function's name. For example, to look up the <span class="in">`sample`</span> function, type <span class="in">`?sample`</span>. This will open a help page that describes the function and its arguments. You can also look up the help page for a function by typing <span class="in">`help(sample)`</span>. The help page will show you the names of the function's arguments and their default values, as well as examples of how to use the function.</span>
+<span id="cb81-110"><a href="#cb81-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-111"><a href="#cb81-111" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb81-112"><a href="#cb81-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-113"><a href="#cb81-113" aria-hidden="true" tabindex="-1"></a>You should write out the names of each argument after the first one or two when you call a function with multiple arguments. Why? First, this will help you and others understand your code. It is usually obvious which argument your first input refers to (and sometimes the second input as well). However, you'd need a large memory to remember the third and fourth arguments of every R function. Second, and more importantly, writing out argument names prevents errors.</span>
 <span id="cb81-114"><a href="#cb81-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-115"><a href="#cb81-115" aria-hidden="true" tabindex="-1"></a>As you provide more arguments, it becomes more likely that your order and R's order may not align. As a result, values may get passed to the wrong argument. Argument names prevent this. R will always match a value to its argument name, no matter where it appears in the order of arguments:</span>
+<span id="cb81-115"><a href="#cb81-115" aria-hidden="true" tabindex="-1"></a>If you do not write out the names of your arguments, R will match your values to the arguments in your function by order. For example, in the following code, the first value, <span class="in">`die`</span>, will be matched to the first argument of <span class="in">`sample`</span>, which is named <span class="in">`x`</span>. The next value, <span class="in">`1`</span>, will be matched to the next argument, <span class="in">`size`</span>:</span>
 <span id="cb81-116"><a href="#cb81-116" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-119"><a href="#cb81-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-120"><a href="#cb81-120" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">x =</span> die)</span>
+<span id="cb81-120"><a href="#cb81-120" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="dv">1</span>)</span>
 <span id="cb81-121"><a href="#cb81-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-122"><a href="#cb81-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-123"><a href="#cb81-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Function example: sample with replacement</span></span>
+<span id="cb81-123"><a href="#cb81-123" aria-hidden="true" tabindex="-1"></a>As you provide more arguments, it becomes more likely that your order and R's order may not align. As a result, values may get passed to the wrong argument. Argument names prevent this. R will always match a value to its argument name, no matter where it appears in the order of arguments:</span>
 <span id="cb81-124"><a href="#cb81-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-125"><a href="#cb81-125" aria-hidden="true" tabindex="-1"></a>If you set <span class="in">`size = 2`</span>, you can _almost_ simulate a pair of dice. Before we run that code, think for a minute why that might be the case. <span class="in">`sample`</span> will return two numbers, one for each die:</span>
-<span id="cb81-126"><a href="#cb81-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-129"><a href="#cb81-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-130"><a href="#cb81-130" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>)</span>
-<span id="cb81-131"><a href="#cb81-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-127"><a href="#cb81-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-128"><a href="#cb81-128" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">x =</span> die)</span>
+<span id="cb81-129"><a href="#cb81-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-130"><a href="#cb81-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-131"><a href="#cb81-131" aria-hidden="true" tabindex="-1"></a><span class="fu">## Function example: sample with replacement</span></span>
 <span id="cb81-132"><a href="#cb81-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-133"><a href="#cb81-133" aria-hidden="true" tabindex="-1"></a>I said this "almost" works because this method does something funny. If you use it many times, you'll notice that the second die never has the same value as the first die, which means you'll never roll something like a pair of threes or snake eyes. What is going on?</span>
+<span id="cb81-133"><a href="#cb81-133" aria-hidden="true" tabindex="-1"></a>If you set <span class="in">`size = 2`</span>, you can _almost_ simulate a pair of dice. Before we run that code, think for a minute why that might be the case. <span class="in">`sample`</span> will return two numbers, one for each die:</span>
 <span id="cb81-134"><a href="#cb81-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-135"><a href="#cb81-135" aria-hidden="true" tabindex="-1"></a>By default, <span class="in">`sample`</span> builds a sample _without replacement_. To see what this means, imagine that <span class="in">`sample`</span> places all of the values of <span class="in">`die`</span> in a jar or urn. Then imagine that <span class="in">`sample`</span> reaches into the jar and pulls out values one by one to build its sample. Once a value has been drawn from the jar, <span class="in">`sample`</span> sets it aside. The value doesn't go back into the jar, so it cannot be drawn again. So if <span class="in">`sample`</span> selects a six on its first draw, it will not be able to select a six on the second draw; six is no longer in the jar to be selected. Although <span class="in">`sample`</span> creates its sample electronically, it follows this seemingly physical behavior.</span>
-<span id="cb81-136"><a href="#cb81-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-137"><a href="#cb81-137" aria-hidden="true" tabindex="-1"></a>One side effect of this behavior is that each draw depends on the draws that come before it. In the real world, however, when you roll a pair of dice, each die is independent of the other. If the first die comes up six, it does not prevent the second die from coming up six. In fact, it doesn't influence the second die in any way whatsoever. You can recreate this behavior in <span class="in">`sample`</span> by adding the argument <span class="in">`replace = TRUE`</span>:</span>
-<span id="cb81-138"><a href="#cb81-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-141"><a href="#cb81-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-142"><a href="#cb81-142" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-143"><a href="#cb81-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-137"><a href="#cb81-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-138"><a href="#cb81-138" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>)</span>
+<span id="cb81-139"><a href="#cb81-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-140"><a href="#cb81-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-141"><a href="#cb81-141" aria-hidden="true" tabindex="-1"></a>I said this "almost" works because this method does something funny. If you use it many times, you'll notice that the second die never has the same value as the first die, which means you'll never roll something like a pair of threes or snake eyes. What is going on?</span>
+<span id="cb81-142"><a href="#cb81-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-143"><a href="#cb81-143" aria-hidden="true" tabindex="-1"></a>By default, <span class="in">`sample`</span> builds a sample _without replacement_. To see what this means, imagine that <span class="in">`sample`</span> places all of the values of <span class="in">`die`</span> in a jar or urn. Then imagine that <span class="in">`sample`</span> reaches into the jar and pulls out values one by one to build its sample. Once a value has been drawn from the jar, <span class="in">`sample`</span> sets it aside. The value doesn't go back into the jar, so it cannot be drawn again. So if <span class="in">`sample`</span> selects a six on its first draw, it will not be able to select a six on the second draw; six is no longer in the jar to be selected. Although <span class="in">`sample`</span> creates its sample electronically, it follows this seemingly physical behavior.</span>
 <span id="cb81-144"><a href="#cb81-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-145"><a href="#cb81-145" aria-hidden="true" tabindex="-1"></a>The argument <span class="in">`replace = TRUE`</span> causes <span class="in">`sample`</span> to sample _with replacement_. Our jar example provides a good way to understand the difference between sampling with replacement and without. When `sample` uses replacement, it draws a value from the jar and records the value. Then it puts the value back into the jar. In other words, `sample` _replaces_ each value after each draw. As a result, <span class="in">`sample`</span> may select the same value on the second draw. Each value has a chance of being selected each time. It is as if every draw were the first draw.</span>
+<span id="cb81-145"><a href="#cb81-145" aria-hidden="true" tabindex="-1"></a>One side effect of this behavior is that each draw depends on the draws that come before it. In the real world, however, when you roll a pair of dice, each die is independent of the other. If the first die comes up six, it does not prevent the second die from coming up six. In fact, it doesn't influence the second die in any way whatsoever. You can recreate this behavior in <span class="in">`sample`</span> by adding the argument <span class="in">`replace = TRUE`</span>:</span>
 <span id="cb81-146"><a href="#cb81-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-147"><a href="#cb81-147" aria-hidden="true" tabindex="-1"></a>Sampling with replacement is an easy way to create _independent random samples_. Each value in your sample will be a sample of size one that is independent of the other values. This is the correct way to simulate a pair of dice:</span>
-<span id="cb81-148"><a href="#cb81-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-151"><a href="#cb81-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-152"><a href="#cb81-152" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-153"><a href="#cb81-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-149"><a href="#cb81-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-150"><a href="#cb81-150" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-151"><a href="#cb81-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-152"><a href="#cb81-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-153"><a href="#cb81-153" aria-hidden="true" tabindex="-1"></a>The argument <span class="in">`replace = TRUE`</span> causes <span class="in">`sample`</span> to sample _with replacement_. Our jar example provides a good way to understand the difference between sampling with replacement and without. When `sample` uses replacement, it draws a value from the jar and records the value. Then it puts the value back into the jar. In other words, `sample` _replaces_ each value after each draw. As a result, <span class="in">`sample`</span> may select the same value on the second draw. Each value has a chance of being selected each time. It is as if every draw were the first draw.</span>
 <span id="cb81-154"><a href="#cb81-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-155"><a href="#cb81-155" aria-hidden="true" tabindex="-1"></a>Congratulate yourself; you've just run your first simulation in R! You now have a method for simulating the result of rolling a pair of dice. If you want to add up the dice, you can feed your result straight into the <span class="in">`sum`</span> function:</span>
+<span id="cb81-155"><a href="#cb81-155" aria-hidden="true" tabindex="-1"></a>Sampling with replacement is an easy way to create _independent random samples_. Each value in your sample will be a sample of size one that is independent of the other values. This is the correct way to simulate a pair of dice:</span>
 <span id="cb81-156"><a href="#cb81-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-159"><a href="#cb81-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-160"><a href="#cb81-160" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-161"><a href="#cb81-161" aria-hidden="true" tabindex="-1"></a>dice</span>
-<span id="cb81-162"><a href="#cb81-162" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dice)</span>
-<span id="cb81-163"><a href="#cb81-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-160"><a href="#cb81-160" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-161"><a href="#cb81-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-162"><a href="#cb81-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-163"><a href="#cb81-163" aria-hidden="true" tabindex="-1"></a>Congratulate yourself; you've just run your first simulation in R! You now have a method for simulating the result of rolling a pair of dice. If you want to add up the dice, you can feed your result straight into the <span class="in">`sum`</span> function:</span>
 <span id="cb81-164"><a href="#cb81-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-165"><a href="#cb81-165" aria-hidden="true" tabindex="-1"></a>What would happen if you call <span class="in">`dice`</span> multiple times? Would R generate a new pair of dice values each time? Let's give it a try:</span>
-<span id="cb81-166"><a href="#cb81-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-169"><a href="#cb81-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-170"><a href="#cb81-170" aria-hidden="true" tabindex="-1"></a>dice</span>
-<span id="cb81-171"><a href="#cb81-171" aria-hidden="true" tabindex="-1"></a>dice</span>
-<span id="cb81-172"><a href="#cb81-172" aria-hidden="true" tabindex="-1"></a>dice</span>
-<span id="cb81-173"><a href="#cb81-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-167"><a href="#cb81-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-168"><a href="#cb81-168" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-169"><a href="#cb81-169" aria-hidden="true" tabindex="-1"></a>dice</span>
+<span id="cb81-170"><a href="#cb81-170" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dice)</span>
+<span id="cb81-171"><a href="#cb81-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-172"><a href="#cb81-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-173"><a href="#cb81-173" aria-hidden="true" tabindex="-1"></a>What would happen if you call <span class="in">`dice`</span> multiple times? Would R generate a new pair of dice values each time? Let's give it a try:</span>
 <span id="cb81-174"><a href="#cb81-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-175"><a href="#cb81-175" aria-hidden="true" tabindex="-1"></a>The name <span class="in">`dice`</span> refers to a _vector_ of two numbers. Calling more than once does not change the favlue. Each time you call <span class="in">`dice`</span>, R will show you the result of that one time you called <span class="in">`sample`</span> and saved the output to <span class="in">`dice`</span>. R won't rerun <span class="in">`sample(die, 2, replace = TRUE)`</span> to create a new roll of the dice. Once you save a set of results to an R object, those results do not change.</span>
-<span id="cb81-176"><a href="#cb81-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-177"><a href="#cb81-177" aria-hidden="true" tabindex="-1"></a>However, it _would_ be convenient to have an object that can re-roll the dice whenever you call it. You can make such an object by writing your own R function.</span>
-<span id="cb81-178"><a href="#cb81-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-179"><a href="#cb81-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## Writing Your Own Functions {#write-functions}</span></span>
-<span id="cb81-180"><a href="#cb81-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-181"><a href="#cb81-181" aria-hidden="true" tabindex="-1"></a>To recap, you already have working R code that simulates rolling a pair of dice:</span>
+<span id="cb81-177"><a href="#cb81-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-178"><a href="#cb81-178" aria-hidden="true" tabindex="-1"></a>dice</span>
+<span id="cb81-179"><a href="#cb81-179" aria-hidden="true" tabindex="-1"></a>dice</span>
+<span id="cb81-180"><a href="#cb81-180" aria-hidden="true" tabindex="-1"></a>dice</span>
+<span id="cb81-181"><a href="#cb81-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-182"><a href="#cb81-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-185"><a href="#cb81-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-186"><a href="#cb81-186" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb81-187"><a href="#cb81-187" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-188"><a href="#cb81-188" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dice)</span>
-<span id="cb81-189"><a href="#cb81-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-183"><a href="#cb81-183" aria-hidden="true" tabindex="-1"></a>The name <span class="in">`dice`</span> refers to a _vector_ of two numbers. Calling more than once does not change the favlue. Each time you call <span class="in">`dice`</span>, R will show you the result of that one time you called <span class="in">`sample`</span> and saved the output to <span class="in">`dice`</span>. R won't rerun <span class="in">`sample(die, 2, replace = TRUE)`</span> to create a new roll of the dice. Once you save a set of results to an R object, those results do not change.</span>
+<span id="cb81-184"><a href="#cb81-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-185"><a href="#cb81-185" aria-hidden="true" tabindex="-1"></a>However, it _would_ be convenient to have an object that can re-roll the dice whenever you call it. You can make such an object by writing your own R function.</span>
+<span id="cb81-186"><a href="#cb81-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-187"><a href="#cb81-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Writing Your Own Functions {#write-functions}</span></span>
+<span id="cb81-188"><a href="#cb81-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-189"><a href="#cb81-189" aria-hidden="true" tabindex="-1"></a>To recap, you already have working R code that simulates rolling a pair of dice:</span>
 <span id="cb81-190"><a href="#cb81-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-191"><a href="#cb81-191" aria-hidden="true" tabindex="-1"></a>You can retype this code into the console anytime you want to re-roll your dice. However, this is an awkward way to work with the code. It would be easier to use your code if you wrapped it into its own function, which is exactly what we'll do now. We're going to write a function named <span class="in">`roll`</span> that you can use to roll your virtual dice. When you're finished, the function will work like this: each time you call <span class="in">`roll()`</span>, R will return the sum of rolling two dice:</span>
-<span id="cb81-192"><a href="#cb81-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-193"><a href="#cb81-193" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-194"><a href="#cb81-194" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
-<span id="cb81-195"><a href="#cb81-195" aria-hidden="true" tabindex="-1"></a><span class="do">## 8 </span></span>
-<span id="cb81-196"><a href="#cb81-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-197"><a href="#cb81-197" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
-<span id="cb81-198"><a href="#cb81-198" aria-hidden="true" tabindex="-1"></a><span class="do">## 3</span></span>
-<span id="cb81-199"><a href="#cb81-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-200"><a href="#cb81-200" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
-<span id="cb81-201"><a href="#cb81-201" aria-hidden="true" tabindex="-1"></a><span class="do">## 7</span></span>
-<span id="cb81-202"><a href="#cb81-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-203"><a href="#cb81-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-204"><a href="#cb81-204" aria-hidden="true" tabindex="-1"></a>Functions may seem mysterious or fancy, but they are _just another type of R object_. Instead of containing data, they contain code. This code is stored in a special format that makes it easy to reuse the code in new situations. You can write your own functions by recreating this format.</span>
-<span id="cb81-205"><a href="#cb81-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-206"><a href="#cb81-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Function Constructor</span></span>
+<span id="cb81-193"><a href="#cb81-193" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-194"><a href="#cb81-194" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb81-195"><a href="#cb81-195" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-196"><a href="#cb81-196" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dice)</span>
+<span id="cb81-197"><a href="#cb81-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-198"><a href="#cb81-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-199"><a href="#cb81-199" aria-hidden="true" tabindex="-1"></a>You can retype this code into the console anytime you want to re-roll your dice. However, this is an awkward way to work with the code. It would be easier to use your code if you wrapped it into its own function, which is exactly what we'll do now. We're going to write a function named <span class="in">`roll`</span> that you can use to roll your virtual dice. When you're finished, the function will work like this: each time you call <span class="in">`roll()`</span>, R will return the sum of rolling two dice:</span>
+<span id="cb81-200"><a href="#cb81-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-201"><a href="#cb81-201" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb81-202"><a href="#cb81-202" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
+<span id="cb81-203"><a href="#cb81-203" aria-hidden="true" tabindex="-1"></a><span class="do">## 8 </span></span>
+<span id="cb81-204"><a href="#cb81-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-205"><a href="#cb81-205" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
+<span id="cb81-206"><a href="#cb81-206" aria-hidden="true" tabindex="-1"></a><span class="do">## 3</span></span>
 <span id="cb81-207"><a href="#cb81-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-208"><a href="#cb81-208" aria-hidden="true" tabindex="-1"></a>Every function in R has three basic parts: a name, a body of code, and a set of arguments. To make your own function, you need to replicate these parts and store them in an R object, which you can do with the <span class="in">`function`</span> function. To do this, call <span class="in">`function()`</span> and follow it with a pair of braces, <span class="in">`{}`</span>:</span>
-<span id="cb81-209"><a href="#cb81-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-212"><a href="#cb81-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-213"><a href="#cb81-213" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {}</span>
-<span id="cb81-214"><a href="#cb81-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-208"><a href="#cb81-208" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
+<span id="cb81-209"><a href="#cb81-209" aria-hidden="true" tabindex="-1"></a><span class="do">## 7</span></span>
+<span id="cb81-210"><a href="#cb81-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-211"><a href="#cb81-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-212"><a href="#cb81-212" aria-hidden="true" tabindex="-1"></a>Functions may seem mysterious or fancy, but they are _just another type of R object_. Instead of containing data, they contain code. This code is stored in a special format that makes it easy to reuse the code in new situations. You can write your own functions by recreating this format.</span>
+<span id="cb81-213"><a href="#cb81-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-214"><a href="#cb81-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Function Constructor</span></span>
 <span id="cb81-215"><a href="#cb81-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-216"><a href="#cb81-216" aria-hidden="true" tabindex="-1"></a>This function, as written, doesn't do anything (yet). However, it is a valid function. You can call it by typing its name followed by an open and closed parenthesis:</span>
+<span id="cb81-216"><a href="#cb81-216" aria-hidden="true" tabindex="-1"></a>Every function in R has three basic parts: a name, a body of code, and a set of arguments. To make your own function, you need to replicate these parts and store them in an R object, which you can do with the <span class="in">`function`</span> function. To do this, call <span class="in">`function()`</span> and follow it with a pair of braces, <span class="in">`{}`</span>:</span>
 <span id="cb81-217"><a href="#cb81-217" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-220"><a href="#cb81-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-221"><a href="#cb81-221" aria-hidden="true" tabindex="-1"></a><span class="fu">my_function</span>()</span>
+<span id="cb81-221"><a href="#cb81-221" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {}</span>
 <span id="cb81-222"><a href="#cb81-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-223"><a href="#cb81-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-224"><a href="#cb81-224" aria-hidden="true" tabindex="-1"></a><span class="in">`function`</span> will build a function out of whatever R code you place between the braces. For example, you can turn your dice code into a function by calling:</span>
+<span id="cb81-224"><a href="#cb81-224" aria-hidden="true" tabindex="-1"></a>This function, as written, doesn't do anything (yet). However, it is a valid function. You can call it by typing its name followed by an open and closed parenthesis:</span>
 <span id="cb81-225"><a href="#cb81-225" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-228"><a href="#cb81-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-229"><a href="#cb81-229" aria-hidden="true" tabindex="-1"></a>roll <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb81-230"><a href="#cb81-230" aria-hidden="true" tabindex="-1"></a>    die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb81-231"><a href="#cb81-231" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-232"><a href="#cb81-232" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
-<span id="cb81-233"><a href="#cb81-233" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb81-234"><a href="#cb81-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-235"><a href="#cb81-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-236"><a href="#cb81-236" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb81-237"><a href="#cb81-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## Indentation and readability</span></span>
-<span id="cb81-238"><a href="#cb81-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-239"><a href="#cb81-239" aria-hidden="true" tabindex="-1"></a>Notice each line of code between the braces is indented. This makes the code easier to read but has no impact on how the code runs. R ignores spaces and line breaks and executes one complete expression at a time. Note that in other languages like python, spacing is extremely important and part of the language.</span>
-<span id="cb81-240"><a href="#cb81-240" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb81-241"><a href="#cb81-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-242"><a href="#cb81-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-243"><a href="#cb81-243" aria-hidden="true" tabindex="-1"></a>Just hit the Enter key between each line after the first brace, <span class="in">`{`</span>. R will wait for you to type the last brace, <span class="in">`}`</span>, before it responds.</span>
-<span id="cb81-244"><a href="#cb81-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-245"><a href="#cb81-245" aria-hidden="true" tabindex="-1"></a>Don't forget to save the output of <span class="in">`function`</span> to an R object. This object will become your new function. To use it, write the object's name followed by an open and closed parenthesis:</span>
+<span id="cb81-229"><a href="#cb81-229" aria-hidden="true" tabindex="-1"></a><span class="fu">my_function</span>()</span>
+<span id="cb81-230"><a href="#cb81-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-231"><a href="#cb81-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-232"><a href="#cb81-232" aria-hidden="true" tabindex="-1"></a><span class="in">`function`</span> will build a function out of whatever R code you place between the braces. For example, you can turn your dice code into a function by calling:</span>
+<span id="cb81-233"><a href="#cb81-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-236"><a href="#cb81-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-237"><a href="#cb81-237" aria-hidden="true" tabindex="-1"></a>roll <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb81-238"><a href="#cb81-238" aria-hidden="true" tabindex="-1"></a>    die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb81-239"><a href="#cb81-239" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-240"><a href="#cb81-240" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
+<span id="cb81-241"><a href="#cb81-241" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb81-242"><a href="#cb81-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-243"><a href="#cb81-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-244"><a href="#cb81-244" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb81-245"><a href="#cb81-245" aria-hidden="true" tabindex="-1"></a><span class="fu">## Indentation and readability</span></span>
 <span id="cb81-246"><a href="#cb81-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-249"><a href="#cb81-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-250"><a href="#cb81-250" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
-<span id="cb81-251"><a href="#cb81-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-247"><a href="#cb81-247" aria-hidden="true" tabindex="-1"></a>Notice each line of code between the braces is indented. This makes the code easier to read but has no impact on how the code runs. R ignores spaces and line breaks and executes one complete expression at a time. Note that in other languages like python, spacing is extremely important and part of the language.</span>
+<span id="cb81-248"><a href="#cb81-248" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb81-249"><a href="#cb81-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-250"><a href="#cb81-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-251"><a href="#cb81-251" aria-hidden="true" tabindex="-1"></a>Just hit the Enter key between each line after the first brace, <span class="in">`{`</span>. R will wait for you to type the last brace, <span class="in">`}`</span>, before it responds.</span>
 <span id="cb81-252"><a href="#cb81-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-253"><a href="#cb81-253" aria-hidden="true" tabindex="-1"></a>You can think of the parentheses as the "trigger" that causes R to run the function. If you type in a function's name _without_ the parentheses, R will show you the code that is stored inside the function. If you type in the name _with_ the parentheses, R will run that code:</span>
+<span id="cb81-253"><a href="#cb81-253" aria-hidden="true" tabindex="-1"></a>Don't forget to save the output of <span class="in">`function`</span> to an R object. This object will become your new function. To use it, write the object's name followed by an open and closed parenthesis:</span>
 <span id="cb81-254"><a href="#cb81-254" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-257"><a href="#cb81-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-258"><a href="#cb81-258" aria-hidden="true" tabindex="-1"></a>roll</span>
-<span id="cb81-259"><a href="#cb81-259" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
-<span id="cb81-260"><a href="#cb81-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-261"><a href="#cb81-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-262"><a href="#cb81-262" aria-hidden="true" tabindex="-1"></a>The code that you place inside your function is known as the _body_ of the function. When you run a function in R, R will execute all of the code in the body and then return the result of the last line of code. If the last line of code doesn't return a value, neither will your function, so you want to ensure that your final line of code returns a value. One way to check this is to think about what would happen if you ran the body of code line by line in the command line. Would R display a result after the last line, or would it not?</span>
-<span id="cb81-263"><a href="#cb81-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-264"><a href="#cb81-264" aria-hidden="true" tabindex="-1"></a>Here's some code that would display a result:</span>
-<span id="cb81-265"><a href="#cb81-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-266"><a href="#cb81-266" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-267"><a href="#cb81-267" aria-hidden="true" tabindex="-1"></a>dice</span>
-<span id="cb81-268"><a href="#cb81-268" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb81-269"><a href="#cb81-269" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
-<span id="cb81-270"><a href="#cb81-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-258"><a href="#cb81-258" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
+<span id="cb81-259"><a href="#cb81-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-260"><a href="#cb81-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-261"><a href="#cb81-261" aria-hidden="true" tabindex="-1"></a>You can think of the parentheses as the "trigger" that causes R to run the function. If you type in a function's name _without_ the parentheses, R will show you the code that is stored inside the function. If you type in the name _with_ the parentheses, R will run that code:</span>
+<span id="cb81-262"><a href="#cb81-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-265"><a href="#cb81-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-266"><a href="#cb81-266" aria-hidden="true" tabindex="-1"></a>roll</span>
+<span id="cb81-267"><a href="#cb81-267" aria-hidden="true" tabindex="-1"></a><span class="fu">roll</span>()</span>
+<span id="cb81-268"><a href="#cb81-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-269"><a href="#cb81-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-270"><a href="#cb81-270" aria-hidden="true" tabindex="-1"></a>The code that you place inside your function is known as the _body_ of the function. When you run a function in R, R will execute all of the code in the body and then return the result of the last line of code. If the last line of code doesn't return a value, neither will your function, so you want to ensure that your final line of code returns a value. One way to check this is to think about what would happen if you ran the body of code line by line in the command line. Would R display a result after the last line, or would it not?</span>
 <span id="cb81-271"><a href="#cb81-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-272"><a href="#cb81-272" aria-hidden="true" tabindex="-1"></a>And here's some code that would not:</span>
+<span id="cb81-272"><a href="#cb81-272" aria-hidden="true" tabindex="-1"></a>Here's some code that would display a result:</span>
 <span id="cb81-273"><a href="#cb81-273" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb81-274"><a href="#cb81-274" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-275"><a href="#cb81-275" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-276"><a href="#cb81-276" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb81-277"><a href="#cb81-277" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
+<span id="cb81-275"><a href="#cb81-275" aria-hidden="true" tabindex="-1"></a>dice</span>
+<span id="cb81-276"><a href="#cb81-276" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb81-277"><a href="#cb81-277" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
 <span id="cb81-278"><a href="#cb81-278" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-279"><a href="#cb81-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-280"><a href="#cb81-280" aria-hidden="true" tabindex="-1"></a>Again, this is just showing the distinction between expressions and assignments. </span>
+<span id="cb81-280"><a href="#cb81-280" aria-hidden="true" tabindex="-1"></a>And here's some code that would not:</span>
 <span id="cb81-281"><a href="#cb81-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-282"><a href="#cb81-282" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arguments</span></span>
-<span id="cb81-283"><a href="#cb81-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-284"><a href="#cb81-284" aria-hidden="true" tabindex="-1"></a>What if we removed one line of code from our function and changed the name <span class="in">`die`</span> to <span class="in">`bones`</span> (just a name--don't think of it as important), like this?</span>
-<span id="cb81-285"><a href="#cb81-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-288"><a href="#cb81-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-289"><a href="#cb81-289" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb81-290"><a href="#cb81-290" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-291"><a href="#cb81-291" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
-<span id="cb81-292"><a href="#cb81-292" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb81-293"><a href="#cb81-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-294"><a href="#cb81-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-295"><a href="#cb81-295" aria-hidden="true" tabindex="-1"></a>Now I'll get an error when I run the function. The function **needs** the object <span class="in">`bones`</span> to do its job, but there is no object named <span class="in">`bones`</span> to be found (you can check by typing <span class="in">`ls()`</span> which will show you the names in the environment, or memory).</span>
-<span id="cb81-296"><a href="#cb81-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-297"><a href="#cb81-297" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-298"><a href="#cb81-298" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
-<span id="cb81-299"><a href="#cb81-299" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in sample(bones, size = 2, replace = TRUE) : </span></span>
-<span id="cb81-300"><a href="#cb81-300" aria-hidden="true" tabindex="-1"></a><span class="do">##   object 'bones' not found</span></span>
+<span id="cb81-282"><a href="#cb81-282" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb81-283"><a href="#cb81-283" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-284"><a href="#cb81-284" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb81-285"><a href="#cb81-285" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
+<span id="cb81-286"><a href="#cb81-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-287"><a href="#cb81-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-288"><a href="#cb81-288" aria-hidden="true" tabindex="-1"></a>Again, this is just showing the distinction between expressions and assignments. </span>
+<span id="cb81-289"><a href="#cb81-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-290"><a href="#cb81-290" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arguments</span></span>
+<span id="cb81-291"><a href="#cb81-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-292"><a href="#cb81-292" aria-hidden="true" tabindex="-1"></a>What if we removed one line of code from our function and changed the name <span class="in">`die`</span> to <span class="in">`bones`</span> (just a name--don't think of it as important), like this?</span>
+<span id="cb81-293"><a href="#cb81-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-296"><a href="#cb81-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-297"><a href="#cb81-297" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb81-298"><a href="#cb81-298" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-299"><a href="#cb81-299" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
+<span id="cb81-300"><a href="#cb81-300" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb81-301"><a href="#cb81-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-302"><a href="#cb81-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-303"><a href="#cb81-303" aria-hidden="true" tabindex="-1"></a>You can supply <span class="in">`bones`</span> when you call <span class="in">`roll2`</span> if you make <span class="in">`bones`</span> an argument of the function. To do this, put the name <span class="in">`bones`</span> in the parentheses that follow <span class="in">`function`</span> when you define <span class="in">`roll2`</span>:</span>
+<span id="cb81-303"><a href="#cb81-303" aria-hidden="true" tabindex="-1"></a>Now I'll get an error when I run the function. The function **needs** the object <span class="in">`bones`</span> to do its job, but there is no object named <span class="in">`bones`</span> to be found (you can check by typing <span class="in">`ls()`</span> which will show you the names in the environment, or memory).</span>
 <span id="cb81-304"><a href="#cb81-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-307"><a href="#cb81-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-308"><a href="#cb81-308" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>(bones) {</span>
-<span id="cb81-309"><a href="#cb81-309" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-310"><a href="#cb81-310" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
-<span id="cb81-311"><a href="#cb81-311" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb81-312"><a href="#cb81-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-313"><a href="#cb81-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-314"><a href="#cb81-314" aria-hidden="true" tabindex="-1"></a>Now <span class="in">`roll2`</span> will work as long as you supply <span class="in">`bones`</span> when you call the function. You can take advantage of this to roll different types of dice each time you call <span class="in">`roll2`</span>. </span>
-<span id="cb81-315"><a href="#cb81-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-316"><a href="#cb81-316" aria-hidden="true" tabindex="-1"></a>Remember, we're rolling pairs of dice:</span>
-<span id="cb81-317"><a href="#cb81-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-320"><a href="#cb81-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-321"><a href="#cb81-321" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
-<span id="cb81-322"><a href="#cb81-322" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb81-323"><a href="#cb81-323" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
-<span id="cb81-324"><a href="#cb81-324" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-305"><a href="#cb81-305" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb81-306"><a href="#cb81-306" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
+<span id="cb81-307"><a href="#cb81-307" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in sample(bones, size = 2, replace = TRUE) : </span></span>
+<span id="cb81-308"><a href="#cb81-308" aria-hidden="true" tabindex="-1"></a><span class="do">##   object 'bones' not found</span></span>
+<span id="cb81-309"><a href="#cb81-309" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-310"><a href="#cb81-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-311"><a href="#cb81-311" aria-hidden="true" tabindex="-1"></a>You can supply <span class="in">`bones`</span> when you call <span class="in">`roll2`</span> if you make <span class="in">`bones`</span> an argument of the function. To do this, put the name <span class="in">`bones`</span> in the parentheses that follow <span class="in">`function`</span> when you define <span class="in">`roll2`</span>:</span>
+<span id="cb81-312"><a href="#cb81-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-315"><a href="#cb81-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-316"><a href="#cb81-316" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>(bones) {</span>
+<span id="cb81-317"><a href="#cb81-317" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-318"><a href="#cb81-318" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
+<span id="cb81-319"><a href="#cb81-319" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb81-320"><a href="#cb81-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-321"><a href="#cb81-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-322"><a href="#cb81-322" aria-hidden="true" tabindex="-1"></a>Now <span class="in">`roll2`</span> will work as long as you supply <span class="in">`bones`</span> when you call the function. You can take advantage of this to roll different types of dice each time you call <span class="in">`roll2`</span>. </span>
+<span id="cb81-323"><a href="#cb81-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-324"><a href="#cb81-324" aria-hidden="true" tabindex="-1"></a>Remember, we're rolling pairs of dice:</span>
 <span id="cb81-325"><a href="#cb81-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-326"><a href="#cb81-326" aria-hidden="true" tabindex="-1"></a>Notice that <span class="in">`roll2`</span> will still give an error if you do not supply a value for the <span class="in">`bones`</span> argument when you call <span class="in">`roll2`</span>:</span>
-<span id="cb81-327"><a href="#cb81-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-328"><a href="#cb81-328" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb81-329"><a href="#cb81-329" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
-<span id="cb81-330"><a href="#cb81-330" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in sample(bones, size = 2, replace = TRUE) : </span></span>
-<span id="cb81-331"><a href="#cb81-331" aria-hidden="true" tabindex="-1"></a><span class="do">##   argument "bones" is missing, with no default</span></span>
+<span id="cb81-328"><a href="#cb81-328" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-329"><a href="#cb81-329" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb81-330"><a href="#cb81-330" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb81-331"><a href="#cb81-331" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
 <span id="cb81-332"><a href="#cb81-332" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-333"><a href="#cb81-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-334"><a href="#cb81-334" aria-hidden="true" tabindex="-1"></a>You can prevent this error by giving the <span class="in">`bones`</span> argument a default value. To do this, set <span class="in">`bones`</span> equal to a value when you define <span class="in">`roll2`</span>:</span>
+<span id="cb81-334"><a href="#cb81-334" aria-hidden="true" tabindex="-1"></a>Notice that <span class="in">`roll2`</span> will still give an error if you do not supply a value for the <span class="in">`bones`</span> argument when you call <span class="in">`roll2`</span>:</span>
 <span id="cb81-335"><a href="#cb81-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-338"><a href="#cb81-338" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-339"><a href="#cb81-339" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) {</span>
-<span id="cb81-340"><a href="#cb81-340" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb81-341"><a href="#cb81-341" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
-<span id="cb81-342"><a href="#cb81-342" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb81-343"><a href="#cb81-343" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb81-344"><a href="#cb81-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-345"><a href="#cb81-345" aria-hidden="true" tabindex="-1"></a>Now you can supply a new value for <span class="in">`bones`</span> if you like, and <span class="in">`roll2`</span> will use the default if you do not:</span>
-<span id="cb81-346"><a href="#cb81-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-349"><a href="#cb81-349" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb81-350"><a href="#cb81-350" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
+<span id="cb81-336"><a href="#cb81-336" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb81-337"><a href="#cb81-337" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
+<span id="cb81-338"><a href="#cb81-338" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in sample(bones, size = 2, replace = TRUE) : </span></span>
+<span id="cb81-339"><a href="#cb81-339" aria-hidden="true" tabindex="-1"></a><span class="do">##   argument "bones" is missing, with no default</span></span>
+<span id="cb81-340"><a href="#cb81-340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-341"><a href="#cb81-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-342"><a href="#cb81-342" aria-hidden="true" tabindex="-1"></a>You can prevent this error by giving the <span class="in">`bones`</span> argument a default value. To do this, set <span class="in">`bones`</span> equal to a value when you define <span class="in">`roll2`</span>:</span>
+<span id="cb81-343"><a href="#cb81-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-346"><a href="#cb81-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-347"><a href="#cb81-347" aria-hidden="true" tabindex="-1"></a>roll2 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">bones =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) {</span>
+<span id="cb81-348"><a href="#cb81-348" aria-hidden="true" tabindex="-1"></a>    dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(bones, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-349"><a href="#cb81-349" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(dice)</span>
+<span id="cb81-350"><a href="#cb81-350" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb81-351"><a href="#cb81-351" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb81-352"><a href="#cb81-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-353"><a href="#cb81-353" aria-hidden="true" tabindex="-1"></a>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <span class="in">`function`</span>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument's default value (if you defined one).</span>
+<span id="cb81-353"><a href="#cb81-353" aria-hidden="true" tabindex="-1"></a>Now you can supply a new value for <span class="in">`bones`</span> if you like, and <span class="in">`roll2`</span> will use the default if you do not:</span>
 <span id="cb81-354"><a href="#cb81-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-355"><a href="#cb81-355" aria-hidden="true" tabindex="-1"></a>To summarize, <span class="in">`function`</span> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <span class="in">`function`</span>. You create arguments for your function to use by supplying their names in the parentheses that follow <span class="in">`function`</span>. Finally, you give your function a name by saving its output to an R object, as shown in @fig-functions.</span>
-<span id="cb81-356"><a href="#cb81-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-357"><a href="#cb81-357" aria-hidden="true" tabindex="-1"></a>Once you've created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft's menu bar? Or a new slide animation and add it to Powerpoint's options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like.</span>
-<span id="cb81-358"><a href="#cb81-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-359"><a href="#cb81-359" aria-hidden="true" tabindex="-1"></a><span class="al">!["Every function in R has the same parts, and you can use `function` to create these parts. Assign the result to a name, so you can call the function later."](images/hopr_0106.png)</span>{#fig-functions}</span>
+<span id="cb81-357"><a href="#cb81-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb81-358"><a href="#cb81-358" aria-hidden="true" tabindex="-1"></a><span class="fu">roll2</span>()</span>
+<span id="cb81-359"><a href="#cb81-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb81-360"><a href="#cb81-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-361"><a href="#cb81-361" aria-hidden="true" tabindex="-1"></a>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <span class="in">`function`</span>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument's default value (if you defined one).</span>
+<span id="cb81-362"><a href="#cb81-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-363"><a href="#cb81-363" aria-hidden="true" tabindex="-1"></a>To summarize, <span class="in">`function`</span> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <span class="in">`function`</span>. You create arguments for your function to use by supplying their names in the parentheses that follow <span class="in">`function`</span>. Finally, you give your function a name by saving its output to an R object, as shown in @fig-functions.</span>
+<span id="cb81-364"><a href="#cb81-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-365"><a href="#cb81-365" aria-hidden="true" tabindex="-1"></a>Once you've created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft's menu bar? Or a new slide animation and add it to Powerpoint's options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like.</span>
+<span id="cb81-366"><a href="#cb81-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-367"><a href="#cb81-367" aria-hidden="true" tabindex="-1"></a><span class="al">!["Every function in R has the same parts, and you can use `function` to create these parts. Assign the result to a name, so you can call the function later."](images/hopr_0106.png)</span>{#fig-functions}</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

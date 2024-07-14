@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.54">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>8&nbsp; Microbiome analysis – Introduction to R for BigCare 2024</title>
+<title>11&nbsp; Microbiome analysis – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./100_microbiome.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./310_microbiome.html">Applications</a></li><li class="breadcrumb-item"><a href="./310_microbiome.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,56 +137,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010_rstudio_and_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020_r_basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Up and Running with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The R language</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030_r_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050_r_scripts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R data structures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_structures_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+  <a href="./vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exploring data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040_stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100_microbiome.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
+  <a href="./310_microbiome.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></span></a>
   </div>
+</li>
+      </ul>
 </li>
     </ul>
 </div>
@@ -196,16 +258,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link active" data-scroll-target="#loading-the-data"><span class="header-section-number">8.1</span> Loading the data</a></li>
-  <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data"><span class="header-section-number">8.2</span> Exploring the data</a></li>
-  <li><a href="#community-indices" id="toc-community-indices" class="nav-link" data-scroll-target="#community-indices"><span class="header-section-number">8.3</span> Community indices</a></li>
-  <li><a href="#other-indices" id="toc-other-indices" class="nav-link" data-scroll-target="#other-indices"><span class="header-section-number">8.4</span> Other indices</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/100_microbiome.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link active" data-scroll-target="#loading-the-data"><span class="header-section-number">11.1</span> Loading the data</a></li>
+  <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data"><span class="header-section-number">11.2</span> Exploring the data</a></li>
+  <li><a href="#community-indices" id="toc-community-indices" class="nav-link" data-scroll-target="#community-indices"><span class="header-section-number">11.3</span> Community indices</a></li>
+  <li><a href="#other-indices" id="toc-other-indices" class="nav-link" data-scroll-target="#other-indices"><span class="header-section-number">11.4</span> Other indices</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/310_microbiome.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./310_microbiome.html">Applications</a></li><li class="breadcrumb-item"><a href="./310_microbiome.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Microbiome analysis</span>
+<span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Microbiome analysis</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -227,8 +289,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Calculate and visualize alpha diversity indices</li>
 <li>Calculate and visualize beta diversity indices</li>
 </ol>
-<section id="loading-the-data" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="loading-the-data">
-<span class="header-section-number">8.1</span> Loading the data</h2>
+<section id="loading-the-data" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="loading-the-data">
+<span class="header-section-number">11.1</span> Loading the data</h2>
 <p>Before we can start analyzing the microbiome data, we need to load the data into R. The data is typically stored in a tabular format after quantification of microbial abundances in different samples. In this case, we will use a dataset built into the <code>mia</code> package. The <code>mia</code> package provides a collection of microbiome datasets for educational purposes and includes functions for processing and analyzing microbiome data.</p>
 <p>To load the data, we first need to install and load the <code>mia</code> package. If you haven’t installed the <code>mia</code> package yet, you can do so using the following command:</p>
 <div class="cell">
@@ -288,8 +350,8 @@ Tip
 <p>If you are working with your own microbiome data, you will often need to load it into R using functions like <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> or <code><a href="https://rdrr.io/r/utils/read.table.html">read.table()</a></code> to read tabular data files. Make sure your data is properly formatted and cleaned before loading it into R for analysis.</p>
 </div>
 </div>
-</section><section id="exploring-the-data" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="exploring-the-data">
-<span class="header-section-number">8.2</span> Exploring the data</h2>
+</section><section id="exploring-the-data" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="exploring-the-data">
+<span class="header-section-number">11.2</span> Exploring the data</h2>
 <p>Once the data is loaded into R, we can start exploring the data to understand its structure and contents. The <code>tse</code> object is a <code>TreeSummarizedExperiment</code> object, which is a specialized data structure for storing microbiome data in R. We can use various functions to explore the data stored in the <code>tse</code> object.</p>
 <p>To get an overview of the data, we can simply type the name of the object in the R console:</p>
 <div class="cell">
@@ -415,8 +477,8 @@ SID532915          NA            51        80       132       5.1</code></pre>
 </div>
 </div>
 <p>As you can see, there is a lot of information stored in the <code>colData</code> slot, including sample IDs, study conditions, and other metadata associated with the samples. This information is essential for understanding the context of the microbiome data and for performing downstream analyses.</p>
-</section><section id="community-indices" class="level2 page-columns page-full" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="community-indices">
-<span class="header-section-number">8.3</span> Community indices</h2>
+</section><section id="community-indices" class="level2 page-columns page-full" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="community-indices">
+<span class="header-section-number">11.3</span> Community indices</h2>
 <p>In the field of microbiome ecology several indices to describe samples and community of samples are available. In this vignette we just want to give a very brief introduction.</p>
 <p>Functions for calculating alpha and beta diversity indices are available. Using <code>addAlpha</code> multiple diversity indices are calculated by default and results are stored automatically in <code>colData</code>. Selected indices can be calculated individually by setting <code>index = "shannon"</code> for example.</p>
 <div class="cell">
@@ -553,7 +615,7 @@ Classes and subclasses in R
 <p>In practice, this means that you can use <code>DataFrame</code> objects in the same way you would use <code>data.frame</code> objects, but you may also have access to additional functionality specific to the <code>DataFrame</code> class.</p>
 </div>
 </div>
-<p>Remember that the alpha diversity indices are calculated for each sample. We can visualize the distribution of the Shannon index across different sample groups using a histogram or a density plot as shown in <a href="#fig-alpha-diversity" class="quarto-xref">Figure&nbsp;<span>8.1</span></a></p>
+<p>Remember that the alpha diversity indices are calculated for each sample. We can visualize the distribution of the Shannon index across different sample groups using a histogram or a density plot as shown in <a href="#fig-alpha-diversity" class="quarto-xref">Figure&nbsp;<span>11.1</span></a></p>
 <div class="cell page-columns page-full">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the ggplot2 package for visualization</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
@@ -562,25 +624,25 @@ Classes and subclasses in R
 <div class="cell-output-display page-columns page-full">
 <div id="fig-alpha-diversity" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full"><div aria-describedby="fig-alpha-diversity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="100_microbiome_files/figure-html/fig-alpha-diversity-1.png" class="img-fluid figure-img" width="672">
+<img src="310_microbiome_files/figure-html/fig-alpha-diversity-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-alpha-diversity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: Alpha diversity (Shannon index) distribution across all samples
+Figure&nbsp;11.1: Alpha diversity (Shannon index) distribution across all samples
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>We can also compare the alpha diversity indices between different sample groups. For example, we can compare the Shannon index between samples from different diagnosis groups (e.g., colorectal cancer, colon adenoma, and healthy controls) as shown in <a href="#fig-alpha-diversity-by-diagnosis" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
+<p>We can also compare the alpha diversity indices between different sample groups. For example, we can compare the Shannon index between samples from different diagnosis groups (e.g., colorectal cancer, colon adenoma, and healthy controls) as shown in <a href="#fig-alpha-diversity-by-diagnosis" class="quarto-xref">Figure&nbsp;<span>11.2</span></a>.</p>
 <div class="cell page-columns page-full">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">shannon</span>, color <span class="op">=</span> <span class="va">study_condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display page-columns page-full">
 <div id="fig-alpha-diversity-by-diagnosis" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full"><div aria-describedby="fig-alpha-diversity-by-diagnosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="100_microbiome_files/figure-html/fig-alpha-diversity-by-diagnosis-1.png" class="img-fluid figure-img" width="672">
+<img src="310_microbiome_files/figure-html/fig-alpha-diversity-by-diagnosis-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-alpha-diversity-by-diagnosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.2: Alpha diversity (Shannon index) by study condition
+Figure&nbsp;11.2: Alpha diversity (Shannon index) by study condition
 </figcaption></figure>
 </div>
 </div>
@@ -604,8 +666,8 @@ Figure&nbsp;8.2: Alpha diversity (Shannon index) by study condition
 </div>
 <p>JSD and UniFrac are implemented in <code>mia</code> as well. <code>calculateJSD</code> can be used as a drop-in replacement in the example above (omit the <code>method</code> argument as well) to calculate the JSD. For calculating the UniFrac distance via <code>calculateUniFrac</code> either a <code>TreeSummarizedExperiment</code> must be used or a tree supplied via the <code>tree</code> argument. For more details see <code><a href="https://rdrr.io/pkg/mia/man/calculateJSD.html">?calculateJSD</a></code>, <code><a href="https://rdrr.io/pkg/mia/man/calculateUnifrac.html">?calculateUnifrac</a></code> or <code><a href="https://rdrr.io/pkg/mia/man/runDPCoA.html">?getDPCoA</a></code>.</p>
 <p><code>runMDS</code> performs the decomposition. Alternatively <code>addNMDS</code> can also be used.</p>
-</section><section id="other-indices" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="other-indices">
-<span class="header-section-number">8.4</span> Other indices</h2>
+</section><section id="other-indices" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="other-indices">
+<span class="header-section-number">11.4</span> Other indices</h2>
 <p><code>estimateDominance</code> and <code>estimateEvenness</code> implement other sample-wise indices. The function behave equivalently to <code>estimateDiversity</code>. For more information see the corresponding man pages.</p>
 
 
@@ -1083,7 +1145,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./ggplot.html" class="pagination-link" aria-label="Plotting with ggplot2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1258,5 +1320,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/100_microbiome.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/310_microbiome.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

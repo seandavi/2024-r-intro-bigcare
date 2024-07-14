@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Chatbots as Learning Tools – Introduction to R for BigCare 2024</title>
+<title>R data structures – Introduction to R for BigCare 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data_structures_overview.html" rel="next">
-<link href="./050_r_scripts.html" rel="prev">
+<link href="./vectors.html" rel="next">
+<link href="./chatbots.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./chatbots.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_structures_overview.html">R data structures</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chatbots.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
   </div>
 </li>
@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link">
+            <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">R data structures</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -276,16 +276,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#features-of-chatbots" id="toc-features-of-chatbots" class="nav-link active" data-scroll-target="#features-of-chatbots">Features of Chatbots</a></li>
+  <li><a href="#chapter-overview" id="toc-chapter-overview" class="nav-link active" data-scroll-target="#chapter-overview">Chapter overview</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/chatbots.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/data_structures_overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./chatbots.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">R data structures</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -302,31 +302,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><a href="https://chatgpt.com/">ChatGPT</a>, developed by OpenAI, and <a href="https://claude.ai">Claude</a>, developed by Anthropic, are advanced language models that leverage deep learning techniques to understand and generate human-like text. At their core, these chatbots operate using a variant of the <a href="https://www.datacamp.com/tutorial/how-transformers-work">Transformer architecture</a>, which enable them to process and generate text based on the patterns and structures they learn from vast amounts of training data. These models<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> excels in natural language understanding and generation tasks, making them incredibly versatile tools for a wide range of applications beyond simple chat interactions.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Foundation models are a recent development in AI. These models are developed from algorithms designed to optimize for generality and versatility of output. They are based on large-scale neural networks that are often trained on a broad range of data sources and large amounts of data to accomplish a wide range of downstream tasks, including some for which they were not specifically developed and trained.</p></div></div><p>In the context of programming and coding, these chatbots serve as valuable assistants by providing explanations, examples, and guidance related to programming languages like R. Users can interact with a chatbot by posing questions or requesting code snippets, which they generate based on their understanding of the input and their extensive training data. For instance, users can inquire about specific syntax rules, algorithm implementations, or even debugging tips, and chatbots can respond with clear explanations and relevant examples. This capability makes them particularly useful for learners and developers seeking quick insights or clarification on complex programming concepts.</p>
-<p>Moreover, chatbots can facilitate learning and problem-solving by offering personalized responses tailored to the user’s queries. Their ability to generate coherent and contextually relevant text allows them to simulate a dialogue where they guides users through coding challenges or help them understand intricate programming concepts more intuitively. This makes chatbots not only a powerful tool for acquiring programming knowledge but also a supportive companion in the journey of mastering programming languages like R.</p>
-<p>In this tutorial, we will explore how chatbots like ChatGPT and Claude can be leveraged as learning tools for programming in R. We will discuss their features, capabilities, and potential applications in the context of programming education. By the end of this tutorial, you will have a better understanding of how chatbots can enhance the learning experience and support your programming endeavors.</p>
-<section id="features-of-chatbots" class="level1 unnumbered">
-<h1 class="unnumbered">Features of Chatbots</h1>
-<p>Chatbots like ChatGPT and Claude offer a range of features that make them valuable learning tools for programming in R. Some of the key features include:</p>
-<ol type="1">
-<li><strong>Natural Language Understanding</strong>: Chatbots can interpret and respond to user queries in natural language, making interactions more intuitive and user-friendly.</li>
-<li><strong>Code Generation</strong>: Chatbots can generate code snippets, examples, and explanations based on the user’s input, helping users understand and implement programming concepts.</li>
-<li><strong>Personalized Responses</strong>: Chatbots can provide personalized responses tailored to the user’s queries, enhancing the learning experience and engagement.</li>
-<li><strong>Interactive Learning</strong>: Chatbots can engage users in interactive learning experiences, guiding them through coding challenges and providing real-time feedback.</li>
-<li><strong>24/7 Availability</strong>: Chatbots are available round the clock, allowing users to seek assistance and guidance at any time, making them convenient learning companions.</li>
-<li><strong>Extensive Knowledge Base</strong>: Chatbots have access to vast amounts of training data and information, enabling them to provide accurate and up-to-date responses to user queries.</li>
-<li><strong>Scalability</strong>: Chatbots can scale to accommodate a large number of users simultaneously, making them suitable for both individual learners and educational institutions.</li>
-<li><strong>Feedback and Evaluation</strong>: Chatbots can provide feedback and evaluation on user-generated code, helping users identify and correct errors in their programming assignments.</li>
-<li><strong>Multimodal Capabilities</strong>: Chatbots can support multimodal interactions, such as text, voice, and visual inputs, enhancing the user experience and accessibility.</li>
-<li><strong>Continuous Learning</strong>: Chatbots can continuously learn and improve their responses based on user interactions and feedback, ensuring that they stay relevant and up-to-date.</li>
-</ol>
+<p>Welcome to the section on R data structures! As you begin your journey in learning R, it is essential to understand the fundamental building blocks of this powerful programming language. R offers a variety of data structures to store and manipulate data, each with its unique properties and capabilities. In this section, we will cover the core data structures in R, including:</p>
+<ul>
+<li>Vectors</li>
+<li>Matrices</li>
+<li>Lists</li>
+<li>Data.frames</li>
+</ul>
+<p>By the end of this section, you will have a solid understanding of these data structures, and you will be able to choose and utilize the appropriate data structure for your specific data manipulation and analysis tasks.</p>
+<p>In each chapter, we will delve into the properties and usage of each data structure, starting with their definitions and moving on to their practical applications. We will provide examples, exercises, and active learning approaches to help you better understand and apply these concepts in your work.</p>
+<div id="fig-data-structures" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-data-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/hopr_0306.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-data-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A pictorial representation of R’s most common data structures are vectors, matrices, arrays, lists, and dataframes. Figure from <a href="https://rstudio-education.github.io/hopr/">Hands-on Programming with R</a>.
+</figcaption>
+</figure>
+</div>
+<section id="chapter-overview" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-overview">Chapter overview</h2>
+<ul>
+<li>Vectors : In this chapter, we will introduce you to the simplest data structure in R, the vector. We will cover how to create, access, and manipulate vectors, as well as discuss their unique properties and limitations.</li>
+<li><dl>
+<dt>Matrices</dt>
+<dd>
+Next, we will explore matrices, which are two-dimensional data structures that extend vectors. You will learn how to create, access, and manipulate matrices, and understand their usefulness in mathematical operations and data organization.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Lists</dt>
+<dd>
+The third chapter will focus on lists, a versatile data structure that can store elements of different types and sizes. We will discuss how to create, access, and modify lists, and demonstrate their flexibility in handling complex data structures.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Data.frames</dt>
+<dd>
+Finally, we will examine data.frames, a widely-used data structure for organizing and manipulating tabular data. You will learn how to create, access, and manipulate data.frames, and understand their advantages over other data structures for data analysis tasks.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Arrays</dt>
+<dd>
+While we will not focus directly on the <code>array</code> data type, which are multidimensional data structures that extend matrices, they are very similar to matrices, but with a third dimension.
+</dd>
+</dl></li>
+</ul>
+<p>As you progress through these chapters, practice the examples and exercises provided, engage in discussion, and collaborate with your peers to deepen your understanding of R data structures. This solid foundation will serve as the basis for more advanced data manipulation, analysis, and visualization techniques in R.</p>
 
 
 <!-- -->
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -802,47 +831,78 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./050_r_scripts.html" class="pagination-link" aria-label="R Scripts">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span>
+      <a href="./chatbots.html" class="pagination-link" aria-label="Chatbots as Learning Tools">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data_structures_overview.html" class="pagination-link" aria-label="R data structures">
-        <span class="nav-page-text">R data structures</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./vectors.html" class="pagination-link" aria-label="Vectors">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectors</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chatbots as Learning Tools</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># R data structures</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">ChatGPT</span><span class="co">](https://chatgpt.com/)</span>, developed by OpenAI, and  <span class="co">[</span><span class="ot">Claude</span><span class="co">](https://claude.ai)</span>, developed by Anthropic, are advanced language models that leverage deep learning techniques to understand and generate human-like text. At their core, these chatbots operate using a variant of the <span class="co">[</span><span class="ot">Transformer architecture</span><span class="co">](https://www.datacamp.com/tutorial/how-transformers-work)</span>, which enable them to process and generate text based on the patterns and structures they learn from vast amounts of training data. These models<span class="ot">[^foundation_models]</span> excels in natural language understanding and generation tasks, making them incredibly versatile tools for a wide range of applications beyond simple chat interactions.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">[^foundation_models]: </span>Foundation models are a recent development in AI. These models are developed from algorithms designed to optimize for generality and versatility of output. They are based on large-scale neural networks that are often trained on a broad range of data sources and large amounts of data to accomplish a wide range of downstream tasks, including some for which they were not specifically developed and trained.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>In the context of programming and coding, these chatbots serve as valuable assistants by providing explanations, examples, and guidance related to programming languages like R. Users can interact with a chatbot by posing questions or requesting code snippets, which they generate based on their understanding of the input and their extensive training data. For instance, users can inquire about specific syntax rules, algorithm implementations, or even debugging tips, and chatbots can respond with clear explanations and relevant examples. This capability makes them particularly useful for learners and developers seeking quick insights or clarification on complex programming concepts.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Welcome to the section on R data structures! As you begin your journey in</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>learning R, it is essential to understand the fundamental building blocks of</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>this powerful programming language. R offers a variety of data structures to</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>store and manipulate data, each with its unique properties and capabilities. In</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>this section, we will cover the core data structures in R, including:</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Moreover, chatbots can facilitate learning and problem-solving by offering personalized responses tailored to the user's queries. Their ability to generate coherent and contextually relevant text allows them to simulate a dialogue where they guides users through coding challenges or help them understand intricate programming concepts more intuitively. This makes chatbots not only a powerful tool for acquiring programming knowledge but also a supportive companion in the journey of mastering programming languages like R.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>In this tutorial, we will explore how chatbots like ChatGPT and Claude can be leveraged as learning tools for programming in R. We will discuss their features, capabilities, and potential applications in the context of programming education. By the end of this tutorial, you will have a better understanding of how chatbots can enhance the learning experience and support your programming endeavors.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu"># Features of Chatbots {.unnumbered}</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Chatbots like ChatGPT and Claude offer a range of features that make them valuable learning tools for programming in R. Some of the key features include:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Natural Language Understanding**: Chatbots can interpret and respond to user queries in natural language, making interactions more intuitive and user-friendly.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Code Generation**: Chatbots can generate code snippets, examples, and explanations based on the user's input, helping users understand and implement programming concepts.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Personalized Responses**: Chatbots can provide personalized responses tailored to the user's queries, enhancing the learning experience and engagement.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Interactive Learning**: Chatbots can engage users in interactive learning experiences, guiding them through coding challenges and providing real-time feedback.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**24/7 Availability**: Chatbots are available round the clock, allowing users to seek assistance and guidance at any time, making them convenient learning companions.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Extensive Knowledge Base**: Chatbots have access to vast amounts of training data and information, enabling them to provide accurate and up-to-date responses to user queries.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Scalability**: Chatbots can scale to accommodate a large number of users simultaneously, making them suitable for both individual learners and educational institutions.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Feedback and Evaluation**: Chatbots can provide feedback and evaluation on user-generated code, helping users identify and correct errors in their programming assignments.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>**Multimodal Capabilities**: Chatbots can support multimodal interactions, such as text, voice, and visual inputs, enhancing the user experience and accessibility.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>**Continuous Learning**: Chatbots can continuously learn and improve their responses based on user interactions and feedback, ensuring that they stay relevant and up-to-date.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Vectors </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Matrices </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Lists </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Data.frames</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>By the end of this section, you will have a solid understanding of these data</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>structures, and you will be able to choose and utilize the appropriate data</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>structure for your specific data manipulation and analysis tasks.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>In each chapter, we will delve into the properties and usage of each data</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>structure, starting with their definitions and moving on to their practical</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>applications. We will provide examples, exercises, and active learning</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>approaches to help you better understand and apply these concepts in your work.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">A pictorial representation of R’s most common data structures are vectors, matrices, arrays, lists, and dataframes. Figure from [Hands-on Programming with R](https://rstudio-education.github.io/hopr/).</span><span class="co">](images/hopr_0306.png)</span>{#fig-data-structures}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter overview</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Vectors : In this chapter, we will introduce you to the simplest data</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  structure in R, the vector. We will cover how to create, access, and</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  manipulate vectors, as well as discuss their unique properties and</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  limitations.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Matrices</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  : Next, we will explore matrices, which are two-dimensional data structures</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  that extend vectors. You will learn how to create, access, and manipulate</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  matrices, and understand their usefulness in mathematical operations and data</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  organization.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Lists</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  : The third chapter will focus on lists, a versatile data structure that can</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  store elements of different types and sizes. We will discuss how to create,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  access, and modify lists, and demonstrate their flexibility in handling</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  complex data structures.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Data.frames</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  : Finally, we will examine data.frames, a widely-used data structure for</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  organizing and manipulating tabular data. You will learn how to create,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  access, and manipulate data.frames, and understand their advantages over</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  other data structures for data analysis tasks.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Arrays</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  : While we will not focus directly on the <span class="in">`array`</span> data type, which are</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  multidimensional data structures that extend matrices, they are very similar</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  to matrices, but with a third dimension. </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>As you progress through these chapters, practice the</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>examples and exercises provided, engage in discussion, and collaborate</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>with your peers to deepen your understanding of R data structures. This solid</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>foundation will serve as the basis for more advanced data manipulation,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>analysis, and visualization techniques in R.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/chatbots.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/data_structures_overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
