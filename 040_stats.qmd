@@ -107,8 +107,16 @@ hist(insurance$charges)
 
 Plot the historgram of the other numeric variables.
 
+Another approach is to use a boxplot. 
+
 ```{r}
 boxplot(insurance$age)
+```
+
+Another way of creating the boxplot is to use the R `formula` notation. 
+
+```{r}
+boxplot(formula = ~age, data = insurance)
 ```
 
 ### Correlation
