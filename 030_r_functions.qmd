@@ -1,8 +1,19 @@
-# Functions
+# Using functions in R
 
-In the last chapter, you learned how to use R objects to store data. In this chapter, you'll learn how to use R functions are used to share and store code. Functions are a powerful tool in R. They allow you to write code once and use it many times. You can even share your functions with others. In this chapter, you'll learn how to use functions to simulate rolling a pair of dice.
 
-R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the `round` function, or calculate its factorial with the `factorial` function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses: 
+In the previous chapter, you learned about storing data in R objects. Now, we'll explore R functions. Functions let you save and reuse code. They're very useful because you can write code once and use it repeatedly. You can also share your functions with others. This chapter will show you how to create functions to simulate rolling two dice.
+
+You can recognize that you are using a function in R when you see a name followed by parentheses. For example, `mean(1:6)` is a function call. The name of the function is `mean`, and the data that the function is operating on is `1:6`. Functions are a fundamental part of R. They are used to perform simple and complex tasks. 
+
+::: {.callout-note}
+## Where do functions come from?
+
+The functions that we use in R come from a variety of sources. Some functions are built into R, and others are part of packages that you can install. You can also write your own functions. A major strength of R is that it is open-source, which means that anyone can write and share functions. This has led to a large and diverse collection of functions that you can use in your work.
+
+:::
+
+R has many functions that others have written and it puts them all at our disposal. We can use functions to do simple and sophisticated tasks. For example, we can round a number with the `round` function, or calculate its factorial with the `factorial` function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses. 
+
 
 ```{r}
 round(3.1415)
@@ -59,9 +70,6 @@ But how do you know which argument names to use? If you try to use a name that a
 round(3.1415, corners = 2)
 ## Error in round(3.1415, corners = 2) : unused argument(s) (corners = 2)
 ```
-
-
-
 
 If you're not sure which names to use with a function, you can look up the function's arguments with `args`. To do this, place the name of the function in the parentheses behind `args`. For example, you can see that the `round` function takes two arguments, one named `x` and one named `digits`:
 
