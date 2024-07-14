@@ -3,7 +3,8 @@
 We are going to load up our `insurance.csv` dataset again and explore it in detail. 
 
 ```{r}
-insurance <- readr::read_csv("~/Downloads/insurance.csv")
+insurance_url <- "https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv"
+insurance <- readr::read_csv(insurance_url)
 ```
 
 At this point, you might want to refresh your memory of the contents of the `insurance` dataset. 
