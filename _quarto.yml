@@ -32,7 +32,7 @@ book:
     - part: Exploring data
       chapters:
         - 040_stats.qmd
-        - eda.qmd
+        #- eda.qmd
         - ggplot.qmd
 
     - part: Applications
