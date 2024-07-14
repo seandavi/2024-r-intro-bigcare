@@ -1,64 +1,115 @@
-# Statistics
+# Exploratory data analysis
 
-In this chapter, we will cover the basics of statistics, including descriptive statistics, hypothesis testing, and correlation analysis. We will also discuss how to perform these analyses using R.
-What is a statistic?
-A statistic is a numerical value that summarizes a dataset. Statistics can be used to describe the characteristics of a dataset, test hypotheses, and make predictions. There are two main types of statistics: descriptive statistics and inferential statistics.
-
-
-## Statistics on a single variable
-
-When we talk about a "variable" in R or other analyses, we may be talking about the thing we are measuring OR the measurements themselves.  
-For example, when we talk about the "age" variable, we may be talking about "age" as a general measurable thing OR about the measurements of "age" on subjects.
-The same holds true when working with data and statistics. 
-In the context of this chapter, when we are talking about "statistics on a single variable," we are referring to summarizing the measurements of that variable. 
-
-Let's make this concrete by simulating 50 adult patient ages. 
+We are going to load up our `insurance.csv` dataset again and explore it in detail. 
 
 ```{r}
-# set the random number generator seed to make results reproducible
-set.seed(123)
-
-# simulate some adult ages
-age <- sample(18:99, size = 50, replace = TRUE)
+insurance <- readr::read_csv("~/Downloads/insurance.csv")
 ```
 
-Take a moment to examine that data. Consider using a histogram (`hist()`), printing the variable, or using `summary()`.
+At this point, you might want to refresh your memory of the contents of the `insurance` dataset. 
 
-### Measures of central tendency
-
-Now that we have our simple `age` variable, calculate the mean and the median.
-
-```{r}
-mean(age)
-median(age)
-```
-
-These measures are called measures of central tendency and give us a sense of the "center" of the distribution. 
-Note that the mean and median do not give the same result. 
-Why is that?
-
-As an exercise, try using the `quantile()` function to find the median rather than the `median()` function.
-
-### Measures of dispersion or spread
-
-In addition to measuring the "middle" of a variable, we often also desire a statistic to represent the "spread" of a variable.
-Measures such as the standard deviation and interquartile range (IQR) help us with that. 
-
-```{r}
-sd(age)
-IQR(age)
-```
-
-## Statistics on two variables
-
-To work on this section, let's load up our insurance data.
+- How many rows does thd dataset have?
+- How many columns?
+- What are the column names for the dataset?
+- What are the data types in each column?
 
 ```{r eval=FALSE}
-insurance_url <-
-    insurance <- readr::read_csv(insurance_url)
+#| code-fold: true
+#| code-summary: Possible solutions to the questions
+nrow(insurance)
+ncol(insurance)
+# You could also use dim(insurance)
+colnames(insurance)
+# the `tibble` object gives column types
+head(insurance)
+# OR
+summary(insurance)
+# OR
+lapply(insurance, class)
 ```
 
+Before going further, let's add the `obese` column again. 
 
+```{r}
+insurance$obese <- ifelse(insurance$bmi > 30, "obese", "not obese")
+```
+
+Check the structure of the `insurance` dataset again to ensure that you got what you wanted, a new column with either 'obese' or 'not obese' in each row. 
+
+## Explore each variable (column)
+
+When presented with a dataframe like the `insurance` data, we may want to interrogate the various columns to figure out what is in them. In this dataset, the columns are of two flavors. We can use the terms `column` and `variable` interchangably here since each column represents the measurements of that variable on a person.
+
+The sex, smoker, and region variables are all `categorical` variables, in that they represent categories of "sex", "smoker", and "region". The age, bmi, children, and charge variables represent numbers.
+
+### Categorical variables
+
+For categorial variables, there are some useful functions to help summarize the data. But to do so, we need to be able to pull out the individual columns. Let's take the "region" column as an example. All of the following will get us the region column.
+
+```{r eval=FALSE}
+insurance$region
+insurance[["region"]]
+insurance[, "region"]
+```
+
+The `unique()` function returns all unique values of a variable. The `table()` function counts the number of each value. While `min()` and `max()` are perhaps not that meaningful, they can sometimes be useful, even for categorical variables.
+
+Let's apply these to the `region` variable/column.
+
+```{r}
+unique(insurance$region)
+table(insurance[["region"]])
+min(insurance$region)
+max(insurance$region)
+```
+
+Can you explain what the `min()` and `max()` are doing here?
+
+Do the same exercise with sex, smoker, and obese variables.
+
+### Numeric variables
+
+The other variables in our `insurance` dataset are numeric. Note that they are not all `continuous` numbers, though, with some of them being quite discrete (there are no fractional numbers of children).
+
+For numerical variables, we can start to use `statistics` to summarize the data. 
+
+::: {.callout-important}
+## What is a statistic?
+
+A statistic is a single value that summarizes a dataset. We use them all the time in data analysis. The mean, median, standard deviation, mode, etc. are all univariate statistics. Correlation is an example of a bivariate statistic that summarizes the relationship between two variables. Statistics like the t-statistic summarize the differences in centrality between two samples. 
+
+:::
+
+The `summary()` function gets us a bunch of statistics quickly. 
+
+```{r}
+summary(insurance)
+```
+
+We can also apply individual statistical measures to a single column.
+
+```{r}
+mean(insurance$age)
+```
+
+And even though the `children` variable/column is a numeric column, we may still be interested in the unique values or a table showing the distribution of the number of children per patient.
+
+```{r}
+unique(insurance$children)
+table(insurance$children)
+```
+
+We may also be interested in seeing the distribution of a numeric variable graphically. The histogram `hist()` is probably the most common way of examining the distribution of a numeric variable.
+
+```{r}
+hist(insurance$charges)
+```
+
+Plot the historgram of the other numeric variables.
+
+```{r}
+boxplot(insurance$age)
+```
 
 ### Correlation
 
