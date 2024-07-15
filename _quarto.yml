@@ -20,20 +20,20 @@ book:
         - 010_rstudio_and_r.qmd
         - 020_r_basics.qmd
         - 030_r_functions.qmd
+        - 045_loading_data.qmd
         - 050_r_scripts.qmd
-        - chatbots.qmd
+        #- chatbots.qmd
+
+    - part: Exploring data
+      chapters:
+        - eda.qmd
+        - ggplot.qmd
 
     - part: data_structures_overview.qmd
       chapters:
         - vectors.qmd
         - matrices.qmd
         - dataframes_intro.qmd
-
-    - part: Exploring data
-      chapters:
-        - 040_stats.qmd
-        #- eda.qmd
-        - ggplot.qmd
 
     - part: Applications
       chapters:

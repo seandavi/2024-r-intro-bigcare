@@ -1,5 +1,15 @@
 # Exploratory data analysis
 
+## What is exploratory data analysis?
+
+Exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. A statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task.
+
+EDA is a crucial step in the data analysis process. It allows us to understand the data, identify patterns, and develop hypotheses. EDA is also useful for identifying outliers, missing values, and other data quality issues.
+
+It is worth noting that EDA is not a formal process. There are no strict rules or guidelines for conducting EDA. Instead, it is an iterative process that involves exploring the data from multiple angles to gain a comprehensive understanding of the data.
+
+## The `insurance` dataset
+
 We are going to load up our `insurance.csv` dataset again and explore it in detail. 
 
 ```{r}
@@ -114,8 +124,72 @@ Another approach is to use a boxplot.
 boxplot(insurance$age)
 ```
 
+## Relationships between variables
 
-### Correlation
+We can also start to look at the relationships between variables. Let's start with the relationship between `age` and `charges`.
 
-### Hypothesis testing
+```{r}
+plot(insurance$age, insurance$charges)
+```
+
+What do you see in the plot?
+
+How about the relathionship between `bmi` and `charges`?
+
+```{r}
+plot(insurance$bmi, insurance$charges)
+```
+
+What do you see in this plot?
+
+### Categorical vs. categorical
+
+We can also look at the relationships between categorical variables. One way to do this is to use a `contingency table`.
+
+```{r}
+table(insurance$sex, insurance$smoker)
+```
+
+What do you see in this table? Is this a useful way to look at the data? 
+
+Another way to look at the relationship between two categorical variables is to use a `mosaic plot`. What is a mosaic plot?
+A mosaic plot is a special type of stacked bar chart that shows percentages of data in groups. The plot is a graphical representation of a contingency table. How are mosaic plots used? Mosaic plots are used to show relationships and to provide a visual comparison of groups. 
+
+```{r}
+mosaicplot(~ sex + smoker, data = insurance)
+```
+
+What do you see in this plot?
+
+::: {.callout-note}
+## The `formula` interface
+
+The `~` symbol is used to specify the formula interface in R. The formula interface is used in many R functions to specify the relationship between variables. In this case, we are specifying that we want to look at the relationship between `sex` and `smoker` in the `insurance` dataset.
+
+In other uses, the formula interface is used to specify the relationship between the dependent and independent variables in a regression model. For example, `y ~ x` specifies that `y` is the dependent variable and `x` is the independent variable.
+::: 
+
+### Categorical vs. numeric
+
+We can also look at the relationship between a categorical and a numeric variable. One way to do this is to use a `boxplot`.
+
+```{r}
+boxplot(charges ~ smoker, data = insurance)
+```
+
+What do you see in this plot? 
+
+Another way to look at the relationship between a categorical and a numeric variable is to use a `violin plot`. What is a violin plot? A violin plot is a method of plotting numeric data and can be considered a combination of the box plot and the kernel density plot.
+
+This is our first introduction to the `ggplot2` package. The `ggplot2` package is a plotting system for R, based on the grammar of graphics. It is a powerful and flexible package that allows you to create complex plots with relatively little code.
+
+```{r}
+library(ggplot2)
+ggplot(insurance, aes(x = smoker, y = charges)) +
+    geom_violin()
+```
+
+We'll be using `ggplot2` a lot in the future, so this is just a "hello world" example.
+
+
 
