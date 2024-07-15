@@ -11,6 +11,7 @@ CSV (Comma-Separated Values) and TSV (Tab-Separated Values) are both simple file
 - TSV files use tabs (\t) to separate values
 
 In both formats:
+
 - Each line represents a row of data
 - The first row often contains column names (headers)
 
@@ -35,7 +36,16 @@ download.file(url = tsv_url, destfile = local_file)
 
 If you look in your file system, you should see a file named `disease_names.tsv` containing the data from the URL.
 
+::: {.callout-tip}
+You can use the terminal to examine a file's contents. For example, you can use `head disease_names.tsv` to view the first few lines of the file. This can be helpful to understand the structure of the data without loading it into R first. In Rstudio, you can also use the Rstudio terminal to run shell commands.
+
+![Activating the terminal in Rstudio](images/rstudio_choose_terminal.png)
+
+:::
+
+
 This code does the following:
+
 1. We specify the URL of the TSV file we want to download.
 2. We choose a name for the local file where we'll save the downloaded data.
 3. We use `download.file()` to fetch the file from the URL and save it locally.
