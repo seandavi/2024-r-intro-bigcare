@@ -117,6 +117,17 @@
     ]
   },
   {
+    "objectID": "010_rstudio_and_r.html#setup-for-the-materials",
+    "href": "010_rstudio_and_r.html#setup-for-the-materials",
+    "title": "1  Introduction",
+    "section": "1.7 Setup for the materials",
+    "text": "1.7 Setup for the materials\nIn this book, we will use R and RStudio for all of our examples. I use additional packages besides those that come with R itself. To install these packages, you can use the following code. Paste this into the R console in RStudio:\n# Install the necessary packages\ninstall.packages('BiocManager')\nBiocManager::install('remotes')\nBiocManager::install('seandavi/2024-r-intro-bigcare')\nThis code will install the BiocManager package, which is used to install packages from the Bioconductor repository, and the remotes package, which is used to install packages from GitHub. We will use the seandavi/2024-r-intro-bigcare package, which contains all of the data and functions we will use in this book.",
+    "crumbs": [
+      "Getting started",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
     "objectID": "020_r_basics.html",
     "href": "020_r_basics.html",
     "title": "\n2  The R language\n",
