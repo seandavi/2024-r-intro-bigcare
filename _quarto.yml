@@ -8,6 +8,7 @@ bibliography: [bibliography.bib]
 book:
   title: "Introduction to R for BigCare 2024"
   reader-mode: true
+  google-analytics: "GTM-PZMG5CH7"
 
   site-url: https://seandavi.github.io/2024-r-intro-bigcare/
   repo-url: https://github.com/seandavi/2024-r-intro-bigcare
