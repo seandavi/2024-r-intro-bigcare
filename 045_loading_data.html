@@ -99,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/045_loading_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./045_loading_data.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading data</span></a></li></ol></nav><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./045_loading_data.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading data</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
 <span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading data</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
@@ -293,9 +293,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>CSV files use commas (,) to separate values</li>
 <li>TSV files use tabs ( to separate values</li>
 </ul>
-<p>In both formats: - Each line represents a row of data - The first row often contains column names (headers)</p>
+<p>In both formats:</p>
+<ul>
+<li>Each line represents a row of data</li>
+<li>The first row often contains column names (headers)</li>
+</ul>
 <p>Both formats are popular because they’re simple, readable, and can be opened by many programs, including text editors and spreadsheet software. TSV files can be particularly useful when your data contains commas within fields.</p>
-</section><section id="downloading-a-tsv-file-using-r" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="downloading-a-tsv-file-using-r">
+</section><section id="downloading-a-tsv-file-using-r" class="level2 page-columns page-full" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="downloading-a-tsv-file-using-r">
 <span class="header-section-number">4.2</span> Downloading a TSV file using R</h2>
 <p>This section is just to get us a TSV file to work with. If you have a CSV or TSV file on your local machine, you can skip this step and read your own.</p>
 <p>Let’s see how to download a TSV file from the internet using R’s <code><a href="https://rdrr.io/r/utils/download.file.html">download.file()</a></code> function.</p>
@@ -310,8 +314,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">tsv_url</span>, destfile <span class="op">=</span> <span class="va">local_file</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you look in your file system, you should see a file named <code>disease_names.tsv</code> containing the data from the URL.</p>
-<p>This code does the following: 1. We specify the URL of the TSV file we want to download. 2. We choose a name for the local file where we’ll save the downloaded data. 3. We use <code><a href="https://rdrr.io/r/utils/download.file.html">download.file()</a></code> to fetch the file from the URL and save it locally.</p>
-</section><section id="loading-the-tsv-file-into-r" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="loading-the-tsv-file-into-r">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the terminal to examine a file’s contents. For example, you can use <code>head disease_names.tsv</code> to view the first few lines of the file. This can be helpful to understand the structure of the data without loading it into R first. In Rstudio, you can also use the Rstudio terminal to run shell commands.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure" aria-labelledby="-caption"><p><img src="images/rstudio_choose_terminal.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="-caption" class="margin-figure-caption column-margin callout-margin-content">Activating the terminal in Rstudio</div><p>This code does the following:</p>
+<ol type="1">
+<li>We specify the URL of the TSV file we want to download.</li>
+<li>We choose a name for the local file where we’ll save the downloaded data.</li>
+<li>We use <code><a href="https://rdrr.io/r/utils/download.file.html">download.file()</a></code> to fetch the file from the URL and save it locally.</li>
+</ol></section><section id="loading-the-tsv-file-into-r" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="loading-the-tsv-file-into-r">
 <span class="header-section-number">4.3</span> Loading the TSV file into R</h2>
 <p>Now that we have a TSV file, let’s load it into R using the <code><a href="https://rdrr.io/r/utils/read.table.html">read.delim()</a></code> function, which is designed for tab-separated files.</p>
 <div class="cell">
@@ -892,83 +917,93 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>TSV files use tabs (\t) to separate values</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>In both formats:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each line represents a row of data</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The first row often contains column names (headers)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>Both formats are popular because they're simple, readable, and can be opened by many programs, including text editors and spreadsheet software. TSV files can be particularly useful when your data contains commas within fields.</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Downloading a TSV file using R</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>This section is just to get us a TSV file to work with. If you have a CSV or TSV file on your local machine, you can skip this step and read your own. </span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>Let's see how to download a TSV file from the internet using R's <span class="in">`download.file()`</span> function.</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of the TSV file (this is a fake URL for demonstration)</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>tsv_url <span class="ot">&lt;-</span> <span class="st">"https://ftp.ncbi.nlm.nih.gov/pub/clinvar/disease_names"</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Local file name to save the TSV</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>local_file <span class="ot">&lt;-</span> <span class="st">"disease_names.tsv"</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the file</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> tsv_url, <span class="at">destfile =</span> local_file)</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>If you look in your file system, you should see a file named <span class="in">`disease_names.tsv`</span> containing the data from the URL.</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>This code does the following:</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>We specify the URL of the TSV file we want to download.</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>We choose a name for the local file where we'll save the downloaded data.</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>We use <span class="in">`download.file()`</span> to fetch the file from the URL and save it locally.</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loading the TSV file into R</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>Now that we have a TSV file, let's load it into R using the <span class="in">`read.delim()`</span> function, which is designed for tab-separated files.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each line represents a row of data</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The first row often contains column names (headers)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>Both formats are popular because they're simple, readable, and can be opened by many programs, including text editors and spreadsheet software. TSV files can be particularly useful when your data contains commas within fields.</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Downloading a TSV file using R</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>This section is just to get us a TSV file to work with. If you have a CSV or TSV file on your local machine, you can skip this step and read your own. </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>Let's see how to download a TSV file from the internet using R's <span class="in">`download.file()`</span> function.</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of the TSV file (this is a fake URL for demonstration)</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>tsv_url <span class="ot">&lt;-</span> <span class="st">"https://ftp.ncbi.nlm.nih.gov/pub/clinvar/disease_names"</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Local file name to save the TSV</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>local_file <span class="ot">&lt;-</span> <span class="st">"disease_names.tsv"</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the file</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> tsv_url, <span class="at">destfile =</span> local_file)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>If you look in your file system, you should see a file named <span class="in">`disease_names.tsv`</span> containing the data from the URL.</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>You can use the terminal to examine a file's contents. For example, you can use <span class="in">`head disease_names.tsv`</span> to view the first few lines of the file. This can be helpful to understand the structure of the data without loading it into R first. In Rstudio, you can also use the Rstudio terminal to run shell commands.</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="al">![Activating the terminal in Rstudio](images/rstudio_choose_terminal.png)</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the TSV file into a variable called 'df_sample'</span></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>df_sample <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"disease_names.tsv"</span>)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>This code does the following:</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>We specify the URL of the TSV file we want to download.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>We choose a name for the local file where we'll save the downloaded data.</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>We use <span class="in">`download.file()`</span> to fetch the file from the URL and save it locally.</span>
 <span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the data</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_sample)</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a summary of the data</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_sample)</span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>Let's break down what's happening here:</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read.delim()`</span> reads the TSV file and creates a data frame in R. By default, it assumes tab-separated values and headers in the first row.</span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>We store this data frame in a variable called <span class="in">`df_sample`</span>. The prefix 'df_' is a common convention to indicate that the variable is a data frame.</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`head(df_sample)`</span> shows the first six rows of the data, which is useful for a quick peek at your dataset.</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`summary(df_sample)`</span> provides a statistical summary of each column in your dataset.</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional tips</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For CSV files, you would use <span class="in">`read.csv()`</span> instead: <span class="in">`df_sample &lt;- read.csv("sample_data.csv")`</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If your TSV file doesn't have headers, use: <span class="in">`read.delim("file.tsv", header = FALSE)`</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For large files, consider using <span class="in">`read.delim()`</span> or <span class="in">`read.csv()`</span> with the parameter <span class="in">`nrows`</span> to read only a portion of the file for initial inspection.</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you're unsure about the delimiter, you can specify it explicitly:</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>For TSV: <span class="in">`read.delim("file.tsv", sep = "\t")`</span></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>For CSV: <span class="in">`read.csv("file.csv", sep = ",")`</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>Remember to always check your data after loading it to ensure it was read correctly!</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Write data to a CSV file</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>Remember that we read the data from a TSV file. If you want to write this data to a CSV file, you can use the <span class="in">`write.csv()`</span> function:</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df_sample, <span class="st">"disease_names.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loading the TSV file into R</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>Now that we have a TSV file, let's load it into R using the <span class="in">`read.delim()`</span> function, which is designed for tab-separated files.</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the TSV file into a variable called 'df_sample'</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>df_sample <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"disease_names.tsv"</span>)</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the data</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_sample)</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a summary of the data</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_sample)</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>Let's break down what's happening here:</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read.delim()`</span> reads the TSV file and creates a data frame in R. By default, it assumes tab-separated values and headers in the first row.</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>We store this data frame in a variable called <span class="in">`df_sample`</span>. The prefix 'df_' is a common convention to indicate that the variable is a data frame.</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`head(df_sample)`</span> shows the first six rows of the data, which is useful for a quick peek at your dataset.</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`summary(df_sample)`</span> provides a statistical summary of each column in your dataset.</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional tips</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For CSV files, you would use <span class="in">`read.csv()`</span> instead: <span class="in">`df_sample &lt;- read.csv("sample_data.csv")`</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If your TSV file doesn't have headers, use: <span class="in">`read.delim("file.tsv", header = FALSE)`</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For large files, consider using <span class="in">`read.delim()`</span> or <span class="in">`read.csv()`</span> with the parameter <span class="in">`nrows`</span> to read only a portion of the file for initial inspection.</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you're unsure about the delimiter, you can specify it explicitly:</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>For TSV: <span class="in">`read.delim("file.tsv", sep = "\t")`</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>For CSV: <span class="in">`read.csv("file.csv", sep = ",")`</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Remember to always check your data after loading it to ensure it was read correctly!</span>
 <span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>This will write the data frame <span class="in">`df_sample`</span> to a CSV file named <span class="in">`disease_names.csv`</span> without including row names. You can then use this CSV file for further analysis or sharing with others.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Write data to a CSV file</span></span>
 <span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working with data from Excel</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>Remember that we read the data from a TSV file. If you want to write this data to a CSV file, you can use the <span class="in">`write.csv()`</span> function:</span>
 <span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>When working with data that originates in Excel, the easiest way to get the data into R is often to save the data as a CSV file from Excel and then read it into R using <span class="in">`read.csv()`</span>.</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>There is also the <span class="in">`readxl`</span> package in R that allows you to read Excel files directly. This package provides functions like <span class="in">`read_excel()`</span> to read data from Excel files into R data frames. If you have Excel files, you can explore this package for reading Excel data into R.</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df_sample, <span class="st">"disease_names.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>This will write the data frame <span class="in">`df_sample`</span> to a CSV file named <span class="in">`disease_names.csv`</span> without including row names. You can then use this CSV file for further analysis or sharing with others.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working with data from Excel</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>When working with data that originates in Excel, the easiest way to get the data into R is often to save the data as a CSV file from Excel and then read it into R using <span class="in">`read.csv()`</span>.</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>There is also the <span class="in">`readxl`</span> package in R that allows you to read Excel files directly. This package provides functions like <span class="in">`read_excel()`</span> to read data from Excel files into R data frames. If you have Excel files, you can explore this package for reading Excel data into R.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

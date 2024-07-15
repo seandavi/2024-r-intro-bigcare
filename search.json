@@ -187,7 +187,7 @@
     "href": "045_loading_data.html",
     "title": "\n4  Loading data\n",
     "section": "",
-    "text": "4.1 What are CSV and TSV files?\nCSV (Comma-Separated Values) and TSV (Tab-Separated Values) are both simple file formats used to store tabular data, such as spreadsheets or databases. The main difference is the delimiter used to separate values:\nIn both formats: - Each line represents a row of data - The first row often contains column names (headers)\nBoth formats are popular because they’re simple, readable, and can be opened by many programs, including text editors and spreadsheet software. TSV files can be particularly useful when your data contains commas within fields.",
+    "text": "4.1 What are CSV and TSV files?\nCSV (Comma-Separated Values) and TSV (Tab-Separated Values) are both simple file formats used to store tabular data, such as spreadsheets or databases. The main difference is the delimiter used to separate values:\nIn both formats:\nBoth formats are popular because they’re simple, readable, and can be opened by many programs, including text editors and spreadsheet software. TSV files can be particularly useful when your data contains commas within fields.",
     "crumbs": [
       "Getting started",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Loading data</span>"
@@ -198,7 +198,7 @@
     "href": "045_loading_data.html#what-are-csv-and-tsv-files",
     "title": "\n4  Loading data\n",
     "section": "",
-    "text": "CSV files use commas (,) to separate values\nTSV files use tabs ( to separate values",
+    "text": "CSV files use commas (,) to separate values\nTSV files use tabs ( to separate values\n\n\n\nEach line represents a row of data\nThe first row often contains column names (headers)",
     "crumbs": [
       "Getting started",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Loading data</span>"
@@ -209,7 +209,7 @@
     "href": "045_loading_data.html#downloading-a-tsv-file-using-r",
     "title": "\n4  Loading data\n",
     "section": "\n4.2 Downloading a TSV file using R",
-    "text": "4.2 Downloading a TSV file using R\nThis section is just to get us a TSV file to work with. If you have a CSV or TSV file on your local machine, you can skip this step and read your own.\nLet’s see how to download a TSV file from the internet using R’s download.file() function.\n\n# URL of the TSV file (this is a fake URL for demonstration)\ntsv_url &lt;- \"https://ftp.ncbi.nlm.nih.gov/pub/clinvar/disease_names\"\n\n# Local file name to save the TSV\nlocal_file &lt;- \"disease_names.tsv\"\n\n# Download the file\ndownload.file(url = tsv_url, destfile = local_file)\n\nIf you look in your file system, you should see a file named disease_names.tsv containing the data from the URL.\nThis code does the following: 1. We specify the URL of the TSV file we want to download. 2. We choose a name for the local file where we’ll save the downloaded data. 3. We use download.file() to fetch the file from the URL and save it locally.",
+    "text": "4.2 Downloading a TSV file using R\nThis section is just to get us a TSV file to work with. If you have a CSV or TSV file on your local machine, you can skip this step and read your own.\nLet’s see how to download a TSV file from the internet using R’s download.file() function.\n\n# URL of the TSV file (this is a fake URL for demonstration)\ntsv_url &lt;- \"https://ftp.ncbi.nlm.nih.gov/pub/clinvar/disease_names\"\n\n# Local file name to save the TSV\nlocal_file &lt;- \"disease_names.tsv\"\n\n# Download the file\ndownload.file(url = tsv_url, destfile = local_file)\n\nIf you look in your file system, you should see a file named disease_names.tsv containing the data from the URL.\n\n\n\n\n\n\nTip\n\n\n\nYou can use the terminal to examine a file’s contents. For example, you can use head disease_names.tsv to view the first few lines of the file. This can be helpful to understand the structure of the data without loading it into R first. In Rstudio, you can also use the Rstudio terminal to run shell commands.\n\n\n\n\n\n\nActivating the terminal in RstudioThis code does the following:\n\nWe specify the URL of the TSV file we want to download.\nWe choose a name for the local file where we’ll save the downloaded data.\nWe use download.file() to fetch the file from the URL and save it locally.",
     "crumbs": [
       "Getting started",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Loading data</span>"
