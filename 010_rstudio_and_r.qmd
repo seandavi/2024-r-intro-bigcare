@@ -178,3 +178,17 @@ size, and panel layout. You can also resize the panels as needed to gain screen 
 At this point, you should have a working Rstudio installation on your computer. 
 In the next chapter, we will discuss the basics of R programming, including how to
 perform simple calculations, create variables, and use functions.
+
+## Setup for the materials
+
+In this book, we will use R and RStudio for all of our examples. I use additional 
+packages besides those that come with R itself. To install these packages, you can use the following code. Paste this into the R console in RStudio:
+
+```r
+# Install the necessary packages
+install.packages('BiocManager')
+BiocManager::install('remotes')
+BiocManager::install('seandavi/2024-r-intro-bigcare')
+```
+
+This code will install the `BiocManager` package, which is used to install packages from the Bioconductor repository, and the `remotes` package, which is used to install packages from GitHub. We will use the `seandavi/2024-r-intro-bigcare` package, which contains all of the data and functions we will use in this book.
