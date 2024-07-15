@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; R Scripts – Introduction to R for BigCare 2024</title>
+<title>Introduction to R for BigCare 2024 – 5&nbsp; R Scripts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chatbots.html" rel="next">
-<link href="./030_r_functions.html" rel="prev">
+<link href="./eda.html" rel="next">
+<link href="./045_loading_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./050_r_scripts.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./050_r_scripts.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R Scripts</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -185,14 +185,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050_r_scripts.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></span></a>
+  <a href="./045_loading_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chatbots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span></a>
+  <a href="./050_r_scripts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R Scripts</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exploring data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
   </div>
 </li>
       </ul>
@@ -201,35 +224,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./data_structures_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R data structures</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vectors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Exploring data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -237,14 +231,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./040_stats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  <a href="./vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Plotting with ggplot2</span></span></a>
+  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataframes_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Frames</span></span></a>
   </div>
 </li>
       </ul>
@@ -276,20 +276,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-are-r-scripts" id="toc-what-are-r-scripts" class="nav-link active" data-scroll-target="#what-are-r-scripts"><span class="header-section-number">4.1</span> What are R Scripts?</a></li>
-  <li><a href="#why-are-r-scripts-useful" id="toc-why-are-r-scripts-useful" class="nav-link" data-scroll-target="#why-are-r-scripts-useful"><span class="header-section-number">4.2</span> Why are R Scripts Useful?</a></li>
-  <li><a href="#creating-an-r-script-using-rstudio" id="toc-creating-an-r-script-using-rstudio" class="nav-link" data-scroll-target="#creating-an-r-script-using-rstudio"><span class="header-section-number">4.3</span> Creating an R Script Using RStudio</a></li>
-  <li><a href="#interacting-with" id="toc-interacting-with" class="nav-link" data-scroll-target="#interacting-with"><span class="header-section-number">4.4</span> Interacting with</a></li>
-  <li><a href="#loading-an-r-script-after-saving" id="toc-loading-an-r-script-after-saving" class="nav-link" data-scroll-target="#loading-an-r-script-after-saving"><span class="header-section-number">4.5</span> Loading an R Script After Saving</a></li>
+  <li><a href="#what-are-r-scripts" id="toc-what-are-r-scripts" class="nav-link active" data-scroll-target="#what-are-r-scripts"><span class="header-section-number">5.1</span> What are R Scripts?</a></li>
+  <li><a href="#why-are-r-scripts-useful" id="toc-why-are-r-scripts-useful" class="nav-link" data-scroll-target="#why-are-r-scripts-useful"><span class="header-section-number">5.2</span> Why are R Scripts Useful?</a></li>
+  <li><a href="#creating-an-r-script-using-rstudio" id="toc-creating-an-r-script-using-rstudio" class="nav-link" data-scroll-target="#creating-an-r-script-using-rstudio"><span class="header-section-number">5.3</span> Creating an R Script Using RStudio</a></li>
+  <li><a href="#interacting-with" id="toc-interacting-with" class="nav-link" data-scroll-target="#interacting-with"><span class="header-section-number">5.4</span> Interacting with</a></li>
+  <li><a href="#loading-an-r-script-after-saving" id="toc-loading-an-r-script-after-saving" class="nav-link" data-scroll-target="#loading-an-r-script-after-saving"><span class="header-section-number">5.5</span> Loading an R Script After Saving</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/050_r_scripts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./050_r_scripts.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010_rstudio_and_r.html">Getting started</a></li><li class="breadcrumb-item"><a href="./050_r_scripts.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R Scripts</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Scripts</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R Scripts</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -306,12 +306,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-are-r-scripts" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="what-are-r-scripts"><span class="header-section-number">4.1</span> What are R Scripts?</h2>
+<section id="what-are-r-scripts" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="what-are-r-scripts"><span class="header-section-number">5.1</span> What are R Scripts?</h2>
 <p>R scripts are text files containing a series of R commands and code that can be executed sequentially. They serve as a way to store, organize, and run R code in a reproducible manner. R scripts typically have a <code>.R</code> file extension and can be created and edited using any text editor or integrated development environment (IDE) like RStudio.</p>
 </section>
-<section id="why-are-r-scripts-useful" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="why-are-r-scripts-useful"><span class="header-section-number">4.2</span> Why are R Scripts Useful?</h2>
+<section id="why-are-r-scripts-useful" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="why-are-r-scripts-useful"><span class="header-section-number">5.2</span> Why are R Scripts Useful?</h2>
 <p>R scripts offer several advantages for data analysis and programming:</p>
 <ol type="1">
 <li><strong>Reproducibility</strong>: Scripts allow you to save and rerun your analysis, ensuring consistent results.</li>
@@ -322,8 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Documentation</strong>: You can include comments in your scripts, explaining your thought process and methodology.</li>
 </ol>
 </section>
-<section id="creating-an-r-script-using-rstudio" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="creating-an-r-script-using-rstudio"><span class="header-section-number">4.3</span> Creating an R Script Using RStudio</h2>
+<section id="creating-an-r-script-using-rstudio" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="creating-an-r-script-using-rstudio"><span class="header-section-number">5.3</span> Creating an R Script Using RStudio</h2>
 <p>To create an R script in RStudio, follow these steps:</p>
 <ol type="1">
 <li>Open RStudio.</li>
@@ -348,11 +348,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Tip:</strong> Use comments (lines starting with <code>#</code>) to explain your code and provide context for others (and your future self).</p>
 </div>
 </section>
-<section id="interacting-with" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="interacting-with"><span class="header-section-number">4.4</span> Interacting with</h2>
+<section id="interacting-with" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="interacting-with"><span class="header-section-number">5.4</span> Interacting with</h2>
 </section>
-<section id="loading-an-r-script-after-saving" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="loading-an-r-script-after-saving"><span class="header-section-number">4.5</span> Loading an R Script After Saving</h2>
+<section id="loading-an-r-script-after-saving" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="loading-an-r-script-after-saving"><span class="header-section-number">5.5</span> Loading an R Script After Saving</h2>
 <p>Once you’ve saved an R script, you can load and run it in several ways:</p>
 <ol type="1">
 <li><p><strong>Using the source() function</strong>: This is the most common method to load and execute an R script.</p>
@@ -852,13 +852,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./030_r_functions.html" class="pagination-link" aria-label="Using functions in R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using functions in R</span></span>
+      <a href="./045_loading_data.html" class="pagination-link" aria-label="Loading data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chatbots.html" class="pagination-link" aria-label="Chatbots as Learning Tools">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chatbots as Learning Tools</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./eda.html" class="pagination-link" aria-label="Exploratory data analysis">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">

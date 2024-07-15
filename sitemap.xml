@@ -2,54 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/index.html</loc>
-    <lastmod>2024-07-14T23:41:10.466Z</lastmod>
+    <lastmod>2024-07-14T11:26:56.163Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/010_rstudio_and_r.html</loc>
-    <lastmod>2024-07-14T23:41:10.450Z</lastmod>
+    <lastmod>2024-07-11T23:30:34.334Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/020_r_basics.html</loc>
-    <lastmod>2024-07-14T23:41:10.450Z</lastmod>
+    <lastmod>2024-07-14T14:44:54.287Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/030_r_functions.html</loc>
-    <lastmod>2024-07-14T23:41:10.451Z</lastmod>
+    <lastmod>2024-07-14T14:52:41.184Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/045_loading_data.html</loc>
+    <lastmod>2024-07-15T14:54:21.903Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/050_r_scripts.html</loc>
-    <lastmod>2024-07-14T23:41:10.451Z</lastmod>
+    <lastmod>2024-07-13T20:48:22.012Z</lastmod>
   </url>
   <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/chatbots.html</loc>
-    <lastmod>2024-07-14T23:41:10.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/vectors.html</loc>
-    <lastmod>2024-07-14T23:41:10.467Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/matrices.html</loc>
-    <lastmod>2024-07-14T23:41:10.467Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/dataframes_intro.html</loc>
-    <lastmod>2024-07-14T23:41:10.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/2024-r-intro-bigcare/040_stats.html</loc>
-    <lastmod>2024-07-14T23:41:10.451Z</lastmod>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/eda.html</loc>
+    <lastmod>2024-07-15T16:03:08.239Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/ggplot.html</loc>
-    <lastmod>2024-07-14T23:41:10.452Z</lastmod>
+    <lastmod>2024-07-11T21:00:39.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/vectors.html</loc>
+    <lastmod>2024-07-14T11:44:53.160Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/matrices.html</loc>
+    <lastmod>2024-07-14T11:39:32.366Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/2024-r-intro-bigcare/dataframes_intro.html</loc>
+    <lastmod>2024-07-11T23:24:31.865Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/310_microbiome.html</loc>
-    <lastmod>2024-07-14T23:41:10.451Z</lastmod>
+    <lastmod>2024-07-13T20:46:40.644Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/2024-r-intro-bigcare/data_structures_overview.html</loc>
-    <lastmod>2024-07-14T23:41:10.452Z</lastmod>
+    <lastmod>2024-07-14T11:52:47.762Z</lastmod>
   </url>
 </urlset>
