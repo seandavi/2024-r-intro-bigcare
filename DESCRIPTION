@@ -1,7 +1,7 @@
 Package: BigCare2024
 Title: Basic intro to R and Bioc stuff
 Version: 0.99.1
-Date: 2024-07-13
+Date: 2024-07-15
 Authors@R: 
     person("Sean", "Davis", , "seandavi@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-8991-6458"))
