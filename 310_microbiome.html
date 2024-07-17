@@ -308,23 +308,22 @@ window.Quarto = {
   <li><a href="#agglomerating-data" id="toc-agglomerating-data" class="nav-link" data-scroll-target="#agglomerating-data"><span class="header-section-number">11.5.2</span> Agglomerating data</a></li>
   </ul>
 </li>
-  <li><a href="#the-tree-structure" id="toc-the-tree-structure" class="nav-link" data-scroll-target="#the-tree-structure"><span class="header-section-number">11.6</span> The tree structure</a></li>
   <li>
-<a href="#community-indices" id="toc-community-indices" class="nav-link" data-scroll-target="#community-indices"><span class="header-section-number">11.7</span> Community indices</a>
+<a href="#community-indices" id="toc-community-indices" class="nav-link" data-scroll-target="#community-indices"><span class="header-section-number">11.6</span> Community indices</a>
   <ul class="collapse">
-<li><a href="#alpha-diversity" id="toc-alpha-diversity" class="nav-link" data-scroll-target="#alpha-diversity"><span class="header-section-number">11.7.1</span> Alpha diversity</a></li>
-  <li><a href="#beta-diversity" id="toc-beta-diversity" class="nav-link" data-scroll-target="#beta-diversity"><span class="header-section-number">11.7.2</span> Beta diversity</a></li>
+<li><a href="#alpha-diversity" id="toc-alpha-diversity" class="nav-link" data-scroll-target="#alpha-diversity"><span class="header-section-number">11.6.1</span> Alpha diversity</a></li>
+  <li><a href="#beta-diversity" id="toc-beta-diversity" class="nav-link" data-scroll-target="#beta-diversity"><span class="header-section-number">11.6.2</span> Beta diversity</a></li>
   </ul>
 </li>
   <li>
-<a href="#microbial-composition" id="toc-microbial-composition" class="nav-link" data-scroll-target="#microbial-composition"><span class="header-section-number">11.8</span> Microbial composition</a>
+<a href="#microbial-composition" id="toc-microbial-composition" class="nav-link" data-scroll-target="#microbial-composition"><span class="header-section-number">11.7</span> Microbial composition</a>
   <ul class="collapse">
-<li><a href="#abundance" id="toc-abundance" class="nav-link" data-scroll-target="#abundance"><span class="header-section-number">11.8.1</span> Abundance</a></li>
-  <li><a href="#prevalence" id="toc-prevalence" class="nav-link" data-scroll-target="#prevalence"><span class="header-section-number">11.8.2</span> Prevalence</a></li>
+<li><a href="#abundance" id="toc-abundance" class="nav-link" data-scroll-target="#abundance"><span class="header-section-number">11.7.1</span> Abundance</a></li>
+  <li><a href="#prevalence" id="toc-prevalence" class="nav-link" data-scroll-target="#prevalence"><span class="header-section-number">11.7.2</span> Prevalence</a></li>
   </ul>
 </li>
-  <li><a href="#heatmaps" id="toc-heatmaps" class="nav-link" data-scroll-target="#heatmaps"><span class="header-section-number">11.9</span> Heatmaps</a></li>
-  <li><a href="#further-fun" id="toc-further-fun" class="nav-link" data-scroll-target="#further-fun"><span class="header-section-number">11.10</span> Further fun</a></li>
+  <li><a href="#heatmaps" id="toc-heatmaps" class="nav-link" data-scroll-target="#heatmaps"><span class="header-section-number">11.8</span> Heatmaps</a></li>
+  <li><a href="#further-fun" id="toc-further-fun" class="nav-link" data-scroll-target="#further-fun"><span class="header-section-number">11.9</span> Further fun</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/edit/main/310_microbiome.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seandavi/2024-r-intro-bigcare/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -656,9 +655,21 @@ Rooted; includes branch lengths.</code></pre>
 </div>
 </div>
 <p>The <code>rowTree</code> slot contains information about the hierarchical structure of the data, such as the relationships between different microbial taxa based on their genetic sequences. This information can be used to explore the evolutionary relationships between different microbes and to visualize the diversity and relatedness of the microbial community in a sample.</p>
+<p>We can visualize the phylogenetic tree using the <code>ggtree</code> package in R. The <code>ggtree</code> package provides functions for visualizing phylogenetic trees in a variety of formats, including circular, rectangular, and radial layouts. Here, we’ll use the <code>ggtree</code> package to visualize the phylogenetic tree stored in the <code>rowTree</code> slot of the <code>TreeSummarizedExperiment</code> object.</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.amazon.com/Integration-Manipulation-Visualization-Phylogenetic-Computational-ebook/dp/B0B5NLZR1Z/">ggtree</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ggtree/man/ggtree.html">ggtree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="310_microbiome_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>See the <a href="https://bioconductor.org/packages/ggtree">ggtree</a> package for more details on visualizing tree structures in R and, for more fun, the <a href="https://yulab-smu.top/treedata-book/">ggtree book</a>.</p>
 <p>The <code>rowLink</code> slot contains information about the relationships between the features and the tree structure. This information can be used to link the features in the data to the nodes in the tree and to explore the relationships between the features based on their abundance profiles.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowLinks</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowLinks</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>LinkDataFrame with 601 rows and 5 columns
                                                   nodeLab nodeLab_alias
@@ -697,14 +708,14 @@ Weissella viridescens                   4773      TRUE       phylo</code></pre>
 <span class="header-section-number">11.5.1</span> Subsetting samples</h3>
 <p>You can subset the samples in a <code>TreeSummarizedExperiment</code> object similarly to how you would subset a <code>data.frame</code>. For example, to subset out data based on the age category of the samples, you can use the following code:</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tse</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tse</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 64 68 60 70 68 66</code></pre>
 </div>
 </div>
 <p>Age is a numeric variable. Let’s focus on older patients.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse_subset_by_age</span> <span class="op">&lt;-</span> <span class="va">tse</span><span class="op">[</span>, <span class="va">tse</span><span class="op">$</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">]</span></span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse_subset_by_age</span> <span class="op">&lt;-</span> <span class="va">tse</span><span class="op">[</span>, <span class="va">tse</span><span class="op">$</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">]</span></span>
 <span><span class="va">tse_subset_by_age</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class: TreeSummarizedExperiment 
@@ -730,13 +741,13 @@ colTree: NULL</code></pre>
 <p>The microbiome features (organisms) that are measured may be measured at different taxonomic levels. For example, the data may be available at the species, genus, family, or phylum level. Agglomerating data is the process of summarizing the data at a higher taxonomic level by combining the abundances of the lower-level taxa. This can be useful for simplifying the data and reducing the dimensionality of the data.</p>
 <p>The <code>agglomerateByRank</code> function in the <code>mia</code> package can be used to agglomerate the data at a specified taxonomic rank. For example, to agglomerate the data at the phylum level, you can use the following code:</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"phylum"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"phylum"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The following values are already present in `metadata` and will be
 overwritten: 'agglomerated_by_rank'. Consider using the 'name' argument to
 specify alternative names.</code></pre>
 </div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
 <span><span class="va">new_tse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class: TreeSummarizedExperiment 
@@ -758,25 +769,11 @@ colTree: NULL</code></pre>
 </div>
 </div>
 <p>The resulting <code>TreeSummarizedExperiment</code> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</p>
-</section></section><section id="the-tree-structure" class="level2" data-number="11.6"><h2 data-number="11.6" class="anchored" data-anchor-id="the-tree-structure">
-<span class="header-section-number">11.6</span> The tree structure</h2>
-<p>The <code>TreeSummarizedExperiment</code> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <code>rowTree</code> slot of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</p>
-<div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.amazon.com/Integration-Manipulation-Visualization-Phylogenetic-Computational-ebook/dp/B0B5NLZR1Z/">ggtree</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/ggtree/man/ggtree.html">ggtree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="310_microbiome_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>See the <a href="https://bioconductor.org/packages/ggtree">ggtree</a> package for more details on visualizing tree structures in R and, for more fun, the <a href="https://yulab-smu.top/treedata-book/">ggtree book</a>.</p>
-</section><section id="community-indices" class="level2" data-number="11.7"><h2 data-number="11.7" class="anchored" data-anchor-id="community-indices">
-<span class="header-section-number">11.7</span> Community indices</h2>
+</section></section><section id="community-indices" class="level2" data-number="11.6"><h2 data-number="11.6" class="anchored" data-anchor-id="community-indices">
+<span class="header-section-number">11.6</span> Community indices</h2>
 <p>In the field of microbiome ecology several indices to describe samples and community of samples are available. In this vignette we just want to give a very brief introduction.</p>
-<section id="alpha-diversity" class="level3" data-number="11.7.1"><h3 data-number="11.7.1" class="anchored" data-anchor-id="alpha-diversity">
-<span class="header-section-number">11.7.1</span> Alpha diversity</h3>
+<section id="alpha-diversity" class="level3" data-number="11.6.1"><h3 data-number="11.6.1" class="anchored" data-anchor-id="alpha-diversity">
+<span class="header-section-number">11.6.1</span> Alpha diversity</h3>
 <p>diversity in microbiology is measured by several indices:</p>
 <ul>
 <li>species richness (total number of species)</li>
@@ -951,8 +948,8 @@ Attaching package: 'scater'</code></pre>
 </div>
 </div>
 </div>
-</section><section id="beta-diversity" class="level3" data-number="11.7.2"><h3 data-number="11.7.2" class="anchored" data-anchor-id="beta-diversity">
-<span class="header-section-number">11.7.2</span> Beta diversity</h3>
+</section><section id="beta-diversity" class="level3" data-number="11.6.2"><h3 data-number="11.6.2" class="anchored" data-anchor-id="beta-diversity">
+<span class="header-section-number">11.6.2</span> Beta diversity</h3>
 <p>Community similarity refers to the way microorganisms resemble each other in terms of their composition and abundance of different microbial taxa. This can help us understand to what degree different samples resemble each other and finding key information. In microbiome analysis however, it’s more common to measure the dissimilarity/Beta diversity between two samples A and B using the Bray-Curtis measure which is defined as follows:</p>
 <p><span class="math display">\[
 BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}
@@ -986,12 +983,12 @@ BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}
 </div>
 </div>
 <p>You can experiment with different variables to color the samples and explore the relationships between samples based on their microbial composition.</p>
-</section></section><section id="microbial-composition" class="level2" data-number="11.8"><h2 data-number="11.8" class="anchored" data-anchor-id="microbial-composition">
-<span class="header-section-number">11.8</span> Microbial composition</h2>
+</section></section><section id="microbial-composition" class="level2" data-number="11.7"><h2 data-number="11.7" class="anchored" data-anchor-id="microbial-composition">
+<span class="header-section-number">11.7</span> Microbial composition</h2>
 <p>Let’s now look at the microbial composition of the samples in the <code>tse</code> object. The microbial composition refers to the relative abundances of different microbial taxa in each sample. This information can provide insights into the diversity and structure of the microbial community in each sample and help identify patterns and relationships between samples based on their microbial composition.</p>
 <p>The <code>mia</code> package provides functions for visualizing the microbial composition of samples, such as bar plots, heatmaps, and stacked bar plots. These plots can help you explore the relative abundances of different microbial taxa in each sample and identify patterns and relationships between samples based on their microbial composition.</p>
-<section id="abundance" class="level3" data-number="11.8.1"><h3 data-number="11.8.1" class="anchored" data-anchor-id="abundance">
-<span class="header-section-number">11.8.1</span> Abundance</h3>
+<section id="abundance" class="level3" data-number="11.7.1"><h3 data-number="11.7.1" class="anchored" data-anchor-id="abundance">
+<span class="header-section-number">11.7.1</span> Abundance</h3>
 <p>We can start by creating a bar plot of the top 40 most abundant taxa in the dataset. This plot shows the relative abundances of the top 40 taxa in each sample, with the taxa sorted by abundance.</p>
 <div class="cell">
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">miaViz</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1045,8 +1042,8 @@ introduced infinite values.</code></pre>
 </div>
 </div>
 </div>
-</section><section id="prevalence" class="level3" data-number="11.8.2"><h3 data-number="11.8.2" class="anchored" data-anchor-id="prevalence">
-<span class="header-section-number">11.8.2</span> Prevalence</h3>
+</section><section id="prevalence" class="level3" data-number="11.7.2"><h3 data-number="11.7.2" class="anchored" data-anchor-id="prevalence">
+<span class="header-section-number">11.7.2</span> Prevalence</h3>
 <p>Prevalence refers to the proportion of samples in which a taxon is present. This information can help identify the most common and rare taxa in the dataset and provide insights into the distribution of different taxa across samples.</p>
 <p>Let’s agglomerate the data at the genus level and then plot the prevalence of the top 20 most prevalent genera in the dataset.</p>
 <div class="cell">
@@ -1070,8 +1067,8 @@ specify alternative names.</code></pre>
          0.7272727          0.7077922 </code></pre>
 </div>
 </div>
-</section></section><section id="heatmaps" class="level2" data-number="11.9"><h2 data-number="11.9" class="anchored" data-anchor-id="heatmaps">
-<span class="header-section-number">11.9</span> Heatmaps</h2>
+</section></section><section id="heatmaps" class="level2" data-number="11.8"><h2 data-number="11.8" class="anchored" data-anchor-id="heatmaps">
+<span class="header-section-number">11.8</span> Heatmaps</h2>
 <p>Heatmaps are a common way to visualize microbiome data and can provide insights into the relative abundances of different microbial taxa in each sample. To keep things simple, we’ll create a heatmap of the relative abundances of the phyla in the dataset.</p>
 <p>We first agglomerate the data at the phylum level and then create a heatmap of the relative abundances of the phyla in the dataset.</p>
 <div class="cell">
@@ -1090,8 +1087,8 @@ specify alternative names.</code></pre>
 </div>
 </div>
 </div>
-</section><section id="further-fun" class="level2" data-number="11.10"><h2 data-number="11.10" class="anchored" data-anchor-id="further-fun">
-<span class="header-section-number">11.10</span> Further fun</h2>
+</section><section id="further-fun" class="level2" data-number="11.9"><h2 data-number="11.9" class="anchored" data-anchor-id="further-fun">
+<span class="header-section-number">11.9</span> Further fun</h2>
 <p>The mia package folks have created a <a href="https://microbiome.github.io/OMA/docs/devel/">book on microbome analysis in R</a> that you can explore for more details on microbiome analysis in R. The book covers a wide range of topics related to microbiome analysis, including data loading, preprocessing, visualization, and statistical analysis. It provides detailed explanations and examples of how to work with microbiome data in R and is a valuable resource for anyone interested in learning more about microbiome analysis.</p>
 
 
@@ -1731,58 +1728,58 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowTree`</span> slot contains information about the hierarchical structure of the data, such as the relationships between different microbial taxa based on their genetic sequences. This information can be used to explore the evolutionary relationships between different microbes and to visualize the diversity and relatedness of the microbial community in a sample. </span>
 <span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowLink`</span> slot contains information about the relationships between the features and the tree structure. This information can be used to link the features in the data to the nodes in the tree and to explore the relationships between the features based on their abundance profiles.</span>
+<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a>We can visualize the phylogenetic tree using the <span class="in">`ggtree`</span> package in R. The <span class="in">`ggtree`</span> package provides functions for visualizing phylogenetic trees in a variety of formats, including circular, rectangular, and radial layouts. Here, we'll use the <span class="in">`ggtree`</span> package to visualize the phylogenetic tree stored in the <span class="in">`rowTree`</span> slot of the <span class="in">`TreeSummarizedExperiment`</span> object.</span>
 <span id="cb56-172"><a href="#cb56-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a><span class="fu">rowLinks</span>(tse)</span>
-<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`rowTree`</span> and <span class="in">`rowLinks`</span> are optional components of the <span class="in">`TreeSummarizedExperiment`</span> object, but when present, they provide valuable information about the hierarchical structure of the data and the relationships between the features in the data.</span>
-<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-181"><a href="#cb56-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrangling and subsetting</span></span>
-<span id="cb56-182"><a href="#cb56-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-183"><a href="#cb56-183" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides several functions for wrangling and subsetting microbiome data. These functions allow you to filter, transform, and manipulate the data to extract the information you need for analysis.</span>
-<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsetting samples</span></span>
-<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a>You can subset the samples in a <span class="in">`TreeSummarizedExperiment`</span> object similarly to how you would subset a <span class="in">`data.frame`</span>. For example, to subset out data based on the age category of the samples, you can use the following code:</span>
-<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tse<span class="sc">$</span>age)</span>
-<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a>Age is a numeric variable. Let's focus on older patients.</span>
-<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-199"><a href="#cb56-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age <span class="ot">&lt;-</span> tse[, tse<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">50</span>]</span>
-<span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age</span>
+<span id="cb56-173"><a href="#cb56-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
+<span id="cb56-174"><a href="#cb56-174" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggtree)</span></span>
+<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a><span class="in">ggtree(rowTree(tse))</span></span>
+<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">ggtree</span><span class="co">](https://bioconductor.org/packages/ggtree)</span> package for more details on visualizing tree structures in R and, for more fun, the <span class="co">[</span><span class="ot">ggtree book</span><span class="co">](https://yulab-smu.top/treedata-book/)</span>. </span>
+<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowLink`</span> slot contains information about the relationships between the features and the tree structure. This information can be used to link the features in the data to the nodes in the tree and to explore the relationships between the features based on their abundance profiles.</span>
+<span id="cb56-181"><a href="#cb56-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a><span class="fu">rowLinks</span>(tse)</span>
+<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`rowTree`</span> and <span class="in">`rowLinks`</span> are optional components of the <span class="in">`TreeSummarizedExperiment`</span> object, but when present, they provide valuable information about the hierarchical structure of the data and the relationships between the features in the data.</span>
+<span id="cb56-189"><a href="#cb56-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-190"><a href="#cb56-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrangling and subsetting</span></span>
+<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides several functions for wrangling and subsetting microbiome data. These functions allow you to filter, transform, and manipulate the data to extract the information you need for analysis.</span>
+<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsetting samples</span></span>
+<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a>You can subset the samples in a <span class="in">`TreeSummarizedExperiment`</span> object similarly to how you would subset a <span class="in">`data.frame`</span>. For example, to subset out data based on the age category of the samples, you can use the following code:</span>
+<span id="cb56-197"><a href="#cb56-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tse<span class="sc">$</span>age)</span>
 <span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agglomerating data</span></span>
+<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a>Age is a numeric variable. Let's focus on older patients.</span>
 <span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-206"><a href="#cb56-206" aria-hidden="true" tabindex="-1"></a>The microbiome features (organisms) that are measured may be measured at different taxonomic levels. For example, the data may be available at the species, genus, family, or phylum level. Agglomerating data is the process of summarizing the data at a higher taxonomic level by combining the abundances of the lower-level taxa. This can be useful for simplifying the data and reducing the dimensionality of the data.</span>
-<span id="cb56-207"><a href="#cb56-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a>The <span class="in">`agglomerateByRank`</span> function in the <span class="in">`mia`</span> package can be used to agglomerate the data at a specified taxonomic rank. For example, to agglomerate the data at the phylum level, you can use the following code:</span>
-<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a>new_tse <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"phylum"</span>)</span>
-<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
-<span id="cb56-215"><a href="#cb56-215" aria-hidden="true" tabindex="-1"></a>new_tse</span>
-<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</span>
-<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## The tree structure</span></span>
-<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-223"><a href="#cb56-223" aria-hidden="true" tabindex="-1"></a>The <span class="in">`TreeSummarizedExperiment`</span> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <span class="in">`rowTree`</span> slot of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</span>
-<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
-<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggtree)</span></span>
-<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a><span class="in">ggtree(rowTree(tse))</span></span>
-<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age <span class="ot">&lt;-</span> tse[, tse<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">50</span>]</span>
+<span id="cb56-210"><a href="#cb56-210" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age</span>
+<span id="cb56-211"><a href="#cb56-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agglomerating data</span></span>
+<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-215"><a href="#cb56-215" aria-hidden="true" tabindex="-1"></a>The microbiome features (organisms) that are measured may be measured at different taxonomic levels. For example, the data may be available at the species, genus, family, or phylum level. Agglomerating data is the process of summarizing the data at a higher taxonomic level by combining the abundances of the lower-level taxa. This can be useful for simplifying the data and reducing the dimensionality of the data.</span>
+<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a>The <span class="in">`agglomerateByRank`</span> function in the <span class="in">`mia`</span> package can be used to agglomerate the data at a specified taxonomic rank. For example, to agglomerate the data at the phylum level, you can use the following code:</span>
+<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a>new_tse <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"phylum"</span>)</span>
+<span id="cb56-223"><a href="#cb56-223" aria-hidden="true" tabindex="-1"></a><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
+<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a>new_tse</span>
+<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</span>
+<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">ggtree</span><span class="co">](https://bioconductor.org/packages/ggtree)</span> package for more details on visualizing tree structures in R and, for more fun, the <span class="co">[</span><span class="ot">ggtree book</span><span class="co">](https://yulab-smu.top/treedata-book/)</span>. </span>
+<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-231"><a href="#cb56-231" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-232"><a href="#cb56-232" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-233"><a href="#cb56-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## Community indices</span></span>
