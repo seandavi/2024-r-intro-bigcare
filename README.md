@@ -13,3 +13,24 @@ install.packages('BiocManager')
 BiocManager::install('remotes')
 BiocManager::install('seandavi/2024-r-intro-bigcare')
 ```
+
+
+## local development
+
+To build the website locally, run the following code:
+
+```
+quarto render
+```
+
+To build the website and serve it locally, run the following code:
+
+```
+quarto preview
+```
+
+To publish the website to GitHub pages, run the following code:
+
+```
+quarto publish
+```
