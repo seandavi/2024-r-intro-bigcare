@@ -760,16 +760,10 @@ colTree: NULL</code></pre>
 <p>The resulting <code>TreeSummarizedExperiment</code> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</p>
 </section></section><section id="the-tree-structure" class="level2" data-number="11.6"><h2 data-number="11.6" class="anchored" data-anchor-id="the-tree-structure">
 <span class="header-section-number">11.6</span> The tree structure</h2>
-<p>The <code>TreeSummarizedExperiment</code> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <code>rowTree</code> and <code>colTree</code> slots of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</p>
+<p>The <code>TreeSummarizedExperiment</code> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <code>rowTree</code> slot of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</p>
 <div class="cell">
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.amazon.com/Integration-Manipulation-Visualization-Phylogenetic-Computational-ebook/dp/B0B5NLZR1Z/">ggtree</a></span><span class="op">)</span></span>
-<span><span class="va">new_tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"phylum"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following values are already present in `metadata` and will be
-overwritten: 'agglomerated_by_rank'. Consider using the 'name' argument to
-specify alternative names.</code></pre>
-</div>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggtree/man/ggtree.html">ggtree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">new_tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ggtree/man/ggtree.html">ggtree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="310_microbiome_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
@@ -792,7 +786,7 @@ specify alternative names.</code></pre>
 <p>Functions for calculating alpha and beta diversity indices are available. Using <code>addAlpha</code> multiple diversity indices are calculated by default and results are stored automatically in <code>colData</code>.</p>
 <p>In the code below we calculate the Shannon and observed diversity indices.</p>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha</a></span><span class="op">(</span><span class="va">tse</span>, index <span class="op">=</span> <span class="st">"shannon"</span>, assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha</a></span><span class="op">(</span><span class="va">tse</span>, index <span class="op">=</span> <span class="st">"shannon"</span>, assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span><span class="op">)</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha</a></span><span class="op">(</span><span class="va">tse</span>, index <span class="op">=</span> <span class="st">"observed"</span>, assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -816,7 +810,7 @@ specify alternative names.</code></pre>
 <p>The <code>observed</code> index is a simple count of the number of species present in a sample, while the <code>shannon</code> index takes into account both the number of species and their relative abundances. These indices provide information about the diversity and richness of the microbial community in each sample.</p>
 <p>And we can look at the resulting colData() which now contains the calculated alpha diversity indices.</p>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>DataFrame with 154 rows and 30 columns
            study_name  subject_id   body_site antibiotics_current_use
@@ -927,7 +921,7 @@ SID532915       126</code></pre>
 </div>
 <p>The <code>scater</code> package provides some convenient plotting functions that are designed to work with the <code>SummarizedExperiment</code> class.</p>
 <div class="cell" data-messasge="false">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioconductor.org/packages/scater/">scater</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioconductor.org/packages/scater/">scater</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: scuttle</code></pre>
 </div>
@@ -943,7 +937,7 @@ Attaching package: 'scater'</code></pre>
 
     multiplot</code></pre>
 </div>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData</a></span><span class="op">(</span><span class="va">tse</span>,</span>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData</a></span><span class="op">(</span><span class="va">tse</span>,</span>
 <span>    <span class="st">"observed"</span>,</span>
 <span>    <span class="st">"study_condition"</span>,</span>
 <span>    colour_by <span class="op">=</span> <span class="st">"gender"</span></span>
@@ -966,7 +960,7 @@ BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}
 <p>where <span class="math inline">\(A_{k}\)</span> and <span class="math inline">\(B_{k}\)</span> are the abundances of taxon <span class="math inline">\(k\)</span> in samples A and B, respectively. The Bray-Curtis dissimilarity ranges from 0 (identical communities) to 1 (completely different communities).</p>
 <p>The <code>mia</code> package provides functions for calculating beta diversity indices, such as the Bray-Curtis dissimilarity, Jaccard similarity, and UniFrac distance. These indices can be used to compare the microbial communities between different samples and to identify patterns and relationships between samples based on their microbial composition.</p>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Run PCoA on relabundance assay with Bray-Curtis distances</span></span>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Run PCoA on relabundance assay with Bray-Curtis distances</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vegandevs/vegan">vegan</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/scater/man/runMDS.html">runMDS</a></span><span class="op">(</span><span class="va">tse</span>,</span>
@@ -980,7 +974,7 @@ BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}
 <p>The resulting <code>TreeSummarizedExperiment</code> object now contains the Bray-Curtis dissimilarity matrix in the <code>MDS_bray</code> slot, which can be used to visualize the relationships between samples based on their microbial composition.</p>
 <p>We can visualize the results of the PCoA using the <code>plotReducedDim</code> function from the <code>scater</code> package. This function creates a plot of the reduced dimensions (PCoA) and colors the samples based on a specified variable, such as the study condition</p>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create ggplot object</span></span>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create ggplot object</span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotReducedDim.html">plotReducedDim</a></span><span class="op">(</span><span class="va">tse</span>, <span class="st">"MDS_bray"</span>, colour_by <span class="op">=</span> <span class="st">"study_condition"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1000,11 +994,11 @@ BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}
 <span class="header-section-number">11.8.1</span> Abundance</h3>
 <p>We can start by creating a bar plot of the top 40 most abundant taxa in the dataset. This plot shows the relative abundances of the top 40 taxa in each sample, with the taxa sorted by abundance.</p>
 <div class="cell">
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">miaViz</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">miaViz</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: ggraph</code></pre>
 </div>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/miaViz/man/plotAbundanceDensity.html">plotAbundanceDensity</a></span><span class="op">(</span><span class="va">tse</span>,</span>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/miaViz/man/plotAbundanceDensity.html">plotAbundanceDensity</a></span><span class="op">(</span><span class="va">tse</span>,</span>
 <span>    layout <span class="op">=</span> <span class="st">"jitter"</span>,</span>
 <span>    assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span>,</span>
 <span>    n <span class="op">=</span> <span class="fl">40</span></span>
@@ -1027,7 +1021,7 @@ introduced infinite values.</code></pre>
 </div>
 <p>We can also look at the relative abundances of specific taxa in the dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/miaViz/man/plotAbundanceDensity.html">plotAbundanceDensity</a></span><span class="op">(</span><span class="va">tse</span>,</span>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/miaViz/man/plotAbundanceDensity.html">plotAbundanceDensity</a></span><span class="op">(</span><span class="va">tse</span>,</span>
 <span>    layout <span class="op">=</span> <span class="st">"density"</span>,</span>
 <span>    assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span>,</span>
 <span>    n <span class="op">=</span> <span class="fl">5</span>, colour_by <span class="op">=</span> <span class="st">"study_condition"</span></span>
@@ -1056,7 +1050,7 @@ introduced infinite values.</code></pre>
 <p>Prevalence refers to the proportion of samples in which a taxon is present. This information can help identify the most common and rare taxa in the dataset and provide insights into the distribution of different taxa across samples.</p>
 <p>Let’s agglomerate the data at the genus level and then plot the prevalence of the top 20 most prevalent genera in the dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse_genus</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"genus"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse_genus</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"genus"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The following values are already present in `metadata` and will be
 overwritten: 'agglomerated_by_rank'. Consider using the 'name' argument to
@@ -1064,7 +1058,7 @@ specify alternative names.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/mia/man/getPrevalence.html">getPrevalence</a></span><span class="op">(</span><span class="va">tse_genus</span>,</span>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/mia/man/getPrevalence.html">getPrevalence</a></span><span class="op">(</span><span class="va">tse_genus</span>,</span>
 <span>    detection <span class="op">=</span> <span class="fl">1</span> <span class="op">/</span> <span class="fl">100</span>,</span>
 <span>    sort <span class="op">=</span> <span class="cn">TRUE</span>, assay.type <span class="op">=</span> <span class="st">"relative_abundance"</span>,</span>
 <span>    as.relative <span class="op">=</span> <span class="cn">TRUE</span></span>
@@ -1081,14 +1075,14 @@ specify alternative names.</code></pre>
 <p>Heatmaps are a common way to visualize microbiome data and can provide insights into the relative abundances of different microbial taxa in each sample. To keep things simple, we’ll create a heatmap of the relative abundances of the phyla in the dataset.</p>
 <p>We first agglomerate the data at the phylum level and then create a heatmap of the relative abundances of the phyla in the dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">pheatmap</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">pheatmap</span><span class="op">)</span></span>
 <span><span class="va">tse_phylum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/agglomerate-methods.html">agglomerateByRank</a></span><span class="op">(</span><span class="va">tse</span>, rank <span class="op">=</span> <span class="st">"phylum"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The following values are already present in `metadata` and will be
 overwritten: 'agglomerated_by_rank'. Consider using the 'name' argument to
 specify alternative names.</code></pre>
 </div>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/pheatmap/man/pheatmap.html">pheatmap</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">assay</a></span><span class="op">(</span><span class="va">tse_phylum</span>, <span class="st">"relative_abundance"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/pheatmap/man/pheatmap.html">pheatmap</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">assay</a></span><span class="op">(</span><span class="va">tse_phylum</span>, <span class="st">"relative_abundance"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="310_microbiome_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1581,376 +1575,375 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb58" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Microbiome analysis</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>The human microbiome is a complex ecosystem of bacteria, viruses, fungi, and other microorganisms that live in and on the human body. These microorganisms play a crucial role in human health and disease, influencing everything from digestion and metabolism to immune function and mental health. Understanding the composition and function of the human microbiome is a rapidly growing area of research with implications for a wide range of fields, including medicine, agriculture, and environmental science.</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>Microbiome analysis involves studying the microbial communities that inhabit different environments, such as the human gut, skin, mouth, and soil. The analysis of microbiome data typically involves quantifying the abundance of different microorganisms in a given sample and comparing the microbial communities across different samples or conditions. This can help researchers identify patterns, relationships, and associations between microbial communities and various factors, such as health status, diet, lifestyle, and environmental conditions.</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>In this chapter, we will assume that the data has already been processed and cleaned, and we will focus on analyzing the microbiome data using R. </span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Getting started</span></span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>We'll be using the <span class="in">`mia`</span> package for microbiome analysis in R. The <span class="in">`mia`</span> package provides a suite of tools for analyzing microbiome data, including functions for loading, processing, and visualizing microbiome data. The package is designed to work with the <span class="in">`SummarizedExperiment`</span> and <span class="in">`TreeSummarizedExperiment`</span> classes, which are specialized data structures for storing microbiome data in R.</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>To get started, you'll need to install the <span class="in">`mia`</span> package from GitHub using the <span class="in">`BiocManager`</span> package. If you don't already have the <span class="in">`BiocManager`</span> package installed, you can install it using the following command:</span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a><span class="in"># Install the mia package</span></span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="in">BiocManager::install("microbiome/mia")</span></span>
-<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`mia`</span> package is part of the Bioconductor project, but in this case, we are installing it directly from GitHub using the <span class="in">`microbiome/mia`</span> repository. This is a common practice when working with development versions of packages or with packages that are not yet available on Bioconductor. </span>
-<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a>Once the <span class="in">`mia`</span> package is installed, you can load it into your R session using the following command:</span>
-<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE, warning=FALSE}</span></span>
-<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a><span class="in"># Load the mia package</span></span>
-<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a><span class="in">library(mia)</span></span>
-<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a>Now that the <span class="in">`mia`</span> package is loaded, we can load the microbiome dataset that we will be working with. </span>
-<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-34"><a href="#cb58-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Accessing micriobiome datasets</span></span>
-<span id="cb58-35"><a href="#cb58-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-36"><a href="#cb58-36" aria-hidden="true" tabindex="-1"></a>There are many publicly available microbiome datasets that you can use for analysis. Bioconductor provides several packages that contain curated microbiome datasets that facilitate access to and loading microbiome data into R for analysis.</span>
-<span id="cb58-37"><a href="#cb58-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-38"><a href="#cb58-38" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">curatedMetagenomicData</span><span class="co">](https://bioconductor.org/packages/curatedMetagenomicsData)</span> is a large collection of curated human microbiome datasets, provided as TreeSE objects (Pasolli et al. 2017). The resource provides curated human microbiome data including gene families, marker abundance, marker presence, pathway abundance, pathway coverage, and relative abundance for samples from different body sites. See the package homepage for more details on data availability and access.</span>
-<span id="cb58-39"><a href="#cb58-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-40"><a href="#cb58-40" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">The microbiomeDataSets package</span><span class="co">](https://bioconductor.org/packages/microbiomeDataSets)</span> provides a collection of curated microbiome datasets for teaching and research purposes. The package contains several example datasets that can be used to explore different aspects of microbiome analysis, such as alpha and beta diversity, differential abundance analysis, and visualization.</span>
-<span id="cb58-41"><a href="#cb58-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-42"><a href="#cb58-42" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">The mia package</span><span class="co">](https://bioconductor.org/packages/mia)</span> and several other packages provide example datasets for learning and testing the functions in the package. These datasets are typically small and easy to work with, making them ideal for learning how to analyze microbiome data in R.</span>
-<span id="cb58-43"><a href="#cb58-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-44"><a href="#cb58-44" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">MicroBioMap</span><span class="co">](https://github.com/seandavi/MicroBioMap)</span> package provides a collection of 170,000 microbiome samples homogeneously processed. The package is designed to facilitate the use of large-scale microbiome data for research and education purposes.</span>
-<span id="cb58-45"><a href="#cb58-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-46"><a href="#cb58-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data containers</span></span>
-<span id="cb58-47"><a href="#cb58-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-48"><a href="#cb58-48" aria-hidden="true" tabindex="-1"></a>Bioconductor provides several specialized data structures for storing and working with microbiome data in R. These data structures are designed to handle the complex and high-dimensional nature of microbiome data and provide a convenient and efficient way to store, manipulate, and analyze microbiome data in R.</span>
-<span id="cb58-49"><a href="#cb58-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-50"><a href="#cb58-50" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">SummarizedExperiment (SE)</span><span class="co">](https://bioconductor.org/packages/SummarizedExperiment)</span> (Morgan et al. 2020) is a generic and highly optimized container for complex data structures. It has become a common choice for analyzing various types of biomedical profiling data, such as RNAseq, ChIp-Seq, microarrays, flow cytometry, proteomics, and single-cell sequencing.</span>
-<span id="cb58-51"><a href="#cb58-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-52"><a href="#cb58-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-53"><a href="#cb58-53" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">TreeSummarizedExperiment</span><span class="co">](https://bioconductor.org/packages/TreeSummarizedExperiment)</span> (Huang 2020) was developed as an extension to incorporate hierarchical information (such as phylogenetic trees and sample hierarchies) and reference sequences.</span>
-<span id="cb58-54"><a href="#cb58-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-55"><a href="#cb58-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-56"><a href="#cb58-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loading a microbiome dataset</span></span>
-<span id="cb58-57"><a href="#cb58-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-58"><a href="#cb58-58" aria-hidden="true" tabindex="-1"></a>We will be using the <span class="in">`curatedMetagenomicData`</span> package to load the <span class="in">`FengQ_2015`</span> dataset. This dataset contains microbiome data from a study by <span class="co">[</span><span class="ot">Feng et al. (2015)</span><span class="co">](https://pubmed.ncbi.nlm.nih.gov/25758642/)</span>. The curatedMetagenomicData package provides a convenient interface for accessing microbiome datasets that have been pre-processed and curated for analysis. </span>
-<span id="cb58-59"><a href="#cb58-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-60"><a href="#cb58-60" aria-hidden="true" tabindex="-1"></a>Ignore the details of the code for now, but suffice it to say that what the code will do for us is to load a dataset for downstream analysis.</span>
-<span id="cb58-61"><a href="#cb58-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-64"><a href="#cb58-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-65"><a href="#cb58-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the FengQ_2015 dataset</span></span>
-<span id="cb58-66"><a href="#cb58-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(curatedMetagenomicData)</span>
-<span id="cb58-67"><a href="#cb58-67" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">curatedMetagenomicData</span>(<span class="st">"FengQ_2015.relative_abundance"</span>, <span class="at">dryrun =</span> <span class="cn">FALSE</span>, <span class="at">rownames =</span> <span class="st">"short"</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb58-68"><a href="#cb58-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-69"><a href="#cb58-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-70"><a href="#cb58-70" aria-hidden="true" tabindex="-1"></a>This code goes out to the internet and downloads the dataset for you. The <span class="in">`tse`</span> object is a <span class="in">`TreeSummarizedExperiment`</span> object that contains the microbiome data from the Feng et al. (2015) study. The <span class="in">`TreeSummarizedExperiment`</span> class is a specialized data structure for storing microbiome data in R, and it is used by the <span class="in">`mia`</span> package for microbiome analysis.</span>
-<span id="cb58-71"><a href="#cb58-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-72"><a href="#cb58-72" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb58-73"><a href="#cb58-73" aria-hidden="true" tabindex="-1"></a>If you are working with your own microbiome data, you will often need to  load it into R using functions like <span class="in">`read.csv()`</span> or <span class="in">`read.table()`</span> to read tabular data files. Make sure your data is properly formatted and cleaned before loading it into R for analysis. </span>
-<span id="cb58-74"><a href="#cb58-74" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb58-75"><a href="#cb58-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-76"><a href="#cb58-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-77"><a href="#cb58-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-78"><a href="#cb58-78" aria-hidden="true" tabindex="-1"></a>Once the data is loaded into R, we can start exploring the data to understand its structure and contents. The <span class="in">`tse`</span> object is a <span class="in">`TreeSummarizedExperiment`</span> object, which is a specialized data structure for storing microbiome data in R. It works quite like a data.frame in, but with many specialized structures for storing microbiome experiment data as shown in @fig-tse-anatomy. We can use various functions to explore the data stored in the <span class="in">`tse`</span> object. See the <span class="co">[</span><span class="ot">TreeSummarizedExperiment</span><span class="co">](https://bioconductor.org/packages/TreeSummarizedExperiment)</span> package for more details.</span>
-<span id="cb58-79"><a href="#cb58-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-80"><a href="#cb58-80" aria-hidden="true" tabindex="-1"></a>This section provides an introduction to these data containers. In microbiome data science, these containers link taxonomic abundance tables with rich side information on the features and samples. Taxonomic abundance data can be obtained by 16S rRNA amplicon or metagenomic sequencing, phylogenetic microarrays, or by other means. Many microbiome experiments include multiple versions and types of data generated independently or derived from each other through transformation or agglomeration. </span>
-<span id="cb58-81"><a href="#cb58-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-82"><a href="#cb58-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-83"><a href="#cb58-83" aria-hidden="true" tabindex="-1"></a>![Anatomy of a TreeSummarizedExperiment object. Compared to the SingleCellExperiment objects, TreeSummarizedExperiment has five additional slots. **rowTree**: the hierarchical structure on the rows of the assays. </span>
-<span id="cb58-84"><a href="#cb58-84" aria-hidden="true" tabindex="-1"></a>**rowLinks**: the link information between rows of the assays and the rowTree.</span>
-<span id="cb58-85"><a href="#cb58-85" aria-hidden="true" tabindex="-1"></a>**colTree**: the hierarchical structure on the columns of the assays.</span>
-<span id="cb58-86"><a href="#cb58-86" aria-hidden="true" tabindex="-1"></a>**colLinks**: the link information between columns of the assays and the colTree.</span>
-<span id="cb58-87"><a href="#cb58-87" aria-hidden="true" tabindex="-1"></a>**referenceSeq** (optional): the reference sequence data per feature (row).</span>
-<span id="cb58-88"><a href="#cb58-88" aria-hidden="true" tabindex="-1"></a>](images/treesummarizedexperiment.png){#fig-tse-anatomy}</span>
-<span id="cb58-89"><a href="#cb58-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-90"><a href="#cb58-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-91"><a href="#cb58-91" aria-hidden="true" tabindex="-1"></a>To get an overview of the data, we can simply type the name of the object in the R console:</span>
-<span id="cb58-92"><a href="#cb58-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-95"><a href="#cb58-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-96"><a href="#cb58-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the object</span></span>
-<span id="cb58-97"><a href="#cb58-97" aria-hidden="true" tabindex="-1"></a>tse</span>
-<span id="cb58-98"><a href="#cb58-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-99"><a href="#cb58-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-100"><a href="#cb58-100" aria-hidden="true" tabindex="-1"></a>Observe how the output of the <span class="in">`tse`</span> object will show you the dimensions of the data, the metadata associated with the samples and features, etc. However, the data themselves are not printed to the console due to the large size of the dataset. The <span class="in">`TreeSummarizedExperiment`</span> object is a complex data structure that contains multiple components, including the abundance data, sample information, feature information, and other metadata.</span>
-<span id="cb58-101"><a href="#cb58-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-102"><a href="#cb58-102" aria-hidden="true" tabindex="-1"></a>Next, we'll look at some of the key components of the <span class="in">`TreeSummarizedExperiment`</span> object and how to access and manipulate them.</span>
-<span id="cb58-103"><a href="#cb58-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-104"><a href="#cb58-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assay data</span></span>
-<span id="cb58-105"><a href="#cb58-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-106"><a href="#cb58-106" aria-hidden="true" tabindex="-1"></a>The microbiome is the collection of all microbes (such as bacteria, viruses, fungi, etc.) in the body. When studying these microbes, data is needed, and that’s where assays come in. An assay is a way of measuring the presence and abundance of different types of microbes in a sample. For example, if you want to know how many bacteria of a certain type are in your gut, you can use an assay to measure this. When storing assays, the original data is count-based. However, the original count-based taxonomic abundance tables may undergo different transformations, such as logarithmic, Centered Log-Ratio (CLR), or relative abundance. These are typically stored in **assays**.</span>
-<span id="cb58-107"><a href="#cb58-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-108"><a href="#cb58-108" aria-hidden="true" tabindex="-1"></a>The assays slot contains the experimental data as multiple count matrices. The result of assays is a list of matrices.</span>
-<span id="cb58-109"><a href="#cb58-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-112"><a href="#cb58-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-113"><a href="#cb58-113" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(tse)</span>
-<span id="cb58-114"><a href="#cb58-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-115"><a href="#cb58-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-116"><a href="#cb58-116" aria-hidden="true" tabindex="-1"></a>Individual assays can be accessed via assay() function. The result is a matrix.</span>
-<span id="cb58-117"><a href="#cb58-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-120"><a href="#cb58-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-121"><a href="#cb58-121" aria-hidden="true" tabindex="-1"></a><span class="fu">assay</span>(tse, <span class="st">"relative_abundance"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb58-122"><a href="#cb58-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-123"><a href="#cb58-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-124"><a href="#cb58-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### colData</span></span>
-<span id="cb58-125"><a href="#cb58-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-126"><a href="#cb58-126" aria-hidden="true" tabindex="-1"></a>colData contains information about the samples used in the study. This information can include details such as the sample ID, the primers used in the analysis, the barcodes associated with the sample (truncated or complete), the type of sample (e.g. soil, fecal, mock) and a description of the sample.</span>
-<span id="cb58-127"><a href="#cb58-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-130"><a href="#cb58-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-131"><a href="#cb58-131" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(tse)</span>
-<span id="cb58-132"><a href="#cb58-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-133"><a href="#cb58-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-134"><a href="#cb58-134" aria-hidden="true" tabindex="-1"></a>As you can see, there is a lot of information stored in the <span class="in">`colData`</span> slot, including sample IDs, study conditions, and other metadata associated with the samples. This information is essential for understanding the context of the microbiome data and for performing downstream analyses. </span>
-<span id="cb58-135"><a href="#cb58-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-136"><a href="#cb58-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-137"><a href="#cb58-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### rowData</span></span>
-<span id="cb58-138"><a href="#cb58-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-139"><a href="#cb58-139" aria-hidden="true" tabindex="-1"></a>rowData contains data on the features of the analyzed samples. This is particularly important in the microbiome field for storing taxonomic information. This taxonomic information is extremely important for understanding the composition and diversity of the microbiome in each sample analyzed. It enables identification of the different types of microorganisms present in samples. It also allows you to explore the relationships between microbiome composition and various environmental or health factors.</span>
-<span id="cb58-140"><a href="#cb58-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-143"><a href="#cb58-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-144"><a href="#cb58-144" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rowData</span>(tse))</span>
-<span id="cb58-145"><a href="#cb58-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-146"><a href="#cb58-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-147"><a href="#cb58-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### rowTree</span></span>
-<span id="cb58-148"><a href="#cb58-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-149"><a href="#cb58-149" aria-hidden="true" tabindex="-1"></a>Phylogenetic trees also play an important role in the microbiome field. The TreeSE class can keep track of features and node relations via two functions, rowTree and rowLinks.</span>
-<span id="cb58-150"><a href="#cb58-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-151"><a href="#cb58-151" aria-hidden="true" tabindex="-1"></a>A tree can be accessed via <span class="in">`rowTree()`</span> as <span class="in">`phylo`</span> object.</span>
-<span id="cb58-152"><a href="#cb58-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-153"><a href="#cb58-153" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb58-154"><a href="#cb58-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phylogenetic trees</span></span>
-<span id="cb58-155"><a href="#cb58-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-156"><a href="#cb58-156" aria-hidden="true" tabindex="-1"></a>The phylogenetic tree is a branching diagram or "tree" showing the inferred evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. The tree of life is a phylogenetic tree that shows the evolutionary relationships among all living organisms on Earth.</span>
-<span id="cb58-157"><a href="#cb58-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-158"><a href="#cb58-158" aria-hidden="true" tabindex="-1"></a>In the context of microbiome analysis, phylogenetic trees are used to represent the evolutionary relationships between different microbial taxa based on their genetic sequences. These trees can help researchers understand the diversity and relatedness of different microbes in a sample and provide insights into the evolutionary history of the microbial community.</span>
-<span id="cb58-159"><a href="#cb58-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-160"><a href="#cb58-160" aria-hidden="true" tabindex="-1"></a>The <span class="in">`phylo`</span> class in R is used to represent phylogenetic trees and provides functions for working with and visualizing these trees. The <span class="in">`ggtree`</span> package is a popular package for visualizing phylogenetic trees in R and provides a wide range of options for customizing the appearance of the tree.</span>
-<span id="cb58-161"><a href="#cb58-161" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb58-162"><a href="#cb58-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-165"><a href="#cb58-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-166"><a href="#cb58-166" aria-hidden="true" tabindex="-1"></a><span class="fu">rowTree</span>(tse)</span>
-<span id="cb58-167"><a href="#cb58-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-168"><a href="#cb58-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-169"><a href="#cb58-169" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowTree`</span> slot contains information about the hierarchical structure of the data, such as the relationships between different microbial taxa based on their genetic sequences. This information can be used to explore the evolutionary relationships between different microbes and to visualize the diversity and relatedness of the microbial community in a sample. </span>
-<span id="cb58-170"><a href="#cb58-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-171"><a href="#cb58-171" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowLink`</span> slot contains information about the relationships between the features and the tree structure. This information can be used to link the features in the data to the nodes in the tree and to explore the relationships between the features based on their abundance profiles.</span>
-<span id="cb58-172"><a href="#cb58-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-175"><a href="#cb58-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-176"><a href="#cb58-176" aria-hidden="true" tabindex="-1"></a><span class="fu">rowLinks</span>(tse)</span>
-<span id="cb58-177"><a href="#cb58-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-178"><a href="#cb58-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-179"><a href="#cb58-179" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`rowTree`</span> and <span class="in">`rowLinks`</span> are optional components of the <span class="in">`TreeSummarizedExperiment`</span> object, but when present, they provide valuable information about the hierarchical structure of the data and the relationships between the features in the data.</span>
-<span id="cb58-180"><a href="#cb58-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-181"><a href="#cb58-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrangling and subsetting</span></span>
-<span id="cb58-182"><a href="#cb58-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-183"><a href="#cb58-183" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides several functions for wrangling and subsetting microbiome data. These functions allow you to filter, transform, and manipulate the data to extract the information you need for analysis.</span>
-<span id="cb58-184"><a href="#cb58-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-185"><a href="#cb58-185" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsetting samples</span></span>
-<span id="cb58-186"><a href="#cb58-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-187"><a href="#cb58-187" aria-hidden="true" tabindex="-1"></a>You can subset the samples in a <span class="in">`TreeSummarizedExperiment`</span> object similarly to how you would subset a <span class="in">`data.frame`</span>. For example, to subset out data based on the age category of the samples, you can use the following code:</span>
-<span id="cb58-188"><a href="#cb58-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-191"><a href="#cb58-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-192"><a href="#cb58-192" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tse<span class="sc">$</span>age)</span>
-<span id="cb58-193"><a href="#cb58-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-194"><a href="#cb58-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-195"><a href="#cb58-195" aria-hidden="true" tabindex="-1"></a>Age is a numeric variable. Let's focus on older patients.</span>
-<span id="cb58-196"><a href="#cb58-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-199"><a href="#cb58-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-200"><a href="#cb58-200" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age <span class="ot">&lt;-</span> tse[, tse<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">50</span>]</span>
-<span id="cb58-201"><a href="#cb58-201" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age</span>
-<span id="cb58-202"><a href="#cb58-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-203"><a href="#cb58-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-204"><a href="#cb58-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agglomerating data</span></span>
-<span id="cb58-205"><a href="#cb58-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-206"><a href="#cb58-206" aria-hidden="true" tabindex="-1"></a>The microbiome features (organisms) that are measured may be measured at different taxonomic levels. For example, the data may be available at the species, genus, family, or phylum level. Agglomerating data is the process of summarizing the data at a higher taxonomic level by combining the abundances of the lower-level taxa. This can be useful for simplifying the data and reducing the dimensionality of the data.</span>
-<span id="cb58-207"><a href="#cb58-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-208"><a href="#cb58-208" aria-hidden="true" tabindex="-1"></a>The <span class="in">`agglomerateByRank`</span> function in the <span class="in">`mia`</span> package can be used to agglomerate the data at a specified taxonomic rank. For example, to agglomerate the data at the phylum level, you can use the following code:</span>
-<span id="cb58-209"><a href="#cb58-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-212"><a href="#cb58-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-213"><a href="#cb58-213" aria-hidden="true" tabindex="-1"></a>new_tse <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"phylum"</span>)</span>
-<span id="cb58-214"><a href="#cb58-214" aria-hidden="true" tabindex="-1"></a><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
-<span id="cb58-215"><a href="#cb58-215" aria-hidden="true" tabindex="-1"></a>new_tse</span>
-<span id="cb58-216"><a href="#cb58-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-217"><a href="#cb58-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-218"><a href="#cb58-218" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</span>
-<span id="cb58-219"><a href="#cb58-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-220"><a href="#cb58-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-221"><a href="#cb58-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## The tree structure</span></span>
-<span id="cb58-222"><a href="#cb58-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-223"><a href="#cb58-223" aria-hidden="true" tabindex="-1"></a>The <span class="in">`TreeSummarizedExperiment`</span> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <span class="in">`rowTree`</span> and <span class="in">`colTree`</span> slots of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</span>
-<span id="cb58-224"><a href="#cb58-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-225"><a href="#cb58-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
-<span id="cb58-226"><a href="#cb58-226" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggtree)</span></span>
-<span id="cb58-227"><a href="#cb58-227" aria-hidden="true" tabindex="-1"></a><span class="in">new_tse &lt;- agglomerateByRank(tse, rank = "phylum")</span></span>
-<span id="cb58-228"><a href="#cb58-228" aria-hidden="true" tabindex="-1"></a><span class="in">ggtree(rowTree(new_tse))</span></span>
-<span id="cb58-229"><a href="#cb58-229" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-230"><a href="#cb58-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-231"><a href="#cb58-231" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">ggtree</span><span class="co">](https://bioconductor.org/packages/ggtree)</span> package for more details on visualizing tree structures in R and, for more fun, the <span class="co">[</span><span class="ot">ggtree book</span><span class="co">](https://yulab-smu.top/treedata-book/)</span>. </span>
-<span id="cb58-232"><a href="#cb58-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-233"><a href="#cb58-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-234"><a href="#cb58-234" aria-hidden="true" tabindex="-1"></a><span class="fu">## Community indices</span></span>
-<span id="cb58-235"><a href="#cb58-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-236"><a href="#cb58-236" aria-hidden="true" tabindex="-1"></a>In the field of microbiome ecology several indices to describe samples and</span>
-<span id="cb58-237"><a href="#cb58-237" aria-hidden="true" tabindex="-1"></a>community of samples are available. In this vignette we just want to give a</span>
-<span id="cb58-238"><a href="#cb58-238" aria-hidden="true" tabindex="-1"></a>very brief introduction.</span>
-<span id="cb58-239"><a href="#cb58-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-240"><a href="#cb58-240" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alpha diversity</span></span>
-<span id="cb58-241"><a href="#cb58-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-242"><a href="#cb58-242" aria-hidden="true" tabindex="-1"></a>diversity in microbiology is measured by several indices:</span>
-<span id="cb58-243"><a href="#cb58-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-244"><a href="#cb58-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>species richness (total number of species)</span>
-<span id="cb58-245"><a href="#cb58-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>equitability (distribution of species within a microbiome)</span>
-<span id="cb58-246"><a href="#cb58-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>diversity (combination of the two)</span>
-<span id="cb58-247"><a href="#cb58-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-248"><a href="#cb58-248" aria-hidden="true" tabindex="-1"></a>Functions for calculating alpha and beta diversity indices are available.</span>
-<span id="cb58-249"><a href="#cb58-249" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`addAlpha`</span> multiple diversity indices are calculated by default</span>
-<span id="cb58-250"><a href="#cb58-250" aria-hidden="true" tabindex="-1"></a>and results are stored automatically in <span class="in">`colData`</span>. </span>
-<span id="cb58-251"><a href="#cb58-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-252"><a href="#cb58-252" aria-hidden="true" tabindex="-1"></a>In the code below we calculate the Shannon and observed diversity indices. </span>
-<span id="cb58-253"><a href="#cb58-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-256"><a href="#cb58-256" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-257"><a href="#cb58-257" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">addAlpha</span>(tse, <span class="at">index =</span> <span class="st">"shannon"</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>)</span>
-<span id="cb58-258"><a href="#cb58-258" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">addAlpha</span>(tse, <span class="at">index =</span> <span class="st">"observed"</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>)</span>
-<span id="cb58-259"><a href="#cb58-259" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(<span class="fu">colData</span>(tse))</span>
-<span id="cb58-260"><a href="#cb58-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-261"><a href="#cb58-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-262"><a href="#cb58-262" aria-hidden="true" tabindex="-1"></a>The <span class="in">`observed`</span> index is a simple count of the number of species present in a sample, while the <span class="in">`shannon`</span> index takes into account both the number of species and their relative abundances. These indices provide information about the diversity and richness of the microbial community in each sample.</span>
-<span id="cb58-263"><a href="#cb58-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-264"><a href="#cb58-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-265"><a href="#cb58-265" aria-hidden="true" tabindex="-1"></a>And we can look at the resulting colData() which now contains the calculated alpha diversity indices.</span>
-<span id="cb58-266"><a href="#cb58-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-269"><a href="#cb58-269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-270"><a href="#cb58-270" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(tse)</span>
-<span id="cb58-271"><a href="#cb58-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-272"><a href="#cb58-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-273"><a href="#cb58-273" aria-hidden="true" tabindex="-1"></a>The <span class="in">`scater`</span> package provides some convenient plotting functions that are designed to work with the <span class="in">`SummarizedExperiment`</span> class.</span>
-<span id="cb58-274"><a href="#cb58-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-275"><a href="#cb58-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{r messasge=FALSE}</span></span>
-<span id="cb58-276"><a href="#cb58-276" aria-hidden="true" tabindex="-1"></a><span class="in">library(scater)</span></span>
-<span id="cb58-277"><a href="#cb58-277" aria-hidden="true" tabindex="-1"></a><span class="in">plotColData(tse,</span></span>
-<span id="cb58-278"><a href="#cb58-278" aria-hidden="true" tabindex="-1"></a><span class="in">    "observed",</span></span>
-<span id="cb58-279"><a href="#cb58-279" aria-hidden="true" tabindex="-1"></a><span class="in">    "study_condition",</span></span>
-<span id="cb58-280"><a href="#cb58-280" aria-hidden="true" tabindex="-1"></a><span class="in">    colour_by = "gender"</span></span>
-<span id="cb58-281"><a href="#cb58-281" aria-hidden="true" tabindex="-1"></a><span class="in">) +</span></span>
-<span id="cb58-282"><a href="#cb58-282" aria-hidden="true" tabindex="-1"></a><span class="in">    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +</span></span>
-<span id="cb58-283"><a href="#cb58-283" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(y = expression(Richness[Observed]))</span></span>
-<span id="cb58-284"><a href="#cb58-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-285"><a href="#cb58-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-286"><a href="#cb58-286" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beta diversity</span></span>
-<span id="cb58-287"><a href="#cb58-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-288"><a href="#cb58-288" aria-hidden="true" tabindex="-1"></a>Community similarity refers to the way microorganisms resemble each other in terms of their composition and abundance of different microbial taxa. This can help us understand to what degree different samples resemble each other and finding key information. In microbiome analysis however, it's more common to measure the dissimilarity/Beta diversity between two samples A and B using the Bray-Curtis measure which is defined as follows:</span>
-<span id="cb58-289"><a href="#cb58-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-290"><a href="#cb58-290" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb58-291"><a href="#cb58-291" aria-hidden="true" tabindex="-1"></a>BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}</span>
-<span id="cb58-292"><a href="#cb58-292" aria-hidden="true" tabindex="-1"></a>$$ </span>
-<span id="cb58-293"><a href="#cb58-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-294"><a href="#cb58-294" aria-hidden="true" tabindex="-1"></a>where $A_{k}$ and $B_{k}$ are the abundances of taxon $k$ in samples A and B, respectively. The Bray-Curtis dissimilarity ranges from 0 (identical communities) to 1 (completely different communities).</span>
-<span id="cb58-295"><a href="#cb58-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-296"><a href="#cb58-296" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides functions for calculating beta diversity indices, such as the Bray-Curtis dissimilarity, Jaccard similarity, and UniFrac distance. These indices can be used to compare the microbial communities between different samples and to identify patterns and relationships between samples based on their microbial composition.</span>
-<span id="cb58-297"><a href="#cb58-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-298"><a href="#cb58-298" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
-<span id="cb58-299"><a href="#cb58-299" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: calculateBrayCurtis</span></span>
-<span id="cb58-300"><a href="#cb58-300" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: false</span></span>
-<span id="cb58-301"><a href="#cb58-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-302"><a href="#cb58-302" aria-hidden="true" tabindex="-1"></a><span class="in"># Run PCoA on relabundance assay with Bray-Curtis distances</span></span>
-<span id="cb58-303"><a href="#cb58-303" aria-hidden="true" tabindex="-1"></a><span class="in">library(vegan)</span></span>
-<span id="cb58-304"><a href="#cb58-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-305"><a href="#cb58-305" aria-hidden="true" tabindex="-1"></a><span class="in">tse &lt;- runMDS(tse,</span></span>
-<span id="cb58-306"><a href="#cb58-306" aria-hidden="true" tabindex="-1"></a><span class="in">    FUN = vegdist,</span></span>
-<span id="cb58-307"><a href="#cb58-307" aria-hidden="true" tabindex="-1"></a><span class="in">    method = "bray",</span></span>
-<span id="cb58-308"><a href="#cb58-308" aria-hidden="true" tabindex="-1"></a><span class="in">    assay.type = "relative_abundance",</span></span>
-<span id="cb58-309"><a href="#cb58-309" aria-hidden="true" tabindex="-1"></a><span class="in">    name = "MDS_bray"</span></span>
-<span id="cb58-310"><a href="#cb58-310" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb58-311"><a href="#cb58-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-312"><a href="#cb58-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-313"><a href="#cb58-313" aria-hidden="true" tabindex="-1"></a>This code is a bit to unpack. It calculates the Bray-Curtis dissimilarity between samples in the <span class="in">`tse`</span> object using the <span class="in">`vegdist`</span> function from the <span class="in">`vegan`</span> package. The resulting dissimilarity matrix is then used to perform a Principal Coordinate Analysis (PCoA) using the <span class="in">`runMDS`</span> function from the <span class="in">`scater`</span> package. The PCoA is a dimensionality reduction technique that projects the high-dimensional Bray-Curtis dissimilarity matrix onto a lower-dimensional space while preserving the pairwise distances between samples.</span>
-<span id="cb58-314"><a href="#cb58-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-315"><a href="#cb58-315" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object now contains the Bray-Curtis dissimilarity matrix in the <span class="in">`MDS_bray`</span> slot, which can be used to visualize the relationships between samples based on their microbial composition.</span>
-<span id="cb58-316"><a href="#cb58-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-317"><a href="#cb58-317" aria-hidden="true" tabindex="-1"></a>We can visualize the results of the PCoA using the <span class="in">`plotReducedDim`</span> function from the <span class="in">`scater`</span> package. This function creates a plot of the reduced dimensions (PCoA) and colors the samples based on a specified variable, such as the study condition</span>
-<span id="cb58-318"><a href="#cb58-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-321"><a href="#cb58-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-322"><a href="#cb58-322" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: showPCoA</span></span>
-<span id="cb58-323"><a href="#cb58-323" aria-hidden="true" tabindex="-1"></a><span class="co"># Create ggplot object</span></span>
-<span id="cb58-324"><a href="#cb58-324" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plotReducedDim</span>(tse, <span class="st">"MDS_bray"</span>, <span class="at">colour_by =</span> <span class="st">"study_condition"</span>)</span>
-<span id="cb58-325"><a href="#cb58-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-326"><a href="#cb58-326" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb58-327"><a href="#cb58-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-328"><a href="#cb58-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-329"><a href="#cb58-329" aria-hidden="true" tabindex="-1"></a>You can experiment with different variables to color the samples and explore the relationships between samples based on their microbial composition.</span>
-<span id="cb58-330"><a href="#cb58-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-331"><a href="#cb58-331" aria-hidden="true" tabindex="-1"></a><span class="fu">## Microbial composition</span></span>
-<span id="cb58-332"><a href="#cb58-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-333"><a href="#cb58-333" aria-hidden="true" tabindex="-1"></a>Let's now look at the microbial composition of the samples in the <span class="in">`tse`</span> object. The microbial composition refers to the relative abundances of different microbial taxa in each sample. This information can provide insights into the diversity and structure of the microbial community in each sample and help identify patterns and relationships between samples based on their microbial composition.</span>
-<span id="cb58-334"><a href="#cb58-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-335"><a href="#cb58-335" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides functions for visualizing the microbial composition of samples, such as bar plots, heatmaps, and stacked bar plots. These plots can help you explore the relative abundances of different microbial taxa in each sample and identify patterns and relationships between samples based on their microbial composition.</span>
-<span id="cb58-336"><a href="#cb58-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-337"><a href="#cb58-337" aria-hidden="true" tabindex="-1"></a><span class="fu">### Abundance</span></span>
-<span id="cb58-338"><a href="#cb58-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-339"><a href="#cb58-339" aria-hidden="true" tabindex="-1"></a>We can start by creating a bar plot of the top 40 most abundant taxa in the dataset. This plot shows the relative abundances of the top 40 taxa in each sample, with the taxa sorted by abundance.</span>
-<span id="cb58-340"><a href="#cb58-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-343"><a href="#cb58-343" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-344"><a href="#cb58-344" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plotTopTaxa</span></span>
-<span id="cb58-345"><a href="#cb58-345" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miaViz)</span>
-<span id="cb58-346"><a href="#cb58-346" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAbundanceDensity</span>(tse,</span>
-<span id="cb58-347"><a href="#cb58-347" aria-hidden="true" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">"jitter"</span>,</span>
-<span id="cb58-348"><a href="#cb58-348" aria-hidden="true" tabindex="-1"></a>    <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
-<span id="cb58-349"><a href="#cb58-349" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">40</span></span>
-<span id="cb58-350"><a href="#cb58-350" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb58-351"><a href="#cb58-351" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>(<span class="at">label =</span> scales<span class="sc">::</span>percent)</span>
-<span id="cb58-352"><a href="#cb58-352" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-353"><a href="#cb58-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-354"><a href="#cb58-354" aria-hidden="true" tabindex="-1"></a>We can also look at the relative abundances of specific taxa in the dataset. </span>
-<span id="cb58-355"><a href="#cb58-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-358"><a href="#cb58-358" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-359"><a href="#cb58-359" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAbundanceDensity</span>(tse,</span>
-<span id="cb58-360"><a href="#cb58-360" aria-hidden="true" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">"density"</span>,</span>
-<span id="cb58-361"><a href="#cb58-361" aria-hidden="true" tabindex="-1"></a>    <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
-<span id="cb58-362"><a href="#cb58-362" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">5</span>, <span class="at">colour_by =</span> <span class="st">"study_condition"</span></span>
-<span id="cb58-363"><a href="#cb58-363" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb58-364"><a href="#cb58-364" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>()</span>
-<span id="cb58-365"><a href="#cb58-365" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-366"><a href="#cb58-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-367"><a href="#cb58-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-368"><a href="#cb58-368" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prevalence</span></span>
-<span id="cb58-369"><a href="#cb58-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-370"><a href="#cb58-370" aria-hidden="true" tabindex="-1"></a>Prevalence refers to the proportion of samples in which a taxon is present. This information can help identify the most common and rare taxa in the dataset and provide insights into the distribution of different taxa across samples.</span>
-<span id="cb58-371"><a href="#cb58-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-372"><a href="#cb58-372" aria-hidden="true" tabindex="-1"></a>Let's agglomerate the data at the genus level and then plot the prevalence of the top 20 most prevalent genera in the dataset.</span>
-<span id="cb58-373"><a href="#cb58-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-374"><a href="#cb58-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-377"><a href="#cb58-377" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-378"><a href="#cb58-378" aria-hidden="true" tabindex="-1"></a>tse_genus <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"genus"</span>)</span>
-<span id="cb58-379"><a href="#cb58-379" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-380"><a href="#cb58-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-383"><a href="#cb58-383" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-384"><a href="#cb58-384" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">getPrevalence</span>(tse_genus,</span>
-<span id="cb58-385"><a href="#cb58-385" aria-hidden="true" tabindex="-1"></a>    <span class="at">detection =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">100</span>,</span>
-<span id="cb58-386"><a href="#cb58-386" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
-<span id="cb58-387"><a href="#cb58-387" aria-hidden="true" tabindex="-1"></a>    <span class="at">as.relative =</span> <span class="cn">TRUE</span></span>
-<span id="cb58-388"><a href="#cb58-388" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb58-389"><a href="#cb58-389" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-390"><a href="#cb58-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-391"><a href="#cb58-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-392"><a href="#cb58-392" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heatmaps</span></span>
-<span id="cb58-393"><a href="#cb58-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-394"><a href="#cb58-394" aria-hidden="true" tabindex="-1"></a>Heatmaps are a common way to visualize microbiome data and can provide insights into the relative abundances of different microbial taxa in each sample. To keep things simple, we'll create a heatmap of the relative abundances of the phyla in the dataset.</span>
-<span id="cb58-395"><a href="#cb58-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-396"><a href="#cb58-396" aria-hidden="true" tabindex="-1"></a>We first agglomerate the data at the phylum level and then create a heatmap of the relative abundances of the phyla in the dataset.</span>
-<span id="cb58-397"><a href="#cb58-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-398"><a href="#cb58-398" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
-<span id="cb58-399"><a href="#cb58-399" aria-hidden="true" tabindex="-1"></a><span class="in">library(pheatmap)</span></span>
-<span id="cb58-400"><a href="#cb58-400" aria-hidden="true" tabindex="-1"></a><span class="in">tse_phylum &lt;- agglomerateByRank(tse, rank = "phylum")</span></span>
-<span id="cb58-401"><a href="#cb58-401" aria-hidden="true" tabindex="-1"></a><span class="in">pheatmap(assay(tse_phylum, "relative_abundance"))</span></span>
-<span id="cb58-402"><a href="#cb58-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb58-403"><a href="#cb58-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-404"><a href="#cb58-404" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further fun</span></span>
-<span id="cb58-405"><a href="#cb58-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-406"><a href="#cb58-406" aria-hidden="true" tabindex="-1"></a>The mia package folks have created a <span class="co">[</span><span class="ot">book on microbome analysis in R</span><span class="co">](https://microbiome.github.io/OMA/docs/devel/)</span> that you can explore for more details on microbiome analysis in R. The book covers a wide range of topics related to microbiome analysis, including data loading, preprocessing, visualization, and statistical analysis. It provides detailed explanations and examples of how to work with microbiome data in R and is a valuable resource for anyone interested in learning more about microbiome analysis.</span>
+<div class="sourceCode" id="cb56" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Microbiome analysis</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>The human microbiome is a complex ecosystem of bacteria, viruses, fungi, and other microorganisms that live in and on the human body. These microorganisms play a crucial role in human health and disease, influencing everything from digestion and metabolism to immune function and mental health. Understanding the composition and function of the human microbiome is a rapidly growing area of research with implications for a wide range of fields, including medicine, agriculture, and environmental science.</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>Microbiome analysis involves studying the microbial communities that inhabit different environments, such as the human gut, skin, mouth, and soil. The analysis of microbiome data typically involves quantifying the abundance of different microorganisms in a given sample and comparing the microbial communities across different samples or conditions. This can help researchers identify patterns, relationships, and associations between microbial communities and various factors, such as health status, diet, lifestyle, and environmental conditions.</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>In this chapter, we will assume that the data has already been processed and cleaned, and we will focus on analyzing the microbiome data using R. </span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Getting started</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>We'll be using the <span class="in">`mia`</span> package for microbiome analysis in R. The <span class="in">`mia`</span> package provides a suite of tools for analyzing microbiome data, including functions for loading, processing, and visualizing microbiome data. The package is designed to work with the <span class="in">`SummarizedExperiment`</span> and <span class="in">`TreeSummarizedExperiment`</span> classes, which are specialized data structures for storing microbiome data in R.</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>To get started, you'll need to install the <span class="in">`mia`</span> package from GitHub using the <span class="in">`BiocManager`</span> package. If you don't already have the <span class="in">`BiocManager`</span> package installed, you can install it using the following command:</span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="in"># Install the mia package</span></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="in">BiocManager::install("microbiome/mia")</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`mia`</span> package is part of the Bioconductor project, but in this case, we are installing it directly from GitHub using the <span class="in">`microbiome/mia`</span> repository. This is a common practice when working with development versions of packages or with packages that are not yet available on Bioconductor. </span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>Once the <span class="in">`mia`</span> package is installed, you can load it into your R session using the following command:</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE, warning=FALSE}</span></span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a><span class="in"># Load the mia package</span></span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a><span class="in">library(mia)</span></span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>Now that the <span class="in">`mia`</span> package is loaded, we can load the microbiome dataset that we will be working with. </span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Accessing micriobiome datasets</span></span>
+<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a>There are many publicly available microbiome datasets that you can use for analysis. Bioconductor provides several packages that contain curated microbiome datasets that facilitate access to and loading microbiome data into R for analysis.</span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">curatedMetagenomicData</span><span class="co">](https://bioconductor.org/packages/curatedMetagenomicsData)</span> is a large collection of curated human microbiome datasets, provided as TreeSE objects (Pasolli et al. 2017). The resource provides curated human microbiome data including gene families, marker abundance, marker presence, pathway abundance, pathway coverage, and relative abundance for samples from different body sites. See the package homepage for more details on data availability and access.</span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">The microbiomeDataSets package</span><span class="co">](https://bioconductor.org/packages/microbiomeDataSets)</span> provides a collection of curated microbiome datasets for teaching and research purposes. The package contains several example datasets that can be used to explore different aspects of microbiome analysis, such as alpha and beta diversity, differential abundance analysis, and visualization.</span>
+<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">The mia package</span><span class="co">](https://bioconductor.org/packages/mia)</span> and several other packages provide example datasets for learning and testing the functions in the package. These datasets are typically small and easy to work with, making them ideal for learning how to analyze microbiome data in R.</span>
+<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">MicroBioMap</span><span class="co">](https://github.com/seandavi/MicroBioMap)</span> package provides a collection of 170,000 microbiome samples homogeneously processed. The package is designed to facilitate the use of large-scale microbiome data for research and education purposes.</span>
+<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data containers</span></span>
+<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a>Bioconductor provides several specialized data structures for storing and working with microbiome data in R. These data structures are designed to handle the complex and high-dimensional nature of microbiome data and provide a convenient and efficient way to store, manipulate, and analyze microbiome data in R.</span>
+<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">SummarizedExperiment (SE)</span><span class="co">](https://bioconductor.org/packages/SummarizedExperiment)</span> (Morgan et al. 2020) is a generic and highly optimized container for complex data structures. It has become a common choice for analyzing various types of biomedical profiling data, such as RNAseq, ChIp-Seq, microarrays, flow cytometry, proteomics, and single-cell sequencing.</span>
+<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">TreeSummarizedExperiment</span><span class="co">](https://bioconductor.org/packages/TreeSummarizedExperiment)</span> (Huang 2020) was developed as an extension to incorporate hierarchical information (such as phylogenetic trees and sample hierarchies) and reference sequences.</span>
+<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loading a microbiome dataset</span></span>
+<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a>We will be using the <span class="in">`curatedMetagenomicData`</span> package to load the <span class="in">`FengQ_2015`</span> dataset. This dataset contains microbiome data from a study by <span class="co">[</span><span class="ot">Feng et al. (2015)</span><span class="co">](https://pubmed.ncbi.nlm.nih.gov/25758642/)</span>. The curatedMetagenomicData package provides a convenient interface for accessing microbiome datasets that have been pre-processed and curated for analysis. </span>
+<span id="cb56-59"><a href="#cb56-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-60"><a href="#cb56-60" aria-hidden="true" tabindex="-1"></a>Ignore the details of the code for now, but suffice it to say that what the code will do for us is to load a dataset for downstream analysis.</span>
+<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-65"><a href="#cb56-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the FengQ_2015 dataset</span></span>
+<span id="cb56-66"><a href="#cb56-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(curatedMetagenomicData)</span>
+<span id="cb56-67"><a href="#cb56-67" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">curatedMetagenomicData</span>(<span class="st">"FengQ_2015.relative_abundance"</span>, <span class="at">dryrun =</span> <span class="cn">FALSE</span>, <span class="at">rownames =</span> <span class="st">"short"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-70"><a href="#cb56-70" aria-hidden="true" tabindex="-1"></a>This code goes out to the internet and downloads the dataset for you. The <span class="in">`tse`</span> object is a <span class="in">`TreeSummarizedExperiment`</span> object that contains the microbiome data from the Feng et al. (2015) study. The <span class="in">`TreeSummarizedExperiment`</span> class is a specialized data structure for storing microbiome data in R, and it is used by the <span class="in">`mia`</span> package for microbiome analysis.</span>
+<span id="cb56-71"><a href="#cb56-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a>If you are working with your own microbiome data, you will often need to  load it into R using functions like <span class="in">`read.csv()`</span> or <span class="in">`read.table()`</span> to read tabular data files. Make sure your data is properly formatted and cleaned before loading it into R for analysis. </span>
+<span id="cb56-74"><a href="#cb56-74" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-75"><a href="#cb56-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a>Once the data is loaded into R, we can start exploring the data to understand its structure and contents. The <span class="in">`tse`</span> object is a <span class="in">`TreeSummarizedExperiment`</span> object, which is a specialized data structure for storing microbiome data in R. It works quite like a data.frame in, but with many specialized structures for storing microbiome experiment data as shown in @fig-tse-anatomy. We can use various functions to explore the data stored in the <span class="in">`tse`</span> object. See the <span class="co">[</span><span class="ot">TreeSummarizedExperiment</span><span class="co">](https://bioconductor.org/packages/TreeSummarizedExperiment)</span> package for more details.</span>
+<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-80"><a href="#cb56-80" aria-hidden="true" tabindex="-1"></a>This section provides an introduction to these data containers. In microbiome data science, these containers link taxonomic abundance tables with rich side information on the features and samples. Taxonomic abundance data can be obtained by 16S rRNA amplicon or metagenomic sequencing, phylogenetic microarrays, or by other means. Many microbiome experiments include multiple versions and types of data generated independently or derived from each other through transformation or agglomeration. </span>
+<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-82"><a href="#cb56-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-83"><a href="#cb56-83" aria-hidden="true" tabindex="-1"></a>![Anatomy of a TreeSummarizedExperiment object. Compared to the SingleCellExperiment objects, TreeSummarizedExperiment has five additional slots. **rowTree**: the hierarchical structure on the rows of the assays. </span>
+<span id="cb56-84"><a href="#cb56-84" aria-hidden="true" tabindex="-1"></a>**rowLinks**: the link information between rows of the assays and the rowTree.</span>
+<span id="cb56-85"><a href="#cb56-85" aria-hidden="true" tabindex="-1"></a>**colTree**: the hierarchical structure on the columns of the assays.</span>
+<span id="cb56-86"><a href="#cb56-86" aria-hidden="true" tabindex="-1"></a>**colLinks**: the link information between columns of the assays and the colTree.</span>
+<span id="cb56-87"><a href="#cb56-87" aria-hidden="true" tabindex="-1"></a>**referenceSeq** (optional): the reference sequence data per feature (row).</span>
+<span id="cb56-88"><a href="#cb56-88" aria-hidden="true" tabindex="-1"></a>](images/treesummarizedexperiment.png){#fig-tse-anatomy}</span>
+<span id="cb56-89"><a href="#cb56-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-90"><a href="#cb56-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-91"><a href="#cb56-91" aria-hidden="true" tabindex="-1"></a>To get an overview of the data, we can simply type the name of the object in the R console:</span>
+<span id="cb56-92"><a href="#cb56-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-95"><a href="#cb56-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-96"><a href="#cb56-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the object</span></span>
+<span id="cb56-97"><a href="#cb56-97" aria-hidden="true" tabindex="-1"></a>tse</span>
+<span id="cb56-98"><a href="#cb56-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-99"><a href="#cb56-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-100"><a href="#cb56-100" aria-hidden="true" tabindex="-1"></a>Observe how the output of the <span class="in">`tse`</span> object will show you the dimensions of the data, the metadata associated with the samples and features, etc. However, the data themselves are not printed to the console due to the large size of the dataset. The <span class="in">`TreeSummarizedExperiment`</span> object is a complex data structure that contains multiple components, including the abundance data, sample information, feature information, and other metadata.</span>
+<span id="cb56-101"><a href="#cb56-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-102"><a href="#cb56-102" aria-hidden="true" tabindex="-1"></a>Next, we'll look at some of the key components of the <span class="in">`TreeSummarizedExperiment`</span> object and how to access and manipulate them.</span>
+<span id="cb56-103"><a href="#cb56-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-104"><a href="#cb56-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assay data</span></span>
+<span id="cb56-105"><a href="#cb56-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-106"><a href="#cb56-106" aria-hidden="true" tabindex="-1"></a>The microbiome is the collection of all microbes (such as bacteria, viruses, fungi, etc.) in the body. When studying these microbes, data is needed, and that’s where assays come in. An assay is a way of measuring the presence and abundance of different types of microbes in a sample. For example, if you want to know how many bacteria of a certain type are in your gut, you can use an assay to measure this. When storing assays, the original data is count-based. However, the original count-based taxonomic abundance tables may undergo different transformations, such as logarithmic, Centered Log-Ratio (CLR), or relative abundance. These are typically stored in **assays**.</span>
+<span id="cb56-107"><a href="#cb56-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-108"><a href="#cb56-108" aria-hidden="true" tabindex="-1"></a>The assays slot contains the experimental data as multiple count matrices. The result of assays is a list of matrices.</span>
+<span id="cb56-109"><a href="#cb56-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-112"><a href="#cb56-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-113"><a href="#cb56-113" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(tse)</span>
+<span id="cb56-114"><a href="#cb56-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-115"><a href="#cb56-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-116"><a href="#cb56-116" aria-hidden="true" tabindex="-1"></a>Individual assays can be accessed via assay() function. The result is a matrix.</span>
+<span id="cb56-117"><a href="#cb56-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-120"><a href="#cb56-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-121"><a href="#cb56-121" aria-hidden="true" tabindex="-1"></a><span class="fu">assay</span>(tse, <span class="st">"relative_abundance"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb56-122"><a href="#cb56-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-123"><a href="#cb56-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-124"><a href="#cb56-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### colData</span></span>
+<span id="cb56-125"><a href="#cb56-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-126"><a href="#cb56-126" aria-hidden="true" tabindex="-1"></a>colData contains information about the samples used in the study. This information can include details such as the sample ID, the primers used in the analysis, the barcodes associated with the sample (truncated or complete), the type of sample (e.g. soil, fecal, mock) and a description of the sample.</span>
+<span id="cb56-127"><a href="#cb56-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-130"><a href="#cb56-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-131"><a href="#cb56-131" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(tse)</span>
+<span id="cb56-132"><a href="#cb56-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-133"><a href="#cb56-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-134"><a href="#cb56-134" aria-hidden="true" tabindex="-1"></a>As you can see, there is a lot of information stored in the <span class="in">`colData`</span> slot, including sample IDs, study conditions, and other metadata associated with the samples. This information is essential for understanding the context of the microbiome data and for performing downstream analyses. </span>
+<span id="cb56-135"><a href="#cb56-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-136"><a href="#cb56-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-137"><a href="#cb56-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### rowData</span></span>
+<span id="cb56-138"><a href="#cb56-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-139"><a href="#cb56-139" aria-hidden="true" tabindex="-1"></a>rowData contains data on the features of the analyzed samples. This is particularly important in the microbiome field for storing taxonomic information. This taxonomic information is extremely important for understanding the composition and diversity of the microbiome in each sample analyzed. It enables identification of the different types of microorganisms present in samples. It also allows you to explore the relationships between microbiome composition and various environmental or health factors.</span>
+<span id="cb56-140"><a href="#cb56-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-143"><a href="#cb56-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-144"><a href="#cb56-144" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rowData</span>(tse))</span>
+<span id="cb56-145"><a href="#cb56-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-146"><a href="#cb56-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-147"><a href="#cb56-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### rowTree</span></span>
+<span id="cb56-148"><a href="#cb56-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-149"><a href="#cb56-149" aria-hidden="true" tabindex="-1"></a>Phylogenetic trees also play an important role in the microbiome field. The TreeSE class can keep track of features and node relations via two functions, rowTree and rowLinks.</span>
+<span id="cb56-150"><a href="#cb56-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-151"><a href="#cb56-151" aria-hidden="true" tabindex="-1"></a>A tree can be accessed via <span class="in">`rowTree()`</span> as <span class="in">`phylo`</span> object.</span>
+<span id="cb56-152"><a href="#cb56-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-153"><a href="#cb56-153" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb56-154"><a href="#cb56-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phylogenetic trees</span></span>
+<span id="cb56-155"><a href="#cb56-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-156"><a href="#cb56-156" aria-hidden="true" tabindex="-1"></a>The phylogenetic tree is a branching diagram or "tree" showing the inferred evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. The tree of life is a phylogenetic tree that shows the evolutionary relationships among all living organisms on Earth.</span>
+<span id="cb56-157"><a href="#cb56-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-158"><a href="#cb56-158" aria-hidden="true" tabindex="-1"></a>In the context of microbiome analysis, phylogenetic trees are used to represent the evolutionary relationships between different microbial taxa based on their genetic sequences. These trees can help researchers understand the diversity and relatedness of different microbes in a sample and provide insights into the evolutionary history of the microbial community.</span>
+<span id="cb56-159"><a href="#cb56-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-160"><a href="#cb56-160" aria-hidden="true" tabindex="-1"></a>The <span class="in">`phylo`</span> class in R is used to represent phylogenetic trees and provides functions for working with and visualizing these trees. The <span class="in">`ggtree`</span> package is a popular package for visualizing phylogenetic trees in R and provides a wide range of options for customizing the appearance of the tree.</span>
+<span id="cb56-161"><a href="#cb56-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-162"><a href="#cb56-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-165"><a href="#cb56-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-166"><a href="#cb56-166" aria-hidden="true" tabindex="-1"></a><span class="fu">rowTree</span>(tse)</span>
+<span id="cb56-167"><a href="#cb56-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowTree`</span> slot contains information about the hierarchical structure of the data, such as the relationships between different microbial taxa based on their genetic sequences. This information can be used to explore the evolutionary relationships between different microbes and to visualize the diversity and relatedness of the microbial community in a sample. </span>
+<span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rowLink`</span> slot contains information about the relationships between the features and the tree structure. This information can be used to link the features in the data to the nodes in the tree and to explore the relationships between the features based on their abundance profiles.</span>
+<span id="cb56-172"><a href="#cb56-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a><span class="fu">rowLinks</span>(tse)</span>
+<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`rowTree`</span> and <span class="in">`rowLinks`</span> are optional components of the <span class="in">`TreeSummarizedExperiment`</span> object, but when present, they provide valuable information about the hierarchical structure of the data and the relationships between the features in the data.</span>
+<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-181"><a href="#cb56-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrangling and subsetting</span></span>
+<span id="cb56-182"><a href="#cb56-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-183"><a href="#cb56-183" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides several functions for wrangling and subsetting microbiome data. These functions allow you to filter, transform, and manipulate the data to extract the information you need for analysis.</span>
+<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsetting samples</span></span>
+<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a>You can subset the samples in a <span class="in">`TreeSummarizedExperiment`</span> object similarly to how you would subset a <span class="in">`data.frame`</span>. For example, to subset out data based on the age category of the samples, you can use the following code:</span>
+<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tse<span class="sc">$</span>age)</span>
+<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a>Age is a numeric variable. Let's focus on older patients.</span>
+<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-199"><a href="#cb56-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age <span class="ot">&lt;-</span> tse[, tse<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">50</span>]</span>
+<span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a>tse_subset_by_age</span>
+<span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agglomerating data</span></span>
+<span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-206"><a href="#cb56-206" aria-hidden="true" tabindex="-1"></a>The microbiome features (organisms) that are measured may be measured at different taxonomic levels. For example, the data may be available at the species, genus, family, or phylum level. Agglomerating data is the process of summarizing the data at a higher taxonomic level by combining the abundances of the lower-level taxa. This can be useful for simplifying the data and reducing the dimensionality of the data.</span>
+<span id="cb56-207"><a href="#cb56-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a>The <span class="in">`agglomerateByRank`</span> function in the <span class="in">`mia`</span> package can be used to agglomerate the data at a specified taxonomic rank. For example, to agglomerate the data at the phylum level, you can use the following code:</span>
+<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a>new_tse <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"phylum"</span>)</span>
+<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a><span class="co"># observe the new object, particularly the number of features (rows)</span></span>
+<span id="cb56-215"><a href="#cb56-215" aria-hidden="true" tabindex="-1"></a>new_tse</span>
+<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object contains the data aggregated at the phylum level, with the abundances of the lower-level taxa combined to create a summary at the phylum level. This can make the data easier to work with and interpret, especially when dealing with large and complex microbiome datasets.</span>
+<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## The tree structure</span></span>
+<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-223"><a href="#cb56-223" aria-hidden="true" tabindex="-1"></a>The <span class="in">`TreeSummarizedExperiment`</span> object also contains information about the hierarchical structure of the data. The tree structure is stored in the <span class="in">`rowTree`</span> slot of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.</span>
+<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
+<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggtree)</span></span>
+<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a><span class="in">ggtree(rowTree(tse))</span></span>
+<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">ggtree</span><span class="co">](https://bioconductor.org/packages/ggtree)</span> package for more details on visualizing tree structures in R and, for more fun, the <span class="co">[</span><span class="ot">ggtree book</span><span class="co">](https://yulab-smu.top/treedata-book/)</span>. </span>
+<span id="cb56-231"><a href="#cb56-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-232"><a href="#cb56-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-233"><a href="#cb56-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## Community indices</span></span>
+<span id="cb56-234"><a href="#cb56-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-235"><a href="#cb56-235" aria-hidden="true" tabindex="-1"></a>In the field of microbiome ecology several indices to describe samples and</span>
+<span id="cb56-236"><a href="#cb56-236" aria-hidden="true" tabindex="-1"></a>community of samples are available. In this vignette we just want to give a</span>
+<span id="cb56-237"><a href="#cb56-237" aria-hidden="true" tabindex="-1"></a>very brief introduction.</span>
+<span id="cb56-238"><a href="#cb56-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-239"><a href="#cb56-239" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alpha diversity</span></span>
+<span id="cb56-240"><a href="#cb56-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-241"><a href="#cb56-241" aria-hidden="true" tabindex="-1"></a>diversity in microbiology is measured by several indices:</span>
+<span id="cb56-242"><a href="#cb56-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-243"><a href="#cb56-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>species richness (total number of species)</span>
+<span id="cb56-244"><a href="#cb56-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>equitability (distribution of species within a microbiome)</span>
+<span id="cb56-245"><a href="#cb56-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>diversity (combination of the two)</span>
+<span id="cb56-246"><a href="#cb56-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-247"><a href="#cb56-247" aria-hidden="true" tabindex="-1"></a>Functions for calculating alpha and beta diversity indices are available.</span>
+<span id="cb56-248"><a href="#cb56-248" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`addAlpha`</span> multiple diversity indices are calculated by default</span>
+<span id="cb56-249"><a href="#cb56-249" aria-hidden="true" tabindex="-1"></a>and results are stored automatically in <span class="in">`colData`</span>. </span>
+<span id="cb56-250"><a href="#cb56-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-251"><a href="#cb56-251" aria-hidden="true" tabindex="-1"></a>In the code below we calculate the Shannon and observed diversity indices. </span>
+<span id="cb56-252"><a href="#cb56-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-255"><a href="#cb56-255" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-256"><a href="#cb56-256" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">addAlpha</span>(tse, <span class="at">index =</span> <span class="st">"shannon"</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>)</span>
+<span id="cb56-257"><a href="#cb56-257" aria-hidden="true" tabindex="-1"></a>tse <span class="ot">&lt;-</span> <span class="fu">addAlpha</span>(tse, <span class="at">index =</span> <span class="st">"observed"</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>)</span>
+<span id="cb56-258"><a href="#cb56-258" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(<span class="fu">colData</span>(tse))</span>
+<span id="cb56-259"><a href="#cb56-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-260"><a href="#cb56-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-261"><a href="#cb56-261" aria-hidden="true" tabindex="-1"></a>The <span class="in">`observed`</span> index is a simple count of the number of species present in a sample, while the <span class="in">`shannon`</span> index takes into account both the number of species and their relative abundances. These indices provide information about the diversity and richness of the microbial community in each sample.</span>
+<span id="cb56-262"><a href="#cb56-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-263"><a href="#cb56-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-264"><a href="#cb56-264" aria-hidden="true" tabindex="-1"></a>And we can look at the resulting colData() which now contains the calculated alpha diversity indices.</span>
+<span id="cb56-265"><a href="#cb56-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-268"><a href="#cb56-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-269"><a href="#cb56-269" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(tse)</span>
+<span id="cb56-270"><a href="#cb56-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-271"><a href="#cb56-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-272"><a href="#cb56-272" aria-hidden="true" tabindex="-1"></a>The <span class="in">`scater`</span> package provides some convenient plotting functions that are designed to work with the <span class="in">`SummarizedExperiment`</span> class.</span>
+<span id="cb56-273"><a href="#cb56-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-274"><a href="#cb56-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r messasge=FALSE}</span></span>
+<span id="cb56-275"><a href="#cb56-275" aria-hidden="true" tabindex="-1"></a><span class="in">library(scater)</span></span>
+<span id="cb56-276"><a href="#cb56-276" aria-hidden="true" tabindex="-1"></a><span class="in">plotColData(tse,</span></span>
+<span id="cb56-277"><a href="#cb56-277" aria-hidden="true" tabindex="-1"></a><span class="in">    "observed",</span></span>
+<span id="cb56-278"><a href="#cb56-278" aria-hidden="true" tabindex="-1"></a><span class="in">    "study_condition",</span></span>
+<span id="cb56-279"><a href="#cb56-279" aria-hidden="true" tabindex="-1"></a><span class="in">    colour_by = "gender"</span></span>
+<span id="cb56-280"><a href="#cb56-280" aria-hidden="true" tabindex="-1"></a><span class="in">) +</span></span>
+<span id="cb56-281"><a href="#cb56-281" aria-hidden="true" tabindex="-1"></a><span class="in">    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +</span></span>
+<span id="cb56-282"><a href="#cb56-282" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(y = expression(Richness[Observed]))</span></span>
+<span id="cb56-283"><a href="#cb56-283" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-284"><a href="#cb56-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-285"><a href="#cb56-285" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beta diversity</span></span>
+<span id="cb56-286"><a href="#cb56-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-287"><a href="#cb56-287" aria-hidden="true" tabindex="-1"></a>Community similarity refers to the way microorganisms resemble each other in terms of their composition and abundance of different microbial taxa. This can help us understand to what degree different samples resemble each other and finding key information. In microbiome analysis however, it's more common to measure the dissimilarity/Beta diversity between two samples A and B using the Bray-Curtis measure which is defined as follows:</span>
+<span id="cb56-288"><a href="#cb56-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-289"><a href="#cb56-289" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb56-290"><a href="#cb56-290" aria-hidden="true" tabindex="-1"></a>BC_{ij} = \frac{\sum_{k} |A_{k} - B_{k}|}{\sum_{k} (A_{k} + B_{k})}</span>
+<span id="cb56-291"><a href="#cb56-291" aria-hidden="true" tabindex="-1"></a>$$ </span>
+<span id="cb56-292"><a href="#cb56-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-293"><a href="#cb56-293" aria-hidden="true" tabindex="-1"></a>where $A_{k}$ and $B_{k}$ are the abundances of taxon $k$ in samples A and B, respectively. The Bray-Curtis dissimilarity ranges from 0 (identical communities) to 1 (completely different communities).</span>
+<span id="cb56-294"><a href="#cb56-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-295"><a href="#cb56-295" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides functions for calculating beta diversity indices, such as the Bray-Curtis dissimilarity, Jaccard similarity, and UniFrac distance. These indices can be used to compare the microbial communities between different samples and to identify patterns and relationships between samples based on their microbial composition.</span>
+<span id="cb56-296"><a href="#cb56-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-297"><a href="#cb56-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
+<span id="cb56-298"><a href="#cb56-298" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: calculateBrayCurtis</span></span>
+<span id="cb56-299"><a href="#cb56-299" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: false</span></span>
+<span id="cb56-300"><a href="#cb56-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-301"><a href="#cb56-301" aria-hidden="true" tabindex="-1"></a><span class="in"># Run PCoA on relabundance assay with Bray-Curtis distances</span></span>
+<span id="cb56-302"><a href="#cb56-302" aria-hidden="true" tabindex="-1"></a><span class="in">library(vegan)</span></span>
+<span id="cb56-303"><a href="#cb56-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-304"><a href="#cb56-304" aria-hidden="true" tabindex="-1"></a><span class="in">tse &lt;- runMDS(tse,</span></span>
+<span id="cb56-305"><a href="#cb56-305" aria-hidden="true" tabindex="-1"></a><span class="in">    FUN = vegdist,</span></span>
+<span id="cb56-306"><a href="#cb56-306" aria-hidden="true" tabindex="-1"></a><span class="in">    method = "bray",</span></span>
+<span id="cb56-307"><a href="#cb56-307" aria-hidden="true" tabindex="-1"></a><span class="in">    assay.type = "relative_abundance",</span></span>
+<span id="cb56-308"><a href="#cb56-308" aria-hidden="true" tabindex="-1"></a><span class="in">    name = "MDS_bray"</span></span>
+<span id="cb56-309"><a href="#cb56-309" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb56-310"><a href="#cb56-310" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-311"><a href="#cb56-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-312"><a href="#cb56-312" aria-hidden="true" tabindex="-1"></a>This code is a bit to unpack. It calculates the Bray-Curtis dissimilarity between samples in the <span class="in">`tse`</span> object using the <span class="in">`vegdist`</span> function from the <span class="in">`vegan`</span> package. The resulting dissimilarity matrix is then used to perform a Principal Coordinate Analysis (PCoA) using the <span class="in">`runMDS`</span> function from the <span class="in">`scater`</span> package. The PCoA is a dimensionality reduction technique that projects the high-dimensional Bray-Curtis dissimilarity matrix onto a lower-dimensional space while preserving the pairwise distances between samples.</span>
+<span id="cb56-313"><a href="#cb56-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-314"><a href="#cb56-314" aria-hidden="true" tabindex="-1"></a>The resulting <span class="in">`TreeSummarizedExperiment`</span> object now contains the Bray-Curtis dissimilarity matrix in the <span class="in">`MDS_bray`</span> slot, which can be used to visualize the relationships between samples based on their microbial composition.</span>
+<span id="cb56-315"><a href="#cb56-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-316"><a href="#cb56-316" aria-hidden="true" tabindex="-1"></a>We can visualize the results of the PCoA using the <span class="in">`plotReducedDim`</span> function from the <span class="in">`scater`</span> package. This function creates a plot of the reduced dimensions (PCoA) and colors the samples based on a specified variable, such as the study condition</span>
+<span id="cb56-317"><a href="#cb56-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-320"><a href="#cb56-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-321"><a href="#cb56-321" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: showPCoA</span></span>
+<span id="cb56-322"><a href="#cb56-322" aria-hidden="true" tabindex="-1"></a><span class="co"># Create ggplot object</span></span>
+<span id="cb56-323"><a href="#cb56-323" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plotReducedDim</span>(tse, <span class="st">"MDS_bray"</span>, <span class="at">colour_by =</span> <span class="st">"study_condition"</span>)</span>
+<span id="cb56-324"><a href="#cb56-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-325"><a href="#cb56-325" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
+<span id="cb56-326"><a href="#cb56-326" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-327"><a href="#cb56-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-328"><a href="#cb56-328" aria-hidden="true" tabindex="-1"></a>You can experiment with different variables to color the samples and explore the relationships between samples based on their microbial composition.</span>
+<span id="cb56-329"><a href="#cb56-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-330"><a href="#cb56-330" aria-hidden="true" tabindex="-1"></a><span class="fu">## Microbial composition</span></span>
+<span id="cb56-331"><a href="#cb56-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-332"><a href="#cb56-332" aria-hidden="true" tabindex="-1"></a>Let's now look at the microbial composition of the samples in the <span class="in">`tse`</span> object. The microbial composition refers to the relative abundances of different microbial taxa in each sample. This information can provide insights into the diversity and structure of the microbial community in each sample and help identify patterns and relationships between samples based on their microbial composition.</span>
+<span id="cb56-333"><a href="#cb56-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-334"><a href="#cb56-334" aria-hidden="true" tabindex="-1"></a>The <span class="in">`mia`</span> package provides functions for visualizing the microbial composition of samples, such as bar plots, heatmaps, and stacked bar plots. These plots can help you explore the relative abundances of different microbial taxa in each sample and identify patterns and relationships between samples based on their microbial composition.</span>
+<span id="cb56-335"><a href="#cb56-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-336"><a href="#cb56-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### Abundance</span></span>
+<span id="cb56-337"><a href="#cb56-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-338"><a href="#cb56-338" aria-hidden="true" tabindex="-1"></a>We can start by creating a bar plot of the top 40 most abundant taxa in the dataset. This plot shows the relative abundances of the top 40 taxa in each sample, with the taxa sorted by abundance.</span>
+<span id="cb56-339"><a href="#cb56-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-342"><a href="#cb56-342" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-343"><a href="#cb56-343" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plotTopTaxa</span></span>
+<span id="cb56-344"><a href="#cb56-344" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miaViz)</span>
+<span id="cb56-345"><a href="#cb56-345" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAbundanceDensity</span>(tse,</span>
+<span id="cb56-346"><a href="#cb56-346" aria-hidden="true" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">"jitter"</span>,</span>
+<span id="cb56-347"><a href="#cb56-347" aria-hidden="true" tabindex="-1"></a>    <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
+<span id="cb56-348"><a href="#cb56-348" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">40</span></span>
+<span id="cb56-349"><a href="#cb56-349" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb56-350"><a href="#cb56-350" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>(<span class="at">label =</span> scales<span class="sc">::</span>percent)</span>
+<span id="cb56-351"><a href="#cb56-351" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-352"><a href="#cb56-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-353"><a href="#cb56-353" aria-hidden="true" tabindex="-1"></a>We can also look at the relative abundances of specific taxa in the dataset. </span>
+<span id="cb56-354"><a href="#cb56-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-357"><a href="#cb56-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-358"><a href="#cb56-358" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAbundanceDensity</span>(tse,</span>
+<span id="cb56-359"><a href="#cb56-359" aria-hidden="true" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">"density"</span>,</span>
+<span id="cb56-360"><a href="#cb56-360" aria-hidden="true" tabindex="-1"></a>    <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
+<span id="cb56-361"><a href="#cb56-361" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">5</span>, <span class="at">colour_by =</span> <span class="st">"study_condition"</span></span>
+<span id="cb56-362"><a href="#cb56-362" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb56-363"><a href="#cb56-363" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>()</span>
+<span id="cb56-364"><a href="#cb56-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-365"><a href="#cb56-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-366"><a href="#cb56-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-367"><a href="#cb56-367" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prevalence</span></span>
+<span id="cb56-368"><a href="#cb56-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-369"><a href="#cb56-369" aria-hidden="true" tabindex="-1"></a>Prevalence refers to the proportion of samples in which a taxon is present. This information can help identify the most common and rare taxa in the dataset and provide insights into the distribution of different taxa across samples.</span>
+<span id="cb56-370"><a href="#cb56-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-371"><a href="#cb56-371" aria-hidden="true" tabindex="-1"></a>Let's agglomerate the data at the genus level and then plot the prevalence of the top 20 most prevalent genera in the dataset.</span>
+<span id="cb56-372"><a href="#cb56-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-373"><a href="#cb56-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-376"><a href="#cb56-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-377"><a href="#cb56-377" aria-hidden="true" tabindex="-1"></a>tse_genus <span class="ot">&lt;-</span> <span class="fu">agglomerateByRank</span>(tse, <span class="at">rank =</span> <span class="st">"genus"</span>)</span>
+<span id="cb56-378"><a href="#cb56-378" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-379"><a href="#cb56-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-382"><a href="#cb56-382" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-383"><a href="#cb56-383" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">getPrevalence</span>(tse_genus,</span>
+<span id="cb56-384"><a href="#cb56-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">detection =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">100</span>,</span>
+<span id="cb56-385"><a href="#cb56-385" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">assay.type =</span> <span class="st">"relative_abundance"</span>,</span>
+<span id="cb56-386"><a href="#cb56-386" aria-hidden="true" tabindex="-1"></a>    <span class="at">as.relative =</span> <span class="cn">TRUE</span></span>
+<span id="cb56-387"><a href="#cb56-387" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb56-388"><a href="#cb56-388" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-389"><a href="#cb56-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-390"><a href="#cb56-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-391"><a href="#cb56-391" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heatmaps</span></span>
+<span id="cb56-392"><a href="#cb56-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-393"><a href="#cb56-393" aria-hidden="true" tabindex="-1"></a>Heatmaps are a common way to visualize microbiome data and can provide insights into the relative abundances of different microbial taxa in each sample. To keep things simple, we'll create a heatmap of the relative abundances of the phyla in the dataset.</span>
+<span id="cb56-394"><a href="#cb56-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-395"><a href="#cb56-395" aria-hidden="true" tabindex="-1"></a>We first agglomerate the data at the phylum level and then create a heatmap of the relative abundances of the phyla in the dataset.</span>
+<span id="cb56-396"><a href="#cb56-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-397"><a href="#cb56-397" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE}</span></span>
+<span id="cb56-398"><a href="#cb56-398" aria-hidden="true" tabindex="-1"></a><span class="in">library(pheatmap)</span></span>
+<span id="cb56-399"><a href="#cb56-399" aria-hidden="true" tabindex="-1"></a><span class="in">tse_phylum &lt;- agglomerateByRank(tse, rank = "phylum")</span></span>
+<span id="cb56-400"><a href="#cb56-400" aria-hidden="true" tabindex="-1"></a><span class="in">pheatmap(assay(tse_phylum, "relative_abundance"))</span></span>
+<span id="cb56-401"><a href="#cb56-401" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-402"><a href="#cb56-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-403"><a href="#cb56-403" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further fun</span></span>
+<span id="cb56-404"><a href="#cb56-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-405"><a href="#cb56-405" aria-hidden="true" tabindex="-1"></a>The mia package folks have created a <span class="co">[</span><span class="ot">book on microbome analysis in R</span><span class="co">](https://microbiome.github.io/OMA/docs/devel/)</span> that you can explore for more details on microbiome analysis in R. The book covers a wide range of topics related to microbiome analysis, including data loading, preprocessing, visualization, and statistical analysis. It provides detailed explanations and examples of how to work with microbiome data in R and is a valuable resource for anyone interested in learning more about microbiome analysis.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

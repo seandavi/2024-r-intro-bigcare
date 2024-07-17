@@ -759,7 +759,7 @@
     "href": "310_microbiome.html#the-tree-structure",
     "title": "\n11  Microbiome analysis\n",
     "section": "\n11.6 The tree structure",
-    "text": "11.6 The tree structure\nThe TreeSummarizedExperiment object also contains information about the hierarchical structure of the data. The tree structure is stored in the rowTree and colTree slots of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.\n\nlibrary(ggtree)\nnew_tse &lt;- agglomerateByRank(tse, rank = \"phylum\")\n\nWarning: The following values are already present in `metadata` and will be\noverwritten: 'agglomerated_by_rank'. Consider using the 'name' argument to\nspecify alternative names.\n\nggtree(rowTree(new_tse))\n\n\n\n\n\n\n\nSee the ggtree package for more details on visualizing tree structures in R and, for more fun, the ggtree book.",
+    "text": "11.6 The tree structure\nThe TreeSummarizedExperiment object also contains information about the hierarchical structure of the data. The tree structure is stored in the rowTree slot of the object. The tree structure represents the relationships between the samples or features based on their abundance profiles.\n\nlibrary(ggtree)\nggtree(rowTree(tse))\n\n\n\n\n\n\n\nSee the ggtree package for more details on visualizing tree structures in R and, for more fun, the ggtree book.",
     "crumbs": [
       "Applications",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Microbiome analysis</span>"
