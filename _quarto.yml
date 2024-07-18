@@ -23,7 +23,6 @@ book:
         - 030_r_functions.qmd
         - 045_loading_data.qmd
         - 050_r_scripts.qmd
-        #- chatbots.qmd
 
     - part: Exploring data
       chapters:
@@ -63,4 +62,3 @@ format:
     reference-location: margin
     mermaid:
       theme: neutral
-    css: styles.css
