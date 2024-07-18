@@ -342,12 +342,12 @@ Figure&nbsp;9.1: A matrix is a collection of column vectors.
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="va">mat</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      [,1]      [,2]     [,3]       [,4]     [,5]      [,6]      [,7]
-x  1.00000  2.000000 3.000000  4.0000000 5.000000 6.0000000 7.0000000
-y -1.37595 -0.673147 1.001059 -0.6951363 1.129463 0.4337584 0.3217394
-        [,8]      [,9]     [,10]
-x 8.00000000 9.0000000 10.000000
-y 0.01821573 0.4140505 -2.094936</code></pre>
+<pre><code>       [,1]       [,2]      [,3]      [,4]       [,5]      [,6]      [,7]
+x 1.0000000  2.0000000 3.0000000 4.0000000  5.0000000  6.000000 7.0000000
+y 0.0626442 -0.2605412 0.4941094 0.7590003 -0.3364795 -0.259964 0.6668722
+    [,8]       [,9]      [,10]
+x 8.0000  9.0000000 10.0000000
+y 1.9121 -0.1715687  0.2585426</code></pre>
 </div>
 </div>
 <p>The alternative to <code>rbind</code> is <code>cbind</code> that binds columns (<strong>c</strong>) together.</p>
@@ -355,17 +355,17 @@ y 0.01821573 0.4140505 -2.094936</code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
 <span><span class="va">mat</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       x           y
- [1,]  1 -1.37594967
- [2,]  2 -0.67314703
- [3,]  3  1.00105860
- [4,]  4 -0.69513626
- [5,]  5  1.12946279
- [6,]  6  0.43375840
- [7,]  7  0.32173943
- [8,]  8  0.01821573
- [9,]  9  0.41405046
-[10,] 10 -2.09493607</code></pre>
+<pre><code>       x          y
+ [1,]  1  0.0626442
+ [2,]  2 -0.2605412
+ [3,]  3  0.4941094
+ [4,]  4  0.7590003
+ [5,]  5 -0.3364795
+ [6,]  6 -0.2599640
+ [7,]  7  0.6668722
+ [8,]  8  1.9120996
+ [9,]  9 -0.1715687
+[10,] 10  0.2585426</code></pre>
 </div>
 </div>
 <p>Inspecting the names associated with rows and columns is often useful, particularly if the names have human meaning.</p>
@@ -388,17 +388,17 @@ y 0.01821573 0.4140505 -2.094936</code></pre>
 </div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      apples     oranges
- [1,]      1 -1.37594967
- [2,]      2 -0.67314703
- [3,]      3  1.00105860
- [4,]      4 -0.69513626
- [5,]      5  1.12946279
- [6,]      6  0.43375840
- [7,]      7  0.32173943
- [8,]      8  0.01821573
- [9,]      9  0.41405046
-[10,]     10 -2.09493607</code></pre>
+<pre><code>      apples    oranges
+ [1,]      1  0.0626442
+ [2,]      2 -0.2605412
+ [3,]      3  0.4941094
+ [4,]      4  0.7590003
+ [5,]      5 -0.3364795
+ [6,]      6 -0.2599640
+ [7,]      7  0.6668722
+ [8,]      8  1.9120996
+ [9,]      9 -0.1715687
+[10,]     10  0.2585426</code></pre>
 </div>
 </div>
 <p>Matrices have dimensions.</p>
@@ -438,14 +438,14 @@ Important
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># The 2nd element of the 1st row of mat</span></span>
 <span><span class="va">mat</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> oranges 
--1.37595 </code></pre>
+<pre><code>  oranges 
+0.0626442 </code></pre>
 </div>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># The first ROW of mat</span></span>
 <span><span class="va">mat</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  apples  oranges 
- 1.00000 -1.37595 </code></pre>
+<pre><code>   apples   oranges 
+1.0000000 0.0626442 </code></pre>
 </div>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># The first COLUMN of mat</span></span>
 <span><span class="va">mat</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -476,17 +476,17 @@ Caution
 <div class="cell">
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>       <span class="co"># remove first column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] -1.37594967 -0.67314703  1.00105860 -0.69513626  1.12946279  0.43375840
- [7]  0.32173943  0.01821573  0.41405046 -2.09493607</code></pre>
+<pre><code> [1]  0.0626442 -0.2605412  0.4941094  0.7590003 -0.3364795 -0.2599640
+ [7]  0.6668722  1.9120996 -0.1715687  0.2585426</code></pre>
 </div>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>,<span class="op">]</span>  <span class="co"># remove first five rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     apples     oranges
-[1,]      6  0.43375840
-[2,]      7  0.32173943
-[3,]      8  0.01821573
-[4,]      9  0.41405046
-[5,]     10 -2.09493607</code></pre>
+<pre><code>     apples    oranges
+[1,]      6 -0.2599640
+[2,]      7  0.6668722
+[3,]      8  1.9120996
+[4,]      9 -0.1715687
+[5,]     10  0.2585426</code></pre>
 </div>
 </div>
 </section><section id="changing-values-in-a-matrix" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="changing-values-in-a-matrix">
@@ -496,13 +496,13 @@ Caution
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span>,nrow<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       V1                   V2         
- Min.   :-2.8804047   Min.   :-1.4665  
- 1st Qu.:-0.3318684   1st Qu.:-1.1070  
- Median : 0.5758668   Median :-0.6853  
- Mean   :-0.0009426   Mean   :-0.6084  
- 3rd Qu.: 0.6836370   3rd Qu.:-0.3374  
- Max.   : 0.8764775   Max.   : 0.8011  </code></pre>
+<pre><code>       V1                 V2          
+ Min.   :-1.33238   Min.   :-1.48278  
+ 1st Qu.:-0.52761   1st Qu.:-0.68838  
+ Median : 0.31448   Median :-0.14225  
+ Mean   :-0.01296   Mean   :-0.06669  
+ 3rd Qu.: 0.35305   3rd Qu.: 0.79620  
+ Max.   : 0.66566   Max.   : 1.03073  </code></pre>
 </div>
 </div>
 <p>Multiplication and division works similarly to vectors. When multiplying by a vector, for example, the values of the vector are reused. In the simplest case, let’s multiply the matrix by a constant (vector of length 1).</p>
@@ -511,13 +511,13 @@ Caution
 <span><span class="va">m2</span> <span class="op">=</span> <span class="va">m</span><span class="op">*</span><span class="fl">20</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">m2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       V1                  V2         
- Min.   :-57.60809   Min.   :-29.330  
- 1st Qu.: -6.63737   1st Qu.:-22.140  
- Median : 11.51734   Median :-13.706  
- Mean   : -0.01885   Mean   :-12.168  
- 3rd Qu.: 13.67274   3rd Qu.: -6.748  
- Max.   : 17.52955   Max.   : 16.022  </code></pre>
+<pre><code>       V1                 V2         
+ Min.   :-26.6476   Min.   :-29.656  
+ 1st Qu.:-10.5523   1st Qu.:-13.768  
+ Median :  6.2896   Median : -2.845  
+ Mean   : -0.2592   Mean   : -1.334  
+ 3rd Qu.:  7.0609   3rd Qu.: 15.924  
+ Max.   : 13.3133   Max.   : 20.615  </code></pre>
 </div>
 </div>
 <p>By combining subsetting with assignment, we can make changes to just part of a matrix.</p>
@@ -528,24 +528,24 @@ Caution
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">m2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       V1               V2         
- Min.   : 42.39   Min.   :-29.330  
- 1st Qu.: 93.36   1st Qu.:-22.140  
- Median :111.52   Median :-13.706  
- Mean   : 99.98   Mean   :-12.168  
- 3rd Qu.:113.67   3rd Qu.: -6.748  
- Max.   :117.53   Max.   : 16.022  </code></pre>
+ Min.   : 73.35   Min.   :-29.656  
+ 1st Qu.: 89.45   1st Qu.:-13.768  
+ Median :106.29   Median : -2.845  
+ Mean   : 99.74   Mean   : -1.334  
+ 3rd Qu.:107.06   3rd Qu.: 15.924  
+ Max.   :113.31   Max.   : 20.615  </code></pre>
 </div>
 </div>
 <p>A somewhat common transformation for a matrix is to transpose which changes rows to columns. One might need to do this if an assay output from a lab machine puts samples in rows and genes in columns, for example, while in Bioconductor/R, we often want the samples in columns and the genes in rows.</p>
 <div class="cell">
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">m2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]      [,2]       [,3]      [,4]     [,5]      [,6]     [,7]
-[1,] 113.921282 103.48302 112.321561 89.989171 115.6439 117.52955 112.9271
-[2,]  -7.343504 -15.60652   1.357473 -6.549433 -17.4937 -11.80519  16.0219
+<pre><code>           [,1]     [,2]     [,3]      [,4]      [,5]      [,6]      [,7]
+[1,] 106.815460 86.01827 85.80517  73.35238 106.11582  99.73604 106.46335
+[2,]   4.638628 16.99678 18.68817 -14.44571 -10.32864 -29.65564 -11.73298
           [,8]      [,9]     [,10]
-[1,] 110.71311  80.89083  42.39191
-[2,] -27.23953 -23.68840 -29.32969</code></pre>
+[1,] 112.64556 107.14273 113.31326
+[2,]  12.70564  20.61456 -20.81924</code></pre>
 </div>
 </div>
 </section><section id="calculations-on-matrix-rows-and-columns" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="calculations-on-matrix-rows-and-columns">
@@ -558,43 +558,43 @@ Caution
 <div class="cell">
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">m3</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.178876</code></pre>
+<pre><code>[1] 5.104862</code></pre>
 </div>
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">m3</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.625788</code></pre>
+<pre><code>[1] 1.521707</code></pre>
 </div>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># or a row</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">m3</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.867812</code></pre>
+<pre><code>[1] 5.708435</code></pre>
 </div>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">m3</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.029104</code></pre>
+<pre><code>[1] 2.126164</code></pre>
 </div>
 </div>
 <p>There are some useful convenience functions for computing means and sums of data in <strong>all</strong> of the columns and rows of matrices.</p>
 <div class="cell">
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 4.178876 4.485702 5.003931 5.338303 5.875298 4.868359 4.279324 5.601164
- [9] 4.572530 6.219823</code></pre>
+<pre><code> [1] 5.104862 5.067118 4.674373 5.207726 6.422428 5.276819 4.127895 5.238015
+ [9] 5.501107 4.458434</code></pre>
 </div>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowMeans</a></span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 4.867812 4.440548 4.490479 4.523367 5.478116 5.052268 5.881956 6.032062
- [9] 4.566772 5.089929</code></pre>
+<pre><code> [1] 5.708435 5.500776 5.496619 4.886450 4.969435 5.826565 3.985788 5.264617
+ [9] 4.918903 4.521188</code></pre>
 </div>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 48.67812 44.40548 44.90479 45.23367 54.78116 50.52268 58.81956 60.32062
- [9] 45.66772 50.89929</code></pre>
+<pre><code> [1] 57.08435 55.00776 54.96619 48.86450 49.69435 58.26565 39.85788 52.64617
+ [9] 49.18903 45.21188</code></pre>
 </div>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 41.78876 44.85702 50.03931 53.38303 58.75298 48.68359 42.79324 56.01164
- [9] 45.72530 62.19823</code></pre>
+<pre><code> [1] 51.04862 50.67118 46.74373 52.07726 64.22428 52.76819 41.27895 52.38015
+ [9] 55.01107 44.58434</code></pre>
 </div>
 </div>
 <p>We can look at the distribution of column means:</p>
@@ -604,7 +604,7 @@ Caution
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cmeans</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  4.179   4.507   4.936   5.042   5.535   6.220 </code></pre>
+  4.128   4.773   5.156   5.108   5.267   6.422 </code></pre>
 </div>
 </div>
 <p>Note that this is centered pretty closely around the selected mean of <code>5</code> above.</p>
@@ -614,7 +614,7 @@ Caution
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">csds</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
- 0.9825  1.6536  1.9689  1.9548  2.2032  3.0449 </code></pre>
+  1.417   1.882   2.004   2.155   2.450   3.329 </code></pre>
 </div>
 </div>
 <p>Again, take a look at the distribution which is centered quite close to the selected standard deviation when we created our matrix.</p>
